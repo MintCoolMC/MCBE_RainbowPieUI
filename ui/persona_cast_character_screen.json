@@ -1,6 +1,60 @@
 {
   "namespace": "persona_cast_character_screen",
 
+  "left_bottom_button@common_buttons.light_text_button": {
+    "$pressed_button_name": "button.cast_left_select",
+    "$left_button_text|default": "",
+    "$button_text": "$left_button_text",
+    "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+    "$focus_override_left": "FOCUS_OVERRIDE_STOP",
+    "bindings": [
+      {
+        "binding_name": "#cast_enabled_select",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  },
+
+  "right_bottom_button@common_buttons.light_text_button": {
+    "size": [ "fill", "100%" ],
+    "$pressed_button_name": "button.cast_right_select",
+    "$right_button_text|default": "",
+    "$button_text": "$right_button_text",
+    "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "bindings": [
+      {
+        "binding_name": "#cast_enabled_select",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  },
+
+  "common_preview_page_framework": {
+    "$cast_modal_bottom_bar_controls": [],
+    "controls": [
+      // { "background@persona_cast_character_screen.common_background_blocker": {} },
+      {
+        "dialog@common_dialogs.main_panel_two_buttons": {
+          "size": [ "71.40625%", "90%" ],
+          "$close_button_to_button_id": "button.cast_back",
+          "$text_name": "$character_cast_prompt_title",
+          "$top_button_panel": "persona_cast_character_screen.left_bottom_button",
+          "$bottom_button_panel": "persona_cast_character_screen.right_bottom_button",
+          "$child_control": "$inner_contents"
+        }
+      }
+    ]
+  },
+
+  "cast_preview_page_one_inner_section/modal_inner_background": {
+    "ignored": true
+  },
+
+  "cast_preview_page_two_inner_section": {
+    "texture": ""
+  },
+
   "cast_character_screen_right_side_model/skin_model_label": {
     "font_type": "$global_font_type",
     "backup_font_type": "$global_font_type_backup"
