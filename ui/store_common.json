@@ -1,6 +1,50 @@
 {
   "namespace": "common_store",
 
+  "popup_dialog__no_store_connection": {
+    "controls": [
+      {
+        "dialog@common_dialogs.main_panel_one_button": {
+          "size": [ 200, 120 ],
+          "$text_name": "rainbowpie.ui.dialog.title_default",
+          "$button_panel": "popup_dialog.popup_dialog_middle_button",
+          "$child_control": "rainbowpie_dialog.label_panel",
+          "$show_close_button": false,
+          "$rainbowpie_dialog_text": "$message_text"
+        }
+      }
+    ]
+  },
+
+  "popup_dialog__restore_popup": {
+    "controls": [
+      {
+        "dialog@common_dialogs.main_panel_no_buttons": {
+          "size": [ 200, 120 ],
+          "$text_name": "rainbowpie.ui.dialog.title_default",
+          "$child_control": "rainbowpie_dialog.label_panel",
+          "$show_close_button": false,
+          "$rainbowpie_dialog_text": "$message_text"
+        }
+      }
+    ]
+  },
+
+  "popup_dialog__restore_failed": {
+    "controls": [
+      {
+        "dialog@common_dialogs.main_panel_one_button": {
+          "size": [ 200, 120 ],
+          "$text_name": "rainbowpie.ui.dialog.title_default",
+          "$button_panel": "popup_dialog.popup_dialog_middle_button",
+          "$child_control": "rainbowpie_dialog.label_panel",
+          "$show_close_button": false,
+          "$rainbowpie_dialog_text": "$message_text"
+        }
+      }
+    ]
+  },
+
   "purchase_coins_panel/plus_button": {
     "focus_enabled": false
   },
