@@ -1,0 +1,47 @@
+{
+
+  "namespace": "choose_realm",
+
+  "ten_player_button": {
+    "$button_size_override": [ "100%", "100%" ]
+  },
+
+  "choose_realm_screen": {
+    "force_render_below": false
+  },
+
+  "choose_realm_screen_content": {
+    "controls": [
+      { "background_all@rainbowpie.background_all": {} },
+      {
+        "header@rainbowpie.header_black": {
+          "$header_title": "#window_title_text",
+          "$title_bindings": [
+            {
+              "binding_type": "global",
+              "binding_condition": "none",
+              "binding_name": "#window_title_text",
+              "binding_name_override": "#window_title_text"
+            },
+            {
+              "binding_type": "global",
+              "binding_condition": "once",
+              "binding_name": "#tts_dialog_title"
+            }
+          ]
+        }
+      },
+      {
+        "main_panel@choose_realm.main_panel": {
+          "size": [ "100%", "100% - 19px" ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle" 
+        }
+      }
+    ]
+  },
+
+  "background": {
+    "ignored": true
+  }
+}

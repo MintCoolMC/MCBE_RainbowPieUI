@@ -1,0 +1,746 @@
+{
+  "namespace": "npc_interact",
+
+  "name_edit": {
+    "max_length": 32767
+  },
+
+  "action_text_edit": {
+    "max_length": 32767
+  },
+
+  "maximized_action_edit": {
+    "max_length": 32767
+  },
+
+  "button_name_edit": {
+    "max_length": 32767
+  },
+
+  "student_view_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header_background": {
+              "type": "image",
+              "texture": "textures/ui/White",
+              "size": [ "100%", 15 ],
+              "offset": [ 0, -16 ],
+              "anchor_to": "top_middle",
+              "anchor_from": "top_middle",
+              "layer": 1,
+              "color": [ 0.12941176470588237, 0.12941176470588237, 0.12941176470588237 ],
+              "alpha": 0.5,
+              "controls": [
+                {
+                  "title_label": {
+                    "type": "label",
+                    "offset": [ 2.5, 0 ],
+                    "size": [ "100% - 15px", "10px" ],
+                    "anchor_from": "left_middle",
+                    "anchor_to": "left_middle",
+                    "text": "#title_text",
+                    "localize": true,
+                    "font_type": "$global_font_type",
+                    "backup_font_type": "$global_font_type_backup",
+                    "layer": 2,
+                    "bindings": [
+                      {
+                        "binding_type": "global",
+                        "binding_condition": "none",
+                        "binding_name": "#title_text",
+                        "binding_name_override": "#title_text"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "student_button_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "multiline_text_edit_control": {
+    "$enable_profanity_filter": "$text_edit_box_enable_profanity_filter"
+  },
+
+  "text_edit_control": {
+    "$enable_profanity_filter": "$text_edit_box_enable_profanity_filter"
+  },
+
+  "x_close_button_header@npc_interact.x_close_button": {
+    "$close_button_color": "$rainbowpie_ui_theme_dialog_text_color",
+    "$use_default_close_button": "(not $rainbowpie_ui_theme_dialog_close_white)"
+  },
+
+  "x_close_button": {
+    "$close_button_color": "$rainbowpie_ui_theme_dialog_text_color",
+    "$use_default_close_button|default": "(not $rainbowpie_ui_theme_dialog_close_white)"
+  },
+
+  "close_button_holder": {
+    "offset": [ 5, 0 ]
+  },
+
+  "button_name_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "action_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "maximized_action_edit@npc_interact.multiline_text_edit_control": {
+    "size": [ "100%", "100% - 19px" ],
+    "anchor_to": "bottom_middle",
+    "anchor_from": "bottom_middle"
+  },
+
+  "action_edit/text_edit": {
+    "size": [ "100% - 30px", 50 ]
+  },
+
+  "action": {
+    "texture": "textures/ui/Black",
+    "alpha": 0.4
+  },
+
+  "help_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "main_content/advanced": {
+  },
+
+  "student_view_content/close": {
+    "ignored": false
+  },
+
+  "banner_fill": {
+    "texture": "textures/RainbowPie/tm"
+  },
+
+  "bubble_point": {
+    "ignored": true
+  },
+
+  "student_message_bubble": {
+    "texture": "textures/RainbowPie/tm"
+  },
+
+  "npc_message": {
+    "max_length": 32767,
+    "$color": [ 1.0, 1.0, 1.0 ]
+  },
+
+  "basic_stack_panel/name_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "basic_stack_panel/dialog_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "basic_stack_panel/appearance_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "main_content/basic": {
+  },
+  
+  "close_button_header": {
+    "type": "panel",
+    "size": [ "100%c", "100%c" ],
+    "offset": [ "-48%", -2.5 ],
+    "controls": [
+      {
+        "close_basic@npc_interact.x_close_button_header": {
+          "$close_button_to_button_id": "button.exit_basic",
+          "$visibility_binding_name": "#basic_visible"
+        }
+      },
+      {
+        "close_student_edit@npc_interact.x_close_button_header": {
+          // Only show this when editing the student view as a worldbuilder
+          "ignored": "(not $is_worldbuilder)",
+          "$close_button_to_button_id": "button.exit_student_edit",
+          "$visibility_binding_name": "#student_view_visible"
+        }
+      },
+      {
+        "close_student@npc_interact.x_close_button_header": {
+          // Only show this when viewing the student view as a non-worldbuilder
+          "ignored": "$is_worldbuilder",
+          "$close_button_to_button_id": "button.exit_student",
+          "$visibility_binding_name": "#student_view_visible"
+        }
+      },
+      {
+        "close_maximized_action_edit@npc_interact.x_close_button_header": {
+          "$close_button_to_button_id": "button.exit_maximized",
+          "$visibility_binding_name": "#maximized_edit_visible"
+        }
+      },
+      {
+        "close_advanced@npc_interact.x_close_button_header": {
+          "$close_button_to_button_id": "button.exit_advanced",
+          "$visibility_binding_name": "#advanced_visible"
+        }
+      }
+    ]
+  },
+
+  "gamepad_helper_exit_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "npc_top_bar_animation@common_store.store_top_bar_animation": {
+    "from": [ 0, "-20%" ],
+    "to": [ 0, 0 ]
+  },
+
+  "npc_top_bar_back_animation@common_store.store_top_bar_back_animation_pop": {
+    "from": [ 0, 0 ],
+    "to": [ 0, "-20%" ]
+  },
+
+  "npc_dialog_label_panel@common.scrolling_panel": {
+    "$scrolling_pane_size": [ "100% - 1px", "100%" ],
+    "$scrolling_pane_offset": [ 2, 0 ],
+    "$scrolling_content": "npc_interact.npc_dialog_text_panel",
+    "$scroll_size": [ 5, "100% - 4px" ],
+    "$show_background": false,
+    "layer": 1,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$always_handle_scrolling": true
+  },
+
+  "npc_dialog_text_panel": {
+    "type": "stack_panel",
+    "size": [ "100% - 4px", "100%c" ],
+    "anchor_to": "top_middle",
+    "anchor_from": "top_middle",
+    "offset": [ 0, 0 ],
+    "controls": [
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ 0, 2 ]
+        }
+      },
+      {
+        "dialog_text": {
+          "type": "label",
+          "size": [ "100%", "default" ],
+          "anchor_to": "top_middle",
+          "anchor_from": "top_middle",
+          "layer": 2,
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "text": "#text",
+          "color": "$body_text_color",
+          "shadow": false,
+          "bindings": [
+            {
+              "binding_name": "#dialogtext"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((((((#dialogtext - 'RainbowPieUI:NPC_DIALOG_0') - 'RainbowPieUI:NPC_DIALOG_1') - 'RainbowPieUI:NPC_DIALOG_2') - 'RainbowPieUI:NPC_DIALOG_3') - 'RainbowPieUI:NPC_DIALOG_BG_NOBLUR') - 'RainbowPieUI:NPC_DIALOG_BG')",
+              "target_property_name": "#text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "npc_dialog_student_button@common.empty_panel": {
+    "size": "$student_button_size",
+    "controls": [
+      {
+        "button@common_buttons.light_text_button": {
+          "$button_type_panel": "npc_interact.student_button_label_panel",
+          "$pressed_button_name": "button.student_button",
+          "layer": 4,
+          "size": [ "100%", "100%" ],
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "student_buttons_collection",
+              "binding_collection_prefix": "student_buttons"
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#student_button_visible",
+        "binding_type": "collection",
+        "binding_name_override": "#visible",
+        "binding_collection_name": "student_buttons_collection"
+      }
+    ]
+  },
+
+  "npc_dialog_button_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "clips_children": true,
+    "controls": [
+      {
+        "actions": {
+          "type": "grid",
+          "size": "$student_grid_size",
+          "anchor_to": "left_middle",
+          "anchor_from": "left_middle",
+          "grid_item_template": "npc_interact.npc_dialog_student_button",
+          "grid_dimension_binding": "#student_button_grid_dimensions",
+          "collection_name": "student_buttons_collection",
+          "bindings": [
+            {
+              "binding_name": "#student_button_grid_dimensions"
+            }
+          ],
+          "variables": [
+            {
+              "requires": "($student_button_mode = '1')",
+              "$student_button_size": [ "100%", "100%" ],
+              "$student_grid_size": [ "100%", "100%" ]
+            },
+            {
+              "requires": "($student_button_mode = '2')",
+              "$student_button_size": [ "fill", "100%" ],
+              "$student_grid_size": [ "150%", "100%" ]
+            },
+            {
+              "requires": "($student_button_mode = '3')",
+              "$student_button_size": [ "fill", "100%" ],
+              "$student_grid_size": [ "100%", "100%" ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "npc_screen_contents": {
+    "type": "panel",
+    "controls": [
+      {
+        "dialog_panel": {
+          "type": "panel",
+          "ignored": "$is_worldbuilder",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "close@npc_interact.close_button_holder": {
+                "$close_button_to_button_id": "button.exit_student"
+              }
+            },
+            // background
+            {
+              "background_panel": {
+                "type": "panel",
+                "size": [ "100%", "100%" ],
+                "layer": 2900,
+                "controls": [
+                  {
+                    "bg@mintui_background.background_fullscreen": {
+                      "ignored": false,
+                      "$background_layer": 1
+                    }
+                  },
+                  {
+                    "blur_panel_2": {
+                      "type": "panel",
+                      "clips_children": true,
+                      "size": [ "100%", "100%" ],
+                      "offset": [ "50% - 100px", 0 ],
+                      "controls": [
+                        {
+                          "blur_panel_1": {
+                            "type": "panel",
+                            "clips_children": true,
+                            "size": [ "100%", "100%" ],
+                            "offset": [ 0, "50% - 60px" ],
+                            "controls": [
+                              {
+                                "blur_layer_1@mintui_background.background_blur": {
+                                  "$background_mask": false,
+                                  "$background_ingame": true,
+                                  "$background_offset": [ "-100% + 200px", "-100% + 120px" ],
+                                  "$background_children_offset": [ "50% - 100px", "50% - 60px" ],
+                                  "$background_layer": 2
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "bindings": [
+                        {
+                          "binding_name": "#student_view_visible",
+                          "binding_type": "global"
+                        },
+                        {
+                          "binding_name": "#dialogtext"
+                        },
+                        {
+                          "binding_type": "view",
+                          "source_property_name": "(#student_view_visible and ((#dialogtext - 'RainbowPieUI:NPC_DIALOG_BG_NOBLUR') = #dialogtext))",
+                          "target_property_name": "#visible"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#student_view_visible",
+                    "binding_type": "global"
+                  },
+                  {
+                    "binding_name": "#dialogtext"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#student_view_visible and (not ((#dialogtext - 'RainbowPieUI:NPC_DIALOG_BG') = #dialogtext)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            // no button
+            {
+              "dialog_0@common_dialogs.main_panel_no_buttons": {
+                "$text_name": "#title_text",
+                "$title_text_binding_type": "global",
+                "$child_control": "npc_interact.npc_dialog_label_panel",
+                "$show_close_button": true,
+                "$close_button_to_button_id": "button.exit_student",
+                "size": [ 200, 120 ],
+                "layer": 3100,
+                "bindings": [
+                  {
+                    "binding_name": "#student_view_visible",
+                    "binding_type": "global"
+                  },
+                  {
+                    "binding_name": "#dialogtext"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#student_view_visible and (not ((#dialogtext - 'RainbowPieUI:NPC_DIALOG_0') = #dialogtext)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            // 1 button
+            {
+              "dialog_1@common_dialogs.main_panel_one_button": {
+                "$student_button_mode": "1",
+                "$text_name": "#title_text",
+                "$title_text_binding_type": "global",
+                "$child_control": "npc_interact.npc_dialog_label_panel",
+                "$button_panel": "npc_interact.npc_dialog_button_panel",
+                "$show_close_button": false,
+                "size": [ 200, 120 ],
+                "layer": 3100,
+                "bindings": [
+                  {
+                    "binding_name": "#student_view_visible",
+                    "binding_type": "global"
+                  },
+                  {
+                    "binding_name": "#dialogtext"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#student_view_visible and (not ((#dialogtext - 'RainbowPieUI:NPC_DIALOG_1') = #dialogtext)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            // 2 buttons
+            {
+              "dialog_2@common_dialogs.main_panel_one_button": {
+                "$student_button_mode": "2",
+                "$text_name": "#title_text",
+                "$title_text_binding_type": "global",
+                "$child_control": "npc_interact.npc_dialog_label_panel",
+                "$button_panel": "npc_interact.npc_dialog_button_panel",
+                "$show_close_button": false,
+                "size": [ 200, 120 ],
+                "layer": 3100,
+                "bindings": [
+                  {
+                    "binding_name": "#student_view_visible",
+                    "binding_type": "global"
+                  },
+                  {
+                    "binding_name": "#dialogtext"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#student_view_visible and (not ((#dialogtext - 'RainbowPieUI:NPC_DIALOG_2') = #dialogtext)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            // 3 buttons
+            {
+              "dialog_3@common_dialogs.main_panel_one_button": {
+                "$student_button_mode": "3",
+                "$text_name": "#title_text",
+                "$title_text_binding_type": "global",
+                "$child_control": "npc_interact.npc_dialog_label_panel",
+                "$button_panel": "npc_interact.npc_dialog_button_panel",
+                "$show_close_button": false,
+                "size": [ 200, 120 ],
+                "layer": 3100,
+                "bindings": [
+                  {
+                    "binding_name": "#student_view_visible",
+                    "binding_type": "global"
+                  },
+                  {
+                    "binding_name": "#dialogtext"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#student_view_visible and (not ((#dialogtext - 'RainbowPieUI:NPC_DIALOG_3') = #dialogtext)))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "teacher@npc_interact.root_panel": {
+          "$child_control": "npc_interact.main_content",
+          "bindings": [
+            {
+              "binding_name": "#teacher_view_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      },
+      {
+        "npc_dialog_tip": {
+          "type": "image",
+          "ignored": "(not $is_worldbuilder)",
+          "size": [ "200px", "100%c + 2px" ],
+          "anchor_to": "top_right",
+          "anchor_from": "top_right",
+          "texture": "textures/ui/White",
+          "color": "$rainbowpie_ui_theme_dialog_content_background_color",
+          "alpha": "$rainbowpie_ui_theme_dialog_content_background_alpha",
+          "layer": 100,
+          "controls": [
+            {
+              "stack_panel": {
+                "type": "stack_panel",
+                "controls": [
+                  {
+                    "title_dialog": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.title.dialog",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$e_color_format",
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "NPC_DIALOG_0": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.NPC_DIALOG_0",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$rainbowpie_ui_theme_dialog_content_color",
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "NPC_DIALOG_1": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.NPC_DIALOG_1",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$rainbowpie_ui_theme_dialog_content_color",
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "NPC_DIALOG_2": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.NPC_DIALOG_2",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$rainbowpie_ui_theme_dialog_content_color",
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "NPC_DIALOG_3": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.NPC_DIALOG_3",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$rainbowpie_ui_theme_dialog_content_color",
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "title_background": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.title.background",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$e_color_format",
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "NPC_DIALOG_BG": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.NPC_DIALOG_BG",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$rainbowpie_ui_theme_dialog_content_color",
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "NPC_DIALOG_BG_NOBLUR": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.NPC_DIALOG_BG_NOBLUR",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$rainbowpie_ui_theme_dialog_content_color",
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "tip_text": {
+                      "type": "label",
+                      "size": [ "default", "default" ],
+                      "text": "rainbowpie.ui.npc_interact.command.text.tip",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$e_color_format",
+                      "layer": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#student_view_visible",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "#dialogtext"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#student_view_visible and (not ((#dialogtext - 'RainbowPieUI:') = #dialogtext)))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "student_view_content@npc_interact.student_view_content": {
+          "size": [ 320, "100%cm" ],
+          "bindings": [
+            {
+              "binding_name": "#student_view_visible",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "#dialogtext"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#student_view_visible and (((#dialogtext - 'RainbowPieUI:NPC_DIALOG_') = #dialogtext)))",
+              "target_property_name": "#visible",
+              "ignored": "$is_worldbuilder"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "#student_view_visible",
+              "target_property_name": "#visible",
+              "ignored": "(not $is_worldbuilder)"
+            }
+          ]
+        }
+      },
+      {
+        "bg": {
+          "type": "image",
+          "texture": "textures/ui/Black",
+          "size": [ "100%", "100%" ],
+          "alpha": 0.2,
+          "layer": -1,
+          "bindings": [
+            {
+              "binding_name": "#student_view_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      },
+      {
+        "npc_screen_close@npc_interact.close_text": {
+          "anchor_to": "bottom_left",
+          "anchor_from": "bottom_left",
+          "offset": [ 20, 0 ]
+        }
+      }
+    ]
+  },
+
+  "npc_screen": {
+    "force_render_below": true,
+    "$scroll_clips_children": "(not $scroll_met)"
+  }
+}

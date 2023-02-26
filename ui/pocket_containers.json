@@ -1,0 +1,108 @@
+{
+  "namespace": "pocket_containers",
+
+  "small_chest_panel": {
+    "$chest_screen": true,
+    "$chest_type": "small_chest"
+  },
+
+  "large_chest_panel": {
+    "$chest_screen": true,
+    "$chest_type": "small_chest"
+  },
+
+  "ender_chest_panel": {
+    "$chest_screen": true,
+    "$chest_type": "ender_chest"
+  },
+
+  "shulker_box_panel": {
+    "$chest_screen": true,
+    "$chest_type": "shulker_box"
+  },
+
+  "barrel_panel": {
+    "$chest_screen": true,
+    "$chest_type": "barrel"
+  },
+
+  "panel/inventory": {
+    "ignored": true
+  },
+
+  "panel/container": {
+    "ignored": true
+  },
+
+  "panel/header": {
+    "ignored": true
+  },
+
+  "panel/bg": {
+    "ignored": true
+  },
+
+  "panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header_pocket_redstone@rainbowpie.inv_header_pocket": {
+              "$redstone_screen|default": false,
+              "$redstone_type|default": "null",
+              "visible": "$redstone_screen",
+              "$title_inv_text": true,
+              "$inv_title": "chestScreen.header.player",
+              "$title_text": "$container_title",
+              "$title_icon_texture": "('textures/ui/inventory_icons_pocket/redstone/' + $redstone_type)"
+            }
+          },
+          {
+            "inv_header_pocket_chest@rainbowpie.inv_header_pocket": {
+              "$chest_screen|default": false,
+              "$chest_type|default": "null",
+              "visible": "$chest_screen",
+              "$title_inv_text": true,
+              "$inv_title": "chestScreen.header.player",
+              "$title_text": "$container_title",
+              "$title_icon_texture": "('textures/ui/inventory_icons_pocket/chest/' + $chest_type)"
+            }
+          },
+          {
+            "inventory_and_half_screen": {
+              "type": "panel",
+              "animation_reset_name": "screen_animation_reset",
+              "anims": [
+                "@common.rainbowpie_inventory_exit_animation_push",
+                "@common.rainbowpie_inventory_entrance_animation_pop",
+                "@common.inventory_animation_start",
+                "@common.inventory_animation_end2",
+                "@common.inventory_animation_end2_pop",
+                "@common.screen_exit_animation_push_fade",
+                "@common.screen_exit_animation_pop_fade",
+                "@common.screen_entrance_animation_push_fade",
+                "@common.screen_entrance_animation_pop_fade"
+              ],
+              "controls": [
+                {
+                  "inventory@half_screen": {
+                    "$container_size": 36,
+                    "$pane_collection": "combined_hotbar_and_inventory_items"
+                  }
+                },
+                {
+                  "container@half_screen": {
+                    "anchor_from": "top_middle",
+                    "$pane_collection": "container_items"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

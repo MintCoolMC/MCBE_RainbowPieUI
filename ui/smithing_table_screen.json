@@ -1,0 +1,108 @@
+/********************************************************
++*   (c) Mojang. All rights reserved                       *
++*   (c) Microsoft. All rights reserved.                   *
++*********************************************************/
+
+{
+  "namespace": "smithing_table",
+
+  "ingot_image": {
+    "texture": "textures/ui/smithing_table/ingot_image",
+    "color": [ 0.1, 0.1, 0.1 ],
+    "alpha": 0.7
+  },
+
+  "arrow_icon": {
+    "texture": "textures/ui/crafting/arrow",
+    "alpha": 0.4
+  },
+
+  "plus_sign_icon": {
+    "texture": "textures/ui/crafting/anvil-plus",
+    "alpha": 0.4
+  },
+
+  "smithing_icon": {
+    "ignored": true
+  },
+
+  "upgrade_label": {
+    "ignored": true
+  },
+
+  "smithing_table_panel": {
+    "type": "panel",
+    "controls": [
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 8
+        }
+      },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      {
+        "title_text@common_art.title_text": {
+          "ignored": "$hide_inventory_watermark",
+          "offset": [ 0, 94 ],
+          "anchor_to": "buttom_middle",
+          "anchor_from": "buttom_middle",
+          "$title_text_scale": 2.0
+        }
+      },
+      {
+        "root_panel@common.root_panel": {
+          "layer": 1,
+          "controls": [
+            {
+              "inv_header@rainbowpie.inv_header": {
+                "offset": [ 0, 10 ],
+                "$title_icon_ignored": false,
+                "$title_text": "container.smithing_table.upgrade"
+              }
+            },
+            {
+              "smithing_table_screen_inventory": {
+                "type": "panel",
+                "layer": 2,
+                "controls": [
+                  { "top_half_panel@smithing_table.top_half_panel": {} },
+                  { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
+                  { "hotbar_grid@common.hotbar_grid_template": {} },
+                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                ]
+              }
+            },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  },
+  "smithing_table_screen@common.inventory_screen_common": {
+    "$close_on_player_hurt|default": false,
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "smithing_table.smithing_table_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "smithing_table_pocket.smithing_table_panel"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_animations": [
+          "@common.screen_exit_animation_push_fade",
+          "@common.screen_exit_animation_pop_fade",
+          "@common.screen_entrance_animation_push_fade",
+          "@common.screen_entrance_animation_pop_fade"
+        ]
+      }
+    ]
+  }
+}
+
+// #endregion

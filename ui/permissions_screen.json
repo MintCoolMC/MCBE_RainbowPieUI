@@ -1,0 +1,360 @@
+{
+  "namespace": "permissions",
+
+  "unchecked_noleft": {
+    "type": "panel",
+    "$text_color": "$rainbowpie_ui_theme_toggle_text_unchecked_hover_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_alpha",
+          "controls": [
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "checked_left_blue_bar_hover": {
+    "type": "panel",
+    "$text_color": "$rainbowpie_ui_theme_toggle_text_checked_hover_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_checked_hover_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_checked_hover_alpha",
+          "controls": [
+            {
+              "left_image": {
+                "type": "image",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 0 ],
+                "texture": "textures/ui/White",
+                "size": [ 2, "100%" ],
+                "layer": 3,
+                "color": "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_color",
+                "alpha": "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_alpha"
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "checked_left_blue_bar": {
+    "type": "panel",
+    "$text_color": "$rainbowpie_ui_theme_toggle_text_checked_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_checked_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_alpha",
+          "controls": [
+            {
+              "left_image": {
+                "type": "image",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 0 ],
+                "texture": "textures/ui/White",
+                "size": [ 2, "100%" ],
+                "layer": 3,
+                "color": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_color",
+                "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_alpha"
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "unchecked_noh": {
+    "type": "panel",
+    "$text_color": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_unchecked_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_unchecked_default_alpha",
+          "controls": [
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "player_grid_item": {
+    "size": [ "100%", 25 ]
+  },
+
+  "player_grid_item/player_toggle": {
+    "size": [ "100%", "25px" ]
+  },
+
+  "player_toggle": {
+    "size": [ "100%", "25px" ],
+    "$checked_control": "permissions.checked_left_blue_bar",
+    "$checked_hover_control": "permissions.checked_left_blue_bar_hover",
+    "$unchecked_hover_control": "permissions.unchecked_noleft",
+    "$unchecked_control": "permissions.unchecked_noh"
+  },
+
+  "permissions_options_scrolling_panel": {
+    "size": [ "100% - 2px", "100%" ]
+  },
+
+  "permissions_options_grid_item": {
+    "controls": [
+      {
+        "option_toggle@settings_common.option_toggle": {
+          "$main_header_text_color": "$rainbowpie_ui_theme_text_text_color",
+          // "variables": [
+          //   {
+          //     "requires": "$rainbowpie_ui_theme_text_text_light",
+          //     "$main_header_text_color": [ 1.0, 1.0, 1.0 ]
+          //   }
+          // ],
+          "$option_label": "#option_name",
+          "$option_binding_name": "#option_toggle",
+          "$option_enabled_binding_type": "global",
+          "$option_enabled_binding_name": "#can_edit_permissions",
+          "$toggle_state_binding_name": "#option_toggle_state",
+          "$toggle_grid_collection_name": "permissions_collection",
+          "$toggle_binding_type": "collection",
+		      "$toggle_enabled_binding_type": "global",
+		      "$toggle_enabled_binding_name": "#can_edit_permissions",
+          "$toggle_name": "option_toggle",
+          "$binding_type": "collection",
+          "$label_bindings": [
+            {
+              "binding_name": "#option_name",
+              "binding_type": "collection",
+              "binding_collection_name": "permissions_collection"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "permission_level_dropdown": {
+    // Rainbow Pie Edit
+    "$show_option_label": false,
+    "$option_dropdown_size": [ "100%", 25 ],
+    "$button_mode": true,
+    "$button_mode_type": "4",
+    "$1_binding_name": "#permission_level_radio_visitor",
+    "$2_binding_name": "#permission_level_radio_member",
+    "$3_binding_name": "#permission_level_radio_operator",
+    "$4_binding_name": "#permission_level_radio_custom",
+    "$1_label_text": "permissions.level.visitor",
+    "$2_label_text": "permissions.level.member",
+    "$3_label_text": "permissions.level.operator",
+    "$4_label_text": "permissions.level.custom"
+    // ,
+    // "$main_header_text_color": [ 0.0, 0.0, 0.0 ],
+    // "variables": [
+    //   {
+    //     "requires": "$rainbowpie_ui_theme_text_text_light",
+    //     "$main_header_text_color": [ 1.0, 1.0, 1.0 ]
+    //   }
+    // ]
+  },
+
+  "banner_background": {
+    "texture": "textures/ui/White",
+    "color": "$rainbowpie_ui_theme_text_background_color",
+    "alpha": "$rainbowpie_ui_theme_text_background_alpha"
+  },
+
+  "radio_content_with_title_bar/helper_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "radio_title_and_icon/radio_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "option_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "option_state_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "gamertag_label": {
+    "color": "$text_color",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "world_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "ip_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "title_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "top_bar_panel": {
+    "controls": [
+      {
+        "header@rainbowpie.header": {
+          "$header_title": "permissions.title"
+        }
+      }
+    ]
+  }
+}

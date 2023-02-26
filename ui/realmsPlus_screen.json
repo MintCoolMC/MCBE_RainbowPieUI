@@ -1,0 +1,147 @@
+{
+  "namespace": "realmsPlus",
+
+  "realmsPlus_main_panel": {
+    "$is_sidebar_blur_enabled": true
+  },
+
+  "realmsPlus_main_panel/root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "blur_layer_2@mintui_background.background_blur": {
+              "ignored": "((not $is_pregame) or ($rainbowpie_ui_flag_disable_sidebar_navigation))",
+              "$background_offset": [ "-70% + 20.5px", 19 ],
+              "$background_children_offset": [ "70% - 20.5px", -19 ],
+              "$background_layer": -2
+            }
+          },
+          {
+            "mask_layer_2@mintui_background.background_mask": {
+              "ignored": "((not $is_pregame) or ($rainbowpie_ui_flag_disable_sidebar_navigation))",
+              "$background_offset": [ "-70% + 20.5px", 19 ],
+              "$background_children_offset": [ "70% - 20.5px", -19 ],
+              "$background_layer": -2
+            }
+          },
+          {
+            "blur_layer_1@mintui_background.background_blur": {
+              "ignored": "((not $is_pregame) or (not $rainbowpie_ui_flag_disable_sidebar_navigation))",
+              "$background_offset": [ "-70% - 2px", 19 ],
+              "$background_children_offset": [ "70% + 2px", -19 ],
+              "$background_layer": -2
+            }
+          },
+          {
+            "mask_layer_1@mintui_background.background_mask": {
+              "ignored": "((not $is_pregame) or (not $rainbowpie_ui_flag_disable_sidebar_navigation))",
+              "$background_offset": [ "-70% - 2px", 19 ],
+              "$background_children_offset": [ "70% + 2px", -19 ],
+              "$background_layer": -2
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "gradient_image_stack": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "black": {
+              "type": "image",
+              "size": [ "100%", "100%" ],
+              "texture": "textures/ui/Black",
+              "alpha": 0.4
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "gradient_image_stack/solid_pink": {
+    "ignored": true
+  },
+
+  "gradient_image_stack/gradient": {
+    "ignored": true
+  },
+
+  "gradient_content_panel/particles": {
+    "ignored": true
+  },
+
+  "dialog_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "white_background": {
+              "type": "image",
+              "ignored": "$is_pregame",
+              "size": [ "30% - 2px", "100%" ],
+              "anchor_from": "left_middle",
+              "anchor_to": "left_middle",
+              "texture": "textures/ui/Black",
+              "alpha": 0.4,
+              "layer": -1
+            }
+          },
+          {
+            "black_background": {
+              "type": "image",
+              "size": [ "70% + 2px", "100%" ],
+              "anchor_from": "right_middle",
+              "anchor_to": "right_middle",
+              "texture": "textures/ui/Black",
+              "alpha": 0.2,
+              "layer": -1
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "content_area": {
+    "size": [ "70% - 3px", "100%" ]
+  },
+
+  "selector_area": {
+    "size": [ "30% - 6px", "100%" ]
+  },
+
+  "buy_now_toggle": {
+    "$default_texture": "textures/ui/button/realmsContent",
+    "$hover_texture": "textures/ui/button/realmsContentPressed",
+    "$pressed_texture": "textures/ui/button/realmsContentPressed",
+    "$pressed_no_hover_texture": "textures/ui/button/realmsContentPressed"
+  },
+
+  "tab_button_text": {
+    "alpha": 1
+  },
+
+  "realms_plus_upgrade_notice_screen": {
+    "$screen_background_control": "common.empty_panel"
+  },
+
+  "realms_plus_pdp_screen": {
+    "$screen_background_control": "common.empty_panel",
+    "variables": []
+  },
+
+  "left_right_pane_divider": {
+     "ignored": true
+  }
+}

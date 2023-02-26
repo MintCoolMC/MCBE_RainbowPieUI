@@ -1,0 +1,44 @@
+{
+  "namespace": "coin_purchase",
+
+  "main_panel/no_offers_panel": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "not_enough_coins": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "price": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "bonus_coins_stack/bonus_label_panel/bonus_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "bonus_coins_stack/plus_label/plus_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "coins_stack_panel/text_padding/coins_without_bonus": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "offer_panel": {
+    "$default_button_alpha": 1,
+    "$default_hover_alpha": 1,
+    "$default_pressed_alpha": 1,
+    "$default_button_texture": "textures/ui/button/coin_button",
+    "$hover_button_texture": "textures/ui/button/coin_button",
+    "$pressed_button_texture": "textures/ui/button/coin_button",
+    "$button_border_style": "1",
+    "$is_coin_button": true
+  }
+}

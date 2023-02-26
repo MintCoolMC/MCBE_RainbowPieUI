@@ -1,0 +1,77 @@
+{
+  "namespace": "screenshotpicker",
+
+  "edit_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "screenshotpicker_item_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "timesince_panel/screenshotpicker_timesince_instance": {
+    "alpha": 1,
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "#screenshotpicker_timesince_visible"
+        }
+      }
+    ]
+  },
+
+  "spacing_gap": {
+    "size": [ "100%", 5 ]
+  },
+
+  "content/screenshots_label": {
+    "ignored": true
+  },
+
+  "content/return_button": {
+    "ignored": true
+  },
+
+  "content/edit_button_instance": {
+    "ignored": true
+  },
+
+  "content/top_bar_gradient": {
+    "ignored": true
+  },
+
+  "screenshotpicker_screen_content/container": {
+    "anchor_to": "bottom_middle",
+    "anchor_from": "bottom_middle",
+    "size": [ "100%", "100% - 19px" ]
+  },
+
+  "screenshotpicker_screen_content/transparent_background_instance": {
+    "ignored": true
+  },
+
+  "screenshotpicker_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "feed.screenshots",
+              "$right_panel": "screenshotpicker_extra.right_panel",
+              "$back_button_pressed_button_name": "button.close_screenshot_picker"
+            }
+          },
+          {
+            "background_all@rainbowpie.background_all": {}
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "namespace": "chat_settings",
+
+  "chat_setting_scrolling_panel": {
+    "$scroll_size": [ 4, "100% - 4px" ],
+    "$scroll_bar_left_padding_size": [ 1.5, 0 ],
+    "$scroll_bar_right_padding_size": [ 0.5, 0 ]
+  },
+
+  "typeface_dropdown": {
+    "$option_dropdown_size": [ "100%", 20 ],
+    "$button_mode": true,
+    "$button_mode_type": "2",
+    "$1_binding_name": "#typeface_radio_mojangles",
+    "$2_binding_name": "#typeface_radio_notoSans",
+    "$1_label_text": "typeface.mojangles",
+    "$2_label_text": "typeface.notoSans"
+  },
+
+  "chat_settings_scrolling_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "padding": {
+              "type": "panel",
+              "size": [ 4, 4 ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

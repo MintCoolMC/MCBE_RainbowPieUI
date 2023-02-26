@@ -1,0 +1,112 @@
+{
+  "namespace": "controls_section",
+  
+  "touch_section/common_touch_settings/control_scheme_section/select_control_mode": {
+    "size": [ "100%", 28 ]
+  },
+
+  "touch_section/common_touch_settings/control_scheme_section": {
+  },
+
+  "touch_section/common_touch_settings/control_scheme_section/section_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "touch_section/common_touch_settings/control_scheme_section/image_and_button/scheme_button_section/caption/selected_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "touch_section/common_touch_settings/control_scheme_section/image_and_button/scheme_button_section/caption/selected_control": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "touch_section/common_touch_settings/option_enable_new_touch_control_schemes_button": {
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "#new_touch_control_schemes_preview_enabled"
+        }
+      }
+    ]
+  },
+
+  "keyboard_and_mouse_button": {
+    "$icon_group_name": "controls",
+    "$icon_texture_name": "keyboard_and_mouse"
+  },
+
+  "controller_button": {
+    "$icon_group_name": "controls",
+    "$icon_texture_name": "controller"
+  },
+
+  "touch_button": {
+    "$icon_group_name": "controls",
+    "$icon_texture_name": "touch"
+  },
+
+  "controller_section/option_toggle_4": {
+    "ignored": false
+  },
+
+  "gamepad_mapping_item/option_info_label_control/keymapping_label_control": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "gamepad_mapping_item/option_info_label_control": {
+    "texture": "textures/ui/Black",
+    "alpha": 0,
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "option_info_label_control": {
+              "type": "image",
+              "texture": "textures/ui/Black",
+              "size": [ "100%", "100% - 2px" ],
+              "alpha": 0.4,
+              "anchor_from": "center",
+              "anchor_to": "center"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "keymapping_item/option_info_label_control/keymapping_label_control": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "keymapping_item/option_info_label_control": {
+    "texture": "textures/ui/Black",
+    "alpha": 0,
+    "modifications": [
+        {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "option_info_label_control": {
+              "type": "image",
+              "texture": "textures/ui/Black",
+              "size": [ "100%", "100% - 2px" ],
+              "alpha": 0.4,
+              "anchor_from": "center",
+              "anchor_to": "center"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

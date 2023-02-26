@@ -1,0 +1,148 @@
+{
+  "namespace": "scoreboard",
+
+  "player_icon_panel/player_icon": {
+    "ignored": false
+  },
+
+  "player_icon_panel/permission_icon": {
+    "ignored": true
+  },
+
+  "scoreboard_sidebar/main/lists": {
+    "offset": [ 1, 10 ]
+  },
+
+  "scoreboard_sidebar/main": {
+    // "texture": "($RainbowPie_Mintraspberry + '/r_black')",
+    "size": [ "100%cm + 2px", "100%c" ]
+  },
+
+  "scoreboard_sidebar": {
+    "animation_reset_name": "screen_animation_reset",
+    "anims": [
+      "@scoreboard.panel_animation_back",
+      "@scoreboard.panel_animation_back_pop",
+      "@scoreboard.panel_animation",
+      "@scoreboard.panel_animation_pop"
+    ]
+  },
+
+  "panel_animation": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.9,
+    "from": [ "100%", 0 ],
+    "to": [ 0, 0 ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "panel_animation_pop@scoreboard.panel_animation": {
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "panel_animation_back": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 4,
+    "to": [ "100%", 0 ],
+    "from": [ 0, 0 ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "panel_animation_back_pop@scoreboard.panel_animation_back": {
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "scoreboard_player_list/invite_players_button_panel": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/disconnected_from_multiplayer_label_panel": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/vertical_padding_6": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/vertical_padding_5": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/vertical_padding_4": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/vertical_padding_3": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/vertical_padding_2": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/vertical_padding_1": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/vertical_padding_0": {
+    "ignored": true
+  },
+
+  "scoreboard_player_list/permissions_button": {
+    "ignored": true
+  },
+
+  "player_score": {
+    "color": "$text_color",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "shadow": false
+  },
+
+  "player_name": {
+    "color": "$text_color",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "shadow": false
+  },
+
+  "player_rank_panel/player_rank_bg": {
+    "size": [ "100%y + 1px", "100% - 2px" ],
+    "texture": "textures/ui/White",
+    "offset": [ 0.5, 0 ],
+    "color": "$rainbowpie_ui_theme_button_background_default_color",
+    "alpha": "$rainbowpie_ui_theme_button_background_default_alpha"
+  },
+
+  "player_rank_panel/player_rank_bg/player_rank": {
+    "color": "$rainbowpie_ui_theme_button_text_default_color",
+    "font_type": "MinecraftTen",
+    "font_scale_factor": 1.4
+  },
+
+  "list_objective_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "scoreboard_sidebar/main/displayed_objective": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "scoreboard_sidebar_player": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "scoreboard_sidebar_score": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  }
+}

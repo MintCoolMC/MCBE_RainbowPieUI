@@ -1,0 +1,354 @@
+{
+  "namespace": "settings",
+
+  "selector_stack_panel/realm_selector_pane": {
+    "size": [ "100%", "100%c" ]
+  },
+
+  "selector_stack_panel/controls_and_settings_selector_pane/spacer_2": {
+    "ignored": true
+  },
+
+  "selector_stack_panel/controls_and_settings_selector_pane/spacer_1": {
+    "ignored": true
+  },
+
+  "selector_stack_panel/controls_and_settings_selector_pane/language_button": {
+    "ignored": false
+  },
+
+  "section_content_panels/general_and_controls_sections/language_section": {
+    "ignored": false
+  },
+
+  "selector_stack_panel/spacer_0": {
+    "ignored": true
+  },
+
+  "selector_stack_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "xbox_live_panel": {
+              "type": "panel",
+              "ignored": "(not $include_controls_and_settings_sections or $is_netease or not $is_xboxlive_enabled or not $is_account_panel_enabled)",
+              "size": [ "100%", 50 ],
+              "controls": [
+                {
+                  "background": {
+                    "type": "image",
+                    "texture": "textures/ui/White",
+                    "size": [ "100% - 2px", "100% - 2px" ],
+                    "alpha": "$rainbowpie_ui_theme_text_background_alpha",
+                    "color": "$rainbowpie_ui_theme_text_background_color",
+                    "layer": -1,
+                    "controls": [
+                      {
+                        "gamerpic": {
+                          "type": "image",
+                          "size": [ 44, 44 ],
+                          "offset": [ 2, 0 ],
+                          "anchor_from": "left_middle",
+                          "anchor_to": "left_middle",
+                          "layer": 1,
+                          "bindings": [
+                            {
+                              "binding_name": "#gamerpic_texture_path",
+                              "binding_name_override": "#texture"
+                            },
+                            {
+                              "binding_name": "#gamerpic_texture_location_type",
+                              "binding_name_override": "#texture_file_system"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "gamertag_label": {
+                          "type": "label",
+                          "offset": [ 49, 5 ],
+                          "size": [ "100% - 50px", 20 ],
+                          "anchor_from": "top_left",
+                          "anchor_to": "top_left",
+                          "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                          "color": "$rainbowpie_ui_theme_text_text_color",
+                          "layer": 1,
+                          "text": "#gamertag_label",
+                          "font_scale_factor": 1.5,
+                          "font_type": "$global_font_type",
+                          "backup_font_type": "$global_font_type_backup",
+                          "variables": [
+                            {
+                              "requires": "$rainbowpie_ui_theme_text_text_light",
+                              "$text_color": [ 1.0, 1.0, 1.0 ]
+                            }
+                          ],
+                          "bindings": [
+                            {
+                              "binding_name": "#gamertag_label"
+                            },
+                            {
+                              "binding_name": "#logged_in",
+                              "binding_name_override": "#visible"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "manage_account_button@settings_common.action_button": {
+                          "ignored": "($is_ios or $is_android)",
+                          "anchor_from": "top_left",
+                          "anchor_to": "top_left",
+                          "$pressed_button_name": "manage_account_button",
+                          "$button_text": "options.manageAccount",
+                          "size": [ "100% - 50px", 23 ],
+                          "offset": [ 48, 24 ],
+                          "bindings": [
+                            {
+                              "binding_name": "#logged_in",
+                              "binding_name_override": "#visible"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "sign_out_action_button@settings_common.action_button": {
+                          "ignored": "(not $is_ios and not $is_android)",
+                          "enabled": "$is_pregame",
+                          "$pressed_button_name": "sign_out_button",
+                          "$button_text": "xbox.signOutLong",
+                          "anchor_from": "top_left",
+                          "anchor_to": "top_left",
+                          "size": [ "100% - 50px", 23 ],
+                          "offset": [ 48, 24 ],
+                          "bindings": [
+                            {
+                              "binding_name": "#logged_in",
+                              "binding_name_override": "#visible"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "gamertag_label_nologon": {
+                          "type": "label",
+                          "offset": [ 49, 5 ],
+                          "size": [ "100% - 50px", 20 ],
+                          "anchor_from": "top_left",
+                          "anchor_to": "top_left",
+                          "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                          "color": "$rainbowpie_ui_theme_text_text_color",
+                          "layer": 1,
+                          "text": "#player_name",
+                          "font_scale_factor": 1.5,
+                          "font_type": "$global_font_type",
+                          "backup_font_type": "$global_font_type_backup",
+                          "variables": [
+                            {
+                              "requires": "$rainbowpie_ui_theme_text_text_light",
+                              "$text_color": [ 1.0, 1.0, 1.0 ]
+                            }
+                          ],
+                          "bindings": [
+                            {
+                              "binding_name": "#player_name"
+                            },
+                            {
+                              "binding_name": "#not_logged_in",
+                              "binding_name_override": "#visible"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "sign_in_action_button@settings_common.action_button": {
+                          "enabled": "$is_pregame",
+                          "$pressed_button_name": "sign_in_button",
+                          "$button_text": "xbox.signin",
+                          "anchor_from": "top_left",
+                          "anchor_to": "top_left",
+                          "size": [ "100% - 50px", 23 ],
+                          "offset": [ 48, 24 ],
+                          "bindings": [
+                            {
+                              "binding_name": "#not_logged_in",
+                              "binding_name_override": "#visible"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "spacer_ap": {
+              "visible": "($include_controls_and_settings_sections and $touch)",
+              "ignored": "($is_holographic and $is_reality_mode or $is_pregame or not $is_quick_camera_enabled)",
+              "type": "panel",
+              "size": [ 2, 3 ]
+            }
+          },
+          {
+            "netease_touch_space": {
+              "visible": "($is_netease and $include_controls_and_settings_sections and ($touch))",
+              "type": "panel",
+              "size": [ 1, 1 ]
+            }
+          },
+          {
+            "perspective_dropdown@settings_common.option_dropdown": {
+              "$bottom_padding": false,
+              "$option_generic_panel_size": [ "100%", 23 ],
+              "$show_option_label": false,
+              "$option_dropdown_size": [ "100%", 25 ],
+              "visible": "($include_controls_and_settings_sections and $touch)",
+              "ignored": "($is_holographic and $is_reality_mode or $is_pregame or not $is_quick_camera_enabled)",
+              "$dropdown_content": "general_section.third_person_dropdown_content",
+              "$dropdown_area": "content_area",
+              "$dropdown_name": "third_person_dropdown",
+              "$option_enabled_binding_name": "#third_person_dropdown_enabled",
+              "$options_dropdown_toggle_label_binding": "#third_person_dropdown_toggle_label",
+              "$dropdown_scroll_content_size": [ "100%", "200%" ],
+              "$button_mode": true,
+              "$button_mode_type": "3s",
+              "$1_binding_name": "#thirdperson_radio_first",
+              "$2_binding_name": "#thirdperson_radio_third_back",
+              "$3_binding_name": "#thirdperson_radio_third_front",
+              "$1_icon_texture": "($rainbowpie_ui_path_setting_icon + '/firstperson')",
+              "$2_icon_texture": "($rainbowpie_ui_path_setting_icon + '/thirdpersonback')",
+              "$3_icon_texture": "($rainbowpie_ui_path_setting_icon + '/thirdpersonfront')"
+              // ,
+              // "$1_label_text": "options.thirdperson.firstperson",
+              // "$2_label_text": "options.thirdperson.thirdpersonback",
+              // "$3_label_text": "options.thirdperson.thirdpersonfront"
+            }
+          },
+          {
+            "netease_pc_space": {
+              "visible": "($is_netease and $include_controls_and_settings_sections and (not $touch))",
+              "type": "panel",
+              "size": [ 1, 1 ]
+            }
+          }
+        ]
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "rainbowpie_selector_panel": {
+              "type": "stack_panel",
+              "ignored": "(not $include_controls_and_settings_sections)",
+              "controls": [
+                {
+                  "selector_group_label_3@settings_common.selector_group_label": {
+                    "ignored": "$is_netease",
+                    "text": "$clientName"
+                  }
+                },
+                {
+                  "pack_info_button@general_section.pack_info_button": {
+                    "ignored": "($is_netease or $mcpedl_release or $rainbowpie_ui_flag_hideinfo)",
+                    "$toggle_group_forced_index": "$pack_info_index"
+                  }
+                },
+                {
+                  "global_pack_info_button@general_section.global_pack_info_button": {
+                    "ignored": "($is_netease or not $mcpedl_release or $rainbowpie_ui_flag_hideinfo)",
+                    "$toggle_group_forced_index": "$global_pack_info_index"
+                  }
+                },
+                {
+                  "theme_info_button@general_section.theme_info_button": {
+                    "ignored": "$is_netease",
+                    "$toggle_group_forced_index": "$theme_info_forced_index"
+                  }
+                },
+                {
+                  "val_info_button@general_section.val_info_button": {
+                    "ignored": "(not $development_pack)",
+                    "$toggle_group_forced_index": "$val_info_index"
+                  }
+                },
+                {
+                  "playsound_button@general_section.playsound_button": {
+                    "ignored": true,
+                    "$toggle_group_forced_index": "$play_forced_index"
+                  }
+                },
+                {
+                  "preview_info_button@general_section.preview_info_button": {
+                    "visible": "$preview_pack",
+                    "ignored": "($is_netease or true)",
+                    "$toggle_group_forced_index": "$preview_info_forced_index"
+                  }
+                },
+                {
+                  "pml_info_button@general_section.pml_info_button": {
+                    "ignored": "$is_netease",
+                    "$toggle_group_forced_index": "$pml_info_forced_index"
+                  }
+                },
+                {
+                  "package_info_button@general_section.package_info_button": {
+                    "ignored": "$is_netease",
+                    "$toggle_group_forced_index": "$package_info_forced_index"
+                  }
+                },
+                {
+                  "update_button@general_section.update_button": {
+                    "visible": false,
+                    "ignored": "($is_netease or $mcpedl_release)",
+                    "$toggle_group_forced_index": "$update_forced_index"
+                  }
+                },
+                {
+                  "rainbowpie_uidebug_button@general_section.rainbowpie_uidebug_button": {
+                    "ignored": "(not $rainbowpie_ui_flag_uidebug)",
+                    "$toggle_group_forced_index": "$uidebug_forced_index"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "section_content_panels": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "rainbowpie_sections": {
+              "type": "stack_panel",
+              "ignored": "(not $include_controls_and_settings_sections)",
+              "controls": [
+                { "pack_info_section@general_section.pack_info_section": { "visible": false } },
+                { "global_pack_info_section@general_section.global_pack_info_section": { "visible": false } },
+                { "theme_info_section@general_section.theme_info_section": { "visible": false } },
+                { "val_info_section@general_section.val_info_section": { "visible": false } },
+                { "playsound_section@general_section.playsound_section": { "visible": false } },
+                { "preview_info_section@general_section.preview_info_section": { "visible": false } },
+                { "pml_info_section@general_section.pml_info_section": { "visible": false } },
+                { "package_info_section@general_section.package_info_section": { "visible": false } },
+                { "update_section@general_section.update_section": { "visible": false, "ignored": "$mcpedl_release" } },
+                { "rainbowpie_uidebug_section@general_section.rainbowpie_uidebug_section": { "visible": false, "ignored": "(not $rainbowpie_ui_flag_uidebug)" } }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

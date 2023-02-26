@@ -1,0 +1,91 @@
+{
+  "namespace": "loom",
+
+  "banner_outline": {
+    "texture": "textures/ui/Black",
+    "alpha": 0.4
+  },
+
+  "toolbar_anchor": {
+    "ignored": true
+  },
+
+  "right_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header@rainbowpie.inv_header": {
+              "offset": [ 0, 5 ],
+              "$title_icon_ignored": false,
+              "$title_text": "container.loom",
+              "$title_icon_texture": "('textures/ui/inventory_icons/' + $screen_content)"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "right_panel/common_panel": {
+    "ignored": true
+  },
+
+  "arrow_icon": {
+    "texture": "textures/ui/crafting/arrow_large",
+    "alpha": 0.4
+  },
+
+  "loom_label": {
+    "ignored": true
+  },
+
+  "loom_panel": {
+    "type": "panel",
+    "controls": [
+      { "screen_stack_panel@loom.screen_stack_panel": {} },
+
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+      { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} },
+      {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 8
+        }
+      },
+      {
+        "title_text@common_art.title_text": {
+          "ignored": "$hide_inventory_watermark",
+          "offset": [ 0, 94 ],
+          "anchor_to": "buttom_middle",
+          "anchor_from": "buttom_middle",
+          "$title_text_scale": 2.0
+        }
+      }
+    ]
+  },
+
+  "loom_screen": {
+    "close_on_player_hurt": false,
+    "modifications": [
+      {
+        "array_name": "variables",
+        "operation": "insert_front",
+        "value": [
+          {
+            "requires": "$pocket_screen",
+            "$screen_animations": [
+              "@common.screen_exit_animation_push_fade",
+              "@common.screen_exit_animation_pop_fade",
+              "@common.screen_entrance_animation_push_fade",
+              "@common.screen_entrance_animation_pop_fade"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

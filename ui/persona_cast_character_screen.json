@@ -1,0 +1,88 @@
+{
+  "namespace": "persona_cast_character_screen",
+
+  "cast_character_screen_right_side_model/skin_model_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "cast_character_select_main/modal_inner_background": {
+    "ignored": true
+  },
+
+  "popup_cast_character_select_bg": {
+    "size": [ "100%", "100%" ]
+  },
+
+  "scrolling_content_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "popup_inner_contents@persona_cast_character_screen.cast_character_select_main": {
+          "size": [ "100% - 2px", "100% - 2px" ],
+          "offset": [ 0, 0 ]
+        }
+      }
+    ]
+  },
+
+  "popup_dialog__cast_character_select@profile.profile_common_dialog": {
+    "$popup_panel_size": [ 230, 190 ],
+    "$title_text": "menu.character_cast.select_title",
+    "$scrolling_content": "persona_cast_character_screen.scrolling_content_panel",
+    "$confirm_button_name": "button.cast_select",
+    "$confirm_button_text": "gui.select",
+    "$button_text_binding_type": "global",
+    "$button_binding_condition": "always",
+    "$close_button_to_button_id": "button.cast_back",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "$close_button_to_button_id",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_ok",
+        "mapping_type": "focused"
+      },
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_left",
+        "to_button_id": "button.menu_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_right",
+        "to_button_id": "button.menu_right",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_up",
+        "to_button_id": "button.menu_up",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_down",
+        "to_button_id": "button.menu_down",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ],
+    "controls": [
+      { "background@profile.modal_window_input_blocker": {} },
+      { "panel@profile.popup_info_panel": {} }
+    ]
+  },
+
+  "popup_dialog__cast_character_preview": {
+    "ignored": false
+  }
+}

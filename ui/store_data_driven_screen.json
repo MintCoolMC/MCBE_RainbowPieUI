@@ -1,0 +1,24 @@
+{
+  "namespace": "store_layout",
+
+  "store_data_driven_screen": {
+    "$is_sidebar_blur_enabled": true,
+    "variables": []
+  },
+
+  "store_layout_ribbon_search_button_content": {
+    "type": "panel",
+    "size": [ "100%c", "100%" ],
+    "controls": [
+      {
+        "button_image": {
+          "type": "image",
+          "size": [ 9, 9 ],
+          "texture": "$image_texture_path",
+          "layer": 1,
+          "color": "$glyph_color"
+        }
+      }
+    ]
+  }
+}

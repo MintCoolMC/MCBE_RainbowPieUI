@@ -1,0 +1,50 @@
+{
+  "namespace": "manage_feed",
+
+  "grid_panel/top_spacing_gap": {
+    "ignored": true
+  },
+
+  "manage_feed_item_scrolling_panel": {
+    "anchor_to": "bottom_middle",
+    "anchor_from": "bottom_middle",
+    "size": [ "100%", "100% - 19px" ]
+  },
+
+  "content/reported_items_label": {
+    "ignored": true
+  },
+
+  "content/return_button": {
+    "ignored": true
+  },
+
+  "content/top_bar_gradient": {
+    "ignored": true
+  },
+
+  "manage_feed_screen_content/transparent_background": {
+    "ignored": true
+  },
+
+  "manage_feed_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "feed.reported_label",
+              "$back_button_pressed_button_name": "button.close_manage_feed"
+            }
+          },
+          {
+            "background_all@rainbowpie.background_all": {}
+          }
+        ]
+      }
+    ]
+  }
+}
+

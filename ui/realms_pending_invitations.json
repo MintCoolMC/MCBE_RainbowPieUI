@@ -1,0 +1,28 @@
+{
+  "namespace": "realms_pending_invitations",
+
+  "panel_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "realms_pending_invitations_screen": {
+    "force_render_below": true
+  },
+
+  "realms_invitation_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "background@mintui_background.background_blur_fullscreen": {
+              "layer": -3000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

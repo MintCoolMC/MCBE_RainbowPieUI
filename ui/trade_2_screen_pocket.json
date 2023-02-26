@@ -1,0 +1,47 @@
+{
+  "namespace": "trade2_pocket",
+
+  "trade_and_help_buttons/trade_button_holder": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "trade_all_button@trade2_extra.trade_all_button": {
+              "size": [ "50%", "100%" ],
+              "anchor_from": "right_middle",
+              "anchor_to": "right_middle"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "trade_and_help_buttons/trade_button_holder/trade_button": {
+    "size": [ "50%", "100%" ],
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle"
+  },
+
+  "trade_slots_panel": {
+    "texture": ""
+  },
+
+  "left_navigation_tabs": {
+    "offset": [ 7, -6 ]
+  },
+
+  "left_tab_trade": {
+    "size": [ 34, 26 ]
+  },
+
+  "left_tab_inventory": {
+    "size": [ 34, 26 ]
+  },
+
+  "left_navigation_tabs/padding": {
+    "ignored": true
+  }
+}

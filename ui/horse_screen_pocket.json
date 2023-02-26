@@ -1,0 +1,121 @@
+{
+  "namespace": "horse_pocket",
+
+  "close_tab": {
+    "size": [ 34, 26 ],
+    "offset": [ 4, 8 ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "close@common.close_button": {
+              "size": [ 34, 26 ],
+              "offset": [ 0, 0 ],
+              "$use_default_close_button": false,
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "layer": 2
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "visual_tabs_equip/chest": {
+    "size": [ 34, 26 ],
+    "offset": [ 4, -34 ]
+  },
+
+  "visual_tabs_equip/equip": {
+    "size": [ 34, 26 ],
+    "offset": [ 4, -8 ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "tab_left_checked_tip": {
+              "type": "image",
+              "texture": "textures/ui/button/pressed",
+              "size": [ 2, "100%" ],
+              "anchor_from": "left_middle",
+              "anchor_to": "left_middle",
+              "alpha": 1,
+              "layer": 12
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "visual_tabs_chest/equip": {
+    "size": [ 34, 26 ],
+    "offset": [ 4, -8 ]
+  },
+
+  "visual_tabs_chest/chest": {
+    "size": [ 34, 26 ],
+    "offset": [ 4, -34 ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "tab_left_checked_tip": {
+              "type": "image",
+              "texture": "textures/ui/button/pressed",
+              "size": [ 2, "100%" ],
+              "anchor_from": "left_middle",
+              "anchor_to": "left_middle",
+              "alpha": 1,
+              "layer": 12
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "tab_back": {
+     "texture": "textures/ui/Black",
+     "alpha": 0.4
+  },
+
+  "tab_front": {
+    "texture": "textures/ui/Black",
+     "alpha": 0.5
+    // ,
+    // "controls": [
+    //   {
+    //     "tab_left_checked_tip": {
+    //       "type": "image",
+    //       "texture": "textures/ui/button/pressed",
+    //       "size": [ "100%", 2 ],
+    //       "anchor_from": "left_middle",
+    //       "anchor_to": "left_middle",
+    //       "alpha": 0.5
+    //     }
+    //   }
+    // ]
+  },
+
+  "renderer_bg": {
+    "texture": "textures/ui/Black",
+    "alpha": 0.5
+  },
+
+  "dark_bg": {
+    "texture": "textures/ui/Black",
+    "alpha": 0.5
+  },
+
+  "panel_outline": {
+    "ignored": true
+  }
+}

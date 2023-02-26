@@ -1,0 +1,89 @@
+{
+  "namespace": "brewing_stand_pocket",
+
+  "slots_panel/brewing_pipes": {
+    "texture": "textures/ui/brewing/brewing_pipes_large",
+    "alpha": 0.4
+  },
+
+  "slots_panel/brewing_arrow_panel/brewing_arrow_full_image": {
+    "texture": "textures/ui/brewing/brewing_arrow_large_full",
+    "alpha": 1.0
+  },
+
+  "slots_panel/brewing_arrow_panel/brewing_arrow_empty_image": {
+    "texture": "textures/ui/brewing/brewing_arrow_large_empty",
+    "alpha": 0.4
+  },
+
+  "inventory_and_brewing_panel": {
+    "ignored": true
+  },
+
+  "header_and_content_stack_panel": {
+    "ignored": true
+  },
+
+  "brewing_stand_panel/bg": {
+    "ignored": true
+  },
+
+  "brewing_stand_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header_pocket@rainbowpie.inv_header_pocket": {
+              "$title_text": "$container_title"
+            }
+          },
+          {
+            "inventory_and_half_screen": {
+              "type": "panel",
+              "animation_reset_name": "screen_animation_reset",
+              "anims": [
+                "@common.rainbowpie_inventory_exit_animation_push",
+                "@common.rainbowpie_inventory_entrance_animation_pop",
+                "@common.inventory_animation_start",
+                "@common.inventory_animation_end2",
+                "@common.inventory_animation_end2_pop",
+                "@common.screen_exit_animation_push_fade",
+                "@common.screen_exit_animation_pop_fade",
+                "@common.screen_entrance_animation_push_fade",
+                "@common.screen_entrance_animation_pop_fade"
+              ],
+              "controls": [
+                {
+                  "inventory_half_screen": {
+                    "type": "panel",
+                    "size": [ "50%", "100% - 30px" ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+          
+                    "controls": [
+                      { "inventory_content@brewing_stand_pocket.inventory_content": {} }
+                    ]
+                  }
+                },
+                {
+                  "brewing_half_screen": {
+                    "type": "panel",
+                    "size": [ "50%", "100% - 30px" ],
+                    "anchor_from": "bottom_right",
+                    "anchor_to": "bottom_right",
+          
+                    "controls": [
+                      { "brewing_stand_contents_panel@brewing_stand_pocket.brewing_stand_contents_panel": {} }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "namespace": "edu_common",
+
+  "light_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "dark_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "readable_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "edu_screen_header/title_controls/title_item/title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "share_dialog_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "share_dialog_body_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  }
+}

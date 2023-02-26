@@ -1,0 +1,99 @@
+{
+  "namespace": "brewing_stand",
+
+  "brewing_stand_panel/root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header@rainbowpie.inv_header": {
+              "offset": [ 0, 0 ],
+              "$title_icon_ignored": false,
+              "$title_text": "$container_title"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "brewing_stand_panel/root_panel/common_panel": {
+    "ignored": true
+  },
+  
+  "brewing_pipes": {
+    "texture": "textures/ui/brewing/brewing_pipes",
+    "alpha": 0.4
+  },
+
+  "brewing_fuel_pipes": {
+    "texture": "textures/ui/brewing/brewing_fuel_pipes",
+    "alpha": 0.4
+  },
+
+  "bubbles_empty_image": {
+    "texture": "textures/ui/brewing/bubbles",
+    "alpha": 0.4
+  },
+
+  "bubbles_full_image": {
+    "texture": "textures/ui/brewing/bubbles",
+    "alpha": 1
+  },
+
+  "brewing_arrow_empty_image": {
+    "texture": "textures/ui/brewing/brewing_arrow_empty",
+    "alpha": 0.4
+  },
+
+  "brewing_fuel_bar_empty_image": {
+    "texture": "textures/ui/brewing/brewing_fuel_bar_empty",
+    "alpha": 0.4
+  },
+
+  "brewing_label": {
+    "ignored": true
+  },
+
+  "brewing_stand_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "title_text@common_art.title_text": {
+              "ignored": "$hide_inventory_watermark",
+              "offset": [ 0, 94 ],
+              "anchor_to": "buttom_middle",
+              "anchor_from": "buttom_middle",
+              "$title_text_scale": 2.0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "brewing_stand_screen": {
+    "close_on_player_hurt": false,
+    "modifications": [
+      {
+        "array_name": "variables",
+        "operation": "insert_front",
+        "value": [
+          {
+            "requires": "$pocket_screen",
+            "$screen_animations": [
+              "@common.screen_exit_animation_push_fade",
+              "@common.screen_exit_animation_pop_fade",
+              "@common.screen_entrance_animation_push_fade",
+              "@common.screen_entrance_animation_pop_fade"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

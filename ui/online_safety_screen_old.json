@@ -1,0 +1,414 @@
+{
+    "namespace": "online_safety",
+  
+    "exit_animation_push": {
+      "anim_type": "alpha",
+      "easing": "out_cubic",
+      "duration": 0,
+      "from": 1.0,
+      "to": 0.0,
+      "play_event": "screen.exit_push",
+      "end_event": "screen.exit_end"
+    },
+  
+    "exit_animation_pop": {
+      "anim_type": "alpha",
+      "easing": "out_cubic",
+      "duration": 0,
+      "from": 1.0,
+      "to": 0.0,
+      "play_event": "screen.exit_pop",
+      "end_event": "screen.exit_end"
+    },
+
+    //--------------------------------------------------------------------------------
+  
+    "online_safety_proceed_button@popup_dialog.popup_dialog_button": {
+      "size": "$button_size",
+      "$pressed_button_name": "button.proceed",
+      "$button_text": "onlinePlay.proceed"
+    },
+  
+    "online_safety_back_button@popup_dialog.popup_dialog_button": {
+      "size": "$button_size",
+      "$pressed_button_name": "button.back",
+      "$button_text": "onlinePlay.Back"
+    },
+  
+    "online_safety_description": {
+      "type": "label",
+      "size": [ "100%-4px", "default" ],
+      "font_type": "$global_font_type",
+      "backup_font_type": "$global_font_type_backup",
+      "text": "onlinePlay.message",
+      "color": "$rainbowpie_ui_theme_text_text_color"
+    },
+
+    "online_safety_description_panel": {
+      "type": "stack_panel",
+      "controls": [
+        {
+          "padding": {
+            "type": "panel",
+            "size": [ 4, 4.5 ]
+          }
+        },
+        { "online_safety_description@online_safety.online_safety_description": {} }
+      ]
+    },
+  
+    "online_safety_label_panel@common.scrolling_panel": {
+      "$scrolling_pane_size": [ "100% - 1px", "100% - 3px" ],
+      "$scrolling_pane_offset": [ 2, 2 ],
+      "$scrolling_content": "online_safety.online_safety_description_panel",
+      "$scroll_size": [ 5, "100% - 4px" ],
+      "$show_background": false,
+      "layer": 1,
+      "anchor_from": "top_middle",
+      "anchor_to": "top_middle",
+      "$always_handle_scrolling": true
+    },
+  
+    "do_not_show_checkbox@common.checkbox": {
+      "size": [ "100%", 30 ],
+      "anchor_from": "top_left",
+      "anchor_to": "top_left",
+      "$toggle_name": "online_safety_do_not_show_again",
+      "$toggle_state_binding_name": "#online_safety_do_not_show_again",
+      "$toggle_label_text|default": "onlinePlay.doNotShowAgain",
+  
+      "tts_control_type_order_priority": 100,
+      "tts_value_order_priority": 101,
+      "$toggle_enabled_binding_type": "global",
+  
+      "controls": [
+        {
+          "header_description_stack_panel": {
+            "type": "stack_panel",
+            "orientation": "horizontal",
+            "size": [ "100%", "100%" ],
+            "anchor_from": "top_left",
+            "anchor_to": "top_left",
+  
+            "controls": [
+              {
+                "checkbox_visuals@common.toggle_visuals": {
+                  "size": [ 30, "100%" ],
+                  "anchor_from": "left_middle",
+                  "anchor_to": "left_middle"
+                }
+              },
+              {
+                "buffer_panel": {
+                  "type": "panel",
+                  "layer": 3,
+                  "size": [ "fill", "100%" ],
+                  "controls": [
+                    {
+                      "label": {
+                        "type": "label",
+                        "color": "$light_button_default_text_color",
+                        "text": "$toggle_label_text",
+                        "size": [ "default", "default" ],
+                        "anchor_from": "center",
+                        "anchor_to": "center"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "another_panel": {
+                  "type": "panel",
+                  "size": [ 30, "100%" ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    "do_not_show_checkbox_and_proceed@common.checkbox": {
+      "size": [ "100%", 22 ],
+      "anchor_from": "top_left",
+      "anchor_to": "top_left",
+      "$toggle_name": "online_safety_do_not_show_again",
+      "$toggle_state_binding_name": "#online_safety_do_not_show_again",
+      "$toggle_label_text": "rainbowpie.onlinePlay.doNotShowAgain",
+  
+      "tts_control_type_order_priority": 100,
+      "tts_value_order_priority": 101,
+      "$toggle_enabled_binding_type": "global",
+  
+      "controls": [
+        {
+          "header_description_stack_panel": {
+            "type": "panel",
+            "size": [ "100%", "100%" ],
+            "anchor_from": "top_left",
+            "anchor_to": "top_left",
+  
+            "controls": [
+              {
+                "checkbox_visuals@common.toggle_visuals": {
+                  "$unchecked_control": "settings_common.option_toggle_on",
+                  "$checked_control": "settings_common.option_toggle_on",
+                  "$unchecked_hover_control": "settings_common.option_toggle_on_hover",
+                  "$checked_hover_control": "settings_common.option_toggle_on_hover",
+                  "$unchecked_locked_control": "settings_common.option_toggle_off_locked",
+                  "$unchecked_locked_hover_control": "settings_common.option_toggle_off_locked",
+                  "$checked_locked_control": "settings_common.option_toggle_on_locked",
+                  "$checked_locked_hover_control": "settings_common.option_toggle_on_locked",
+                  "$on_label": "$toggle_label_text",
+                  "$off_label": "$toggle_label_text",
+                  "$option_toggle_size": [ "100% - 2px", "100% - 2px" ],
+                  "offset": [ 1, 1 ],
+                  "layer": 2,
+                  "anchor_from": "left_middle",
+                  "anchor_to": "left_middle"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "button_mappings": [
+        {
+          "from_button_id": "button.menu_select",
+          "to_button_id": "button.proceed",
+          "mapping_type": "pressed"
+        },
+        {
+          "from_button_id": "button.menu_ok",
+          "to_button_id": "button.proceed",
+          "mapping_type": "focused"
+        },
+        {
+          "from_button_id": "button.menu_select",
+          "to_button_id": "button.menu_select",
+          "mapping_type": "pressed"
+        },
+        {
+          "from_button_id": "button.menu_ok",
+          "to_button_id": "button.menu_ok",
+          "mapping_type": "focused"
+        },
+        {
+          "ignored": "(not $enable_directional_toggling)",
+          "from_button_id": "button.menu_left",
+          "to_button_id": "$toggle_off_button",
+          "mapping_type": "pressed",
+          "input_mode_condition": "gamepad_and_not_gaze"
+        },
+        {
+          "ignored": "(not $enable_directional_toggling)",
+          "from_button_id": "button.menu_right",
+          "to_button_id": "$toggle_on_button",
+          "mapping_type": "pressed",
+          "input_mode_condition": "gamepad_and_not_gaze"
+        }
+      ]
+    },
+  
+    //--------------------------------------------------------------------------------
+    
+    "gamepad_helpers": {
+      "type": "panel",
+      "size": [ 100, 10 ],
+      "offset": [ 0, "45%" ],
+      "controls": [
+        {
+          "gamepad_helper_a@common.gamepad_helper_a": {
+            "anchor_from": "center",
+            "anchor_to": "center"
+          }
+        }
+      ]
+    },
+  
+    //---------------------------------------------------------------------------
+    // Screens
+    //---------------------------------------------------------------------------
+    "online_safety_screen@common.base_screen": {
+      "$rainbowpie_ui_screenbackground_bsf_need": false,
+      "$screen_animations": [
+        "@online_safety.exit_animation_push",
+        "@online_safety.exit_animation_pop"
+      ],
+      "button_mappings": [
+        {
+          "from_button_id": "button.menu_cancel",
+          "to_button_id": "button.back",
+          "mapping_type": "global"
+        },
+        {
+          "from_button_id": "button.menu_ok",
+          "to_button_id": "button.proceed",
+          "mapping_type": "global"
+        }
+      ],
+
+      "$screen_content": "online_safety.online_safety_screen_content"
+    },
+  
+    "online_safety_screen_content": {
+      "type": "panel",
+      "controls": [
+        {
+          "gamepad_helpers@rainbowpie.gamepad_helpers": {
+            "$panel_controls": [
+              {
+                "gamepad_helper_a@rainbowpie.gamepad_helper": {
+                  "$icon_texture": "#controller_face_down_icon",
+                  "$icon_description_bind": "onlinePlay.proceed"
+                }
+              },
+              {
+                "gamepad_helper_b@rainbowpie.gamepad_helper": {
+                  "$icon_texture": "#controller_face_right_icon",
+                  "$icon_description_bind": "gui.back"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "blur_panel_2": {
+            "type": "panel",
+            "clips_children": true,
+            "size": [ "100%", "100%" ],
+            "offset": [ "50% - 110px", 0 ],
+            "controls": [
+              {
+                "blur_panel_1": {
+                  "type": "panel",
+                  "clips_children": true,
+                  "size": [ "100%", "100%" ],
+                  "offset": [ 0, "50% - 50px" ],
+                  "controls": [
+                    {
+                      "blur_layer_1@mintui_background.background_blur": {
+                        "$background_offset": [ "-100% + 220px", "-100% + 110px" ],
+                        "$background_children_offset": [ "50% - 110px", "50% - 60px" ],
+                        "$background_layer": 2
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "background_all@rainbowpie.background_all_ingame": {
+          }
+        },
+        {
+          "title_text@common_art.title_text": {
+            "anchor_to": "top_middle",
+            "anchor_from": "top_middle",
+            "$title_text_scale": 5.0,
+            "layer": 12
+          }
+        },
+        {
+          "rainbowpie_content": {
+            "type": "panel",
+            "size": [ 220, 110 ],
+            "offset": [ 0, 5 ],
+            "layer": 5,
+            "controls": [
+              {
+                "background": {
+                  "type": "image",
+                  "size": [ "100%", "100%" ],
+                  "texture": "textures/ui/White",
+                  "color": "$rainbowpie_ui_theme_text_background_color",
+                  "alpha": "$rainbowpie_ui_theme_text_background_alpha",
+                  "layer": 1,
+                  "controls": [
+                    {
+                      "background_inside": {
+                        "type": "image",
+                        "size": [ "100%", "25%" ],
+                        "anchor_from": "top_middle",
+                        "anchor_to": "top_middle",
+                        "texture": "textures/ui/White",
+                        "color": "$rainbowpie_ui_theme_title_background_color",
+                        "alpha": "$rainbowpie_ui_theme_title_background_alpha",
+                        "layer": 2,
+                        "controls": [
+                          {
+                            "close_button@common.close_button": {
+                              "$use_default_close_button": "(not $rainbowpie_ui_theme_title_text_light)",
+                              "$close_button_to_button_id": "button.back",
+                              "offset": [ -2, 0 ],
+                              "anchor_from": "right_middle",
+                              "anchor_to": "right_middle"
+                            }
+                          },
+                          {
+                            "title": {
+                              "type": "label",
+                              "text": "onlinePlay.notRated",
+                              "text_alignment": "center",
+                              "font_type": "$global_font_type",
+                              "backup_font_type": "$global_font_type_backup",
+                              "layer": 3,
+                              "size": [ "100% - 14px", 10 ],
+                              "offset": [ 0, 0 ],
+                              "anchor_from": "center",
+                              "anchor_to": "center",
+                              "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                              "color": "$rainbowpie_ui_theme_title_text_color",
+                              "variables": [
+                                {
+                                  "requires": "$rainbowpie_ui_theme_title_text_light",
+                                  "$text_color": [ 1.0, 1.0, 1.0 ]
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "content@online_safety.online_safety_label_panel": {
+                        "layer": 2,
+                        "size": [ "100% - 20px", "100% -50px" ],
+                        "offset": [ 0, 25.5 ],
+                        "anchor_from": "top_middle",
+                        "anchor_to": "top_middle"
+                      }
+                    },
+                    {
+                      "buttons_dont_show_again@online_safety.do_not_show_checkbox_and_proceed": {
+                        "focus_enabled": false,
+                        "layer": 2,
+                        "size": [ "50% - 2px", 22 ],
+                        "offset": [ 2, -2 ],
+                        "anchor_from": "bottom_left",
+                        "anchor_to": "bottom_left"
+                      }
+                    },
+                    {
+                      "buttons_proceed@online_safety.online_safety_proceed_button": {
+                        "focus_enabled": false,
+                        "$button_text": "rainbowpie.onlinePlay.continue",
+                        "layer": 2,
+                        "size": [ "50% - 2px", 22 ],
+                        "offset": [ -2, -2 ],
+                        "anchor_from": "bottom_right",
+                        "anchor_to": "bottom_right"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }  
+  }

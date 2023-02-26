@@ -1,0 +1,196 @@
+{
+  "namespace": "rainbowpie_settings",
+
+  "info_card": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [ "100%", 50 ],
+    "alpha": 0.5,
+    "$icon_texture|default": "textures/RainbowPie/ui/icons/info_icon",
+    "$text_1|default": "Title Text",
+    "$text_2|default": "Desc Text",
+    "$text_3|default": "Info Text",
+    "$text_4|default": "Info2 Text",
+    "controls": [
+      {
+        "furry_background": {
+          "ignored": true,
+          "type": "image",
+          "texture": "textures/RainbowPie/images/Mintraspberry/Furry!",
+          "size": [ 60, 60 ],
+          "offset": [ "30%", 0 ],
+          "layer": 2,
+          "alpha": 0.4
+        }
+      },
+      {
+        "stack_panel_1": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", "100%" ],
+          "layer": 3,
+          "controls": [
+            {
+              "image_icon": {
+                "type": "image",
+                "size": [ 50, 50 ],
+                "texture": "$icon_texture"
+              }
+            },
+            {
+              "padding_1": {
+                "type": "panel",
+                "size": [ 2, 2 ]
+              }
+            },
+            {
+              "stack_panel_2": {
+                "type": "stack_panel",
+                "size": [ "fill", "fill" ],
+                "controls": [
+                  {
+                    "padding_top@common.empty_panel": {
+                      "size": [ 1.8, 1.8 ]
+                    }
+                  },
+                  {
+                    "label_1": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 15 ],
+                      "text": "$text_1",
+                      "font_scale_factor": 1.5,
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  },
+                  {
+                    "label_2": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 10 ],
+                      "text": "$text_2",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  },
+                  {
+                    "label_3": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 10 ],
+                      "text": "$text_3",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  },
+                  {
+                    "label_4": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 10 ],
+                      "text": "$text_4",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "info_card_3line": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [ "100%", 40 ],
+    "alpha": 0.5,
+    "$icon_texture|default": "textures/RainbowPie/ui/icons/info_icon",
+    "$text_1|default": "Title Text",
+    "$text_2|default": "Desc Text",
+    "$text_3|default": "Info Text",
+    "controls": [
+      {
+        "furry_background": {
+          "ignored": true,
+          "type": "image",
+          "texture": "textures/RainbowPie/images/Mintraspberry/Furry!",
+          "size": [ 60, 60 ],
+          "offset": [ "30%", 0 ],
+          "layer": 2,
+          "alpha": 0.4
+        }
+      },
+      {
+        "stack_panel_1": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", "100%" ],
+          "layer": 3,
+          "controls": [
+            {
+              "image_icon": {
+                "type": "image",
+                "size": [ 40, 40 ],
+                "texture": "$icon_texture"
+              }
+            },
+            {
+              "padding_1": {
+                "type": "panel",
+                "size": [ 2, 2 ]
+              }
+            },
+            {
+              "stack_panel_2": {
+                "type": "stack_panel",
+                "size": [ "fill", "fill" ],
+                "controls": [
+                  {
+                    "padding_top@common.empty_panel": {
+                      "size": [ 1.8, 1.8 ]
+                    }
+                  },
+                  {
+                    "label_1": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 15 ],
+                      "text": "$text_1",
+                      "font_scale_factor": 1.5,
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  },
+                  {
+                    "label_2": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 10 ],
+                      "text": "$text_2",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  },
+                  {
+                    "label_3": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 10 ],
+                      "text": "$text_3",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

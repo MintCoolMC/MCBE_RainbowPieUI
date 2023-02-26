@@ -1,0 +1,62 @@
+{
+  "namespace": "content_log_history",
+
+  "content_log_history_screen": {
+    "$screen_bg_content": "settings_common.background_black"
+  },
+
+  "right_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "clipboard_button@common_buttons.light_content_button": {
+          "anchor_to": "top_right",
+          "anchor_from": "top_right",
+          "size": [ 100, "100%" ],
+          "$pressed_button_name": "button.copy_to_clipboard",
+          "$button_content": "content_log_history.clipboard_icon_wrapper"
+        }
+      }
+    ]
+  },
+
+  "clipboard_icon_wrapper/stack_panel/label_panel/label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content_log_message": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content_log_history_panel/content_log_history_dialog": {
+    "ignored": true
+  },
+
+  "content_log_history_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "contentlog.history.title",
+              "$right_panel": "content_log_history.right_panel"
+            }
+          },
+          { "background_all@rainbowpie.background_all": {} },
+          { "background_anim@rainbowpie.background_anim": { "ignored": "$is_pregame" } },
+          {
+            "main_stack_panel@content_log_history.main_stack_panel": {
+              "size": [ "100%", "100% - 19px" ],
+              "anchor_to": "bottom_middle",
+              "anchor_from": "bottom_middle"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

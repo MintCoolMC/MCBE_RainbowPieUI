@@ -1,0 +1,103 @@
+{
+  "namespace": "crafting_pocket",
+
+  "output_grid_and_label/recipe_item_label": {
+    "ignored": true
+  },
+
+  "right_panel/right_background": {
+    "ignored": true
+  },
+
+  "left_panel/left_background": {
+    "ignored": true
+  },
+
+  "hotbar_panel/bg": {
+    "ignored": true
+  },
+
+  "right_tab_content/bg": {
+    "ignored": true
+  },
+
+  "pocket_armor_tab_content/equipment_and_renderer/armor_panel/armor_and_player/player_preview_border/player_bg/player_renderer_panel/player_renderer": {
+    "property_bag": {
+      "#look_at_cursor": true
+    }
+  },
+
+  "pocket_armor_tab_content/equipment_and_renderer/armor_panel/armor_and_player/player_preview_border/player_bg": {
+    "alpha": 0.5,
+    "size": [ "100%", "100%" ]
+  },
+
+  "pocket_armor_tab_content/equipment_and_renderer/armor_panel/armor_and_player/player_preview_border": {
+    "texture": ""
+  },
+
+  "pocket_armor_tab_content/label_and_renderer/label_panel/armor_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "right_tab_navigation_panel_pocket/content/full_screen_tab": {
+    "size": [ "100%", 26 ]
+  },
+
+  "right_tab_navigation_panel_pocket/content/crafting_tab": {
+    "size": [ "100%", 26 ]
+  },
+
+  "right_tab_navigation_panel_pocket/content/armor_tab": {
+    "size": [ "100%", 26 ]
+  },
+
+  "right_tab_navigation_panel_pocket/content/close": {
+    "size": [ "100%", 26 ],
+    "texture": ""
+  },
+
+  "right_tab_navigation_panel_pocket/content": {
+    "size": [ "100%", "100% - 12px" ],
+    "offset": [ -6, 6 ]
+  },
+
+  "left_tab_navigation_panel_pocket/content/construction_tab": {
+    "max_size": [ "100%", 26 ]
+  },
+
+  "left_tab_navigation_panel_pocket/content/equipment_tab": {
+    "max_size": [ "100%", 26 ]
+  },
+
+  "left_tab_navigation_panel_pocket/content/items_tab": {
+    "max_size": [ "100%", 26 ]
+  },
+
+  "left_tab_navigation_panel_pocket/content/nature_tab": {
+    "max_size": [ "100%", 26 ]
+  },
+
+  "left_tab_navigation_panel_pocket/content/recipe_panel": {
+    "max_size": [ "100%", 26 ]
+  },
+
+  "left_tab_navigation_panel_pocket/content/inventory_tab": {
+    "max_size": [ "100%", 26 ]
+  },
+
+  "left_tab_navigation_panel_pocket/content": {
+    "size": [ "100%", "100% - 12px" ],
+    "offset": [ 6, 6 ]
+  },
+
+  "inventory_screen_pocket_base": {
+    "$screen_animations": [
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ]
+  }
+}

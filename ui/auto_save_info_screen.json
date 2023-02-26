@@ -1,0 +1,13 @@
+{
+  "namespace": "auto_save_info",
+
+  "auto_save@rainbowpie_auto_save.auto_save_panel": {
+    "bindings": [
+      {
+        "binding_name": "#auto_save_animation_visible",
+        "binding_name_override": "#visible",
+        "ignored": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,139 @@
+{
+    "namespace": "rainbowpie_package",
+  
+    "package_info_tmp": {
+      "type": "stack_panel",
+      "controls": [
+        {
+          "package_info_tmp_i@rainbowpie_package.package_info_tmp_i": {}
+        },
+        {
+          "padding": {
+            "type": "panel",
+            "size": [ 6, 6 ]
+          }
+        }
+      ]
+    },
+  
+    "package_info_tmp_i": {
+      "type": "image",
+      "texture": "textures/ui/Black",
+      "size": [ "100%", 50 ],
+      "alpha": 0.5,
+      "$package_icon_texture|default": "textures/RainbowPie/images/Mintraspberry/package",
+      "$package_name|default": "package_name",
+      "$package_version|default": "package_version",
+      "$package_target_version|default": "NULL",
+      "$package_id|default": "00000000-0000-0000-0000-00000000000",
+      "controls": [
+        {
+          "stack_panel_1": {
+            "type": "stack_panel",
+            "orientation": "horizontal",
+            "size": [ "100%", "100%" ],
+            "layer": 3,
+            "controls": [
+              {
+                "image_icon": {
+                  "type": "image",
+                  "size": [ 50, 50 ],
+                  "texture": "$package_icon_texture"
+                }
+              },
+              {
+                "padding_1": {
+                  "type": "panel",
+                  "size": [ 2, 2 ]
+                }
+              },
+              {
+                "stack_panel_2": {
+                  "type": "stack_panel",
+                  "size": [ "fill", "fill" ],
+                  "controls": [
+                    {
+                      "padding_top@common.empty_panel": {
+                        "size": [ 1.8, 1.8 ]
+                      }
+                    },
+                    {
+                      "label_1": {
+                        "type": "label",
+                        "layer": 1,
+                        "size": [ "100%", 15 ],
+                        "text": "$package_name",
+                        "font_scale_factor": 1.5,
+                        "font_type": "$global_font_type",
+                        "backup_font_type": "$global_font_type_backup"
+                      }
+                    },
+                    {
+                      "label_2": {
+                        "type": "label",
+                        "layer": 1,
+                        "size": [ "100%", 10 ],
+                        "text": "('Version: ' + $package_version)",
+                        "font_type": "$global_font_type",
+                        "backup_font_type": "$global_font_type_backup"
+                      }
+                    },
+                    {
+                      "label_3": {
+                        "type": "label",
+                        "layer": 1,
+                        "size": [ "100%", 10 ],
+                        "text": "($check_color + 'Target: ' + $package_target_version + $check_text)",
+                        "$check_color": "",
+                        "$check_text": "",
+                        "font_type": "$global_font_type",
+                        "backup_font_type": "$global_font_type_backup",
+                        "variables": [
+                          {
+                            "requires": "(not ($package_target_version = ('v' + $rainbowpieui_engine_version_name + '.' + $rainbowpieui_patch_version)))",
+                            "$check_color": "§c",
+                            "$check_text": " [ERROR]"
+                          },
+                          {
+                            "requires": "($package_target_version = 'NULL')",
+                            "$check_color": "§e",
+                            "$check_text": " [Default Value]"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "label_4": {
+                        "type": "label",
+                        "layer": 1,
+                        "size": [ "100%", 10 ],
+                        "text": "('UUID: ' + $package_id)",
+                        "font_type": "$global_font_type",
+                        "backup_font_type": "$global_font_type_backup"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+  
+    "package_info": {
+      "type": "stack_panel",
+      "controls": [
+        {
+          "8088d11c-455b-4eb0-a678-c62be4bd5e2c@rainbowpie_package.package_info_tmp": {
+            "visible": "$development_pack",
+            "$package_icon_texture": "textures/RainbowPie/images/Mintraspberry/package",
+            "$package_name": "Internal",
+            "$package_version": "('v' + $rainbowpieui_engine_version_name + '.' + $rainbowpieui_patch_version + '.' + $rainbowpieui_hotfix_version)",
+            "$package_target_version": "('v' + $rainbowpieui_engine_version_name + '.' + $rainbowpieui_patch_version)",
+            "$package_id": "8088d11c-455b-4eb0-a678-c62be4bd5e2c"
+          }
+        }
+      ]
+    }
+  }

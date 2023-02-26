@@ -1,0 +1,159 @@
+{
+  "namespace": "command_block",
+
+  "plus_icon": {
+    "size": [ 18, 18 ],
+    "texture": "($rainbowpie_ui_path_uihome + '/maximize_icon')"
+  },
+
+  "block_type_panel": {
+    "$focus_override_right": "",
+    "$option_dropdown_size": [ "100%", 25 ],
+    "$button_mode": true,
+    "$button_mode_type": "3",
+    "$1_binding_name": "#command_impulse_mode",
+    "$2_binding_name": "#command_chain_mode",
+    "$3_binding_name": "#command_repeat_mode",
+    "$1_label_text": "commandBlockScreen.blockType.impulse",
+    "$2_label_text": "commandBlockScreen.blockType.chain",
+    "$3_label_text": "commandBlockScreen.blockType.repeat"
+  },
+
+  "condition_mode_panel": {
+    "$focus_override_right": "",
+    "$option_dropdown_size": [ "100%", 25 ],
+    "$button_mode": true,
+    "$button_mode_type": "2",
+    "$1_binding_name": "#command_conditional_mode",
+    "$2_binding_name": "#command_unconditional_mode",
+    "$1_label_text": "commandBlockScreen.condition.conditional",
+    "$2_label_text": "commandBlockScreen.condition.unconditional"
+  },
+
+  "redstone_mode_panel": {
+    "$focus_override_right":  "",
+    "$option_dropdown_size": [ "100%", 25 ],
+    "$button_mode": true,
+    "$button_mode_type": "2",
+    "$1_binding_name": "#command_always_on_mode",
+    "$2_binding_name": "#command_needs_redstone_mode",
+    "$1_label_text": "commandBlockScreen.redstone.always_on",
+    "$2_label_text": "commandBlockScreen.redstone.needs_redstone"
+  },
+
+  "left_scroll_panel_content/content_stack_panel/offset8": {
+    "size": [ "100%", 1 ]
+  },
+
+  "left_scroll_panel_content/content_stack_panel/cancel": {
+    "$button_size_override": [ "100% + 2px", "100%" ]
+  },
+
+  "left_scroll_panel_content/content_stack_panel/tick_delay_text": {
+    "ignored": true
+  },
+
+  "left_scroll_panel_content/content_stack_panel": {
+    "modifications": [
+      {
+        "control_name": "tick_delay_text",
+        "operation": "insert_after",
+        "value": [
+          {
+            "tick_delay_text_panel": {
+              "type": "panel",
+              "size": [ "100%", 30 ],
+              "controls": [
+                {
+                  "tick_delay_text@common.text_edit_box": {
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "size": [ "100% + 2px", 30 ],
+                    "$focus_id": "tick_delay_text",
+                    "layer": 5,
+                    "max_length": 5,
+                    "$text_edit_box_text_type": "NumberChars",
+                    "$text_box_name": "command_block.tick_delay_textbox",
+                    "$text_edit_box_content_binding_name": "#command_tick_delay"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "left_scroll_panel_content/content_stack_panel/offset1": {
+  },
+  
+  "left_scroll_panel_content/content_stack_panel/offset2/hover_note_text": {
+    "size": [ "100% + 2px", 30 ]
+  },
+
+  "left_scroll_panel_content": {
+    "offset": [ 2, 0 ]
+  },
+
+  "left_scrolling_panel": {
+    "$scroll_size": [ 3, "100% - 4px" ],
+    "$scroll_bar_left_padding_size": [ 0, 0 ]
+  },
+
+  "divider_content/left_side": {
+    "size": [ "40% - 4px", "100% - 22px" ],
+    "offset": [ 4, 18 ]
+  },
+
+  "divider_content/right_side": {
+    "size": [ "60% - 9px", "100% - 22px" ],
+    "offset": [ "40% + 5px", 18 ]
+  },
+
+  "command_block_screen_content/title": {
+    "offset": [ 0, 5 ],
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "command_block_screen_content/background_divider/header_buttons_stack_panel": {
+    "offset": [ -3, 1.5 ]
+  },
+
+  "command_block_screen_content/background_divider": {
+    "$dialog_background": "popup_dialog.popup_dialog_background",
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "background": {
+              "type": "image",
+              "clips_children": false,
+              "texture": "textures/ui/White",
+              "anchor_to": "top_middle",
+              "anchor_from": "top_middle",
+              "size": [ "100% - 8px", "100% - 22px" ],
+              "offset": [ 0, 18 ],
+              "color": "$rainbowpie_ui_theme_dialog_content_background_color",
+              "alpha": "$rainbowpie_ui_theme_dialog_content_background_alpha",
+              "layer": 3,
+              "controls": [
+                
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "command_block_screen": {
+    "force_render_below": true,
+    "$screen_content": "command_block_extra.command_block_screen_content",
+    "$screen_bg_content": "settings_common.background_black",
+    "$screen_background_alpha": 0.4
+  }
+}

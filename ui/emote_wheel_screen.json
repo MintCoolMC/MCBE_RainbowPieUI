@@ -1,0 +1,8 @@
+{
+  "namespace": "persona",
+
+  "emote_wheel_screen": {
+    "$screen_bg_layer": 2,
+    "force_render_below": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "namespace": "world_recovery",
+  
+  "description_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  }
+}

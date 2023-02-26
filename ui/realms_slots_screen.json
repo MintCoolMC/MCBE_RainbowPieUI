@@ -1,0 +1,67 @@
+{
+  "namespace": "realms_slots",
+
+  "main_stack_panel/text_panel_1/text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "main_stack_panel/text_panel_0/text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "world_info_stack_panel/world_type_panel/world_type": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "world_info_stack_panel/world_name_panel/world_name": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "world_slot_button_content/world_slot_bottom/add_world_text_panel/add_world_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "realms_slots_screen_content/background": {
+    "ignored": true
+  },
+
+  "realms_slots_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "#slots_screen_header",
+              "$title_bindings": [
+                {
+                  "binding_name": "#slots_screen_header"
+                }
+              ]
+            }
+          },
+          {
+            "background_all@rainbowpie.background_all": {}
+          },
+          {
+            "realms_slots_screen_content_panel@realms_slots.realms_slots_screen_content_panel": {
+              "anchor_from": "bottom_middle",
+              "anchor_to": "bottom_middle",
+              "size": [ "100%", "100% - 19px" ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "realms_slots_screen": {
+    "$screen_background_control": "common.empty_panel"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "namespace": "realms_world_section",
+
+  "game_mode_dropdown": {
+    "$focus_override_right": "",
+    "$button_mode": true,
+    "$button_mode_type": "3",
+    "$1_binding_name": "#world_game_mode_radio_survival",
+    "$2_binding_name": "#world_game_mode_radio_creative",
+    "$3_binding_name": "#world_game_mode_radio_adventure",
+    "$1_label_text": "createWorldScreen.gameMode.survival",
+    "$2_label_text": "createWorldScreen.gameMode.creative",
+    "$3_label_text": "createWorldScreen.gameMode.adventure"
+  },
+
+  "difficulty_dropdown": {
+    "$focus_override_right": "",
+    "$button_mode": true,
+    "$button_mode_type": "4",
+    "$1_binding_name": "#world_difficulty_radio_peaceful",
+    "$2_binding_name": "#world_difficulty_radio_easy",
+    "$3_binding_name": "#world_difficulty_radio_normal",
+    "$4_binding_name": "#world_difficulty_radio_hard",
+    "$1_label_text": "options.difficulty.peaceful",
+    "$2_label_text": "options.difficulty.easy",
+    "$3_label_text": "options.difficulty.normal",
+    "$4_label_text": "options.difficulty.hard"
+  }
+}

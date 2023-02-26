@@ -1,0 +1,12 @@
+{
+  "namespace": "xbl_report_user",
+
+  "report_button_content/report_label/report_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "xbl_report_user_screen": {
+    "force_render_below": true
+  }
+}

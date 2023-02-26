@@ -1,0 +1,74 @@
+{
+  "namespace": "world_templates",
+
+  "world_template_screen_content_stack_panel/crossplatform_disabled_panel/disable_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+  
+  "realms_templates_info/info_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "label_content_template/label_panel/label_panel_layout/label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "no_owned_templates_text_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "world_button_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "lock_icon": {
+    "color": "$text_color"
+  },
+
+  "world_template_name": {
+    "color": "$text_color"
+  },
+
+  "world_list_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "$text_color|default": [],
+    "color": "$text_color"
+  },
+
+  "world_template_text_panel/text_indent/bottom_side/pad": {
+    "ignored": true
+  },
+
+  "world_template_content_panel": {
+    "variables": [],
+    "$border_texture": ""
+  },
+
+  "world_templates_screen": {
+    "$is_full_screen_layout": false
+  },
+
+  "world_templates_picker_content": {
+    "controls": [
+      { "background_all@rainbowpie.background_all": {} },
+      {
+        "header@rainbowpie.header": {
+          "$header_title": "selectTemplate.create"
+        }
+      },
+      {
+        "template_scroll_content@world_templates.template_scroll_content": {
+          "size": [ "100%", "100% - 19px" ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  }
+}

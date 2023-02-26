@@ -1,0 +1,29 @@
+{
+  "ui_defs": [
+    "ui/MintUI/mintui_background.json",
+    "ui/MintUI/mintui_dialog.json",
+    "ui/RainbowPie/rainbow_pie_popup_dialog.json",
+    "ui/RainbowPie/update_log.json",
+    "ui/RainbowPie/music.json",
+    "ui/RainbowPie/rainbow_pie_common.json",
+    "ui/RainbowPie/rainbow_pie_settings_common.json",
+    "ui/Xanerix/image_anims.json",
+    "ui/RainbowPie/rainbow_pie_auto_save.json",
+    "ui/RainbowPie/pml_info.json",
+    "ui/RainbowPie/package_info.json",
+    "ui/RainbowPie/rainbow_pie_theme_preview.json",
+    "ui/RainbowPie/ui_extras/pause_screen_controls.json",
+    "ui/RainbowPie/ui_extras/chat_screen_controls.json",
+    "ui/RainbowPie/ui_extras/progress_screen_controls.json",
+    "ui/RainbowPie/ui_extras/structure_editor_screen_controls.json",
+    "ui/RainbowPie/ui_extras/command_block_screen_controls.json",
+    "ui/RainbowPie/ui_extras/anvil_screen_controls.json",
+    "ui/RainbowPie/ui_extras/trade_2_screen_controls.json",
+    "ui/RainbowPie/ui_extras/start_screen_controls.json",
+    "ui/RainbowPie/ui_extras/invite_screen_controls.json",
+    "ui/RainbowPie/ui_extras/resource_packs_screen_controls.json",
+    "ui/RainbowPie/ui_extras/feed_screen_controls.json",
+    "ui/RainbowPie/ui_extras/screenshot_picker_screen_controls.json",
+    "ui/RainbowPie/ui_extras/online_safety_screen_controls.json"
+  ]
+}

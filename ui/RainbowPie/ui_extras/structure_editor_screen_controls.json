@@ -1,0 +1,109 @@
+{
+  "namespace": "structure_editor_extra",
+
+  "mode_panel_all_support@settings_common.option_dropdown": {
+    "ignored": "((not $data_support) or (not $3DExport_support))",
+    "$option_label": "",
+    "$dropdown_content": "structure_editor.mode_dropdown_content",
+    "$dropdown_area": "scrolling_panel",
+    "$dropdown_name": "mode_dropdown",
+    "$option_enabled_binding_name": "#mode_dropdown_enabled",
+    "$options_dropdown_toggle_label_binding": "#mode_dropdown_toggle_label",
+    "$dropdown_scroll_content_size": [ "100%", "200%" ],
+    // Rainbow Pie Edit
+    "$option_dropdown_size": [ "100%", 20 ],
+    "$button_mode": true,
+    "$button_mode_type": "5",
+    "$1_binding_name": "#structure_save_mode",
+    "$2_binding_name": "#structure_load_mode",
+    "$3_binding_name": "#structure_data_mode",
+    "$4_binding_name": "#structure_corner_mode",
+    "$5_binding_name": "#structure_3d_export_mode",
+    "$1_label_text": "structure_block.mode.save",
+    "$2_label_text": "structure_block.mode.load",
+    "$3_label_text": "structure_block.mode.data",
+    "$4_label_text": "structure_block.mode.corner",
+    "$5_label_text": "structure_block.mode.export"
+  },
+
+  "mode_panel_all_not_support@settings_common.option_dropdown": {
+    "ignored": "($data_support or $3DExport_support)",
+    "$option_label": "",
+    "$dropdown_content": "structure_editor.mode_dropdown_content",
+    "$dropdown_area": "scrolling_panel",
+    "$dropdown_name": "mode_dropdown",
+    "$option_enabled_binding_name": "#mode_dropdown_enabled",
+    "$options_dropdown_toggle_label_binding": "#mode_dropdown_toggle_label",
+    "$dropdown_scroll_content_size": [ "100%", "200%" ],
+    // Rainbow Pie Edit
+    "$option_dropdown_size": [ "100%", 20 ],
+    "$button_mode": true,
+    "$button_mode_type": "3",
+    "$1_binding_name": "#structure_save_mode",
+    "$2_binding_name": "#structure_load_mode",
+    "$3_binding_name": "#structure_corner_mode",
+    "$1_label_text": "structure_block.mode.save",
+    "$2_label_text": "structure_block.mode.load",
+    "$3_label_text": "structure_block.mode.corner"
+  },
+
+  "mode_panel_support_data@settings_common.option_dropdown": {
+    "ignored": "(not $data_support)",
+    "$option_label": "",
+    "$dropdown_content": "structure_editor.mode_dropdown_content",
+    "$dropdown_area": "scrolling_panel",
+    "$dropdown_name": "mode_dropdown",
+    "$option_enabled_binding_name": "#mode_dropdown_enabled",
+    "$options_dropdown_toggle_label_binding": "#mode_dropdown_toggle_label",
+    "$dropdown_scroll_content_size": [ "100%", "200%" ],
+    // Rainbow Pie Edit
+    "$option_dropdown_size": [ "100%", 20 ],
+    "$button_mode": true,
+    "$button_mode_type": "4",
+    "$1_binding_name": "#structure_save_mode",
+    "$2_binding_name": "#structure_load_mode",
+    "$3_binding_name": "#structure_data_mode",
+    "$4_binding_name": "#structure_corner_mode",
+    "$1_label_text": "structure_block.mode.save",
+    "$2_label_text": "structure_block.mode.load",
+    "$3_label_text": "structure_block.mode.data",
+    "$4_label_text": "structure_block.mode.corner"
+  },
+
+  "mode_panel_support_3d@settings_common.option_dropdown": {
+    "ignored": "(not $3DExport_support)",
+    "$option_label": "",
+    "$dropdown_content": "structure_editor.mode_dropdown_content",
+    "$dropdown_area": "scrolling_panel",
+    "$dropdown_name": "mode_dropdown",
+    "$option_enabled_binding_name": "#mode_dropdown_enabled",
+    "$options_dropdown_toggle_label_binding": "#mode_dropdown_toggle_label",
+    "$dropdown_scroll_content_size": [ "100%", "200%" ],
+    // Rainbow Pie Edit
+    "$option_dropdown_size": [ "100%", 20 ],
+    "$button_mode": true,
+    "$button_mode_type": "4",
+    "$1_binding_name": "#structure_save_mode",
+    "$2_binding_name": "#structure_load_mode",
+    "$3_binding_name": "#structure_corner_mode",
+    "$4_binding_name": "#structure_3d_export_mode",
+    "$1_label_text": "structure_block.mode.save",
+    "$2_label_text": "structure_block.mode.load",
+    "$3_label_text": "structure_block.mode.corner",
+    "$4_label_text": "structure_block.mode.export"
+  },
+
+  "structure_editor_bar_animation@common_store.store_top_bar_animation": {
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ 0, -19 ],
+    "to": [ 0, 0 ]
+  },
+
+  "structure_editor_bar_back_animation@common_store.store_top_bar_back_animation_pop": {
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ 0, 0 ],
+    "to": [ 0, -19 ]
+  }
+}

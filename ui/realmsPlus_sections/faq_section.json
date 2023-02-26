@@ -1,0 +1,23 @@
+{
+  "namespace": "realmsPlus_faq",
+
+  "faq_content_section/faq_header": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "faq_price_bound_text_section/faq_text_answer": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "faq_text_section/faq_text_answer": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "faq_text_question": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  }
+}

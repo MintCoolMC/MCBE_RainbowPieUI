@@ -1,0 +1,80 @@
+{
+  "namespace": "grindstone_pocket",
+
+  "inventory_and_grindstone_panel": {
+    "ignored": true
+  },
+
+  "header_and_content_stack_panel": {
+    "ignored": true
+  },
+
+  "slots_panel/arrow": {
+    "texture": "textures/ui/crafting/arrow_large",
+    "alpha": 0.4
+  },
+
+  "repair_title_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "grindstone_panel/bg": {
+    "ignored": true
+  },
+
+  "grindstone_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "inv_header_pocket@rainbowpie.inv_header_pocket": { "$title_text": "tile.grindstone.name" } },
+          {
+            "inventory_and_half_screen": {
+              "type": "panel",
+              "animation_reset_name": "screen_animation_reset",
+              "anims": [
+                "@common.rainbowpie_inventory_exit_animation_push",
+                "@common.rainbowpie_inventory_entrance_animation_pop",
+                "@common.inventory_animation_start",
+                "@common.inventory_animation_end2",
+                "@common.inventory_animation_end2_pop",
+                "@common.screen_exit_animation_push_fade",
+                "@common.screen_exit_animation_pop_fade",
+                "@common.screen_entrance_animation_push_fade",
+                "@common.screen_entrance_animation_pop_fade"
+              ],
+              "controls": [
+                {
+                  "inventory_half_screen": {
+                    "type": "panel",
+                    "size": [ "50%", "100% - 30px" ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+          
+                    "controls": [
+                      { "inventory_content@grindstone_pocket.inventory_content": {} }
+                    ]
+                  }
+                },
+                {
+                  "grindstone_half_screen": {
+                    "type": "panel",
+                    "size": [ "50%", "100% - 30px" ],
+                    "anchor_from": "bottom_right",
+                    "anchor_to": "bottom_right",
+          
+                    "controls": [
+                      { "grindstone_content@grindstone_pocket.grindstone_contents_panel": {} }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

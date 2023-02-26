@@ -1,0 +1,22 @@
+{
+  "namespace": "custom_templates",
+
+  "template_name": {
+    "color": "$text_color"
+  },
+
+  "lock_icon": {
+    "color": "$text_color"
+  },
+   
+  "template_screenshot": {
+    "texture": ""
+  },
+
+  "template_list_text": {
+    "$text_color|default": [],
+    "color": "$text_color",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  }
+}

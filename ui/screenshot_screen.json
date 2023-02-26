@@ -1,0 +1,220 @@
+{
+  "namespace": "screenshot",
+
+  "screenshot_screen": {
+    // "force_render_below": true
+  },
+
+  "anim_screenshot_flash": {
+    "duration": 0.5
+  },
+
+  "new_post_dialog": {
+    "type": "panel",
+    "size": [ 300, 207 ],
+    "layer": 191,
+    "controls": [
+      {
+        "background_with_buttons@common.common_panel": {
+          "$close_button_offset": [ -1, -1 ],
+          "$close_button_color": "$rainbowpie_ui_theme_dialog_text_color",
+          "layer": 13
+        }
+      },
+      {
+        "title_background": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "anchor_to": "top_middle",
+          "anchor_from": "top_middle",
+          "size": [ "100% - 8px", "100%" ],
+          "color": "$rainbowpie_ui_theme_dialog_background_color",
+          "alpha": "$rainbowpie_ui_theme_dialog_background_alpha_pregame",
+          "layer": 5
+        }
+      },
+      {
+        "background": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "anchor_to": "top_middle",
+          "anchor_from": "top_middle",
+          "size": [ "100% - 8px", "100% - 18px" ],
+          "offset": [ 0, 18 ],
+          "color": "$rainbowpie_ui_theme_dialog_content_background_color",
+          "alpha": "$rainbowpie_ui_theme_dialog_content_background_alpha",
+          "layer": 10,
+          "controls": [
+            {
+              "share": {
+                "type": "panel",
+                "anchor_to": "top_middle",
+                "anchor_from": "top_middle",
+                "size": [ "100%", 25 ],
+                "layer": 11,
+                "controls": [
+                  {
+                    "share_text_box@common.text_edit_box": {
+                      "size": [ "100% - 40px", 25 ],
+                      "max_length": 350,
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "$place_holder_text": "feed.whatup",
+                      "$place_holder_text_color": "$7_color_format",
+                      "$text_box_name": "share_text_box",
+                      "$text_edit_box_content_binding_name": "#caption_text_box",
+                      "bindings": [
+                        {
+                          "binding_name": "#caption_text_box"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "share_button@common_buttons.light_text_button": {
+                      "anchor_to": "top_right",
+                      "anchor_from": "top_right",
+                      "size": [ 40, 25 ],
+                      "$pressed_button_name": "button.share_screenshot",
+                      "$button_text": "feed.share"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "screenshot_image": {
+                "type": "image",
+                "size": [ "100% - 2px", "100% - 25px" ],
+                "offset": [ 0, -0.5 ],
+                "anchor_from": "bottom_middle",
+                "anchor_to": "bottom_middle",
+                "layer": 12,
+                "bindings": [
+                  {
+                    "binding_name": "#screenshot_texture",
+                    "binding_name_override": "#texture"
+                  },
+                  {
+                    "binding_name": "#screenshot_texture_source",
+                    "binding_name_override": "#texture_file_system"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title_text": {
+          "type": "label",
+          "offset": [ 0, 5 ],
+          "size": [ "100%", 15 ],
+          "anchor_to": "top_middle",
+          "anchor_from": "top_middle",
+          "text_alignment": "center",
+          "text": "feed.newPost",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "color": "$rainbowpie_ui_theme_title_text_color",
+          "shadow": false,
+          "layer": 13
+        }
+      }
+    ]
+  },
+
+  "screenshot_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "new_post_stack_panel": {
+              "type": "stack_panel",
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "size": [ 300, "100%c" ],
+              "layer": 10,
+              "controls": [
+                {
+                  "new_post_share_post_1@screenshot.new_post_dialog": {}
+                },
+                {
+                  "screenshot_path_panel": {
+                    "visible": "$rainbowpie_ui_feature_screenshot_path",
+                    "type": "panel",
+                    "size": [ "100%", "100%c" ],
+                    "layer": 2,
+                    "controls": [
+                      {
+                        "screenshot_path_background": {
+                          "type": "image",
+                          "texture": "textures/ui/White",
+                          "size": [ "100% - 8px", "100%c + 2px" ],
+                          "color": "$rainbowpie_ui_theme_title_background_color",
+                          "alpha": "$rainbowpie_ui_theme_title_background_alpha",
+                          "layer": 2,
+                          "controls": [
+                            {
+                              "screenshot_path_stack_panel": {
+                                "type": "stack_panel",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [ "100% - 2px", "100%c" ],
+                                "controls": [
+                                  {
+                                    "saved_label": {
+                                      "type": "label",
+                                      "size": [ "100%", "default" ],
+                                      "font_type": "$global_font_type",
+                                      "backup_font_type": "$global_font_type_backup",
+                                      "text_alignment": "left",
+                                      "text": "rainbowpie.ui.screenshot.saved",
+                                      "color": "$rainbowpie_ui_theme_title_text_color",
+                                      "layer": 2
+                                    }
+                                  },
+                                  {
+                                    "screenshot_path": {
+                                      "type": "label",
+                                      "size": [ "100%", "default" ],
+                                      "font_type": "$global_font_type",
+                                      "backup_font_type": "$global_font_type_backup",
+                                      "text_alignment": "left",
+                                      "text": "#screenshot_texture",
+                                      "color": "$rainbowpie_ui_theme_title_text_color",
+                                      "layer": 2,
+                                      "bindings": [
+                                        {
+                                          "binding_name": "#screenshot_texture"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "screenshot_screen_content/transparent_background": {
+    "ignored": true
+  },
+
+  "screenshot_screen_content/content_panel": {
+    "ignored": true
+  }
+}

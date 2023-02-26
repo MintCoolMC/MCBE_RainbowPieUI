@@ -1,0 +1,117 @@
+{
+  "namespace": "rating_prompt",
+
+  "rating_prompt_yes_label/button_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "rating_prompt_no_label/button_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "title_text": {
+    "type": "label",
+    "layer": 1,
+    "text": "pack.alert",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "color": [ 0.3, 0.3, 0.3 ]
+  },
+
+  "rating_prompt_screen": {
+    "$screen_content": "rating_prompt.screen_panel"
+  },
+
+  "screen_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      { "background_all@rainbowpie.background_all_ingame": {} },
+      {
+        "rating_prompt_screen_content": {
+          "type": "panel",
+          "size": [ 200, 120 ],
+          "controls": [
+            {
+              "common_panel@common.common_panel": {
+                "$close_button_offset": [ 0, -1 ],
+                "$use_default_close_button": true,
+                "$show_close_button": true,
+                "$dialog_background": "dialog_background_hollow_w"
+              }
+            },
+            {
+              "background": {
+                "type": "image",
+                "texture": "textures/ui/Black",
+                "clips_children": true,
+                "anchor_to": "top_middle",
+                "anchor_from": "top_middle",
+                "size": [ "100% - 8px", "100% - 44px" ],
+                "offset": [ 0, 18 ],
+                "alpha": 0.4,
+                "layer": 3,
+                "controls": [
+                  {
+                    "standard_title_label": {
+                      "type": "label",
+                      "size": [ "100% - 4px", "100% - 3px" ],
+                      "color": [ 1.0, 1.0, 1.0 ],
+                      "text": "#title",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "layer": 4,
+                      "shadow": false,
+                      "property_bag": {
+                        "#tts_dialog_title": "#title"
+                      },
+                      "bindings": [
+                        {
+                          "binding_type": "global",
+                          "binding_condition": "none",
+                          "binding_name": "#title",
+                          "binding_name_override": "#title"
+                        },
+                        {
+                          "binding_type": "global",
+                          "binding_condition": "once",
+                          "binding_name": "#tts_dialog_title"
+                        }
+                      ]
+                    }
+                  }                  
+                ]
+              }
+            },
+            {
+              "title_text@rating_prompt.title_text": {
+                "offset": [ 0, 4 ],
+                "size": [ "default", 15 ],
+                "anchor_to": "top_middle",
+                "anchor_from": "top_middle"
+              }
+            },
+            {
+              "yes_button@rating_prompt.rating_prompt_yes_button": {
+                "size": [ "50% - 3px", 22 ],
+                "offset": [ 3, -3 ],
+                "anchor_to": "bottom_left",
+                "anchor_from": "bottom_left"
+              }
+            },
+            {
+              "no_button@rating_prompt.rating_prompt_no_button": {
+                "size": [ "50% - 3px", 22 ],
+                "offset": [ -3, -3 ],
+                "anchor_to": "bottom_right",
+                "anchor_from": "bottom_right"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

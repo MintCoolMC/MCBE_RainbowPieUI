@@ -1,0 +1,71 @@
+{
+  "namespace": "image",
+  // THE PUMPKIN CAT
+  "the_pumpkin_cat": {
+    "type": "image",
+    "texture": "textures/RainbowPie/images/Mintraspberry/the_pumpkin_cat",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [0,0],
+    "layer": 400,
+    "uv": [0,0],
+    "uv_size": [100,100],
+    "anims": ["@image.the_pumpkin_cat_count"],
+    "disable_anim_fast_forward": true
+  },
+  "the_pumpkin_cat_count": {
+    "anim_type": "flip_book",
+    "easing": "in_quart",
+    "frame_count": 8,
+    "frame_step": 8,
+    "fps": 20
+  },
+  // MINT ANIM
+  "image_0": {
+    "type": "image",
+    "texture": "textures/RainbowPie/images/Mintraspberry/anim",
+    "size": ["100px", "100px"],
+    "uv": [0, 0],
+    "uv_size": [80, 90],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [0, 0],
+    "layer": 1,
+    "anims": ["@image.image_count"]
+  },
+  "image_1": {
+    "type": "image",
+    "texture": "textures/RainbowPie/images/Mintraspberry/anim",
+    "size": [ 40, 40 ],
+    "uv": [0, 0],
+    "uv_size": [80, 90],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "layer": 1,
+    "anims": [
+      "@image.image_count",
+      "@image.image_offset"
+    ]
+  },
+  "image_offset": {
+    "anim_type": "offset",
+    "duration": 30.0,
+    "from": [ "54%", -16 ],
+    "to": [ "-54%", -16 ],
+    "next": "@image.image_offset_1"
+  },
+  "image_offset_1": {
+    "anim_type": "offset",
+    "duration": 30.0,
+    "from": [ "54%", -16 ],
+    "to": [ "-54%", -16 ],
+    "next": "@image.image_offset"
+  },
+  "image_count": {
+    "anim_type": "flip_book",
+    "easing": "in_quart",
+    "frame_count": 10,
+    "frame_step": 10,
+    "fps": 15
+  }
+}

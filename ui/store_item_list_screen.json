@@ -1,0 +1,80 @@
+{
+  "namespace": "store_item_list",
+
+  "store_offer_grid_item/frame/offer_button": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "focus_button@common.non_interact_focus_border_button": {
+              "$pressed_button_name|default": "button.select_offer",
+              "sound_name": "random.click",
+              "sound_volume": 1.0,
+              "sound_pitch": 1.0,
+              "size": [ "100%", "100%" ],
+              "tts_inherit_siblings": true,
+              "bindings": [
+                {
+                  "binding_name": "#is_using_gamepad",
+                  "binding_name_override": "#visible"
+                },
+                {
+                  "binding_type": "$offer_collection_details",
+                  "binding_collection_name": "$offer_collection_name"
+                },
+                {
+                  "binding_type": "$store_factory_collection_details",
+                  "binding_collection_name": "$store_factory_collection_name",
+                  "binding_collection_prefix": "$store_factory_collection_prefix"
+                },
+                {
+                  "binding_type": "$offer_collection_details",
+                  "binding_collection_name": "$offer_collection_name",
+                  "binding_collection_prefix": "$offer_collection_prefix"
+                }
+              ],
+              "button_mappings": [
+                {
+                  "from_button_id": "button.menu_select",
+                  "to_button_id": "$pressed_button_name",
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_ok",
+                  "to_button_id": "$pressed_button_name",
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_tab_right",
+                  "to_button_id": "button.cycle_offer_right",
+                  "mapping_type": "focused"
+                },
+                {
+                  "from_button_id": "button.menu_tab_left",
+                  "to_button_id": "button.cycle_offer_left",
+                  "mapping_type": "focused"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "store_offer_grid_item/frame/offer_price_panel/offer_prompt_panel/offer_prompt": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "store_offer_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "store_item_list_screen": {
+    "$fill_alpha": 0.0
+  }
+}

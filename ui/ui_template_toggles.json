@@ -1,0 +1,164 @@
+{
+  "namespace": "common_toggles",
+
+  "switch_toggle_collection": {
+    "$rainbowpie_button_text_default_color|default": "$rainbowpie_ui_theme_button_text_default_color",
+    "$rainbowpie_button_text_hover_color|default": "$rainbowpie_ui_theme_button_text_hover_color",
+    "$rainbowpie_button_text_pressed_color|default": "$rainbowpie_ui_theme_button_text_pressed_color",
+
+    "$rainbowpie_button_default_color|default": "$rainbowpie_ui_theme_button_background_default_color",
+    "$rainbowpie_button_hover_color|default": "$rainbowpie_ui_theme_button_background_hover_color",
+    "$rainbowpie_button_pressed_color|default": "$rainbowpie_ui_theme_button_background_pressed_color",
+
+    "$rainbowpie_button_default_alpha|default": "$rainbowpie_ui_theme_button_background_default_alpha",
+    "$rainbowpie_button_hover_alpha|default": "$rainbowpie_ui_theme_button_background_hover_alpha",
+    "$rainbowpie_button_pressed_alpha|default": "$rainbowpie_ui_theme_button_background_pressed_alpha"
+  },
+
+  "light_ui_toggle_collection": {
+    "$rainbowpie_button_text_default_color|default": "$rainbowpie_ui_theme_button_text_default_color",
+    "$rainbowpie_button_text_hover_color|default": "$rainbowpie_ui_theme_button_text_hover_color",
+    "$rainbowpie_button_text_pressed_color|default": "$rainbowpie_ui_theme_button_text_pressed_color",
+
+    "$rainbowpie_button_default_color|default": "$rainbowpie_ui_theme_button_background_default_color",
+    "$rainbowpie_button_hover_color|default": "$rainbowpie_ui_theme_button_background_hover_color",
+    "$rainbowpie_button_pressed_color|default": "$rainbowpie_ui_theme_button_background_pressed_color",
+
+    "$rainbowpie_button_default_alpha|default": "$rainbowpie_ui_theme_button_background_default_alpha",
+    "$rainbowpie_button_hover_alpha|default": "$rainbowpie_ui_theme_button_background_hover_alpha",
+    "$rainbowpie_button_pressed_alpha|default": "$rainbowpie_ui_theme_button_background_pressed_alpha"
+  },
+
+  "switch_toggle@settings_common.option_toggle": {
+    
+  },
+
+  "light_template_toggle": {
+    "$rainbowpie_button_text_default_color|default": "$rainbowpie_ui_theme_button_text_default_color",
+    "$rainbowpie_button_text_hover_color|default": "$rainbowpie_ui_theme_button_text_hover_color",
+    "$rainbowpie_button_text_pressed_color|default": "$rainbowpie_ui_theme_button_text_pressed_color",
+
+    "$rainbowpie_button_default_color|default": "$rainbowpie_ui_theme_button_background_default_color",
+    "$rainbowpie_button_hover_color|default": "$rainbowpie_ui_theme_button_background_hover_color",
+    "$rainbowpie_button_pressed_color|default": "$rainbowpie_ui_theme_button_background_pressed_color",
+
+    "$rainbowpie_button_default_alpha|default": "$rainbowpie_ui_theme_button_background_default_alpha",
+    "$rainbowpie_button_hover_alpha|default": "$rainbowpie_ui_theme_button_background_hover_alpha",
+    "$rainbowpie_button_pressed_alpha|default": "$rainbowpie_ui_theme_button_background_pressed_alpha"
+  },
+
+  "toggle_unchecked": {
+    "$new_ui_button_texture": "textures/ui/White",
+    "$rainbowpie_button_alpha": "$rainbowpie_button_default_alpha",
+    "$rainbowpie_button_color": "$rainbowpie_button_default_color",
+    "$text_color": "$rainbowpie_button_text_default_color",
+    "$glyph_color": "$rainbowpie_button_text_default_color",
+    "$border_visible": false
+  },
+
+  "toggle_checked": {
+    "$new_ui_button_texture": "textures/ui/White",
+    "$rainbowpie_button_alpha": "$rainbowpie_button_pressed_alpha",
+    "$rainbowpie_button_color": "$rainbowpie_button_pressed_color",
+    "$text_color": "$rainbowpie_button_text_pressed_color",
+    "$glyph_color": "$rainbowpie_button_text_pressed_color",
+    "$border_visible": false
+  },
+  
+  "toggle_unchecked_hover": {
+    "$new_ui_button_texture": "textures/ui/White",
+    "$rainbowpie_button_alpha": "$rainbowpie_button_hover_alpha",
+    "$rainbowpie_button_color": "$rainbowpie_button_hover_color",
+    "$text_color": "$rainbowpie_button_text_hover_color",
+    "$glyph_color": "$rainbowpie_button_text_hover_color",
+    "$border_visible": false
+  },
+
+  "toggle_checked_hover": {
+    "$new_ui_button_texture": "textures/ui/White",
+    "$rainbowpie_button_alpha": "$rainbowpie_button_hover_alpha",
+    "$rainbowpie_button_color": "$rainbowpie_button_hover_color",
+    "$text_color": "$rainbowpie_button_text_hover_color",
+    "$glyph_color": "$rainbowpie_button_text_hover_color",
+    "$border_visible": false
+  },
+
+  "toggle_content_panel": {
+  },
+
+  "content_toggle_label_panel/toggle_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "color": "$content_toggle_label_color",
+    "$content_toggle_label_color|default": "$text_color"
+  },
+
+  "toggle_checkbox_checked_locked": {
+    "$text_color": [ 1.0, 1.0, 1.0 ]
+  },
+
+  "toggle_checkbox_unchecked_locked": {
+    "$text_color": [ 1.0, 1.0, 1.0 ]
+  },
+
+  "toggle_checkbox_checked_hover": {
+    "$content_alpha": 1
+  },
+
+  "toggle_checkbox_unchecked_hover": {
+    "$content_alpha": 1,
+    "$text_color": [ 1.0, 1.0, 1.0 ]
+  },
+
+  "toggle_checkbox_checked": {
+    "$content_alpha": 1
+  },
+
+  "toggle_checkbox_unchecked": {
+    "$content_alpha": 1,
+    "$text_color": [ 1.0, 1.0, 1.0 ]
+  },
+
+  "toggle_checked_locked": {
+    "$text_color": "$hover_text_color"
+  },
+
+  "toggle_unchecked_locked": {
+    "$text_color": "$hover_text_color"
+  },
+
+  "toggle_locked": {
+    "$text_color": "$hover_text_color"
+  },
+
+  // "light_ui_toggle_collection": {
+  //   "$default_border_visible|default": false,
+  //   "$hover_border_visible|default": false,
+  //   "$default_border_visible": false,
+  //   "$hover_border_visible": false,
+  //   "$default_texture|default": "textures/ui/button/default",
+  //   "$hover_texture|default": "textures/ui/button/pressed",
+  //   "$pressed_texture|default": "textures/ui/button/pressed",
+  //   "$pressed_no_hover_texture|default": "textures/ui/button/pressed",
+  //   "$locked_texture|default": "textures/ui/disabledButtonNoBorder",
+  //   "$default_text_color|default": [ 1.0, 1.0, 1.0 ],
+  //   "$hover_text_color|default": [ 1.0, 1.0, 1.0 ],
+  //   "$default_checked_text_color|default": [ 1.0, 1.0, 1.0 ],
+  //   "$hover_checked_text_color|default": [ 1.0, 1.0, 1.0 ],
+  //   "$default_glyph_color|default": [ 1.0, 1.0, 1.0 ],
+  //   "$hover_glyph_color|default": [ 1.0, 1.0, 1.0 ],
+  //   "$default_checked_glyph_color|default": [ 1.0, 1.0, 1.0 ],
+  //   "$hover_checked_glyph_color|default": [ 1.0, 1.0, 1.0 ]
+  // },
+
+  "dark_ui_toggle_collection": {
+    "$default_texture|default": "textures/ui/button/default",
+    "$hover_texture|default": "textures/ui/button/pressed",
+    "$pressed_texture|default": "textures/ui/button/pressed",
+    "$pressed_no_hover_texture|default": "textures/ui/button/pressed",
+    "$default_text_color|default": "$dark_toggle_hover_text_color",
+    "$hover_text_color|default": "$dark_toggle_hover_text_color",
+    "$default_checked_text_color|default": "$dark_toggle_hover_text_color",
+    "$hover_checked_text_color|default": "$dark_toggle_hover_text_color"
+  }
+}

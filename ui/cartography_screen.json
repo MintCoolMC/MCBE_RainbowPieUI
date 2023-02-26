@@ -1,0 +1,94 @@
+{
+  "namespace": "cartography",
+
+  "arrow_icon": {
+    "texture": "textures/ui/crafting/arrow",
+    "alpha": 0.4
+  },
+
+  "plus_sign_icon": {
+    "texture": "textures/ui/crafting/anvil-plus",
+    "alpha": 0.4
+  },
+
+  "cartography_panel/root_panel/common_panel": {
+    "ignored": true
+  },
+
+  "title_label": {
+    "text": ""
+  },
+
+  "output_description_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+ "text_box_panel/map_name_label": {
+   "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+ },
+
+  "cartography_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "title_text@common_art.title_text": {
+              "ignored": "$hide_inventory_watermark",
+              "offset": [ 0, 120 ],
+              "anchor_to": "buttom_middle",
+              "anchor_from": "buttom_middle",
+              "$title_text_scale": 2.0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  
+  "cartography_panel/root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header@rainbowpie.inv_header": {
+              "offset": [ 0, 5 ],
+              "$title_icon_ignored": false,
+              "$title_text": "tile.cartography_table.name"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "cartography_panel/root_panel/tab_close_and_help_button": {
+    "ignored": true
+  },
+
+  "cartography_screen": {
+    "close_on_player_hurt": false,
+    "modifications": [
+      {
+        "array_name": "variables",
+        "operation": "insert_front",
+        "value": [
+          {
+            "requires": "$pocket_screen",
+            "$screen_animations": [
+              "@common.screen_exit_animation_push_fade",
+              "@common.screen_exit_animation_pop_fade",
+              "@common.screen_entrance_animation_push_fade",
+              "@common.screen_entrance_animation_pop_fade"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

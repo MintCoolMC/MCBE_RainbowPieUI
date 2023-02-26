@@ -1,0 +1,78 @@
+{
+  "namespace": "progress_extra",
+
+  "progress_ui_blur1_anim_out_push@progress_extra.progress_ui_blur1_anim_out_pop": {
+    "play_event": "screen.exit_push"
+  },
+
+  "progress_ui_blur1_anim_out_pop@progress_extra.progress_ui_blur1_anim_in_pop": {
+    "from": [ 0, "100% - 60px" ],
+    "to": [ 0, "100%" ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "progress_ui_blur1_anim_in_push@progress_extra.progress_ui_blur1_anim_in_pop": {
+    "play_event": "screen.entrance_push"
+  },
+
+  "progress_ui_blur1_anim_in_pop": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "to": [ 0, "100% - 60px" ],
+    "from": [ 0, "100%" ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "progress_ui_blur2_anim_out_push@progress_extra.progress_ui_blur2_anim_out_pop": {
+    "play_event": "screen.exit_push"
+  },
+
+  "progress_ui_blur2_anim_out_pop@progress_extra.progress_ui_blur2_anim_in_pop": {
+    "from": [ 0, "-100% + 60px" ],
+    "to": [ 0, "-100%" ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "progress_ui_blur2_anim_in_push@progress_extra.progress_ui_blur2_anim_in_pop": {
+    "play_event": "screen.entrance_push"
+  },
+
+  "progress_ui_blur2_anim_in_pop": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "to": [ 0, "-100% + 60px" ],
+    "from": [ 0, "-100%" ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "progress_ui_anim_out_push@progress_extra.progress_ui_anim_out_pop": {
+    "play_event": "screen.exit_push"
+  },
+
+  "progress_ui_anim_out_pop@progress_extra.progress_ui_anim_in_pop": {
+    "from": [ 0, 0 ],
+    "to": [ 0, 60 ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "progress_ui_anim_in_push@progress_extra.progress_ui_anim_in_pop": {
+    "play_event": "screen.entrance_push"
+  },
+
+  "progress_ui_anim_in_pop": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "to": [ 0, 0 ],
+    "from": [ 0, 60 ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  }
+}

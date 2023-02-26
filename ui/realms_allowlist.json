@@ -1,0 +1,177 @@
+{
+  "namespace": "realms_allowlist",
+
+  "share_popup_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "link_url_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "share_popup_dialog_header_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "page_panel/page_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "unblock_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "panel_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "uninvited_friends_label/friend_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "blocked_players_label/friend_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "members_label/loading_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "members_label/friend_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "player_filter_label/player_filter_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "invited_friends_label/friend_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "link_panel/copy_share_panel/spacing": {
+    "ignored": true
+  },
+
+  "link_panel/copy_share_panel": {
+    "offset": [ 0, 0 ]
+  },
+
+  "link_panel/link_url_text": {
+    "anchor_to": "left_middle",
+    "anchor_from": "left_middle",
+    "size": [ "100% - 112px", "default" ],
+    "offset": [ 28, 0 ]
+  },
+
+  "friends_panel/option_dropdown_permissions": {
+    "$focus_override_right": "",
+    "$control_name": "settings_common.option_dropdown_control_button_mode",
+    "$button_mode_type": "3",
+    "$1_binding_name": "#permission_level_radio_visitor",
+    "$2_binding_name": "#permission_level_radio_member",
+    "$3_binding_name": "#permission_level_radio_operator",
+    "$1_label_text": "permissions.level.visitor",
+    "$2_label_text": "permissions.level.member",
+    "$3_label_text": "permissions.level.operator"
+  },
+
+  "refresh_button": {
+    "size": [ 28, 28 ],
+    "offset": [ 0, 0 ]
+  },
+  
+  "add_friends_and_invite_link_panel": {
+    "size": [ "100%", 60 ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "link_panel@realms_allowlist.link_panel": {
+              "anchor_from": "bottom_middle",
+              "anchor_to": "bottom_middle",
+              "size": [ "100%", 28 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "add_friends_and_invite_link_panel/allowlist_stack_panel/share_by_link_button_panel": {
+    "ignored": true
+  },
+
+  "add_friends_and_invite_link_panel/allowlist_stack_panel": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ "100% + 2px", 32 ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "clear_members_button_panel": {
+              "type": "panel",
+              "size": [ "fill", 32 ],
+              "controls": [
+                {
+                  "clear_members_button@common_buttons.light_text_button": {
+                    "size": [ "100%", 30 ],
+                    "layer": 2,
+                    "$button_text": "realmsClearMembers.clear",
+                    "button_mappings": [
+                      {
+                        "from_button_id": "button.menu_select",
+                        "to_button_id": "button.clear_members",
+                        "mapping_type": "pressed"
+                      },
+                      {
+                        "from_button_id": "button.menu_ok",
+                        "to_button_id": "button.clear_members",
+                        "mapping_type": "focused"
+                      }
+                    ],
+                    "bindings": [
+                      {
+                        "binding_name": "#members_list_enabled", // a hack: you cannot set "enabled":false directly on a ui control
+                        "binding_name_override": "#enabled"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "add_friends_and_invite_link_panel/allowlist_stack_panel/options_panel": {
+    "ignored": true
+  },
+
+  "add_friends_and_invite_link_panel/allowlist_stack_panel/spacing2": {
+    "ignored": true
+  },
+
+  "add_friends_and_invite_link_panel/allowlist_stack_panel/spacing": {
+    "ignored": true
+  }
+}

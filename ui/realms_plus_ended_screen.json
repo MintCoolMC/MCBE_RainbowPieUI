@@ -1,0 +1,48 @@
+{
+  "namespace": "realms_plus_ended",
+
+  "more_info_button@common_buttons.light_text_button": {
+    "$button_text": "realmsPlus.popup.top_button_text",
+    "$pressed_button_name": "button.more_info"
+  },
+
+  "renew_subscription_button@common_buttons.light_text_button": {
+    "$button_text": "realmsPlus.popup.bottom_button_text",
+    "$pressed_button_name": "button.renew"
+  },
+
+  "buttons_panel": {
+    "ignored": true
+  },
+
+  "main_panel": {
+    "size": [ 260, 150 ],
+    "controls": [
+      {
+        "dialog@common_dialogs.main_panel_two_buttons": {
+          "$text_name": "realmsPlus.popup.title",
+          "$top_button_panel|default": "realms_plus_ended.renew_subscription_button",
+          "$bottom_button_panel|default": "realms_plus_ended.more_info_button",
+          "$child_control": "realms_plus_ended.content_stack_panel"
+        }
+      }
+    ]
+  },
+
+  "subscription_ended_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "background@mintui_background.background_blur_fullscreen": {
+              "layer": -3000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+

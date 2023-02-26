@@ -1,0 +1,41 @@
+{
+  "namespace": "realmsplus_upgrade_notice_screen",
+
+  "continue_button@common_buttons.light_text_button": {
+    "$pressed_button_name": "button.continue_button",
+    "$button_text": "realmsPlusUpgradeNotice.continue"
+  },
+
+  "viewpacks@common_buttons.light_text_button": {
+    "$pressed_button_name": "button.viewpacks",
+    "$button_text": "realmsPlusUpgradeNotice.viewpacks"
+  },
+
+  "main_content": {
+    "controls": [
+      {
+        "dialog@common_dialogs.main_panel_two_buttons": {
+          "size": [ "78.43%", "80.36%" ],
+          "$text_name": "realmsPlusUpgradeNotice.title",
+          "$top_button_panel|default": "realmsplus_upgrade_notice_screen.continue_button",
+          "$bottom_button_panel|default": "realmsplus_upgrade_notice_screen.viewpacks",
+          "$child_control": "realmsplus_upgrade_notice_screen.content"
+        }
+      },
+      {
+        "background@mintui_background.background_blur_fullscreen": {
+          "layer": -3000
+        }
+      }
+    ]
+  },
+
+  "content/wall_of_text/the_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content/buttons_row": {
+    "ignored": true
+  }
+}

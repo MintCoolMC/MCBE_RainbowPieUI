@@ -1,0 +1,73 @@
+/********************************************************
++*   (c) Mojang. All rights reserved                       *
++*   (c) Microsoft. All rights reserved.                   *
++*********************************************************/
+
+{
+  "namespace": "how_to_play",
+
+  "hud_section": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "rainbowpie_header_1@how_to_play_common.header": {
+              "$text": "rainbowpie.ui.howtoplay.HUD.header.1"
+            }
+          },
+          {
+            "rainbowpie_paragraph_1@how_to_play_common.paragraph_with_icons": {
+              "$text": "rainbowpie.ui.howtoplay.HUD.text.1"
+            }
+          },
+          { "rainbowpie_padding_1@how_to_play_common.padding": {} },
+          {
+            "rainbowpie_paragraph_2@how_to_play_common.paragraph_with_icons": {
+              "$text": "rainbowpie.ui.howtoplay.HUD.text.2"
+            }
+          },
+          { "rainbowpie_padding_2@how_to_play_common.padding": { "ignored": "$rainbowpie_ui_flag_c728d612" } },
+          {
+            "rainbowpie_paragraph_3@how_to_play_common.paragraph_with_icons": {
+              "ignored": "$rainbowpie_ui_flag_c728d612",
+              "$text": "rainbowpie.ui.howtoplay.HUD.text.3"
+            }
+          },
+          {
+            "rainbowpie_header_2@how_to_play_common.header": {
+              "$text": "----------------"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "selector_stack_panel/how_to_play_selector_pane/action_button": {
+    "$button_size_override": [ "100%", "100% + 2px" ]
+  },
+
+  "selector_stack_panel/how_to_play_selector_pane/padding_1": {
+    "size": [ 0, 1 ]
+  },
+
+  "selector_stack_panel/how_to_play_selector_pane/padding_0": {
+    "size": [ 0, 1 ]
+  },
+
+  "how_to_play_screen@how_to_play_common.screen_base": {
+    "$screen_bg_content": "settings_common.background_black",
+    "$selector_stack_panel": "how_to_play.selector_stack_panel",
+    "$section_content_panels": "how_to_play.section_content_panels",
+    "$is_full_screen_layout": true,
+    "$scroll_clips_children": "(not $scroll_met)",
+    "$fill_alpha": 0.0
+  },
+
+  "section_content_panels": {
+    "size": [ "100%", "100%c" ],
+    "offset": [ 0, 0 ]
+  }
+}

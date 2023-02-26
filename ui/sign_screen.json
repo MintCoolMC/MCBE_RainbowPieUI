@@ -1,0 +1,14 @@
+{
+  "namespace": "sign",
+
+  "sign_text_multiline": {
+    "$enable_profanity_filter": "$text_edit_box_enable_profanity_filter"
+  },
+
+  "sign_screen": {
+    "close_on_player_hurt": false,
+    "force_render_below": true,
+    // Set $global_font_type to default on sign edit screen
+    "$global_font_type": "default"
+  }
+}

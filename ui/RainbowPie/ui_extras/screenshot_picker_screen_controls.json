@@ -1,0 +1,18 @@
+{
+  "namespace": "screenshotpicker_extra",
+
+  "right_panel": {
+    "type": "panel",
+    "size": [ "100%c", "100%" ],
+    "controls": [
+      {
+        "new_post_button@common_buttons.light_text_button": {
+          "layer": 10,
+          "size": [ 70, "100%" ],
+          "$pressed_button_name": "button.edit",
+          "$button_text": "feed.edit"
+        }
+      }
+    ]
+  }
+}

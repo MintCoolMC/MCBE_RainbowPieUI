@@ -1,0 +1,11 @@
+{
+  "namespace": "cartography_pocket",
+
+  "right_tab_cartography": {
+    "ignored": true
+  },
+
+  "left_tab_inventory": {
+    "ignored": true
+  }
+}

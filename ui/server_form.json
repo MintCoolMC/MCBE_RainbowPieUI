@@ -1,0 +1,294 @@
+{
+  "namespace": "server_form",
+
+  "main_screen_content": {
+    "size": [ "100%", "100%" ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "gamepad_helpers@rainbowpie.gamepad_helpers": {
+              "layer": 400,
+              "$panel_controls": [
+                {
+                  "gamepad_helper_a@rainbowpie.gamepad_helper": {
+                    "$icon_texture": "#controller_face_down_icon",
+                    "$icon_description_bind": "controller.buttonTip.select"
+                  }
+                },
+                {
+                  "gamepad_helper_b@rainbowpie.gamepad_helper": {
+                    "$icon_texture": "#controller_face_right_icon",
+                    "$icon_description_bind": "controller.buttonTip.back"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "header@rainbowpie.header": {
+              "visible": "$is_rainbowpie_style_server_form_enabled",
+              "$header_title": "#title_text",
+              "$title_bindings": [
+                {
+                  "binding_name": "#title_text"
+                }
+              ],
+              "$header_offset": [
+                "@server_form.server_form_top_bar_back_animation",
+                "@common_store.store_top_bar_back_animation",
+                "@server_form.server_form_top_bar_animation",
+                "@common_store.store_top_bar_animation_pop"
+              ],
+              "$HeaderBlurAnims": [
+                "@pause.top_bar_blur_back_animation",
+                "@pause.top_bar_blur_animation"
+              ],
+              "$HeaderBlur2Anims": [
+                "@pause.top_bar_blur2_back_animation",
+                "@pause.top_bar_blur2_animation"
+              ]
+            }
+          },
+          {
+            "black_background": {
+              "visible": "$is_rainbowpie_style_server_form_enabled",
+              "type": "image",
+              "texture": "textures/ui/Black",
+              "size": [ "500%", "500%" ],
+              "alpha": 0.2,
+              "layer": -1
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "server_form_top_bar_animation@common_store.store_top_bar_animation": {
+    "from": [ 0, "-20%" ],
+    "to": [ 0, 0 ]
+  },
+
+  "server_form_top_bar_back_animation@common_store.store_top_bar_back_animation_pop": {
+    "from": [ 0, 0 ],
+    "to": [ 0, "-20%" ]
+  },
+
+  "main_screen_content/server_form_factory": {
+    "control_ids": "$control_ids",
+    "$control_ids|default": {
+      "long_form": "@server_form.long_form",
+      "custom_form": "@server_form.custom_form"
+    },
+    "variables": [
+      {
+        "requires": "$is_rainbowpie_style_server_form_enabled",
+        "$control_ids": {
+          "long_form": "@server_form.long_form_panel",
+          "custom_form": "@server_form.custom_form_panel"
+        }
+      }
+    ]
+  },
+
+  "long_form_dynamic_buttons_panel": {
+    "size": [ "100%", "100%c" ],
+    "offset": [ 2, 0 ]
+  },
+
+  "dynamic_button_content_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "panel_name": {
+          "type": "panel",
+          "size": [ 30, "100%c" ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "image",
+              "resolve_sibling_scope": true,
+              "source_property_name": "(not (#texture = ''))",
+              "target_property_name": "#visible"
+            }
+          ],
+
+          "controls": [
+            {
+              "image": {
+                "type": "image",
+                "layer": 2,
+                "size": [ 26, 26 ],
+                "offset": [ -2, 0 ],
+                "bindings":[
+                  {
+                    "binding_name": "#form_button_texture",
+                    "binding_name_override": "#texture",
+                    "binding_type": "collection",
+                    "binding_collection_name": "form_buttons"
+                  },
+                  {
+                    "binding_name": "#form_button_texture_file_system",
+                    "binding_name_override": "#texture_file_system",
+                    "binding_type": "collection",
+                    "binding_collection_name": "form_buttons"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(not ((#texture = '') or (#texture = 'loading')))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "button_text": {
+          "type": "label",
+          "size": [ "default", "default" ],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "text_alignment": "center",
+          "text": "#form_button_text",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "shadow": false,
+          "bindings": [
+            {
+              "binding_type": "collection",
+              "binding_condition": "none",
+              "binding_collection_name": "form_buttons",
+              "binding_name": "#form_button_text",
+              "binding_name_override": "#form_button_text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "dynamic_button": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "form_button_moded@common_buttons.dark_content_button": {
+              "$pressed_button_name": "button.form_button_click",
+              "size": [ "100%", 32 ],
+              "$button_content": "server_form.dynamic_button_content_panel",
+              "$button_text": "#form_button_text",
+              "$button_text_binding_type": "collection",
+              "$button_text_grid_collection_name": "form_buttons",
+              "$button_text_max_size": [ "100%", 20 ],
+              "bindings": [
+                {
+                  "binding_type": "collection_details",
+                  "binding_collection_name": "form_buttons"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "dynamic_button/form_button": {
+    "ignored": true
+  },
+
+  "dynamic_button/panel_name": {
+    "ignored": true
+  },
+
+  "long_form_scrolling_content": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle"
+  },
+
+  "long_form_scrolling_content/label_offset_panel/main_label": {
+    // "shadow": "$is_rainbowpie_style_server_form_enabled",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "offset": [ 0, 2.5 ],
+    "size": [ "100% - 4px", "default" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle"
+  },
+
+  "custom_form_scrolling_content": {
+    "size": [ "100%", "100%c" ],
+    "offset": [ 0, 0 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "padding_top": {
+              "type": "panel",
+              "size": [ 2, 2 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "long_form_panel": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": "$size",
+    "offset": "$offset",
+    "$size|default": [ "100%", "100%" ],
+    "$offset|default": [ 0, 0 ],
+    "variables": [
+      {
+        "requires": "$is_rainbowpie_style_server_form_enabled",
+        "$size": [ "100%", "100% - 19px" ],
+        "$offset": [ 0, 19 ]
+      }
+    ]
+  },
+
+  "custom_form_panel": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": "$size",
+    "offset": "$offset",
+    "$size|default": [ "100%", "100%" ],
+    "$offset|default": [ 0, 0 ],
+    "variables": [
+      {
+        "requires": "$is_rainbowpie_style_server_form_enabled",
+        "$size": [ "100%", "100% - 19px" ],
+        "$offset": [ 0, 19 ]
+      }
+    ]
+  },
+  
+  "long_form_panel/scrolling_panel": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$scroll_bar_left_padding_size": [ 0, 0 ],
+    "$scroll_bar_right_padding_size": [ 2, 0 ],
+    "$scroll_size": [ 3, "100% - 4px" ],
+    "$scrolling_pane_size": [ "100%", "100%" ],
+    "$scrolling_pane_offset": [ 0, 0 ]
+  },
+
+  "third_party_server_screen": {
+    "force_render_below": true
+  }
+}

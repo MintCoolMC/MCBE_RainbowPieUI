@@ -1,0 +1,182 @@
+{
+  "namespace": "common_tabs",
+
+  "pocket_tab_close_button": {
+    "texture": ""
+  },
+
+  "tab_top": {
+    "$anchor": "top"
+  },
+
+  "tab_left": {
+    "$anchor": "left"
+  },
+
+  "tab_right": {
+    "$anchor": "right"
+  },
+
+  "base_tab": {
+    "$rainbowpie_toggle_text_unchecked_default_color|default": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+    "$rainbowpie_toggle_text_unchecked_hover_color|default": "$rainbowpie_ui_theme_toggle_text_unchecked_hover_color",
+    "$rainbowpie_toggle_text_unchecked_locked_color|default": "$rainbowpie_ui_theme_toggle_text_locked_checked_color",
+    
+    "$rainbowpie_toggle_text_checked_default_color|default": "$rainbowpie_ui_theme_toggle_text_checked_default_color",
+    "$rainbowpie_toggle_text_checked_hover_color|default": "$rainbowpie_ui_theme_toggle_text_checked_hover_color",
+    "$rainbowpie_toggle_text_checked_locked_color|default": "$rainbowpie_ui_theme_toggle_text_locked_checked_color",
+    
+    "$rainbowpie_toggle_unchecked_default_color|default": "$rainbowpie_ui_theme_toggle_background_unchecked_default_color",
+    "$rainbowpie_toggle_unchecked_hover_color|default": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_color",
+    "$rainbowpie_toggle_unchecked_locked_color|default": "$rainbowpie_ui_theme_toggle_background_locked_default_color",
+    "$rainbowpie_toggle_checked_default_color|default": "$rainbowpie_ui_theme_toggle_background_checked_default_color",
+    "$rainbowpie_toggle_checked_hover_color|default": "$rainbowpie_ui_theme_toggle_background_checked_hover_color",
+    "$rainbowpie_toggle_checked_locked_color|default": "$rainbowpie_ui_theme_toggle_background_locked_checked_color",
+
+    "$rainbowpie_toggle_unchecked_default_alpha|default": "$rainbowpie_ui_theme_toggle_background_unchecked_default_alpha",
+    "$rainbowpie_toggle_unchecked_hover_alpha|default": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_alpha",
+    "$rainbowpie_toggle_unchecked_locked_alpha|default": "$rainbowpie_ui_theme_toggle_background_locked_default_alpha",
+    "$rainbowpie_toggle_checked_default_alpha|default": "$rainbowpie_ui_theme_toggle_background_checked_default_alpha",
+    "$rainbowpie_toggle_checked_hover_alpha|default": "$rainbowpie_ui_theme_toggle_background_checked_hover_alpha",
+    "$rainbowpie_toggle_checked_locked_alpha|default": "$rainbowpie_ui_theme_toggle_background_locked_checked_alpha"
+  },
+
+  "base_tab/$tab_view_binding_name/unchecked": {
+    "$rainbowpie_toggle_color": "$rainbowpie_toggle_unchecked_default_color",
+    "$rainbowpie_toggle_alpha": "$rainbowpie_toggle_unchecked_default_alpha",
+    "$text_color": "$rainbowpie_toggle_text_unchecked_default_color",
+    "$secondary_text_color": "$rainbowpie_toggle_text_unchecked_default_color"
+  },
+
+  "base_tab/$tab_view_binding_name/unchecked_hover": {
+    "$rainbowpie_toggle_color": "$rainbowpie_toggle_unchecked_hover_color",
+    "$rainbowpie_toggle_alpha": "$rainbowpie_toggle_unchecked_hover_alpha",
+    "$text_color": "$rainbowpie_toggle_text_unchecked_hover_color",
+    "$secondary_text_color": "$rainbowpie_toggle_text_unchecked_hover_color"
+  },
+
+  "base_tab/$tab_view_binding_name/unchecked_locked": {
+    "$rainbowpie_toggle_color": "$rainbowpie_toggle_unchecked_locked_color",
+    "$rainbowpie_toggle_alpha": "$rainbowpie_toggle_unchecked_locked_alpha",
+    "$text_color": "$rainbowpie_toggle_text_unchecked_locked_color",
+    "$secondary_text_color": "$rainbowpie_toggle_text_unchecked_locked_color"
+  },
+
+  "base_tab/$tab_view_binding_name/unchecked_locked_hover": {
+    "$rainbowpie_toggle_color": "$rainbowpie_toggle_unchecked_locked_color",
+    "$rainbowpie_toggle_alpha": "$rainbowpie_toggle_unchecked_locked_alpha",
+    "$text_color": "$rainbowpie_toggle_text_unchecked_locked_color",
+    "$secondary_text_color": "$rainbowpie_toggle_text_unchecked_locked_color"
+  },
+
+  "base_tab/$tab_view_binding_name/checked": {
+    "$rainbowpie_toggle_color": "$rainbowpie_toggle_checked_default_color",
+    "$rainbowpie_toggle_alpha": "$rainbowpie_toggle_checked_default_alpha",
+    "$text_color": "$rainbowpie_toggle_text_checked_default_color",
+    "$secondary_text_color": "$rainbowpie_toggle_text_checked_default_color"
+  },
+
+  "base_tab/$tab_view_binding_name/checked_hover": {
+    "$rainbowpie_toggle_color": "$rainbowpie_toggle_checked_hover_color",
+    "$rainbowpie_toggle_alpha": "$rainbowpie_toggle_checked_hover_alpha",
+    "$text_color": "$rainbowpie_toggle_text_checked_hover_color",
+    "$secondary_text_color": "$rainbowpie_toggle_text_checked_hover_color"
+  },
+
+  "base_tab/$tab_view_binding_name/checked_locked": {
+    "$rainbowpie_toggle_color": "$rainbowpie_toggle_checked_locked_color",
+    "$rainbowpie_toggle_alpha": "$rainbowpie_toggle_checked_locked_alpha",
+    "$text_color": "$rainbowpie_toggle_text_checked_locked_color",
+    "$secondary_text_color": "$rainbowpie_toggle_text_checked_locked_color"
+  },
+
+  "base_tab/$tab_view_binding_name/checked_locked_hover": {
+    "$rainbowpie_toggle_color": "$rainbowpie_toggle_checked_locked_color",
+    "$rainbowpie_toggle_alpha": "$rainbowpie_toggle_checked_locked_alpha",
+    "$text_color": "$rainbowpie_toggle_text_checked_locked_color",
+    "$secondary_text_color": "$rainbowpie_toggle_text_checked_locked_color"
+  },
+
+  "tab_panel": {
+    "$is_transparent_enabled|default": false,
+    "$is_checked_bar_enabled|default": true,
+    "$anchor|default": "top",
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "checked_image": {
+              "visible": "$is_checked_bar_enabled",
+              "type": "panel",
+              "size": [ "100%", "100%" ],
+              "anchor_to": "top_middle",
+              "anchor_from": "top_middle",
+              "layer": 10,
+              "controls": [
+                {
+                  "checked_top": {
+                    "ignored": "(not $is_checked_state)",
+                    "visible": "($anchor = 'top')",
+                    "type": "image",
+                    "texture": "textures/ui/White",
+                    "size": [ "100%", 2 ],
+                    "anchor_to": "top_middle",
+                    "anchor_from": "top_middle",
+                    "layer": 10,
+                    "color": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_color",
+                    "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_alpha"
+                  }
+                },
+                {
+                  "checked_left": {
+                    "ignored": "(not $is_checked_state)",
+                    "visible": "($anchor = 'left')",
+                    "type": "image",
+                    "texture": "textures/ui/White",
+                    "size": [ 2, "100%" ],
+                    "anchor_to": "left_middle",
+                    "anchor_from": "left_middle",
+                    "layer": 10,
+                    "color": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_color",
+                    "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_alpha"
+                  }
+                },
+                {
+                  "checked_right": {
+                    "ignored": "(not $is_checked_state)",
+                    "visible": "($anchor = 'right')",
+                    "type": "image",
+                    "texture": "textures/ui/White",
+                    "size": [ 2, "100%" ],
+                    "anchor_to": "right_middle",
+                    "anchor_from": "right_middle",
+                    "layer": 10,
+                    "color": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_color",
+                    "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_alpha"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "tab_panel/tab_image": {
+    "$texture|default": "textures/ui/White",
+    "texture": "$texture",
+    "$rainbowpie_toggle_color|default": [ 0.0, 0.0, 0.0 ],
+    "$rainbowpie_toggle_alpha|default": 0.5,
+    "color": "$rainbowpie_toggle_color",
+    "alpha": "$rainbowpie_toggle_alpha",
+    "variables": [
+      {
+        "requires": "$is_transparent_enabled",
+        "$texture": ""
+      }
+    ]
+  }
+}

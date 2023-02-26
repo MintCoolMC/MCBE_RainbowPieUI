@@ -1,0 +1,22 @@
+{
+  "namespace": "realmsPlus_buy",
+
+  "terms_and_conditions_panel/terms_string_panel/banner_fill": {
+    "alpha": 0.4
+  },
+
+  "title_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "trial_image_and_description/description_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content_description/content_description_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  }
+}

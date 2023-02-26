@@ -1,0 +1,44 @@
+{
+  "namespace": "comment",
+
+  "content/comments": {
+    "ignored": true
+  },
+
+  "content/return_button": {
+    "ignored": true
+  },
+
+  "content/top_bar_gradient": {
+    "ignored": true
+  },
+
+  "textpost_content": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "comment_screen_content/transparent_background": {
+    "ignored": true
+  },
+
+  "comment_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "feed.comments",
+              "$back_button_pressed_button_name": "button.close_comments"
+            }
+          },
+          {
+            "background_all@rainbowpie.background_all": {}
+          }
+        ]
+      }
+    ]
+  }
+}

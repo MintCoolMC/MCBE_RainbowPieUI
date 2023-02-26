@@ -1,0 +1,164 @@
+{
+  "namespace": "redstone",
+  //---------------------------------------------------------------------------
+  // Screens
+  //---------------------------------------------------------------------------
+
+  "item_dropper_label": {
+    "type": "label",
+    "offset": [ 0, 5 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "color": "$title_text_color",
+    "text": "",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "layer": 2
+  },
+
+  "panel": {
+    "type": "panel",
+    "controls": [
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 11
+        }
+      },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      {
+        "title_text@common_art.title_text": {
+          "ignored": "$hide_inventory_watermark",
+          "offset": [ 0, 94 ],
+          "anchor_to": "buttom_middle",
+          "anchor_from": "buttom_middle",
+          "$title_text_scale": 2.0
+        }
+      },
+      {
+        "root_panel@common.root_panel": {
+          "layer": 1,
+          "size": "$screen_dimensions",
+          "controls": [
+            {
+              "inv_header@rainbowpie.inv_header": {
+                "offset": [ 0, -1 ],
+                "$title_icon_ignored": false,
+                "$title_text": "$container_title",
+                "$title_icon_texture": "('textures/ui/inventory_icons/redstone/' + $redstone_type)"
+              }
+            },
+            {
+              "redstone_screen_inventory": {
+                "type": "panel",
+                "layer": 5,
+                "controls": [
+                  { "red_panel@redstone.redstone_panel_top_half": {} },
+                  { "red_bottom_half@common.inventory_panel_bottom_half_with_label": {} },
+                  { "hotbar_grid@common.hotbar_grid_template": {} },
+                  { "red_hold_icon@common.inventory_take_progress_icon_button": {} }
+                ]
+              }
+            },
+            { "red_icon@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} },
+            { "$screen_label@$screen_label": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "hopper_screen@common.inventory_screen_common": {
+    "$redstone_screen": true,
+    "$redstone_type": "hopper",
+    "$close_on_player_hurt|default": false,
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_label": "redstone.hopper_label",
+        "$screen_dimensions": [ 176, 133 ],
+        "$grid_dimensions": [ 5, 1 ],
+        "$grid_offset": [ 0, -7 ],
+        "$screen_content": "redstone.panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers.hopper_panel"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_animations": [
+          "@common.screen_exit_animation_push_fade",
+          "@common.screen_exit_animation_pop_fade",
+          "@common.screen_entrance_animation_push_fade",
+          "@common.screen_entrance_animation_pop_fade"
+        ]
+      }
+    ]
+  },
+
+  "dispenser_screen@common.inventory_screen_common": {
+    "$redstone_screen": true,
+    "$redstone_type": "dispenser",
+    "$close_on_player_hurt|default": false,
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_label": "redstone.dispenser_label",
+        "$screen_dimensions": [ 176, 166 ],
+        "$grid_dimensions": [ 3, 3 ],
+        "$grid_offset": [ 0, 0 ],
+        "$screen_content": "redstone.panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers.dispenser_panel"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_animations": [
+          "@common.screen_exit_animation_push_fade",
+          "@common.screen_exit_animation_pop_fade",
+          "@common.screen_entrance_animation_push_fade",
+          "@common.screen_entrance_animation_pop_fade"
+        ]
+      }
+    ]
+  },
+
+  "dropper_screen@common.inventory_screen_common": {
+    "$redstone_screen": true,
+    "$redstone_type": "dropper",
+    "$close_on_player_hurt|default": false,
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_label": "redstone.dropper_label",
+        "$screen_dimensions": [ 176, 166 ],
+        "$grid_dimensions": [ 3, 3 ],
+        "$grid_offset": [ 0, 0 ],
+        "$screen_content": "redstone.panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers.dropper_panel"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_animations": [
+          "@common.screen_exit_animation_push_fade",
+          "@common.screen_exit_animation_pop_fade",
+          "@common.screen_entrance_animation_push_fade",
+          "@common.screen_entrance_animation_pop_fade"
+        ]
+      }
+    ]
+  }
+}

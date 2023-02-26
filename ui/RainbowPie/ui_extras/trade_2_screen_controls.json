@@ -1,0 +1,318 @@
+{
+  "namespace": "trade2_extra",
+
+  "unchecked_hover_control": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_unchecked_hover_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", "100% - 1px" ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_alpha",
+          "controls": [
+            {
+              "trade_red": {
+                "type": "image",
+                "size": [ "100%", "100%" ],
+                "texture": "textures/ui/button_trade_red",
+                "alpha": 0.4,
+                "layer": 2,
+                "bindings": [
+                  {
+                    "binding_type": "collection_details"
+                  },
+                  {
+                    "binding_name": "(not #trade_possible)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "unchecked_control": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", "100% - 1px" ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_unchecked_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_unchecked_default_alpha",
+          "controls": [
+            {
+              "trade_red": {
+                "type": "image",
+                "size": [ "100%", "100%" ],
+                "texture": "textures/ui/button_trade_red",
+                "alpha": 0.4,
+                "layer": 2,
+                "bindings": [
+                  {
+                    "binding_type": "collection_details"
+                  },
+                  {
+                    "binding_name": "(not #trade_possible)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "checked_hover_control": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_checked_hover_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", "100% - 1px" ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_checked_hover_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_checked_hover_alpha",
+          "controls": [
+            {
+              "trade_red": {
+                "type": "image",
+                "size": [ "100%", "100%" ],
+                "texture": "textures/ui/button_trade_red",
+                "alpha": 0.4,
+                "layer": 2,
+                "bindings": [
+                  {
+                    "binding_type": "collection_details"
+                  },
+                  {
+                    "binding_name": "(not #trade_possible)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "left_image": {
+                "type": "image",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 0 ],
+                "texture": "textures/ui/White",
+                "size": [ 2, "100%" ],
+                "layer": 3,
+                "color": "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_color",
+                "alpha": "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_alpha"
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "checked_control": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_checked_default_color",
+    "$glyph_color": [ 0, 0, 0 ],
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", "100% - 1px" ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_checked_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_alpha",
+          "controls": [
+            {
+              "trade_red": {
+                "type": "image",
+                "size": [ "100%", "100%" ],
+                "texture": "textures/ui/button_trade_red",
+                "alpha": 0.4,
+                "layer": 2,
+                "bindings": [
+                  {
+                    "binding_type": "collection_details"
+                  },
+                  {
+                    "binding_name": "(not #trade_possible)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "left_image": {
+                "type": "image",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 0 ],
+                "texture": "textures/ui/White",
+                "size": [ 2, "100%" ],
+                "layer": 3,
+                "color": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_color",
+                "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_alpha"
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "trade_all_button@common_buttons.light_text_button": {
+    "size": [ 48, 18 ],
+    "$pressed_button_name": "button.container_auto_place",
+    "$button_text": "trade.pack.tradeAll",
+    "property_bag": {
+      "#collection_name": "trade2_result_item",
+      "#collection_index": 0
+    },
+    "bindings": [
+      {
+        "binding_name": "#trade_button_enabled",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  }
+}
+  

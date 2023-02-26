@@ -1,0 +1,16 @@
+{
+  "namespace": "bed",
+
+  "in_bed_screen": {
+    "force_render_below": true
+  },
+
+  "in_bed_screen_content/wake_up_label_panel": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "background": {
+    "ignored": true
+  }
+}

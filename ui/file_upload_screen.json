@@ -1,0 +1,177 @@
+{
+  "namespace": "file_upload",
+
+  "empty_progress_bar_icon": {
+    "texture": "textures/ui/White",
+    "color": "$rainbowpie_ui_theme_progress_empty_color",
+    "alpha": "$rainbowpie_ui_theme_progress_empty_alpha"
+  },
+
+  "full_progress_bar_icon": {
+    "texture": "textures/ui/White",
+    "color": "$rainbowpie_ui_theme_progress_full_color",
+    "alpha": "$rainbowpie_ui_theme_progress_full_alpha"
+  },
+
+  "progress_bar_nub": {
+    "ignored": true
+  },
+
+  "common_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content_stack_panel/progress": {
+    "size": [ "100%", 3 ]
+  },
+
+  "warning_content_panel/message": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "exit_button@file_upload.button_common": {
+    "$pressed_button_name": "button.menu_exit",
+    "$button_text": "gui.exit"
+  },
+
+  "button_panel_2": {
+    "type": "panel",
+    "controls": [
+      {
+        "exit_button@file_upload.exit_button": {}
+      }
+    ]
+  },
+
+  "file_upload_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "blur_panel_2": {
+          "type": "panel",
+          "clips_children": true,
+          "size": [ "100%", "100%" ],
+          "offset": [ "50% - 110px", 0 ],
+          "controls": [
+            {
+              "blur_panel_1": {
+                "type": "panel",
+                "clips_children": true,
+                "size": [ "100%", "100%" ],
+                "offset": [ 0, "50% - 50px" ],
+                "controls": [
+                  {
+                    "blur_layer_1@mintui_background.background_blur": {
+                      "$background_offset": [ "-100% + 220px", "-100% + 110px" ],
+                      "$background_children_offset": [ "50% - 110px", "50% - 60px" ],
+                      "$background_layer": -2
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "background_all@rainbowpie.background_all": {
+        }
+      },
+      { "background_anim@rainbowpie.background_anim": { "ignored": "$is_pregame" } },
+      {
+        "title_text@common_art.title_text": {
+          "anims": [
+            "@progress.title_text_back_anim",
+            "@progress.title_text_back_anim_pop",
+            "@progress.title_text_anim",
+            "@progress.title_text_anim_pop"
+          ],
+          "anchor_to": "top_middle",
+          "anchor_from": "top_middle",
+          "$title_text_scale": 5.0
+        }
+      },
+      {
+        "rainbowpie_content": {
+          "type": "panel",
+          "size": [ 220, 110 ],
+          "offset": [ 0, 5 ],
+          "controls": [
+            {
+              "background": {
+                "type": "image",
+                "size": [ "100%", "100%" ],
+                "texture": "textures/ui/Black",
+                "alpha": 0.3,
+                "layer": 1,
+                "controls": [
+                  {
+                    "background_inside": {
+                      "type": "image",
+                      "size": [ "100%", "25%" ],
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "texture": "textures/ui/Black",
+                      "alpha": 0.6,
+                      "layer": 2,
+                      "controls": [
+                        {
+                          "title@file_upload.upload_title_panel": {
+                            "layer": 3,
+                            "size": [ "100% - 14px", 10 ],
+                            "offset": [ 0, 0 ],
+                            "anchor_from": "center",
+                            "anchor_to": "center"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "content@file_upload.content_panel": {
+                      "layer": 2,
+                      "size": [ "100% - 20px", "100% - 65px" ],
+                      "offset": [ 0, 43 ],
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle"
+                    }
+                  },
+                  {
+                    "buttons@file_upload.button_panel": {
+                      "layer": 2,
+                      "size": [ "50% - 2px", 22 ],
+                      "offset": [ 2, -2 ],
+                      "anchor_from": "bottom_left",
+                      "anchor_to": "bottom_left"
+                    }
+                  },
+                  {
+                    "buttons_2@file_upload.button_panel_2": {
+                      "layer": 2,
+                      "size": [ "50% - 2px", 22 ],
+                      "offset": [ -2, -2 ],
+                      "anchor_from": "bottom_right",
+                      "anchor_to": "bottom_right"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "rainbow_pie_bottom_panel@common_art.rainbow_pie_bottom_panel": {
+          "anims": [
+            "@progress.bottom_text_back_anim",
+            "@progress.bottom_text_back_anim_pop",
+            "@progress.bottom_text_anim",
+            "@progress.bottom_text_anim_pop"
+          ]
+        }
+      }
+    ]
+  }
+}

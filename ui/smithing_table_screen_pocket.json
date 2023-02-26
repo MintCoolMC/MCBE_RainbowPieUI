@@ -1,0 +1,85 @@
+{
+  "namespace": "smithing_table_pocket",
+
+  "slots_panel/arrow": {
+    "texture": "textures/ui/crafting/arrow_large",
+    "alpha": 0.4
+  },
+
+  "upgrade_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "color": [ 1.0, 1.0, 1.0 ]
+  },
+
+  "inventory_and_smithing_table_panel": {
+    "ignored": true
+  },
+
+  "header_and_content_stack_panel": {
+    "ignored": true
+  },
+
+  "smithing_table_panel/bg": {
+    "ignored": true
+  },
+
+  "smithing_table_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header_pocket@rainbowpie.inv_header_pocket": {
+              "$title_text": "tile.smithing_table.name"
+            }
+          },
+          {
+            "inventory_and_half_screen": {
+              "type": "panel",
+              "animation_reset_name": "screen_animation_reset",
+              "anims": [
+                "@common.rainbowpie_inventory_exit_animation_push",
+                "@common.rainbowpie_inventory_entrance_animation_pop",
+                "@common.inventory_animation_start",
+                "@common.inventory_animation_end2",
+                "@common.inventory_animation_end2_pop",
+                "@common.screen_exit_animation_push_fade",
+                "@common.screen_exit_animation_pop_fade",
+                "@common.screen_entrance_animation_push_fade",
+                "@common.screen_entrance_animation_pop_fade"
+              ],
+              "controls": [
+                {
+                  "inventory_half_screen": {
+                    "type": "panel",
+                    "size": [ "50%", "100% - 30px" ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+          
+                    "controls": [
+                      { "inventory_content@smithing_table_pocket.inventory_content": {} }
+                    ]
+                  }
+                },
+                {
+                  "smithing_half_screen": {
+                    "type": "panel",
+                    "size": [ "50%", "100% - 30px" ],
+                    "anchor_from": "bottom_right",
+                    "anchor_to": "bottom_right",
+          
+                    "controls": [
+                      { "smithing_table_content@smithing_table_pocket.smithing_table_contents_panel": {} }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,3015 @@
+//********************************************************
+//+*   (c) mintraspberryup@gmail.com. 2020 All rights reserved
+//********************************************************
+
+{
+  "namespace": "music_player",
+
+  "music_player": {
+    "type": "screen",
+    "force_render_below": "($is_music_player_disabled or $rainbowpie_ui_flag_newAnimTest)",
+    "cache_screen": false,
+    "controls": [
+      {
+        "$music_player_screen@$music_player_screen": {}
+      }
+    ],
+    "$music_player_screen|default": "music_player.music_player_screen",
+    "variables": [
+      {
+        "requires": "$is_music_player_disabled",
+        "$music_player_screen": "music_player.music_player_disabled_dialog"
+      },
+      {
+        "requires": "($is_music_player_v2_enabled and not $is_music_player_disabled)",
+        "$music_player_screen": "music_player.music_player_v2_screen"
+      }
+    ]
+  },
+
+  "music_player_disabled_dialog@common.base_screen": {
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ],
+    "$screen_content": "music_player.music_player_disabled_dialog_content",
+    "$screen_animations": [
+      "@music_player.exit_animation_push",
+      "@music_player.exit_animation_pop"
+    ]
+  },
+
+  "music_player_disabled_dialog_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "dialog@common_dialogs.main_panel_one_button": {
+          "$text_name": "music_player.title",
+          "$child_control": "music_player.label_panel",
+          "$button_panel": "music_player.confirm_button_dialog",
+          "$show_close_button": false,
+          "size": [ 200, 120 ]
+        }
+      }
+    ]
+  },
+
+  "confirm_button_dialog@common_buttons.light_text_button": {
+    "focus_change_down": "FOCUS_OVERRIDE_STOP",
+    "layer": 1,
+    "$pressed_button_name": "button.menu_exit",
+    "$button_text": "gui.ok"
+  },
+
+  "exit_animation_push": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": 0,
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "exit_animation_pop": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": 0,
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "label_panel@common.scrolling_panel": {
+    "$scrolling_pane_size": [ "100% - 1px", "100%" ],
+    "$scrolling_pane_offset": [ 2, 0 ],
+    "$scrolling_content": "music_player.disabled_dialog_text_panel",
+    "$scroll_size": [ 5, "100% - 4px" ],
+    "$show_background": false,
+    "layer": 1,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$always_handle_scrolling": true
+  },
+
+  "disabled_dialog_text_panel": {
+    "type": "stack_panel",
+    "size": [ "100% - 4px", "100%c" ],
+    "anchor_to": "top_middle",
+    "anchor_from": "top_middle",
+    "offset": [ 0, 0 ],
+    "controls": [
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ 0, 2 ]
+        }
+      },
+      {
+        "disabled_dialog_text": {
+          "type": "label",
+          "size": [ "100%", "default" ],
+          "anchor_to": "top_middle",
+          "anchor_from": "top_middle",
+          "layer": 2,
+          "text": "$disable_music_reason",
+          "text_tts": "$disable_music_reason",
+          "color": "$body_text_color",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "shadow": false
+        }
+      }
+    ]
+  },
+
+  "music_player_v2_screen@music_player.screen_base": {
+    "$selector_stack_panel": "music_player.selector_stack_panel",
+    "$section_content_panels": "music_player.section_content_panels"
+  },
+
+  "selector_stack_panel": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "orientation": "vertical",
+    "$default_selector_toggle_index": 1000,
+    "controls": [
+      {
+        "padding_top": {
+          "type": "panel",
+          "size": [ 0, 1 ]
+        }
+      },
+      {
+        "selector_panel": {
+          "type": "stack_panel",
+          "controls": [
+            {
+              "home_music_button@music_player.section_toggle_button": {
+                "$section_topic": "home",
+                "$toggle_group_forced_index": 1000
+              }
+            },
+            { "album_padding@music_player.padding_line": {} },
+            { "album_category@music_player.topic_category": { "$category": "album" } },
+            {
+              "album_volume_alpha_music_button@music_player.section_toggle_button": {
+                "$section_topic": "album_volume_alpha",
+                "$toggle_group_forced_index": 1001
+              }
+            },
+            {
+              "album_volume_beta_music_button@music_player.section_toggle_button": {
+                "$section_topic": "album_volume_beta",
+                "$toggle_group_forced_index": 1002
+              }
+            },
+            {
+              "album_caves_and_cliffs_music_button@music_player.section_toggle_button": {
+                "$section_topic": "album_caves_and_cliffs",
+                "$toggle_group_forced_index": 1005
+              }
+            },
+            {
+              "album_nether_update_music_button@music_player.section_toggle_button": {
+                "$section_topic": "album_nether_update",
+                "$toggle_group_forced_index": 1003
+              }
+            },
+            {
+              "album_the_wild_update_music_button@music_player.section_toggle_button": {
+                "$section_topic": "album_the_wild_update",
+                "$toggle_group_forced_index": 1004
+              }
+            },
+            { "single_padding@music_player.padding_line": {} },
+            { "single_category@music_player.topic_category": { "$category": "single" } },
+            // {
+            //   "vanilla_music_button@music_player.vanilla_music_button": {
+            //     "$section_topic": "vanilla",
+            //     "$toggle_group_forced_index": 0
+            //   }
+            // },
+            // { "x15_category@music_player.topic_category": { "$category": "rainbowpie.ui.music_player.musics" } },
+            // {
+            //   "other_music_button@music_player.other_music_button": {
+            //     "$section_topic": "other",
+            //     "$toggle_group_forced_index": 7
+            //   }
+            // },
+            // {
+            //   "survival_music_button@music_player.survival_music_button": {
+            //     "$section_topic": "survival",
+            //     "$toggle_group_forced_index": 2
+            //   }
+            // },
+            // {
+            //   "creative_music_button@music_player.creative_music_button": {
+            //     "$section_topic": "creative",
+            //     "$toggle_group_forced_index": 3
+            //   }
+            // },
+            // {
+            //   "nether_music_button@music_player.nether_music_button": {
+            //     "$section_topic": "nether",
+            //     "$toggle_group_forced_index": 4
+            //   }
+            // },
+            // {
+            //   "menu_music_button@music_player.menu_music_button": {
+            //     "$section_topic": "menu",
+            //     "$toggle_group_forced_index": 5
+            //   }
+            // },
+            {
+              "water_music_button@music_player.water_music_button": {
+                "$section_topic": "water",
+                "$toggle_group_forced_index": 6
+              }
+            },
+            {
+              "record_music_button@music_player.record_music_button": {
+                "$section_topic": "record",
+                "$toggle_group_forced_index": 1
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_bottom": {
+          "type": "panel",
+          "size": [ 0, 1 ]
+        }
+      }
+    ]
+  },
+
+  "section_content_panels": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "100%c" ],
+    "offset": [ 0, 0 ],
+    "controls": [
+      {
+        "padding_top": {
+          "type": "panel",
+          "size": [ 0, 3 ]
+        }
+      },
+      {
+        "general_tips_sections": {
+          "type": "stack_panel",
+          "controls": [
+            {
+              "home_section@music_player.home_section": {}
+            },
+            {
+              "album_volume_alpha_music_section@music_player.album_volume_alpha_music_section": {}
+            },
+            {
+              "album_volume_beta_music_section@music_player.album_volume_beta_music_section": {}
+            },
+            {
+              "album_caves_and_cliffs_music_section@music_player.album_caves_and_cliffs_music_section": {}
+            },
+            {
+              "album_nether_update_music_section@music_player.album_nether_update_music_section": {}
+            },
+            {
+              "album_the_wild_update_music_section@music_player.album_the_wild_update_music_section": {}
+            },
+            // {
+            //   "vanilla_music_section@music_player.vanilla_music_section": {
+            //     "$section_topic": "vanilla"
+            //   }
+            // },
+            // {
+            //   "other_music_section@music_player.other_music_section": {
+            //     "$section_topic": "other"
+            //   }
+            // },
+            // {
+            //   "survival_music_section@music_player.survival_music_section": {
+            //     "$section_topic": "survival"
+            //   }
+            // },
+            // {
+            //   "creative_music_section@music_player.creative_music_section": {
+            //     "$section_topic": "creative"
+            //   }
+            // },
+            // {
+            //   "nether_music_section@music_player.nether_music_section": {
+            //     "$section_topic": "nether"
+            //   }
+            // },
+            // {
+            //   "menu_music_section@music_player.menu_music_section": {
+            //     "$section_topic": "menu"
+            //   }
+            // },
+            {
+              "water_music_section@music_player.water_music_section": {
+                "$section_topic": "water"
+              }
+            },
+            {
+              "record_music_section@music_player.record_music_section": {
+                "$section_topic": "record"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_bottom": {
+          "type": "panel",
+          "size": [ 0, 3 ]
+        }
+      }
+    ]
+  },
+
+  "home_section@music_player.main_sections": {
+    "$section_topic": "home",
+    "controls": [
+      {
+        "tip_background": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [ "100%", "100%c + 2px" ],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "color": "$rainbowpie_ui_theme_text_background_color",
+          "alpha": "$rainbowpie_ui_theme_text_background_alpha",
+          "controls": [
+            {
+              "text_label": {
+                "type": "label",
+                "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                "color": "$rainbowpie_ui_theme_text_text_color",
+                "layer": 2,
+                "text": "rainbowpie.ui.music_player.text.tip1",
+                "font_type": "$global_font_type",
+                "backup_font_type": "$global_font_type_backup",
+                "size": [ "100% - 2px", "default" ],
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "variables": [
+                  {
+                    "requires": "$rainbowpie_ui_theme_text_text_light",
+                    "$text_color": [ 1.0, 1.0, 1.0 ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "albums_panel_line1_padding@music_player.padding_line": {} },
+      {
+        "albums_panel_line1": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", 100 ],
+          "controls": [
+            {
+              "album_1@music_player.album_template": {
+                "size": [ "33%", 100 ],
+                "$album_cover_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+                "$album_title": "rainbowpie.ui.music_player.section.album_volume_alpha",
+                "$album_sound_name": "minecraft.music.volume_alpha",
+                "$album_section_topic": "album_volume_alpha",
+                "$album_forced_index": 1001
+              }
+            },
+            { "padding_1@music_player.padding_line": {} },
+            {
+              "album_2@music_player.album_template": {
+                "size": [ "33%", 100 ],
+                "$album_cover_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+                "$album_title": "rainbowpie.ui.music_player.section.album_volume_beta",
+                "$album_sound_name": "minecraft.music.volume_beta",
+                "$album_section_topic": "album_volume_beta",
+                "$album_forced_index": 1002
+              }
+            },
+            { "padding_2@music_player.padding_line": {} },
+            {
+              "album_3@music_player.album_template": {
+                "size": [ "33%", 100 ],
+                "$album_cover_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+                "$album_title": "rainbowpie.ui.music_player.section.album_caves_and_cliffs",
+                "$album_sound_name": "minecraft.music.caves_and_cliffs",
+                "$album_section_topic": "album_caves_and_cliffs",
+                "$album_forced_index": 1005
+              }
+            }
+          ]
+        }
+      },
+      { "albums_panel_line2_padding@music_player.padding_line": {} },
+      {
+        "albums_panel_line2": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", 100 ],
+          "controls": [
+            {
+              "album_1@music_player.album_template": {
+                "size": [ "33%", 100 ],
+                "$album_cover_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_nether_update')",
+                "$album_title": "rainbowpie.ui.music_player.section.album_nether_update",
+                "$album_sound_name": "minecraft.music.nether_update",
+                "$album_section_topic": "album_nether_update",
+                "$album_forced_index": 1003
+              }
+            },
+            { "padding_1@music_player.padding_line": {} },
+            {
+              "album_2@music_player.album_template": {
+                "size": [ "33%", 100 ],
+                "$album_cover_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_the_wild_update')",
+                "$album_title": "rainbowpie.ui.music_player.section.album_the_wild_update",
+                "$album_sound_name": "minecraft.music.the_wild_update",
+                "$album_section_topic": "album_the_wild_update",
+                "$album_forced_index": 1004
+              }
+            },
+            { "padding_2@music_player.padding_line": {} },
+            {
+              "album_3@music_player.album_template": {
+                "size": [ "33%", 100 ],
+                "$album_cover_texture": "($rainbowpie_ui_path_uihome + '/music_player/record')",
+                "$album_title": "rainbowpie.ui.music_player.section.record",
+                "$album_sound_name": "minecraft.music.record",
+                "$album_section_topic": "record",
+                "$album_forced_index": 1
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "album_volume_alpha_music_section@music_player.main_sections": {
+    "$section_topic": "album_volume_alpha",
+    "controls": [
+      {
+        "key@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.key",
+          "$music_button_sound": "minecraft.music.volume_alpha.key",
+          "$music_button_duration": 61
+        }
+      },
+      {
+        "subwoofer_lullaby@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.subwoofer_lullaby",
+          "$music_button_sound": "minecraft.music.volume_alpha.subwoofer_lullaby",
+          "$music_button_duration": 209
+        }
+      },
+      {
+        "living_mice@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.living_mice",
+          "$music_button_sound": "minecraft.music.volume_alpha.living_mice",
+          "$music_button_duration": 188
+        }
+      },
+      {
+        "haggstorm@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.haggstorm",
+          "$music_button_sound": "minecraft.music.volume_alpha.haggstorm",
+          "$music_button_duration": 191
+        }
+      },
+      {
+        "minecraft@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.minecraft",
+          "$music_button_sound": "minecraft.music.volume_alpha.minecraft",
+          "$music_button_duration": 260
+        }
+      },
+      {
+        "oxygene@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.oxygene",
+          "$music_button_sound": "minecraft.music.volume_alpha.oxygene",
+          "$music_button_duration": 69
+        }
+      },
+      {
+        "mice_on_venus@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.mice_on_venus",
+          "$music_button_sound": "minecraft.music.volume_alpha.mice_on_venus",
+          "$music_button_duration": 280
+        }
+      },
+      {
+        "dry_hands@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.dry_hands",
+          "$music_button_sound": "minecraft.music.volume_alpha.dry_hands",
+          "$music_button_duration": 68
+        }
+      },
+      {
+        "wet_hands@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.wet_hands",
+          "$music_button_sound": "minecraft.music.volume_alpha.wet_hands",
+          "$music_button_duration": 89
+        }
+      },
+      {
+        "clark@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.clark",
+          "$music_button_sound": "minecraft.music.volume_alpha.clark",
+          "$music_button_duration": 201
+        }
+      },
+      {
+        "thirteen@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.thirteen",
+          "$music_button_sound": "minecraft.music.volume_alpha.thirteen",
+          "$music_button_duration": 178
+        }
+      },
+      {
+        "sweden@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.sweden",
+          "$music_button_sound": "minecraft.music.volume_alpha.sweden",
+          "$music_button_duration": 229
+        }
+      },
+      {
+        "cat@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.cat",
+          "$music_button_sound": "minecraft.music.volume_alpha.cat",
+          "$music_button_duration": 185
+        }
+      },
+      {
+        "danny@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.danny",
+          "$music_button_sound": "minecraft.music.volume_alpha.danny",
+          "$music_button_duration": 255
+        }
+      }
+    ]
+  },
+
+  "album_volume_beta_music_section@music_player.main_sections": {
+    "$section_topic": "album_volume_beta",
+    "controls": [
+      {
+        "alpha@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.alpha",
+          "$music_button_sound": "minecraft.music.volume_beta.alpha",
+          "$music_button_duration": 603
+        }
+      },
+      {
+        "dead_voxel@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.dead_voxel",
+          "$music_button_sound": "minecraft.music.volume_beta.dead_voxel",
+          "$music_button_duration": 303
+        }
+      },
+      {
+        "blind_spots@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.blind_spots",
+          "$music_button_sound": "minecraft.music.volume_beta.blind_spots",
+          "$music_button_duration": 332
+        }
+      },
+      {
+        "moog_city_2@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.moog_city_2",
+          "$music_button_sound": "minecraft.music.volume_beta.moog_city_2",
+          "$music_button_duration": 183
+        }
+      },
+      {
+        "concrete_halls@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.concrete_halls",
+          "$music_button_sound": "minecraft.music.volume_beta.concrete_halls",
+          "$music_button_duration": 259
+        }
+      },
+      {
+        "biome_fest@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.biome_fest",
+          "$music_button_sound": "minecraft.music.volume_beta.biome_fest",
+          "$music_button_duration": 382
+        }
+      },
+      {
+        "mutation@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.mutation",
+          "$music_button_sound": "minecraft.music.volume_beta.mutation",
+          "$music_button_duration": 194
+        }
+      },
+      {
+        "haunt_muskie@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.haunt_muskie",
+          "$music_button_sound": "minecraft.music.volume_beta.haunt_muskie",
+          "$music_button_duration": 361
+        }
+      },
+      {
+        "warmth@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.warmth",
+          "$music_button_sound": "minecraft.music.volume_beta.warmth",
+          "$music_button_duration": 239
+        }
+      },
+      {
+        "floating_trees@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.floating_trees",
+          "$music_button_sound": "minecraft.music.volume_beta.floating_trees",
+          "$music_button_duration": 244
+        }
+      },
+      {
+        "aria_math@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.aria_math",
+          "$music_button_sound": "minecraft.music.volume_beta.aria_math",
+          "$music_button_duration": 309
+        }
+      },
+      {
+        "ballad_of_the_cats@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.ballad_of_the_cats",
+          "$music_button_sound": "minecraft.music.volume_beta.ballad_of_the_cats",
+          "$music_button_duration": 280
+        }
+      },
+      {
+        "taswell@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.taswell",
+          "$music_button_sound": "minecraft.music.volume_beta.taswell",
+          "$music_button_duration": 515
+        }
+      },
+      {
+        "beginning_2@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.beginning_2",
+          "$music_button_sound": "minecraft.music.volume_beta.beginning_2",
+          "$music_button_duration": 182
+        }
+      },
+      {
+        "dreiton@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.dreiton",
+          "$music_button_sound": "minecraft.music.volume_beta.dreiton",
+          "$music_button_duration": 497
+        }
+      },
+      {
+        "the_end@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.the_end",
+          "$music_button_sound": "minecraft.music.volume_beta.the_end",
+          "$music_button_duration": 904
+        }
+      },
+      {
+        "chirp@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.chirp",
+          "$music_button_sound": "minecraft.music.volume_beta.chirp",
+          "$music_button_duration": 185
+        }
+      },
+      {
+        "wait@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.wait",
+          "$music_button_sound": "minecraft.music.volume_beta.wait",
+          "$music_button_duration": 237
+        }
+      },
+      {
+        "mellohi@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.mellohi",
+          "$music_button_sound": "minecraft.music.volume_beta.mellohi",
+          "$music_button_duration": 96
+        }
+      },
+      {
+        "stal@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.stal",
+          "$music_button_sound": "minecraft.music.volume_beta.stal",
+          "$music_button_duration": 150
+        }
+      },
+      {
+        "strad@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.strad",
+          "$music_button_sound": "minecraft.music.volume_beta.strad",
+          "$music_button_duration": 188
+        }
+      },
+      {
+        "ward@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.ward",
+          "$music_button_sound": "minecraft.music.volume_beta.ward",
+          "$music_button_duration": 251
+        }
+      },
+      {
+        "mall@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.mall",
+          "$music_button_sound": "minecraft.music.volume_beta.mall",
+          "$music_button_duration": 197
+        }
+      },
+      {
+        "blocks@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.blocks",
+          "$music_button_sound": "minecraft.music.volume_beta.blocks",
+          "$music_button_duration": 345
+        }
+      },
+      {
+        "far@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_beta')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.far",
+          "$music_button_sound": "minecraft.music.volume_beta.far",
+          "$music_button_duration": 174
+        }
+      }
+    ]
+  },
+
+  "album_caves_and_cliffs_music_section@music_player.main_sections": {
+    "$section_topic": "album_caves_and_cliffs",
+    "controls": [
+      {
+        "stand_tall@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.stand_tall",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.stand_tall",
+          "$music_button_duration": 308
+        }
+      },
+      {
+        "left_to_bloom@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.left_to_bloom",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.left_to_bloom",
+          "$music_button_duration": 342
+        }
+      },
+      {
+        "ancestry@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.ancestry",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.ancestry",
+          "$music_button_duration": 343
+        }
+      },
+      {
+        "wending@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.wending",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.wending",
+          "$music_button_duration": 314
+        }
+      },
+      {
+        "infinite_amethyst@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.infinite_amethyst",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.infinite_amethyst",
+          "$music_button_duration": 271
+        }
+      },
+      {
+        "one_more_day@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.one_more_day",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.one_more_day",
+          "$music_button_duration": 278
+        }
+      },
+      {
+        "otherside@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.otherside",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.otherside",
+          "$music_button_duration": 195
+        }
+      },
+      {
+        "floating_dream@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.floating_dream",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.floating_dream",
+          "$music_button_duration": 195
+        }
+      },
+      {
+        "comforting_memories@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.comforting_memories",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.comforting_memories",
+          "$music_button_duration": 261
+        }
+      },
+      {
+        "an_ordinary_day@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_caves_and_cliffs')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.an_ordinary_day",
+          "$music_button_sound": "minecraft.music.caves_and_cliffs.an_ordinary_day",
+          "$music_button_duration": 331
+        }
+      }
+    ]
+  },
+
+  "album_nether_update_music_section@music_player.main_sections": {
+    "$section_topic": "album_nether_update",
+    "controls": [
+      {
+        "chrysopoeia@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_nether_update')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.chrysopoeia",
+          "$music_button_sound": "minecraft.music.nether_update.chrysopoeia",
+          "$music_button_duration": 303
+        }
+      },
+      {
+        "rubedo@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_nether_update')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.rubedo",
+          "$music_button_sound": "minecraft.music.nether_update.rubedo",
+          "$music_button_duration": 312
+        }
+      },
+      {
+        "so_below@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_nether_update')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.so_below",
+          "$music_button_sound": "minecraft.music.nether_update.so_below",
+          "$music_button_duration": 318
+        }
+      },
+      {
+        "pigstep@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_nether_update')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.pigstep",
+          "$music_button_sound": "minecraft.music.nether_update.pigstep",
+          "$music_button_duration": 148
+        }
+      }
+    ]
+  },
+
+  "album_the_wild_update_music_section@music_player.main_sections": {
+    "$section_topic": "album_the_wild_update",
+    "controls": [
+      {
+        "firebugs@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_the_wild_update')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.firebugs",
+          "$music_button_sound": "minecraft.music.the_wild_update.firebugs",
+          "$music_button_duration": 312
+        }
+      },
+      {
+        "aerie@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_the_wild_update')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.aerie",
+          "$music_button_sound": "minecraft.music.the_wild_update.aerie",
+          "$music_button_duration": 296
+        }
+      },
+      {
+        "labyrinthine@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_the_wild_update')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.labyrinthine",
+          "$music_button_sound": "minecraft.music.the_wild_update.labyrinthine",
+          "$music_button_duration": 324
+        }
+      },
+      {
+        "five@music_player.music_template_button": {
+          "$music_button_texture": "($rainbowpie_ui_path_uihome + '/music_player/album_the_wild_update')",
+          "$music_button_text": "rainbowpie.ui.music_player.music.five",
+          "$music_button_sound": "minecraft.music.the_wild_update.five",
+          "$music_button_duration": 178
+        }
+      }
+    ]
+  },
+
+  "other_music_button@music_player.section_toggle_button": {
+  },
+
+  "other_music_section@music_player.main_sections": {
+    "$section_topic": "other",
+    "controls": [
+      {
+        "music_end@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.end",
+          "$music_button_sound": "music.game.end",
+          "$music_button_duration": 900.6
+        }
+      },
+      {
+        "music_endboss@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.endboss",
+          "$music_button_sound": "music.game.endboss",
+          "$music_button_duration": 325.8
+        }
+      },
+      {
+        "music_credits@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.credits",
+          "$music_button_sound": "music.game.credits",
+          "$music_button_duration": 601.2
+        }
+      }
+    ]
+  },
+
+  "water_music_button@music_player.section_toggle_button": {
+  },
+
+  "water_music_section@music_player.main_sections": {
+    "$section_topic": "water",
+    "controls": [
+      {
+        "music_game_water_1@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_4",
+          "$music_button_text": "rainbowpie.ui.music.game.water.axolotl",
+          "$music_button_sound": "minecraft.music.game.water.axolotl",
+          "$music_button_duration": 303
+        }
+      },
+      {
+        "music_game_water_2@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_2",
+          "$music_button_text": "rainbowpie.ui.music.game.water.dragon_fish",
+          "$music_button_sound": "minecraft.music.game.water.dragon_fish",
+          "$music_button_duration": 372
+        }
+      },
+      {
+        "music_game_water_3@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_3",
+          "$music_button_text": "rainbowpie.ui.music.game.water.shuniji",
+          "$music_button_sound": "minecraft.music.game.water.shuniji",
+          "$music_button_duration": 244
+        }
+      }
+    ]
+  },
+
+  "menu_music_button@music_player.section_toggle_button": {
+  },
+
+  "menu_music_section@music_player.main_sections": {
+    "$section_topic": "menu",
+    "controls": [
+      {
+        "music_game_menu_1@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.menu.menu1",
+          "$music_button_sound": "minecraft.music.menu.menu1",
+          "$music_button_duration": 188.4
+        }
+      },
+      {
+        "music_game_menu_2@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.menu.menu2",
+          "$music_button_sound": "minecraft.music.menu.menu2",
+          "$music_button_duration": 181.8
+        }
+      },
+      {
+        "music_game_menu_3@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.menu.menu3",
+          "$music_button_sound": "minecraft.music.menu.menu3",
+          "$music_button_duration": 181.2
+        }
+      },
+      {
+        "music_game_menu_4@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.menu.menu4",
+          "$music_button_sound": "minecraft.music.menu.menu4",
+          "$music_button_duration": 242.4
+        }
+      },
+      {
+        "music_game_menu_5@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st",
+          "$music_button_text": "rainbowpie.ui.music.menu.an_ordinary_day",
+          "$music_button_sound": "minecraft.music.menu.an_ordinary_day",
+          "$music_button_duration": 318.6
+        }
+      },
+      {
+        "music_game_menu_6@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st",
+          "$music_button_text": "rainbowpie.ui.music.menu.comforting_memories",
+          "$music_button_sound": "minecraft.music.menu.comforting_memories",
+          "$music_button_duration": 261.0
+        }
+      },
+      {
+        "music_game_menu_7@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st",
+          "$music_button_text": "rainbowpie.ui.music.menu.floating_dream",
+          "$music_button_sound": "minecraft.music.menu.floating_dream",
+          "$music_button_duration": 195.0
+        }
+      },
+      {
+        "music_game_menu_8@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st",
+          "$music_button_text": "rainbowpie.ui.music.menu.infinite_amethyst",
+          "$music_button_sound": "minecraft.music.menu.infinite_amethyst",
+          "$music_button_duration": 258.6
+        }
+      },
+      {
+        "music_game_menu_9@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st",
+          "$music_button_text": "rainbowpie.ui.music.menu.left_to_bloom",
+          "$music_button_sound": "minecraft.music.menu.left_to_bloom",
+          "$music_button_duration": 325.2
+        }
+      },
+      {
+        "music_game_menu_10@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st",
+          "$music_button_text": "rainbowpie.ui.music.menu.one_more_day",
+          "$music_button_sound": "minecraft.music.menu.one_more_day",
+          "$music_button_duration": 262.8
+        }
+      },
+      {
+        "music_game_menu_11@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st",
+          "$music_button_text": "rainbowpie.ui.music.menu.stand_tall",
+          "$music_button_sound": "minecraft.music.menu.stand_tall",
+          "$music_button_duration": 304.8
+        }
+      },
+      {
+        "music_game_menu_12@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st",
+          "$music_button_text": "rainbowpie.ui.music.menu.wending",
+          "$music_button_sound": "minecraft.music.menu.wending",
+          "$music_button_duration": 308.4
+        }
+      }
+    ]
+  },
+
+  "nether_music_button@music_player.section_toggle_button": {
+  },
+
+  "nether_music_section@music_player.main_sections": {
+    "$section_topic": "nether",
+    "controls": [
+      {
+        "music_game_nether_1@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.nether.nether1",
+          "$music_button_sound": "minecraft.music.game.nether.nether1",
+          "$music_button_duration": 251.4
+        }
+      },
+      {
+        "music_game_nether_2@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.nether.nether2",
+          "$music_button_sound": "minecraft.music.game.nether.nether2",
+          "$music_button_duration": 301.8
+        }
+      },
+      {
+        "music_game_nether_3@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.nether.nether3",
+          "$music_button_sound": "minecraft.music.game.nether.nether3",
+          "$music_button_duration": 215.4
+        }
+      },
+      {
+        "music_game_nether_4@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.nether.nether4",
+          "$music_button_sound": "minecraft.music.game.nether.nether4",
+          "$music_button_duration": 264.0
+        }
+      },
+      {
+        "music_game_nether_5@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st_1",
+          "$music_button_text": "rainbowpie.ui.music.game.nether.chrysopoeia",
+          "$music_button_sound": "minecraft.music.game.nether.chrysopoeia",
+          "$music_button_duration": 301.8
+        }
+      },
+      {
+        "music_game_nether_6@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st_1",
+          "$music_button_text": "rainbowpie.ui.music.game.nether.rubedo",
+          "$music_button_sound": "minecraft.music.game.nether.rubedo",
+          "$music_button_duration": 307.2
+        }
+      },
+      {
+        "music_game_nether_7@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/mc_st_1",
+          "$music_button_text": "rainbowpie.ui.music.game.nether.so_below",
+          "$music_button_sound": "minecraft.music.game.nether.so_below",
+          "$music_button_duration": 310.8
+        }
+      }
+    ]
+  },
+
+  "creative_music_button@music_player.section_toggle_button": {
+  },
+
+  "creative_music_section@music_player.main_sections": {
+    "$section_topic": "creative",
+    "controls": [
+      {
+        "music_game_creative_1@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.creative.creative1",
+          "$music_button_sound": "minecraft.music.game.creative.creative1",
+          "$music_button_duration": 373.2
+        }
+      },
+      {
+        "music_game_creative_2@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.creative.creative2",
+          "$music_button_sound": "minecraft.music.game.creative.creative2",
+          "$music_button_duration": 319.2
+        }
+      },
+      {
+        "music_game_creative_3@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.creative.creative3",
+          "$music_button_sound": "minecraft.music.game.creative.creative3",
+          "$music_button_duration": 360.6
+        }
+      },
+      {
+        "music_game_creative_4@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.creative.creative4",
+          "$music_button_sound": "minecraft.music.game.creative.creative4",
+          "$music_button_duration": 305.4
+        }
+      },
+      {
+        "music_game_creative_5@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.creative.creative5",
+          "$music_button_sound": "minecraft.music.game.creative.creative5",
+          "$music_button_duration": 490.2
+        }
+      },
+      {
+        "music_game_creative_6@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.creative.creative6",
+          "$music_button_sound": "minecraft.music.game.creative.creative6",
+          "$music_button_duration": 501.0
+        }
+      }
+    ]
+  },
+
+  "survival_music_button@music_player.section_toggle_button": {
+  },
+
+  "survival_music_section@music_player.main_sections": {
+    "$section_topic": "survival",
+    "controls": [
+      {
+        "music_game_calm1@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.calm1",
+          "$music_button_sound": "minecraft.music.game.calm1",
+          "$music_button_duration": 252.0
+        }
+      },
+      {
+        "music_game_calm2@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.calm2",
+          "$music_button_sound": "minecraft.music.game.calm2",
+          "$music_button_duration": 192.6
+        }
+      },
+      {
+        "music_game_calm3@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.calm3",
+          "$music_button_sound": "minecraft.music.game.calm3",
+          "$music_button_duration": 209.4
+        }
+      },
+      {
+        "music_game_hal1@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.hal1",
+          "$music_button_sound": "minecraft.music.game.hal1",
+          "$music_button_duration": 197.4
+        }
+      },
+      {
+        "music_game_hal2@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.hal2",
+          "$music_button_sound": "minecraft.music.game.hal2",
+          "$music_button_duration": 184.8
+        }
+      },
+      {
+        "music_game_hal3@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.hal3",
+          "$music_button_sound": "minecraft.music.game.hal3",
+          "$music_button_duration": 186.6
+        }
+      },
+      {
+        "music_game_hal4@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.hal4",
+          "$music_button_sound": "minecraft.music.game.hal4",
+          "$music_button_duration": 249.0
+        }
+      },
+      {
+        "music_game_nuance1@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.nuance1",
+          "$music_button_sound": "minecraft.music.game.nuance1",
+          "$music_button_duration": 60.6
+        }
+      },
+      {
+        "music_game_nuance2@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.nuance2",
+          "$music_button_sound": "minecraft.music.game.nuance2",
+          "$music_button_duration": 65.4
+        }
+      },
+      {
+        "music_game_piano1@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.piano1",
+          "$music_button_sound": "minecraft.music.game.piano1",
+          "$music_button_duration": 64.8
+        }
+      },
+      {
+        "music_game_piano2@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.piano2",
+          "$music_button_sound": "minecraft.music.game.piano2",
+          "$music_button_duration": 77.4
+        }
+      },
+      {
+        "music_game_piano3@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.piano3",
+          "$music_button_sound": "minecraft.music.game.piano3",
+          "$music_button_duration": 264.0
+        }
+      }
+    ]
+  },
+
+  "vanilla_music_button@music_player.section_toggle_button": {
+  },
+
+  "vanilla_music_section@music_player.main_sections": {
+    "$section_topic": "vanilla",
+    "controls": [
+      {
+        "music_tip2_panel": {
+          "ignored": "$build_platform_UWP",
+          "type": "panel",
+          "size": [ "100%", "100%c" ],
+          "controls": [
+            {
+              "tip_background": {
+                "type": "image",
+                "texture": "textures/ui/White",
+                "size": [ "100%", "100%c + 2px" ],
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "color": "$rainbowpie_ui_theme_text_background_color",
+                "alpha": "$rainbowpie_ui_theme_text_background_alpha",
+                "controls": [
+                  {
+                    "text_label": {
+                      "type": "label",
+                      "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                      "color": "$rainbowpie_ui_theme_text_text_color",
+                      "layer": 2,
+                      "text": "rainbowpie.text.music_tip2",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "size": [ "100% - 2px", "default" ],
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "variables": [
+                        {
+                          "requires": "$rainbowpie_ui_theme_text_text_light",
+                          "$text_color": [ 1.0, 1.0, 1.0 ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "music_tip_panel": {
+          "type": "panel",
+          "size": [ "100%", "100%c" ],
+          "controls": [
+            {
+              "tip_background": {
+                "type": "image",
+                "texture": "textures/ui/White",
+                "size": [ "100%", "100%c + 2px" ],
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "color": "$rainbowpie_ui_theme_text_background_color",
+                "alpha": "$rainbowpie_ui_theme_text_background_alpha",
+                "controls": [
+                  {
+                    "text_label": {
+                      "type": "label",
+                      "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                      "color": "$rainbowpie_ui_theme_text_text_color",
+                      "layer": 2,
+                      "text": "rainbowpie.text.music_tip",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "size": [ "100% - 2px", "default" ],
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "variables": [
+                        {
+                          "requires": "$rainbowpie_ui_theme_text_text_light",
+                          "$text_color": [ 1.0, 1.0, 1.0 ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_1": {
+          "type": "panel",
+          "size": [ 0, 1 ]
+        }
+      },
+      {
+        "music_other@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.random.other",
+          "$music_button_sound": "minecraft.music.random.other",
+          "$music_button_support_stop": false
+        }
+      },
+      {
+        "music_game@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover",
+          "$music_button_text": "rainbowpie.ui.music.game.survival",
+          "$music_button_sound": "music.game",
+          "$music_button_support_stop": false
+        }
+      },
+      {
+        "music_creative@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.creative",
+          "$music_button_sound": "music.game.creative",
+          "$music_button_support_stop": false
+        }
+      },
+      {
+        "music_nether@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.nether",
+          "$music_button_sound": "music.game.nether",
+          "$music_button_support_stop": false
+        }
+      },
+      {
+        "music_menu@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_1",
+          "$music_button_text": "rainbowpie.ui.music.game.menu",
+          "$music_button_sound": "music.menu",
+          "$music_button_support_stop": false
+        }
+      },
+      {
+        "music_water@music_player.music_template_button": {
+          "$music_button_texture": "textures/RainbowPie/images/Minecraft/c418_cover_4",
+          "$music_button_text": "rainbowpie.ui.music.game.water",
+          "$music_button_sound": "music.game.water",
+          "$music_button_support_stop": false
+        }
+      },
+      {
+        "music_record@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_13",
+          "$music_button_text": "rainbowpie.ui.music.random.record",
+          "$music_button_sound": "minecraft.music.record_random",
+          "$music_button_support_stop": false
+        }
+      }
+    ]
+  },
+
+  "record_music_button@music_player.section_toggle_button": {
+  },
+
+  "record_music_section@music_player.main_sections": {
+    "controls": [
+      {
+        "music_11@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_11",
+          "$music_button_text": "item.record_11.desc",
+          "$music_button_sound": "record.play.11",
+          "$music_button_duration": 71
+        }
+      },
+      {
+        "music_13@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_13",
+          "$music_button_text": "item.record_13.desc",
+          "$music_button_sound": "record.play.13",
+          "$music_button_duration": 178
+        }
+      },
+      {
+        "music_blocks@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_blocks",
+          "$music_button_text": "item.record_blocks.desc",
+          "$music_button_sound": "record.play.blocks",
+          "$music_button_duration": 345
+        }
+      },
+      {
+        "music_cat@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_cat",
+          "$music_button_text": "item.record_cat.desc",
+          "$music_button_sound": "record.play.cat",
+          "$music_button_duration": 185
+        }
+      },
+      {
+        "music_chirp@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_chirp",
+          "$music_button_text": "item.record_chirp.desc",
+          "$music_button_sound": "record.play.chirp",
+          "$music_button_duration": 185
+        }
+      },
+      {
+        "music_far@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_far",
+          "$music_button_text": "item.record_far.desc",
+          "$music_button_sound": "record.play.far",
+          "$music_button_duration": 174
+        }
+      },
+      {
+        "music_mall@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_mall",
+          "$music_button_text": "item.record_mall.desc",
+          "$music_button_sound": "record.play.mall",
+          "$music_button_duration": 197
+        }
+      },
+      {
+        "music_mellohi@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_mellohi",
+          "$music_button_text": "item.record_mellohi.desc",
+          "$music_button_sound": "record.play.mellohi",
+          "$music_button_duration": 96
+        }
+      },
+      {
+        "music_stal@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_stal",
+          "$music_button_text": "item.record_stal.desc",
+          "$music_button_sound": "record.play.stal",
+          "$music_button_duration": 150
+        }
+      },
+      {
+        "music_strad@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_strad",
+          "$music_button_text": "item.record_strad.desc",
+          "$music_button_sound": "record.play.strad",
+          "$music_button_duration": 188
+        }
+      },
+      {
+        "music_wait@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_wait",
+          "$music_button_text": "item.record_wait.desc",
+          "$music_button_sound": "record.play.wait",
+          "$music_button_duration": 237
+        }
+      },
+      {
+        "music_ward@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_ward",
+          "$music_button_text": "item.record_ward.desc",
+          "$music_button_sound": "record.play.ward",
+          "$music_button_duration": 251
+        }
+      },
+      {
+        "music_otherside@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_otherside",
+          "$music_button_text": "item.record_otherside.desc",
+          "$music_button_sound": "record.play.otherside",
+          "$music_button_duration": 195
+        }
+      },
+      {
+        "music_pigstep@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_pigstep",
+          "$music_button_text": "item.record_pigstep.desc",
+          "$music_button_sound": "record.play.pigstep_master",
+          "$music_button_duration": 178
+        }
+      },
+      {
+        "music_pigstep@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_5",
+          "$music_button_text": "item.record_5.desc",
+          "$music_button_sound": "minecraft.music.the_wild_update.five",
+          "$music_button_duration": 178
+        }
+      }
+    ]
+  },
+
+  "music_player_screen@common.base_screen": {
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ],
+    "$screen_content": "music_player.music_player_screen_content",
+    "$scroll_clips_children": "(not $scroll_met)"
+  },
+
+
+  "music_player_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "header@rainbowpie.header": {
+          "$header_title": "music_player.title"
+        }
+      },
+      {
+        "music_list@music_player.music_list_panel": {
+          "ignored": "$music_ignored"
+        }
+      },
+      {
+        "music_list_record_panel@music_player.music_list_record_panel": {
+          "ignored": "$music_ignored"
+        }
+      },
+      { "background_all@rainbowpie.background_all": {} },
+      { "background_anim@rainbowpie.background_anim": { "ignored": "$is_pregame" } }
+    ]
+  },
+
+  "music_list_record_panel": {
+    "type": "panel",
+    "anchor_from": "right_middle",
+    "anchor_to": "right_middle",
+    "size": [ "50%", "100% - 19px" ],
+    "offset": [ 0, 18.5 ],
+    "controls": [
+      { "music_list_record_scrolling_panel@music_player.music_list_record_scrolling_panel": {} }
+    ]
+  },
+
+  "music_list_record_scrolling_panel@common.scrolling_panel": {
+    "$scrolling_content": "music_player.music_record_lists",
+    "$show_background": false,
+    "$scroll_size": [ 4, "100%-4px" ],
+    "$scrolling_pane_size|default": [ "100%", "100%" ],
+    "$scrolling_pane_offset": [ 0, -9 ],
+    "$always_handle_scrolling": true
+  },
+
+
+  "music_record_lists": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "list@music_player.music_record_list": {}
+      }
+    ]
+  },
+
+  "music_record_list": {
+    "type": "stack_panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ "100%", "100%c" ],
+    "focus_container": true,
+    "use_last_focus": true,
+    "controls": [
+      {
+        "play_music_record_label": {
+          "type": "label",
+          "color": "$body_text_color",
+          "size": [ "100%", "default" ],
+          "layer": 1,
+          "text": "Rainbow-Pie.PlayMusic.Record",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup"
+        }
+      },
+      {
+        "music_random@music_player.music_template_button": {
+          "$music_button_texture": "textures/ui/refresh_light",
+          "$music_button_text": "options.SoundButton.Record_Random",
+          "$music_button_sound": "minecraft.music.record_random"
+        }
+      },
+      {
+        "music_random_no11@music_player.music_template_button": {
+          "$music_button_texture": "textures/ui/refresh_light",
+          "$music_button_text": "options.SoundButton.Record_Random_NO11",
+          "$music_button_sound": "minecraft.music.record_random_no11"
+        }
+      },
+      {
+        "padding_1": {
+          "type": "panel",
+          "size": [ 4, 4 ]
+        }
+      },
+      {
+        "music_11@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_11",
+          "$music_button_text": "item.record_11.desc",
+          "$music_button_sound": "record.play.11"
+        }
+      },
+      {
+        "music_13@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_13",
+          "$music_button_text": "item.record_13.desc",
+          "$music_button_sound": "record.play.13"
+        }
+      },
+      {
+        "music_blocks@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_blocks",
+          "$music_button_text": "item.record_blocks.desc",
+          "$music_button_sound": "record.play.blocks"
+        }
+      },
+      {
+        "music_cat@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_cat",
+          "$music_button_text": "item.record_cat.desc",
+          "$music_button_sound": "record.play.cat"
+        }
+      },
+      {
+        "music_chirp@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_chirp",
+          "$music_button_text": "item.record_chirp.desc",
+          "$music_button_sound": "record.play.chirp"
+        }
+      },
+      {
+        "music_far@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_far",
+          "$music_button_text": "item.record_far.desc",
+          "$music_button_sound": "record.play.far"
+        }
+      },
+      {
+        "music_mall@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_mall",
+          "$music_button_text": "item.record_mall.desc",
+          "$music_button_sound": "record.play.mall"
+        }
+      },
+      {
+        "music_mellohi@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_mellohi",
+          "$music_button_text": "item.record_mellohi.desc",
+          "$music_button_sound": "record.play.mellohi"
+        }
+      },
+      {
+        "music_stal@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_stal",
+          "$music_button_text": "item.record_stal.desc",
+          "$music_button_sound": "record.play.stal"
+        }
+      },
+      {
+        "music_strad@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_strad",
+          "$music_button_text": "item.record_strad.desc",
+          "$music_button_sound": "record.play.strad"
+        }
+      },
+      {
+        "music_wait@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_wait",
+          "$music_button_text": "item.record_wait.desc",
+          "$music_button_sound": "record.play.wait"
+        }
+      },
+      {
+        "music_ward@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_ward",
+          "$music_button_text": "item.record_ward.desc",
+          "$music_button_sound": "record.play.ward"
+        }
+      },
+      {
+        "music_pigstep@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/record_pigstep",
+          "$music_button_text": "item.record_pigstep.desc",
+          "$music_button_sound": "record.play.pigstep_master"
+        }
+      }
+    ]
+  },
+
+  "custom_music_content": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "music_custom_1@music_player.music_template_button": {
+          "$music_button_texture": "textures/ui/sound_glyph",
+          "$music_button_text": "Default Custom Music",
+          "$music_button_sound": "none"
+        }
+      }
+    ]
+  },
+
+  "music_list_panel": {
+    "type": "panel",
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "size": [ "50%", "100% - 19px" ],
+    "offset": [ 0, 18.5 ],
+    "controls": [
+      { "music_list_scrolling_panel@music_player.music_list_scrolling_panel": {} }
+    ]
+  },
+
+  "music_button_icon": {
+    "layer": 1,
+    "type": "image",
+    "texture": "$music_button_texture",
+    "size": [ 23, 23 ]
+  },
+
+  "music_button_content": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [ "100% - 2px", "100% - 2px" ],
+    "controls": [
+      {
+        "panel": {
+          "type": "panel",
+          "controls": [
+            {
+              "icon_panel": {
+                "type": "panel",
+                "size": [ "100%c", "100%" ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "controls": [
+                  {
+                    "icon@music_player.music_button_icon": {
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "label_panel": {
+                "type": "panel",
+                "size": [ "100%c", "100%" ],
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "controls": [
+                  {
+                    "label": {
+                      "type": "label",
+                      "text": "$music_button_text",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "color": "$text_color"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "music_progress_bar": {
+    "anim_type": "offset",
+    "duration": "($music_button_duration)",
+    "from": [ "-100%", 0 ],
+    "to": [ 0, 0 ],
+    "next": "@music_player.music_progress_bar_wait"
+  },
+
+  "music_progress_bar_wait": {
+    "anim_type": "wait",
+    "duration": 0,
+    "next": "@music_player.music_progress_bar"
+  },
+
+  "music_progress_bar_panel": {
+    "anim_type": "size",
+    "duration": 0,
+    "from": [ 0, "100%" ],
+    "to": [ "100%", "100%" ],
+    "next": "@music_player.music_progress_bar_panel_wait"
+  },
+
+  "music_progress_bar_panel_wait": {
+    "anim_type": "wait",
+    "duration": "($music_button_duration)",
+    "next": "@music_player.music_progress_bar_panel_reset",
+    "reset_event": "$music_button_sound"
+  },
+
+  "music_progress_bar_panel_reset": {
+    "anim_type": "size",
+    "duration": 0,
+    "from": [ 0, "100%" ],
+    "to": [ 0, "100%" ],
+    "end_event": "$music_button_sound"
+  },
+
+  "music_progress_bar_panel_panel": {
+    "anim_type": "size",
+    "duration": 0,
+    "from": [ 0, "100%" ],
+    "to": [ "100%", "100%" ],
+    "play_event": "$music_button_sound"
+  },
+
+  "album_template": {
+    "type": "panel",
+    "size": [ 70, 116 ],
+    "layer": 2,
+    "$album_cover_texture|default": "($rainbowpie_ui_path_uihome + '/music_player/album_volume_alpha')",
+    "$album_title|default": "Album Template",
+    "$album_sound_name|default": "random.click",
+    "$album_section_topic|default": "home",
+    "$album_forced_index|default": 1000,
+    "controls": [
+      {
+        "mouse_background": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [ "100%", "100%" ],
+          "color": "$rainbowpie_ui_theme_text_background_color",
+          "alpha": "$rainbowpie_ui_theme_text_background_alpha",
+          "layer": 1,
+          "controls": [
+            {
+              "cover_image": {
+                "type": "image",
+                "fill": true,
+                "texture": "$album_cover_texture",
+                "size": [ "100%", "100% - 40px" ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "layer": 4
+              }
+            },
+            {
+              "music_title": {
+                "type": "label",
+                "size": [ "100% - 4px", 14 ],
+                "offset": [ 0, "100% - 40px" ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "text_alignment": "left",
+                "text": "$album_title",
+                "font_scale_factor": 1.4,
+                "font_type": "$global_font_type",
+                "backup_font_type": "$global_font_type_backup",
+                "layer": 12,
+                "color": "$rainbowpie_ui_theme_text_text_color"
+              }
+            },
+            {
+              "play_button@common_buttons.light_content_button": {
+                "layer": 20,
+                "size": [ 26, 26 ],
+                "offset": [ 0, 0 ],
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "$pressed_button_name": "rainbowpie.music_empty",
+                "$button_content": "music_player.play_button_icon",
+                "sound_name": "$album_sound_name",
+                "sound_volume": 1.0,
+                "sound_pitch": 1
+              }
+            },
+            // {
+            //   "stop_button@common_buttons.light_content_button": {
+            //     "layer": 20,
+            //     "size": [ 26, 26 ],
+            //     "offset": [ 26, 0 ],
+            //     "anchor_from": "bottom_left",
+            //     "anchor_to": "bottom_left",
+            //     "$pressed_button_name": "rainbowpie.music_empty",
+            //     "$button_content": "music_player.stop_button_icon",
+            //     "sound_name": "$album_sound_name",
+            //     "sound_volume": 0.0000000000001,
+            //     "sound_pitch": 0
+            //   }
+            // },
+            {
+              "section_toggle_button@common_toggles.light_ui_toggle": {
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [ "100% - 26px", 26 ],
+                "offset": [ 26, 0 ],
+
+                "$button_type_panel": "common_buttons.new_ui_binding_button_label",
+                "$button_text_binding_type": "none",
+                "$button_binding_condition": "none",
+                "$button_text_grid_collection_name": "none",
+                "$button_text": "rainbowpie.ui.music_player.seeAll",
+                "$button_offset": [ 0, 0 ],
+
+                "$radio_toggle_group": true,
+                "$toggle_name": "navigation_tab",
+                "$toggle_group_default_selected": "$default_selector_toggle_index",
+      
+                "$toggle_group_forced_index": "$album_forced_index",
+      
+                "$toggle_view_binding_name": "($album_section_topic + '_album_button_toggle')"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "music_template_button": {
+    "type": "panel",
+    "clips_children": true,
+    "size": [ "100%", 30 ],
+    "layer": 1,
+    "$music_button_sound|default": "null",
+    "$music_pitch|default": 1.0,
+    "$music_button_text|default": "null",
+    "$music_button_texture|default": "",
+    "$music_button_duration|default": 0,
+    "$music_button_support_stop|default": true,
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [ "100%", 28 ],
+          "color": "$rainbowpie_ui_theme_text_background_color",
+          "alpha": "$rainbowpie_ui_theme_text_background_alpha",
+          "layer": 1,
+          "controls": [
+            {
+              "music_progress_bar_panel_panel": {
+                "type": "panel",
+                "size": [ 0, "100%" ],
+                "animation_reset_name": "($music_button_sound + '_stop')",
+                "anims": [
+                  "@music_player.music_progress_bar_panel_panel"
+                ],
+                "controls": [
+                  {
+                    "music_progress_bar_panel": {
+                      "type": "panel",
+                      "size": [ 0, "100%" ],
+                      "animation_reset_name": "$music_button_sound",
+                      "anims": [
+                        "@music_player.music_progress_bar_panel"
+                      ],
+                      "controls": [
+                        {
+                          "music_progress_bar": {
+                            "type": "image",
+                            "ignored": "($music_button_duration = 0)",
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "size": [ "100%", "100%" ],
+                            "offset": [ "-100%", 0 ],
+                            "texture": "textures/ui/White",
+                            "color": "$rainbowpie_ui_theme_button_background_hover_color",
+                            "alpha": "$rainbowpie_ui_theme_button_background_hover_alpha",
+                            "layer": 2,
+                            "animation_reset_name": "$music_button_sound",
+                            "anims": [
+                              "@music_player.music_progress_bar_wait"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "music_button_icon": {
+                "layer": 12,
+                "type": "image",
+                "texture": "$music_button_texture",
+                "size": [ 24, 24 ],
+                "offset": [ 2, 0 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle"
+              }
+            },
+            {
+              "play_button@common_buttons.light_content_button": {
+                "layer": 12,
+                "size": [ 26, 26 ],
+                "offset": [ 28, 0 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$pressed_button_name": "$music_button_sound",
+                "$button_content": "music_player.play_button_icon",
+                "sound_name": "$music_button_sound",
+                "sound_volume": 1.0,
+                "sound_pitch": "$music_pitch"
+              }
+            },
+            {
+              "stop_button@common_buttons.light_content_button": {
+                "visible": "$music_button_support_stop",
+                "layer": 12,
+                "size": [ 26, 26 ],
+                "offset": [ 54, 0 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$pressed_button_name": "($music_button_sound + '_stop')",
+                "$button_content": "music_player.stop_button_icon",
+                "sound_name": "$music_button_sound",
+                "sound_volume": 0.0000000000001,
+                "sound_pitch": 0.0
+              }
+            },
+            {
+              "music_title": {
+                "type": "label",
+                "size": [ "100% - 58px", 14 ],
+                "$text_offset|default": [ 56, 0 ],
+                "offset": "$text_offset",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "font_scale_factor": 1.4,
+                "text_alignment": "left",
+                "text": "$music_button_text",
+                "font_type": "$global_font_type",
+                "backup_font_type": "$global_font_type_backup",
+                "layer": 12,
+                "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                "color": "$rainbowpie_ui_theme_text_text_color",
+                "variables": [
+                  {
+                    "requires": "$music_button_support_stop",
+                    "$text_offset": [ 82, 0 ]
+                  },
+                  {
+                    "requires": "$rainbowpie_ui_theme_text_text_light",
+                    "$text_color": [ 1.0, 1.0, 1.0 ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "play_button_icon": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "image": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/store_play_button"
+        }
+      }
+    ]
+  },
+
+  "stop_button_icon": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "image": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [ "100% - 8px", "100% - 8px" ],
+          "texture": "textures/ui/White"
+        }
+      }
+    ]
+  },
+
+  "music_template_button_0@common_buttons.light_content_button": {
+    "$music_button_sound|default": "null",
+    "$music_pitch|default": 1.0,
+    "$music_button_text|default": "null",
+    "$music_button_texture|default": "",
+    "size": [ "100%", 30 ],
+    "$pressed_button_name": "null",
+    "$button_content": "music_player.music_button_content",
+    "sound_name": "$music_button_sound",
+    "sound_volume": 1.0,
+    "sound_pitch": "$music_pitch"
+  },
+
+  "music_list_scrolling_panel@common.scrolling_panel": {
+    "$scrolling_content": "music_player.music_lists",
+    "$show_background": false,
+    "$scroll_size": [ 4, "100%-4px" ],
+    "$scrolling_pane_size|default": [ "100%", "100%" ],
+    "$scrolling_pane_offset": [ 0, -9 ],
+    "$always_handle_scrolling": true
+  },
+
+
+  "music_lists": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "list@music_player.music_list": {}
+      }
+    ]
+  },
+
+  "music_list": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "focus_container": true,
+    "use_last_focus": true,
+    "controls": [
+      {
+        "top_padding": {
+          "ignored": "($win10_edition or $is_netease)",
+          "type": "panel",
+          "size": [ 2, 2 ]
+        }
+      },
+      {
+        "tip_panel": {
+          "ignored": "($win10_edition or $is_netease)",
+          "type": "panel",
+          "size": [ "100%", "100%c + 4px" ],
+          "controls": [
+            {
+              "tip_panel_section": {
+                "type": "image",
+                "size": [ "100% - 4px", "100%c + 2px" ],
+                "texture": "textures/ui/Black",
+                "alpha": 0.4,
+                "controls": [
+                  {
+                    "tip_contents": {
+                      "type": "stack_panel",
+                      "size": [ "100% - 4px", "100%c" ],
+                      "controls": [
+                        {
+                          "tip_label": {
+                            "type": "label",
+                            "text": "pack.music.tip",
+                            "size": [ "100%", "default" ],
+                            "font_type": "$global_font_type",
+                            "backup_font_type": "$global_font_type_backup",
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "play_music_vanilla_label": {
+          "type": "label",
+          "color": "$body_text_color",
+          "size": [ "100%", "default" ],
+          "layer": 1,
+          "text": "Rainbow-Pie.PlayMusic.Vanilla",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup"
+        }
+      },
+      {
+        "music_game@music_player.music_template_button": {
+          "$music_button_texture": "textures/ui/heart_new",
+          "$music_button_text": "options.SoundButton.game",
+          "$music_button_sound": "music.game"
+        }
+      },
+      {
+        "music_creative@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/diamond_pickaxe",
+          "$music_button_text": "options.SoundButton.game.creative",
+          "$music_button_sound": "music.game.creative"
+        }
+      },
+      {
+        "music_end@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/ender_eye",
+          "$music_button_text": "options.SoundButton.game.end",
+          "$music_button_sound": "music.game.end"
+        }
+      },
+      {
+        "music_endboss@music_player.music_template_button": {
+          "$music_button_texture": "textures/items/dragon_fireball",
+          "$music_button_text": "options.SoundButton.game.endboss",
+          "$music_button_sound": "music.game.endboss"
+        }
+      },
+      {
+        "music_nether@music_player.music_template_button": {
+          "$music_button_texture": "textures/ui/portalBg",
+          "$music_button_text": "options.SoundButton.game.nether",
+          "$music_button_sound": "music.game.nether"
+        }
+      },
+      {
+        "music_credits@music_player.music_template_button": {
+          "$music_button_texture": "textures/blocks/grass_side_carried",
+          "$music_button_text": "options.SoundButton.game.credits",
+          "$music_button_sound": "music.game.credits"
+        }
+      },
+      {
+        "music_menu@music_player.music_template_button": {
+          "$music_button_texture": "textures/blocks/grass_side_carried",
+          "$music_button_text": "options.SoundButton.menu",
+          "$music_button_sound": "music.menu"
+        }
+      },
+      {
+        "music_water@music_player.music_template_button": {
+          "$music_button_texture": "textures/ui/icon_water_bucket",
+          "$music_button_text": "options.SoundButton.water",
+          "$music_button_sound": "music.game.water"
+        }
+      },
+      {
+        "play_music_custom_label": {
+          "ignored": "(not $has_custom_music)",
+          "type": "label",
+          "color": "$body_text_color",
+          "size": [ "100%", "default" ],
+          "layer": 1,
+          "text": "$music_custom_addon_text",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup"
+        }
+      },
+      {
+        "custom_music_content@music_player.custom_music_content": {
+          "ignored": "(not $has_custom_music)"
+        }
+      }
+    ]
+  },
+
+  // -----------------
+
+  "dynamic_dialog_screen@common.base_screen": {
+    "type": "screen",
+    "size": [ "100%", "100%" ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_tab_left",
+        "to_button_id": "button.menu_tab_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_tab_right",
+        "to_button_id": "button.menu_tab_right",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ],
+    "$screen_bg_content": "settings_common.background_black",
+    "$screen_content": "music_player.music_player_content",
+    "variables": [
+      {
+        "requires": "$rainbowpie_ui_flag_newAnimTest",
+        "$screen_content": "music_player.anim_test"
+      }
+    ]
+  },
+
+
+  "anim_test": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "anim_panel": {
+          "type": "panel",
+          "size": [ "100%", "100%" ],
+          "offset": [ 0, 0 ],
+          "animation_reset_name": "screen_animation_reset",
+          "anims": [
+            "@music_player.test_a1",
+            "@music_player.test_a1_p",
+            "@music_player.test_a2",
+            "@music_player.test_a2_p",
+            "@music_player.test_a3",
+            "@music_player.test_a3_p",
+            "@music_player.test_a4",
+            "@music_player.test_a4_p"
+          ],
+          "controls": [
+            { "music_player_screen_content@music_player.music_player_content": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "test_a1": {
+    "anim_type": "offset",
+    "easing": "out_quint",
+    "duration": 1.8,
+    "to": [ 0, 0 ],
+    "from": [ "-100% + 310px", 20 ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "test_a1_p": {
+    "anim_type": "offset",
+    "easing": "out_quint",
+    "duration": 1.8,
+    "to": [ 0, 0 ],
+    "from": [ "-100% + 310px", 20 ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "test_a2": {
+    "anim_type": "size",
+    "easing": "out_quint",
+    "duration": 1.8,
+    "to": [ "100%", "100%" ],
+    "from": [ 132, 20 ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "test_a2_p": {
+    "anim_type": "size",
+    "easing": "out_quint",
+    "duration": 1.8,
+    "to": [ "100%", "100%" ],
+    "from": [ 132, 20 ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "test_a3": {
+    "anim_type": "offset",
+    "easing": "out_quint",
+    "duration": 1.8,
+    "from": [ 0, 0 ],
+    "to": [ "-100% + 310px", 20 ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "test_a3_p": {
+    "anim_type": "offset",
+    "easing": "out_quint",
+    "duration": 1.8,
+    "from": [ 0, 0 ],
+    "to": [ "-100% + 310px", 20 ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "test_a4": {
+    "anim_type": "size",
+    "easing": "out_quint",
+    "duration": 1.8,
+    "from": [ "100%", "100%" ],
+    "to": [ 132, 20 ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "test_a4_p": {
+    "anim_type": "size",
+    "easing": "out_quint",
+    "duration": 1.8,
+    "from": [ "100%", "100%" ],
+    "to": [ 132, 20 ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "music_player_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "header@rainbowpie.header": {
+          "$header_title": "music_player.title"
+        }
+      },
+      { "background_all@rainbowpie.background_all": {} },
+      { "background_anim@rainbowpie.background_anim": { "ignored": "$is_pregame" } },
+      {
+        "container": {
+          "type": "panel",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            { "$dialog_content@$dialog_content": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "toggle_button_control": {
+    "type": "panel",
+    "$toggle_text_color|default": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+    "layer": 2,
+    "controls": [
+      {
+        "tab_button_text": {
+          "type": "label",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [ "100% - 10px", "default" ],
+          "max_size": [ "100% - 14px", "100% - 4px" ],
+          "offset": [ 10, 0 ],
+          "text": "('rainbowpie.ui.music_player.section.' + $section_topic)",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "layer": 3,
+          "color": "$toggle_text_color",
+          "alpha": 1
+        }
+      }
+    ]
+  },
+
+  "unchecked_noleft": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_unchecked_hover_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_alpha",
+          "controls": [
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "unchecked_noh": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_unchecked_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_unchecked_default_alpha",
+          "controls": [
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "checked_left_blue_bar_hover": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_checked_hover_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_checked_hover_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_checked_hover_alpha",
+          "controls": [
+            {
+              "left_image": {
+                "type": "image",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 0 ],
+                "texture": "textures/ui/White",
+                "size": [ 2, "100%" ],
+                "layer": 3,
+                "color": "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_color",
+                "alpha": "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_alpha"
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "checked_left_blue_bar": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_checked_default_color",
+    "$glyph_color": [ 0, 0, 0 ],
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_checked_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_alpha",
+          "controls": [
+            {
+              "left_image": {
+                "type": "image",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 0 ],
+                "texture": "textures/ui/White",
+                "size": [ 2, "100%" ],
+                "layer": 3,
+                "color": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_color",
+                "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_alpha"
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "main_sections": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      // {
+      //   "binding_type": "view",
+      //   "source_control_name": "($section_topic + '_button_toggle')",
+      //   "source_property_name": "#toggle_state",
+      //   "target_property_name": "#visible"
+      // }
+      {
+        "binding_type": "view",
+        "source_control_name": "($section_topic + '_button_toggle')",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#normal_toggle_state"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "($section_topic + '_album_button_toggle')",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#album_toggle_state"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#normal_toggle_state or #album_toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "section_toggle_button": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "25px" ],
+    "controls": [
+      {
+        "section_toggle_button@common_toggles.light_ui_toggle": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "100%", "25px" ],
+
+          "$button_type_panel": "music_player.toggle_button_control",
+          "$checked_control": "music_player.checked_left_blue_bar",
+          "$checked_hover_control": "music_player.checked_left_blue_bar_hover",
+          "$unchecked_hover_control": "music_player.unchecked_noleft",
+          "$unchecked_control": "music_player.unchecked_noh",
+          "$radio_toggle_group": true,
+          "$toggle_name": "navigation_tab",
+          "$toggle_group_default_selected": "$default_selector_toggle_index",
+
+          "$toggle_tab_focus_binding_type": "global",
+          "$toggle_tab_focus_binding_name": "#navigation_tab_focus_precedence",
+          "$toggle_on_hover_binding_type": "global",
+          "$toggle_on_hover_binding_name": "#toggle_on_hover",
+
+          "$toggle_view_binding_name": "($section_topic + '_button_toggle')"
+        }
+      }
+    ]
+  },
+
+  "padding_line": {
+    "type": "panel",
+    "size": [ 1, 1 ]
+  },
+
+  "topic_category": {
+    "type": "panel",
+    "size": [ "100%", "12px" ],
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "size": [ "100% - 2px", "12px" ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "texture": "textures/ui/White",
+          "color": "$rainbowpie_ui_theme_toggle_background_default_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_default_default_alpha",
+          "controls": [
+            {
+              "category_text": {
+                "type": "label",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [ "100% - 2px", "default" ],
+                "text": "('rainbowpie.ui.music_player.category.' + $category)",
+                "font_type": "$global_font_type",
+                "backup_font_type": "$global_font_type_backup",
+                "color": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+                "layer": 2
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "dialog_content": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "blur_layer@mintui_background.background_blur": {
+          "$background_offset": [ "-70%", 19 ],
+          "$background_children_offset": [ "70%", -19 ],
+          "$background_layer": -3
+        }
+      },
+      {
+        "mask_layer@mintui_background.background_mask": {
+          "$background_offset": [ "-70%", 19 ],
+          "$background_children_offset": [ "70%", -19 ],
+          "$background_layer": -3
+        }
+      },
+      { "selector_area@music_player.selector_area": {} },
+      { "content_area@music_player.content_area_wrapper": {} }
+    ]
+  },
+
+  "content_area_wrapper": {
+    "type": "panel",
+    "offset": [ "2px", "19px" ],
+    "size": [ "70% - 2px", "100% - 19px" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "layer": 1,
+    "controls": [
+      { "content_area@music_player.content_area": {} }
+    ]
+  },
+
+  // right side
+  "content_area": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "controls": [
+      {
+        "control": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "controls": [
+            {
+              "scrolling_panel@common.scrolling_panel": {
+                "size": [ "100%", "fill" ],
+                "$scrolling_pane_size": [ "100% - 6px", "100%" ],
+                "$scrolling_content": "$section_content_panels",
+                "$show_background": false,
+                "$scroll_size": [ "5px", "100% - 4px" ],
+                "$scroll_bar_left_padding_size": [ 3, 0 ],
+                "$scroll_bar_right_padding_size": [ 0, 0 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "scrollable_selector_area_content": {
+    "type": "panel",
+    "offset": [ 0, 0 ],
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      { "$selector_stack_panel@$selector_stack_panel": {} }
+    ]
+  },
+
+  // left side
+  "selector_area": {
+    "type": "panel",
+    "offset": [ 0, "19px" ],
+    "size": [ "30%", "100% - 19px" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "layer": 3,
+    "focus_container": true,
+    "use_last_focus": true,
+    "controls": [
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "$scrolling_content": "music_player.scrollable_selector_area_content",
+          "$show_background": false,
+          "$scroll_size": [ "5px", "100% - 4px" ],
+          "$scroll_bar_left_padding_size": [ 0, 0 ],
+          "$scroll_bar_right_padding_size": [ 1, 0 ]
+        }
+      }
+    ]
+  },
+
+  "screen_base@music_player.dynamic_dialog_screen": {
+    "$dialog_content": "music_player.dialog_content"
+  }
+}

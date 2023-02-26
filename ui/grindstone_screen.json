@@ -1,0 +1,98 @@
+/********************************************************
++*   (c) Mojang. All rights reserved                       *
++*   (c) Microsoft. All rights reserved.                   *
++*********************************************************/
+{
+  "namespace": "grindstone",
+
+  "arrow_icon": {
+    "texture": "textures/ui/crafting/arrow_large",
+    "alpha": 0.4
+  },
+
+  "top_half_panel/title_label": {
+    "offset": [ 8, -3 ]
+  },
+
+  "title_label": {
+    "type": "label",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "text": "",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "color": "$title_text_color"
+  },
+
+  "grindstone_panel": {
+    "type": "panel",
+    "controls": [
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 8
+        }
+      },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      {
+        "title_text@common_art.title_text": {
+          "ignored": "$hide_inventory_watermark",
+          "offset": [ 0, 94 ],
+          "anchor_to": "buttom_middle",
+          "anchor_from": "buttom_middle",
+          "$title_text_scale": 2.0
+        }
+      },
+      {
+        "root_panel@common.root_panel": {
+          "layer": 1,
+          "controls": [
+            {
+              "inv_header@rainbowpie.inv_header": {
+                "offset": [ 0, -1 ],
+                "$title_icon_ignored": false,
+                "$title_text": "container.repairAndDisenchant"
+              }
+            },
+            {
+              "grindstone_screen_inventory": {
+                "type": "panel",
+                "layer": 2,
+                "controls": [
+                  { "top_half_panel@grindstone.top_half_panel": {} },
+                  { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
+                  { "hotbar_grid@common.hotbar_grid_template": {} },
+                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                ]
+              }
+            },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "grindstone_screen@common.inventory_screen_common": {
+    "$close_on_player_hurt|default": false,
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "grindstone.grindstone_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "grindstone_pocket.grindstone_panel",
+        "$screen_animations": [
+          "@common.screen_exit_animation_push_fade",
+          "@common.screen_exit_animation_pop_fade",
+          "@common.screen_entrance_animation_push_fade",
+          "@common.screen_entrance_animation_pop_fade"
+        ]
+      }
+    ]
+  }
+}

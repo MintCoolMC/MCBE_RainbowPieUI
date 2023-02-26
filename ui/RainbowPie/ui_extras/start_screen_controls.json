@@ -1,0 +1,192 @@
+{
+  "namespace": "start_extra",
+
+  "invite_notification_icon@start.invite_notification_icon": {
+    "controls": [
+      {
+        "dot_panel": {
+          "type": "image",
+          "size": [ 8, 8 ],
+          "offset": [ -1, -1 ],
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "texture": "textures/ui/White",
+          "color": [ 1.0, 0.0, 0.0 ],
+          "layer": 1,
+          "controls": [
+            {
+              "notification_button_text": {
+                "type": "label",
+                "color": [ 1.0, 1.0, 1.0 ],
+                "shadow": false,
+                "font_type": "$global_font_type",
+                "backup_font_type": "$global_font_type_backup",
+                "text": "#realms_notification_count",
+                "bindings": [
+                  {
+                    "binding_name": "#realms_notification_count"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#realms_notification_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "xbox_live_panel": {
+    "type": "panel",
+    "size": [ 132, 40 ],
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", "100% - 2px" ],
+          "alpha": "$rainbowpie_ui_theme_text_background_alpha",
+          "color": "$rainbowpie_ui_theme_text_background_color",
+          "layer": 1,
+          "controls": [
+            {
+              "gamerpic": {
+                "type": "image",
+                "size": [ 34, 34 ],
+                "offset": [ 2, 0 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "layer": 1,
+                "bindings": [
+                  {
+                    "binding_name": "#gamerpic_texture_path",
+                    "binding_name_override": "#texture"
+                  },
+                  {
+                    "binding_name": "#gamerpic_texture_location_type",
+                    "binding_name_override": "#texture_file_system"
+                  }
+                ]
+              }
+            },
+            {
+              "gamertag_label": {
+                "type": "label",
+                "offset": [ 38, 3 ],
+                "size": [ "100% - 38px", 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                "color": "$rainbowpie_ui_theme_text_text_color",
+                "layer": 1,
+                "text": "#gamertag_label",
+                "font_scale_factor": 1.2,
+                "font_type": "$global_font_type",
+                "backup_font_type": "$global_font_type_backup",
+                "variables": [
+                  {
+                    "requires": "$rainbowpie_ui_theme_text_text_light",
+                    "$text_color": [ 1.0, 1.0, 1.0 ]
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#gamertag_label"
+                  },
+                  {
+                    "binding_name": "(not #sign_in_visible)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "gamertag_label_nologon": {
+                "type": "label",
+                "offset": [ 38, 3 ],
+                "size": [ "100% - 38px", 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$text_color|default": [ 0.0, 0.0, 0.0 ],
+                "color": "$rainbowpie_ui_theme_text_text_color",
+                "layer": 1,
+                "text": "#playername",
+                "font_scale_factor": 1.2,
+                "font_type": "$global_font_type",
+                "backup_font_type": "$global_font_type_backup",
+                "variables": [
+                  {
+                    "requires": "$rainbowpie_ui_theme_text_text_light",
+                    "$text_color": [ 1.0, 1.0, 1.0 ]
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#playername"
+                  },
+                  {
+                    "binding_name": "#sign_in_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "xbl_signin_button@start.xbl_signin_button_list": {
+                "focus_change_right": "FOCUS_OVERRIDE_STOP",
+                "focus_change_left": "FOCUS_OVERRIDE_STOP",
+                "size": [ "100% - 38px", 20 ],
+                "offset": [ -1, -1 ],
+                "anchor_from": "bottom_right",
+                "anchor_to": "bottom_right",
+                "bindings": [
+                  {
+                    "binding_name": "#sign_in_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "achievements_button@start._achievements_button": {
+                "focus_change_left": "FOCUS_OVERRIDE_STOP",
+                "size": [ "100% - 58px", 20 ],
+                "offset": [ -21, -1 ],
+                "anchor_from": "bottom_right",
+                "anchor_to": "bottom_right",
+                "bindings": [
+                  {
+                    "binding_name": "(not #sign_in_visible)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "invite_notification_button@common_buttons.light_content_button": {
+                "$pressed_button_name": "button.menu_invite_notification",
+                "$button_content": "start_extra.invite_notification_icon",
+                "focus_change_right": "FOCUS_OVERRIDE_STOP",
+                "size": [ 20, 20 ],
+                "offset": [ -1, -1 ],
+                "anchor_from": "bottom_right",
+                "anchor_to": "bottom_right",
+                "bindings": [
+                  {
+                    "binding_name": "(not #sign_in_visible)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

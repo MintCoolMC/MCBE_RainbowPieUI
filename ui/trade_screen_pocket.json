@@ -1,0 +1,84 @@
+{
+  "namespace": "trade_pocket",
+
+  "result_item_panel/output_item_name": {
+    "shadow": true,
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "trade_panel/inventory": {
+    "ignored": true
+  },
+
+  "trade_panel/merchant_half_screen": {
+    "ignored": true
+  },
+
+  "trade_panel/header": {
+    "ignored": true
+  },
+
+  "trade_panel/bg": {
+    "ignored": true
+  },
+
+  "trade_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header_pocket@rainbowpie.inv_header_pocket": {
+              "$title_text": "$villager_name"
+            }
+          },
+          {
+            "inventory_and_half_screen": {
+              "type": "panel",
+              "animation_reset_name": "screen_animation_reset",
+              "anims": [
+                "@common.rainbowpie_inventory_exit_animation_push",
+                "@common.rainbowpie_inventory_entrance_animation_pop",
+                "@common.inventory_animation_start",
+                "@common.inventory_animation_end2",
+                "@common.inventory_animation_end2_pop",
+                "@common.screen_exit_animation_push_fade",
+                "@common.screen_exit_animation_pop_fade",
+                "@common.screen_entrance_animation_push_fade",
+                "@common.screen_entrance_animation_pop_fade"
+              ],
+              "controls": [
+                {
+                  "inventory_half_screen": {
+                    "type": "panel",
+                    "size": [ "100%", "100% - 30px" ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+          
+                    "controls": [
+                      { "inventory_half_screen@trade_pocket.inventory_half_screen": {} }
+                    ]
+                  }
+                },
+                {
+                  "merchant_half_screen": {
+                    "type": "panel",
+                    "size": [ "100%", "100% - 30px" ],
+                    "anchor_from": "bottom_right",
+                    "anchor_to": "bottom_right",
+          
+                    "controls": [
+                      { "merchant_half_screen@trade_pocket.merchant_half_screen": {} }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

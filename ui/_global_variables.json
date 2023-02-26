@@ -1,0 +1,703 @@
+{
+  "$dark_body_text_color": [ 1.0, 1.0, 1.0 ],
+  "$title_text_color": [ 1.0, 1.0, 1.0 ],
+  "$extra_large_max_screen_size": [ "100%", "100%" ],
+  // 颜色(旧版本的变量) //
+  "$nxc_client_text_color": [ 0.53, 0.21, 0.64 ],
+  "$nxc_title_color": [ 0.2, 0.9, 0.8, 1.0 ],
+  "$nxc_content_color": [ 0.57, 0.29, 0.67 ],
+  "$nxc_update_text_color": [ 1.0, 0.689, 0.0 ],
+  "$lang1_text_color": [ 0.333, 1.0, 0.333 ], // Green
+  "$lang2_text_color": [ 0.333, 0.333, 1.0 ], // Blue
+  "$lang3_text_color": [ 1.0, 0.667, 0.0 ], // Gold
+  "$lang4_text_color": [ 1.0, 1.0, 0.333 ], // Yellow
+  "$lang5_text_color": [ 0.333, 1.0, 1.0 ], // Aqua
+  "$client_effect_name_color": [ 0.333, 1.0, 1.0 ],
+  "$clientUpdate_color": [ 0.333, 1.0, 1.0 ],
+  "$xg_text_color": [ 255, 0, 255 ],
+  "$chemistry_bar_color": [ 1.0, 0.333, 1.0 ],
+  "$plugin_list_color": [ 1.0, 1.0, 0.333 ],
+  "$hud_debug_color": [ 0.333, 1.0, 0.333 ],
+  "$hud_dev_text_color": [ 1.0, 0.689, 0.0 ],
+  "$trial_info_color": [ 1.0, 1.0, 0.333 ],
+  "$education_edition_info_color": [ 0.333, 1.0, 1.0 ],
+  "$hud_preview_text_color": [ 0.333, 1.0, 1.0 ],
+  "$clientUpdate_preview_color": [ 1.0, 0.333, 1.0 ],
+
+  // 设置 //
+  "$default_selector_toggle_index": 0,
+  "$play_forced_index": 33,
+  "$pml_info_forced_index": 44,
+  // 国际版
+  "$pack_info_index": 45,
+  "$auxiliary_forced_index": 46,
+  "$update_forced_index": 47,
+  "$netease_hide_forced_index": 48,
+  "$hidden_forced_index": 49,
+  "$language2_forced_index": 50,
+  "$global_pack_info_index": 51,
+  "$val_info_index": 52,
+  "$preview_info_forced_index": 53,
+  "$package_info_forced_index": 54,
+  "$theme_info_forced_index": 55,
+  "$uidebug_forced_index": 56,
+  // JAVA SETTINGS
+  "$control_forced_index": 10001,
+
+  // 中国版移植变量 //
+  // 变量 //
+  "$clientName": "Rainbow Pie",
+  "$clientNameLite": "Rainbow Pie Lite",
+  "$clientAuthor": "Mintraspberry",
+  "$clientReleaseDate": "0",
+  "$rainbow_pie_hide": true,
+  "$is_rainbowpie": true,
+
+  "$enabled_pml_screen": true,
+  // Line 132
+  "$enabled_settings_pml_screen": true,
+  "$show_image_list": true,
+  "$show_skin_button": false,
+
+  // 版本号 //
+  // Old variables.....
+
+  "$h_patch": false,
+  "$h_prefix": false,
+  "$Nversion": "10032",
+  "$VersionSN": "10032",
+  "$previewVersion": "10032",
+  "$patchVersion": "10032",
+  "$version_prefix": "NULL",
+  "$versionPrefix": "NULL",
+  "$clientVersion": "10032",
+  "$preview_pack": false,
+
+  "$support_netease": false,
+  "$new_minecraft_version_test": false,
+  "$suggest_version": "v1.19.62", // 目标版本，将被打包工具读取
+  "$release_type_text": "Release",
+  "$rv_text": "14031",
+  "$release_date": "",
+  "$pause_label_2_text": "Minecraft UI Pack",
+  "$mcpedl_release": false,
+  "$mcpedl_release_text": "GLOBAL",
+  "$development_pack": false,
+  "$screen_debug": false,
+
+  // Branch //
+  // 以下值可被模块、其他包读取，一般用于私人服务器内校验
+  // branch_type: 分支类型 | release: 保证可用且无明显bug | prerelease: 正式发布前的测试 | preview: 测试新内容、修复bug | dev: 一些无关紧要的测试，内容不一定会放到正式版
+  // branch_name: 分支名称 | rs_public: 正式发布 | rs_preview: 正式发布前的测试 | pre_release: 正式发布前的测试和内容更新 | cn_dev: 中国版的发布和测试 | lt_release: 长期版本，会发送hotfix更新 | lt_preview: 长期版本，会发送hotfix更新。正式发布前的测试
+  // branch_display_name: 分支显示名称 | 会显示在UI名称后
+  "$branch_type": "preview",
+  "$branch_name": "pre_release",
+  "$branch_display_name": "Release Preview",
+
+  // 以下值会在模块列表和被打包时读取
+  "$rainbowpieui_engine_version": "15",
+  "$rainbowpieui_patch_version": "14031",
+  "$rainbowpieui_hotfix_version": "1",
+  "$rainbowpieui_engine_version_name": "1.5",
+  "$rainbowpieui_full_version_name": "1.5.14031.rs_public",
+  "$rainbowpieui_codename": "",
+  "$rainbowpieui_watermark": true,
+
+  // MintUI素材标准变量
+  "$mintui_bool": true,
+  "$mintui_base_name": "MintUI",
+  "$mintui_base_branch": "release",
+  "$mintui_base_big_version": "3.1",
+  "$mintui_base_version": "3164",
+  "$mintui_branch_name": "MintUI_RainbowPieUI_Release",
+  "$mintui_pack_name": "Rainbow Pie UI",
+  "$mintui_pack_description": "Minecraft UI Pack",
+  "$mintui_pack_uuid": "2a6c2264-0401-4cd8-aad8-824fa7672084",
+  "$mintui_pack_version": "1.5.14031",
+
+  "$mintui_other_config_ShowInSettings": false,
+
+  // Version check
+  "$rainbowpie_ui_check_mcversions": "v1.19.62,v1.19.60", // 支持的版本（支持多个）
+
+  // Alert
+  "$rainbowpie_ui_alert_enabled": false,
+  "$rainbowpie_ui_alert_title": "",
+  "$rainbowpie_ui_alert_text": "",
+
+  // Flags
+  "$rainbowpie_ui_flag_disable_sidebar_navigation": false,
+  "$rainbowpie_ui_flag_profile_screen_sidebar_enabled": true,
+
+  "$rainbowpie_ui_flag_profileui": true,
+  "$rainbowpie_ui_flag_chat_new_style": false,
+  "$rainbowpie_ui_flag_title_splash_text": false,
+  "$rainbowpie_ui_flag_hud_live_player": "3", // 0: Rainbow Pie Default, 1: No vanilla player render, 2: Use vanilla player render, 3: Use vanilla; 已经弃用
+  "$rainbowpie_ui_flag_pause_newstyle": true,
+  "$rainbowpie_ui_flag_pause_mouseui": true,
+  "$rainbowpie_ui_flag_pause_battertouch": true, // 优化大屏幕触摸设备的体验
+  "$rainbowpie_ui_flag_screen_backshortcut": false, // 将作为可选功能发布
+  "$rainbowpie_ui_flag_resourcepack_hidemore": true,
+  "$rainbowpie_ui_flag_myinfo_pos": "1", // 0: 在皮肤下方, 1:在extra按钮下方, 2:在退出按钮下方;仅鼠键
+  "$rainbowpie_ui_flag_hideinfo": true,
+  "$rainbowpie_ui_flag_bg_mask_ingame": true, // 在游戏内是否显示mask
+  "$rainbowpie_ui_flag_bg_mask": true, // 在游戏外是否显示mask
+  "$rainbowpie_ui_flag_easteregg_enabled": true, // 控制所有的彩蛋是否启用
+  "$rainbowpie_ui_flag_itemdebuginfo_fullinfo": false, // 在物品debug信息中显示全部信息
+  "$rainbowpie_ui_flag_neteaseui": true,
+  "$rainbowpie_ui_flag_netease_flag_force_disable": false, // 强制将$is_netease设置为false，在网易版本中有效
+  "$rainbowpie_ui_flag_publish_flag_force_disable": false, // 强制将$is_publish设置为false，无用，mcdebug内容
+  "$rainbowpie_ui_flag_uidebug": false, // 显示一些无用的测试功能
+
+  // Unnamed Flags
+  "$rainbowpie_ui_flag_c728d612": true, // 像旧版本一样把隐藏hud的按钮显示在背包按钮旁
+  "$rainbowpie_ui_flag_1e27eb75": true, // 新的资源包界面样式
+  "$rainbowpie_ui_flag_a332b63d": false, // 设置界面标题
+  "$rainbowpie_ui_flag_0c48fd31": true, // 新的隐藏HUD
+  "$rainbowpie_ui_flag_747055a2": true, // 本地资源包搜索 （弃用）
+  "$rainbowpie_ui_flag_44768cf5": true, // 皮肤模型快捷切换
+  "$rainbowpie_ui_flag_4fa6cc05": true, // 设置中的错误弹窗提示
+  "$rainbowpie_ui_flag_0f7d1b3b": true, // 暂停界面的我的信息
+  "$rainbowpie_ui_flag_9ad17d42": false, // 新的暂停界面名称面板
+  "$rainbowpie_ui_flag_5cd97814": true, // extra音乐按钮
+  "$rainbowpie_ui_flag_51ca122b": false, // 皮肤按钮头像
+  "$rainbowpie_ui_flag_d3d2ca36": true, // 使用传统触摸控制模式选择；已失效，弱智微软
+  "$rainbowpie_ui_flag_dc8cd7a4": false, // 无缝传送门
+  "$rainbowpie_ui_flag_c0e980cb": false, // 可拖动popup_dialog
+  "$rainbowpie_ui_flag_dfb7e810": true, // 合成时直接在合成栏上方显示合成物品名称
+  "$rainbowpie_ui_flag_09549e78": true, // 触摸屏退出游戏确认屏幕
+  "$rainbowpie_ui_flag_c42e5d44": false, // Custom Dialog Demo
+  "$rainbowpie_ui_flag_b77b544a": false, // 聊天设置全新实现方式 (在进行UI测试时出现闪退现象;Android_Touch)
+  "$rainbowpie_ui_flag_3108704e": false,
+  "$rainbowpie_ui_flag_247bf052": true, // 聊天设置返回动画测试
+  "$rainbowpie_ui_flag_dfd4e686": false, // 新加载动画测试
+  "$rainbowpie_ui_flag_74013784": true, // 减少背景黑屏
+  "$rainbowpie_ui_flag_3cb89ec6": true, // 新的资源包选择界面
+  "$rainbowpie_ui_flag_61b8d178": true, // 在输入命令时显示聊天（测试）
+  "$rainbowpie_ui_flag_65c157c2": true, // 在输入命令时显示聊天（v2）
+  "$rainbowpie_ui_flag_8e2097f1": true, // 在背包界面显示指南针
+  "$rainbowpie_ui_flag_1d76153c": false, // 聊天栏分割线 （存在bug）
+  "$rainbowpie_ui_flag_5083257c": true,
+  "$rainbowpie_ui_flag_003fd164": false, // 圆角物品栏
+  "$rainbowpie_ui_flag_1f8bfcbd": true, // 在选择资源包界面显示清单按钮
+
+  // Debug
+  "$rainbowpie_ui_debug_screen_animation": false,
+  "$rainbowpie_ui_debug_screen_content": false,
+  "$rainbowpie_ui_debug_errcheck_debug": false,
+  // 仅控制不同的UI显示，不会影响bindings中的判定，留空保持默认
+  "$rainbowpie_ui_debug_ui_device_override": "", // windows;windows_arm;windows_mobile;android;apple_ios;apple_osx;apple_tv;console;console_xboxone;console_ps4
+  "$rainbowpie_ui_debug_ui_input_override": "", // touch;mouse;game_pad
+  // Overrides
+  "$rainbowpie_ui_debug__store_disabled__override": false,
+  "$rainbowpie_ui_debug__trial__override": false,
+  "$rainbowpie_ui_debug__education_edition__override": false,
+  "$rainbowpie_ui_debug__world_archive_support__override": false,
+  "$rainbowpie_ui_debug__file_picking_supported__override": false,
+  "$rainbowpie_ui_debug__pre_release__override": false,
+  "$rainbowpie_ui_debug__is_low_memory_device__override": false,
+  
+  // Path
+  "$rainbowpie_ui_path_home": "textures/RainbowPie",
+  "$rainbowpie_ui_path_uihome": "textures/RainbowPie/ui",
+  // Old paths
+  "$rainbowpie_ui_path_setting_icon": "textures/RainbowPie/ui/setting_icons",
+  "$rainbowpie_ui_path_pause_icon": "textures/RainbowPie/ui/pause_icons",
+  "$rainbowpie_ui_path_icon": "textures/RainbowPie/ui/other_icons",
+
+  "$rainbowpie_ui_path_images_mintraspberry": "textures/RainbowPie/images/Mintraspberry",
+
+  // Rainbow Pie UI Features
+  "$rainbowpie_ui_feature_background_mask": true,
+  "$rainbowpie_ui_feature_background_blur": true,
+  "$rainbowpie_ui_feature_lowgpu_mode": true,
+  "$rainbowpie_ui_feature_setting_icon": true,
+  "$rainbowpie_ui_feature_screenshot_path": true,
+  "$rainbowpie_ui_feature_gamepad_tip": true,
+  "$rainbowpie_ui_feature_rounded_corners": false,
+  "$rainbowpie_ui_feature_dropdown_panel": true,
+  "$rainbowpie_ui_feature_maximize_chat_input": true,
+  "$rainbowpie_ui_feature_item_debug_info": false,
+
+  // Paths
+  "$RainbowPie_SettingIconPath": "textures/RainbowPie/ui/setting_icons",
+  "$RainbowPie_Mintraspberry": "textures/RainbowPie/images/Mintraspberry",
+
+  "$hide_furicon": true,
+  "$hide_sa_tip": true,
+
+  "$button_border_style": "0", // 0-1
+
+  "$is_global_blur_enabled": false,
+  "$is_lowgpu_mode_enabled": true, // 在手机平板等设备获得更高的FPS  作用：禁用多层背景
+
+  "$is_package_info_enabled": false,
+
+  "$is_rainbowpie_iconpack_enabled": true,
+  "$is_music_player_v2_enabled": true,
+  "$is_music_player_disabled": false,
+  "$disable_music_reason": "music_player.reason",
+  "$text_style_toggle": true,
+  "$is_button_round_corner_enabled": false,
+  "$global_topbar_black": true, // 已经弃用，但请不要设置为false
+  "$is_topbar_animations_disabled": false,
+  "$is_v2globalanims_enabled": false,
+  "$is_ignored_safezone": false,
+  "$disable_safezone_reason": "pack.safe_zone.reason",
+  "$is_rainbowpie_style_server_form_enabled": false,
+  "$text_edit_box_enable_profanity_filter": true, // 聊天框、命令方块的输入框启用敏感词
+  "$is_startzoom_animation_enabled": true, // 进入游戏时的背景缩放动画
+  "$is_startblur_animation_enabled": true, // 进入游戏时的背景模糊渐变
+  "$is_ingame_loading_anims_enabled": false, // 进入世界后在HUD中衔接动画
+
+  "$is_quick_camera_enabled": true,
+  "$is_account_panel_enabled": true,
+  "$is_start_account_panel_enabled": true,
+  "$start_account_panel_top": false,
+
+  "$new_start_tips": false, // 开始屏幕右下角的Tip
+
+  "$global_header_title_font_is_minecraftten": false,
+  "$dialog_style_mob_effect": false,
+
+  "$scroll_clips_children": true,
+  "$scroll_met": false,
+
+  "$show_tabandmorebutton": true, // 显示TAB和上下按钮
+  "$f_show_item_count": true, // 一直显示物品数量
+
+  "$show_start_screen": false,
+  "$hide_copyright_text": true,
+  "$hide_profile_framework_panel": false,
+
+  "$show_hotbar": false,
+  "$black_hotbar": false,
+
+  "$aways_enable_miny_flying": false,
+
+  "$armor_hud_enable": false,
+
+  "$dialog_new_style_enabled": false,
+  "$title_background": false,
+  "$popup_dialog_title_alignment": "center",
+  "$popup_dialog_background_white": true,
+
+  "$dialog_title_alignment": "center",
+
+  "$rainbowpie_style_hotbar": true,
+
+  "$background_zoom_size": [ "100%", "100%" ], // 开始界面壁纸缩放后大小
+
+  "$all_background_anim_duration": 1.5,
+  "$all_background_anim_from": [ 10, 100 ],
+  "$disable_test_allbg_anim": true,
+
+  "$hide_screen_bg_animtion": true,
+  "$hide_inv_screen_bg_animtion": true,
+
+  "$ignored_safezone_outside_content": false,
+
+  "$simple_v2_start": true,
+  "$v2_start_button_bg_t": false,
+
+  // Pause
+  "$enable_old_pause_screen": false,
+  "$enable_pause_screen_v2": false, // 该设置仅对鼠键操控有效
+  "$enable_old_start_screen": false,
+  "$enable_start_screen_v2": true,
+  "$vanilla_start_screen": false, // 还原原版开始界面
+
+  "$enable_custom_start_image": false,
+  "$custom_start_image_texture": "startImage",
+  "$custom_start_image_text": "自定义图像",
+
+  "$show_dialog_custom_background": false,
+  "$dialog_custom_background_path": "textures/background",
+
+  // Old Theme Variables (Deprecated) //
+  "$all_blur_bg_path": "",
+  "$all_normal_bg_path": "",
+  "$beta_blur_bg_path": "",
+  "$beta_normal_bg_path": "",
+
+  "$rainbowpie_ui_theme_blur_background_texture": "",
+  "$rainbowpie_ui_theme_normal_background_texture": "",
+  "$rainbowpie_ui_theme_blur_background_texture_beta": "",
+  "$rainbowpie_ui_theme_normal_background_texture_beta": "",
+
+  // Theme System //
+  "$rainbowpie_ui_themesystem_version": "321",
+
+  // Theme Info //
+  "$rainbowpie_ui_theme_icon": "textures/RainbowPie/images/Mintraspberry/pack_icon",
+  "$rainbowpie_ui_theme_name": "rainbowpie.ui.theme.default_name",
+  "$rainbowpie_ui_theme_author": "rainbowpie.ui.theme.default_auther",
+  "$rainbowpie_ui_theme_desc": "rainbowpie.ui.theme.default_description",
+  "$rainbowpie_ui_theme_description": "rainbowpie.ui.theme.default_description",
+  "$rainbowpie_ui_theme_version": "321",
+
+  // Theme Background //
+  "$rainbowpie_ui_theme_background_mask_texture_ingame": "textures/MintUI/background/background_mask",
+  "$rainbowpie_ui_theme_background_mask_texture": "", // 如需使用请添加，默认不使用。default: "textures/MintUI/background/background_mask"
+  "$rainbowpie_ui_theme_background_blur_texture": "textures/MintUI/background/background_blur",
+  "$rainbowpie_ui_theme_background_texture": "textures/MintUI/background/background",
+
+  // Theme Global Variables //
+  "$rainbowpie_ui_theme_global_title_text": "§4R§ca§6i§en§ab§bo§5w §6Pie§r",
+  "$rainbowpie_ui_theme_global_title_text_scale": 3.0,
+  "$rainbowpie_ui_theme_global_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_global_background_alpha": 0.3,
+
+  // Theme Toast Variables //
+  "$rainbowpie_ui_theme_toast_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_toast_background_alpha": 0.5,
+  "$rainbowpie_ui_theme_toast_text_color": [ 1.0, 1.0, 1.0 ],
+
+  // Theme Sidebar Variables //
+  "$rainbowpie_ui_theme_sidebar_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_sidebar_background_alpha": 0.2,
+
+  "$rainbowpie_ui_theme_sidebar_oqaque_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_sidebar_oqaque_background_alpha": 0.3,
+
+  "$rainbowpie_ui_theme_sidebar_verbose_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_sidebar_verbose_background_alpha": 0.3,
+  "$rainbowpie_ui_theme_sidebar_verbose_button_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$rainbowpie_ui_theme_sidebar_verbose_oqaque_background_color": [ 0.12941176470588237, 0.12941176470588237, 0.12941176470588237 ],
+  "$rainbowpie_ui_theme_sidebar_verbose_oqaque_background_alpha": 1,
+  "$rainbowpie_ui_theme_sidebar_verbose_oqaque_button_text_color": [ 1.0, 1.0, 1.0 ],
+
+  // Theme Dialog Variables //
+  "$rainbowpie_ui_theme_dialog_background_color": [ 0.12941176470588237, 0.12941176470588237, 0.12941176470588237 ],
+  "$rainbowpie_ui_theme_dialog_background_alpha_pregame": 0.7,
+  "$rainbowpie_ui_theme_dialog_background_alpha": 0.9,
+  "$rainbowpie_ui_theme_dialog_text_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_dialog_content_background_color": [ 0, 0, 0 ],
+  "$rainbowpie_ui_theme_dialog_content_background_alpha": 0.4,
+  "$rainbowpie_ui_theme_dialog_content_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_dialog_close_white": true,
+
+  // Theme Close Button Variables //
+  "$rainbowpie_ui_theme_closebutton_default_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_closebutton_default_background_alpha": 0.0,
+  "$rainbowpie_ui_theme_closebutton_default_color": [ 1.0, 1.0, 1.0 ],
+
+  "$rainbowpie_ui_theme_closebutton_hover_background_color": [ 0.9019607843137256, 0.10196078431372548, 0.10196078431372548 ],
+  "$rainbowpie_ui_theme_closebutton_hover_background_alpha": 0.4,
+  "$rainbowpie_ui_theme_closebutton_hover_color": [ 1.0, 1.0, 1.0 ],
+
+  "$rainbowpie_ui_theme_closebutton_pressed_background_color": [ 0.9019607843137256, 0.10196078431372548, 0.10196078431372548 ],
+  "$rainbowpie_ui_theme_closebutton_pressed_background_alpha": 0.4,
+  "$rainbowpie_ui_theme_closebutton_pressed_color": [ 0.9019607843137256, 0.10196078431372548, 0.10196078431372548 ],
+
+  // Theme Topbar Variables //
+  "$rainbowpie_ui_theme_topbar_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_topbar_background_alpha": 0.4,
+  "$rainbowpie_ui_theme_topbar_text_color": [ 1.0, 1.0, 1.0 ],
+  // Deprecated
+  "$rainbowpie_ui_theme_topbar_text_light": true,
+
+  // Theme Background and Text Variables //
+  "$rainbowpie_ui_theme_text_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_text_background_alpha": 0.3,
+  "$rainbowpie_ui_theme_text_text_color": [ 1.0, 1.0, 1.0 ],
+  // Deprecated
+  "$rainbowpie_ui_theme_text_text_light": true,
+
+  // Theme Background and Title Variables //
+  "$rainbowpie_ui_theme_title_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_title_background_alpha": 0.5,
+  "$rainbowpie_ui_theme_title_text_color": [ 1.0, 1.0, 1.0 ],
+  // Deprecated
+  "$rainbowpie_ui_theme_title_text_light": true,
+
+  // Theme Text Edit Box Variables //
+  "$rainbowpie_ui_theme_input_default_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_input_default_background_alpha": 0.4,
+  "$rainbowpie_ui_theme_input_default_btbar_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_input_default_btbar_alpha": 0.4,
+
+  "$rainbowpie_ui_theme_input_hover_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_input_hover_background_alpha": 0.3,
+  "$rainbowpie_ui_theme_input_hover_btbar_color": [ 0.13725490196078432, 0.50588235294117645, 0.5137254901960784 ],
+  "$rainbowpie_ui_theme_input_hover_btbar_alpha": 1,
+
+  "$rainbowpie_ui_theme_input_text_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_input_placeholder_color": [ 0.8510, 0.8510, 0.8510 ],
+  // Deprecated
+  "$rainbowpie_ui_theme_input_text_light": true,
+
+  // Theme Scrollbar Variables //
+  "$rainbowpie_ui_theme_scrollbar_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_scrollbar_background_alpha": 0.4,
+  "$rainbowpie_ui_theme_scrollbar_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_scrollbar_alpha": 1,
+
+  // Theme Slider Variables //
+  "$rainbowpie_ui_theme_slider_default_background_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_slider_default_background_alpha": 0.4,
+
+  "$rainbowpie_ui_theme_slider_hover_background_color": [ 0.13725490196078432, 0.50588235294117645, 0.5137254901960784 ],
+  "$rainbowpie_ui_theme_slider_hover_background_alpha": 0.4,
+
+  "$rainbowpie_ui_theme_slider_locked_background_color": [ 0.8, 0.8, 0.8 ],
+  "$rainbowpie_ui_theme_slider_locked_background_alpha": 0.4,
+
+  "$rainbowpie_ui_theme_slider_default_progress_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_slider_default_progress_alpha": 0.7,
+
+  "$rainbowpie_ui_theme_slider_hover_progress_color": [ 0.5176470588235294, 0.6666666666666667, 0.6392156862745098 ],
+  "$rainbowpie_ui_theme_slider_hover_progress_alpha": 0.7,
+
+  "$rainbowpie_ui_theme_slider_locked_progress_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_slider_locked_progress_alpha": 0.7,
+
+  // Theme Progress Loading Bar Variables //
+  "$rainbowpie_ui_theme_progress_empty_color": [ 0.141176, 0.396078, 0.129411 ],
+  "$rainbowpie_ui_theme_progress_full_color": [ 0.129411, 0.694117, 0.211764 ],
+  
+  "$rainbowpie_ui_theme_progress_empty_alpha": 0.4,
+  "$rainbowpie_ui_theme_progress_full_alpha": 0.4,
+
+  // Theme Experience Bar Variables //
+  "$rainbowpie_ui_theme_experience_empty_color": [ 0.141176, 0.396078, 0.129411 ],
+  "$rainbowpie_ui_theme_experience_full_color": [ 0.129411, 0.694117, 0.211764 ],
+  
+  "$rainbowpie_ui_theme_experience_empty_alpha": 0.5,
+  "$rainbowpie_ui_theme_experience_full_alpha": 0.6,
+
+  // Theme Button Variables //
+  "$rainbowpie_ui_theme_button_background_default_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_button_background_hover_color": [ 0.13725490196078432, 0.50588235294117645, 0.5137254901960784 ],
+  "$rainbowpie_ui_theme_button_background_pressed_color": [ 0.13725490196078432, 0.50588235294117645, 0.5137254901960784 ],
+
+  "$rainbowpie_ui_theme_button_background_default_alpha": 0.5,
+  "$rainbowpie_ui_theme_button_background_hover_alpha": 0.4,
+  "$rainbowpie_ui_theme_button_background_pressed_alpha": 0.3,
+
+  "$rainbowpie_ui_theme_button_default_offset": [ 0, 0 ],
+  "$rainbowpie_ui_theme_button_hover_offset": [ 0, 0 ],
+  "$rainbowpie_ui_theme_button_pressed_offset": [ 0, 0 ],
+
+  "$rainbowpie_ui_theme_button_text_default_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_button_text_hover_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_button_text_pressed_color": [ 1.0, 1.0, 1.0 ],
+
+  "$rainbowpie_ui_theme_button_border_default_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_button_border_default_alpha": 0.5,
+
+  // Theme Toggle Variables //
+  "$rainbowpie_ui_theme_toggle_background_default_default_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_toggle_background_locked_default_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_toggle_background_locked_checked_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_toggle_background_locked_checked_btbar_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_toggle_background_checked_default_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_color": [ 0.13725490196078432, 0.50588235294117645, 0.5137254901960784 ],
+  "$rainbowpie_ui_theme_toggle_background_checked_hover_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_color": [ 0.13725490196078432, 0.50588235294117645, 0.5137254901960784 ],
+  "$rainbowpie_ui_theme_toggle_background_unchecked_default_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_toggle_background_unchecked_hover_color": [ 0.011, 0.011, 0.011 ],
+  "$rainbowpie_ui_theme_toggle_background_unchecked_hover_btbar_color": [ 1.0, 1.0, 1.0 ],
+
+  "$rainbowpie_ui_theme_toggle_background_default_default_alpha": 0.5,
+  "$rainbowpie_ui_theme_toggle_background_locked_default_alpha": 0.4,
+  "$rainbowpie_ui_theme_toggle_background_locked_checked_alpha": 0.4,
+  "$rainbowpie_ui_theme_toggle_background_locked_checked_btbar_alpha": 1.0,
+  "$rainbowpie_ui_theme_toggle_background_checked_default_alpha": 0.4,
+  "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_alpha": 1.0,
+  "$rainbowpie_ui_theme_toggle_background_checked_hover_alpha": 0.3,
+  "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_alpha": 1.0,
+  "$rainbowpie_ui_theme_toggle_background_unchecked_default_alpha": 0.5,
+  "$rainbowpie_ui_theme_toggle_background_unchecked_hover_alpha": 0.3,
+  "$rainbowpie_ui_theme_toggle_background_unchecked_hover_btbar_alpha": 1.0,
+
+  "$rainbowpie_ui_theme_toggle_text_default_default_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_toggle_text_checked_default_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_toggle_text_checked_hover_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_toggle_text_unchecked_hover_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_toggle_text_locked_checked_color": [ 1.0, 1.0, 1.0 ],
+
+  // Theme Inventory Variables //
+  "$rainbowpie_ui_theme_inventory_background_enabled": false,
+  "$rainbowpie_ui_theme_inventory_background_fill": true,
+  "$rainbowpie_ui_theme_inventory_background_tiled": false,
+  "$rainbowpie_ui_theme_inventory_background_texture": "textures/RainbowPie/images/Mintraspberry/background_blur",
+  "$rainbowpie_ui_theme_inventory_background_size": [ "100%", "100%" ],
+  "$rainbowpie_ui_theme_inventory_background_offset": [ 0, 0 ],
+  "$rainbowpie_ui_theme_inventory_background_anchor": "center",
+  "$rainbowpie_ui_theme_inventory_background_alpha": 1,
+
+  "$rainbowpie_ui_theme_inventory_header_color": [ 0.12941176470588237, 0.12941176470588237, 0.12941176470588237 ],
+  "$rainbowpie_ui_theme_inventory_header_alpha": 0.7,
+  "$rainbowpie_ui_theme_inventory_header_close_white": true,
+
+  "$rainbowpie_ui_theme_inventory_title_color": [ 1.0, 1.0, 1.0 ],
+
+  "$rainbowpie_ui_theme_inventory_cell_default_color": [ 1.0, 1.0, 1.0 ],
+  "$rainbowpie_ui_theme_inventory_cell_default_alpha": 0.4,
+
+  "$rainbowpie_ui_theme_inventory_cell_red_color": [ 0.8509803921568627, 0.3019607843137255, 0.3019607843137255 ],
+  "$rainbowpie_ui_theme_inventory_cell_red_alpha": 0.4,
+
+  "$rainbowpie_ui_theme_inventory_cell_highlight_color": [ 0.3843137254901961, 0.7098039215686275, 0.192156862745098 ],
+  "$rainbowpie_ui_theme_inventory_cell_highlight_alpha": 0.4,
+
+  "$rainbowpie_ui_theme_inventory_cell_highlight_pocket_color": [ 0.0, 0.5803921568627451, 1.0 ],
+  "$rainbowpie_ui_theme_inventory_cell_highlight_pocket_alpha": 0.7,
+
+  // Theme End
+
+  "$show_inv_custom_background": false,
+  "$inv_custom_background_path": "textures/background",
+  "$inv_custom_background_size": [ "100%", "100%" ],
+
+  "$show_inv_furry_bg": false,
+  "$show_chest_screen_player_armor": true,
+
+  "$inv_header_title_minecraftTen": false,
+
+  "$enable_confirm_quitgame": false,
+  "$enable_win10_confirm_quitgame": false,
+  "$enable_confirm_quitgame_debug": false,
+  "$enable_win10_confirm_quitgame_debug": false,
+
+  "$enable_hide_hotbar_buttons": false,
+  "$enable_bottom_chat": false,
+  "$win10_enable_bottom_chat": true,
+  "$not_hide_hud": false,
+  "$custom_chat_font": false, // 聊天栏强制为自定义字体，这会忽略字体设置
+  "$hide_creative_layout": false,
+  "$start_topbar_black": false,
+  "$disable_vanilla_start_toggle": true,
+  "$disable_start_logo_test": true,
+  "$chat_new_style": false,
+  "$chat_header_black": true,
+
+  "$debug_panel": false,
+
+  "$is_pc": false,
+
+  "$Rainbow_Pie_Show_chemistry_bar": false,
+
+  "$show_cmteb": false,
+  "$hide_welcome_tip": true,
+  "$all_screen_render_below": false,
+  "$hide_all_description": false,
+  "$all_screen_render_gamepad_cursor": false,
+
+  // 隐藏水印
+  "$hide_clientTitle": true,
+  "$hide_inventory_watermark": false,
+  "$pause_use_minecraft_logo": false,
+  "$hide_bottom_panel": true,
+  // 标题 //
+  "$MinecraftTen_font_title": true, // 使用MinecraftTen字体标题
+  "$title_text_alpha": 1.0,
+
+  "$hud_clientName": "§4R§ca§6i§en§ab§bo§5w §6Pie§r",
+  "$hud_clientNameWhite": "Rainbow Pie",
+  "$clientName_title": "§4R§ca§6i§en§ab§bo§5w §6Pie§r",
+  "$rainbow_pie_bottom_panel_text": "§4R§ca§6i§en§ab§bo§5w §6Pie§e UI RESOURCE PACK",
+  "$lite_prefix": "",
+  "$neta_prefix": "",
+  "$preview_prefix": "§bPre",
+  "$hotbar_text": "§4R§ca§6i§en§ab§bo§5w §6Pie §eUI Pack§r",
+  "$hotbar_text_font": "OldSmoothFont",
+  "$position_always_in_hotbar": false,
+
+  // 字体
+  "$global_font_type": "OldSmoothFont", // Default: OldSmoothFont ; Better performance: unicode ; Custom font pack: default
+  "$global_font_type_backup": "unicode",
+  "$global_font_type_chat": "OldSmoothFont",
+  "$global_font_type_title": "OldSmoothFont",
+  "$global_font_type_back_title": "MinecraftTen",
+  "$rainbowpie_ui_text_chat_font_default_string": "Smooth",
+  "$rainbowpie_ui_text_chat_font_name_string": "placeholder",
+
+  // 开发者选项(暂无用途) //
+  "$nxc_dev": false, //
+  "$is_dev": false, //
+
+  "$force_enable_chat_send": false, // 强制启用Chat Send按钮
+  "$force_show_host_button": false, // 强制显示Host Button
+
+  "$enabled_chat": true, // 启用聊天栏
+
+  "$enabled_item_text_bg": false, // 启用hud物品名称背景
+
+  // 原版变量 //
+  "$is_netease": false, // false
+  "$option_binding_name": "",
+  "$option_enabled_binding_name": "",
+  // 原版默认变量 //
+  // Pause screen
+  "$achievements_ignored": false, // true
+  //
+  "$round_corner": false, // 默认关闭(给那些圆角屏适配hud防遮挡)
+  // PML 
+  "$pml_system_version": "7.9",
+  "$pml_system_version_code": "79",
+
+  "$module_loaded": false,
+
+  "$is_pml": false, // 已弃用：旧版本模块信息显示
+  "$contain_author": false,
+  "$contain_description": false,
+  "$contain_update": "none",
+  "$contain_icon": false,
+  "$contain_uuid": false,
+
+  "$pml_icon_texture": "textures/RainbowPie/PML/pml_icon",
+  "$pml_name": "Unknown",
+  "$pml_version": "Unknown",
+  "$pml_author": "Unknown",
+  "$pml_description": "Unknown",
+  "$pml_update": "Unknown",
+  "$pml_uuid": "Unknown",
+  "$pml_support_client_version": "v0.0.1+",
+  "$pml_support_client_version_code": "0",
+
+  "$show_images": false,
+
+  "$start_image_1_texture": "",
+  "$start_title_1": "",
+  "$start_subtitle_1": "",
+
+  "$start_image_2_texture": "",
+  "$start_title_2": "",
+  "$start_subtitle_2": "",
+
+  "$show_image_bg": false,
+  "$show_image_v2_bg": false,
+  "$background_image_texture": "",
+
+  // Room World Settings
+  "$in_game_change_skin": true,
+  "$in_game_emotes": true,
+
+  "$how_to_blay_ignored": false,
+  "$achievement_ignored": false,
+  "$invite_players_ignored": false,
+  "$feedback_ignored": false,
+  "$server_store_ignored": false,
+  "$music_ignored": false,
+  "$profile_ignored": true,
+  "$win10ui_profile_ignored": false,
+  "$achievements_and_invite_ignored": false,
+  "$screenshots_and_feed_ignored": false,
+  "$feedback_and_store_ignored": false,
+
+  "$has_custom_music": false,
+  "$music_custom_addon_text": "Custom Music",
+
+  "$pack_info_uuid": "2a6c2264-0401-4cd8-aad8-824fa7672084",
+
+  // Rainbow Pie Update Package Variables
+  "$package_8088d11c": true, // 设置全新顶栏样式
+  "$package_32852a43": false, // 设置界面仿JAVA废稿
+  "$new_version_warn": true, // 全新的版本警告提示
+  "$package_62fee365eb41": false, // 缩放式背包动画
+  "$rainbowpie_ui_flag_newAnimTest": false
+}
+

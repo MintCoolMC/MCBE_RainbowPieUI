@@ -1,0 +1,164 @@
+{
+  "namespace": "disconnect",
+
+  "disconnect_screen_text": {
+    "type": "label",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "color": "$loading_text_color",
+    "size": [ "default", "default" ],
+    "max_size": [ "100% - 20px", 50 ],
+    "anchor_to": "center",
+    "anchor_from": "center",
+    "text_alignment": "center",
+    "layer": 2,
+    "shadow": false
+  },
+
+  "disconnect_screen@common.base_screen": {
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_leave_screen",
+        "mapping_type": "global"
+      }
+    ],
+    "$screen_content": "disconnect.disconnect_screen_content",
+    "$screen_bg_content": "common.empty_panel",
+    "$screen_background_alpha": 0.4
+  },
+
+  "to_menu_button@disconnect.menu_button_template": {
+    "$pressed_button_name": "button.menu_exit",
+    "$button_text": "gui.toMenu"
+  },
+
+  "gui_button_panel": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [ 0, 50 ],
+    "controls": [
+      /*{
+        "open_uri_button_panel": {
+          "type": "panel",
+          "size": [ "100%", 22 ],
+          "offset": [ 50, 20 ],
+          "ignored": "$is_holographic",
+          "controls": [
+            {
+              "open_uri_button@disconnect.open_uri_button": {
+                "$button_text": "options.chat.links",
+                "size": [ 100, 22 ],
+                "bindings": [
+                  {
+                    "binding_name": "#open_uri_button_visible",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "to_menu_button_panel": {
+          "type": "panel",
+          "size": [ "100%", 26 ],
+          "offset": [ -50, 22 ],
+          "controls": [
+            {
+              "to_menu_button@disconnect.to_menu_button": {
+                "size": [ 100, 22 ],
+                "enabled": "($is_pregame and $is_netease)"
+              }
+            }
+          ]
+        }
+      },*/
+      {
+        "ok_button_panel": {
+          "type": "panel",
+          "size": [ "100%", 26 ],
+          "controls": [
+            {
+              "ok_button@disconnect.ok_button": {
+                "variables": [
+                  { 
+                    "requires": "$is_pregame",
+                    "$button_text": "gui.back"
+                  }
+                ],
+                "size": [ 200, 22 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "disconnect_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "blur_panel_2": {
+          "type": "panel",
+          "clips_children": true,
+          "size": [ "100%", "100%" ],
+          "offset": [ "50% - 99px", 0 ],
+          "controls": [
+            {
+              "blur_panel_1": {
+                "type": "panel",
+                "clips_children": true,
+                "size": [ "100%", "100%" ],
+                "offset": [ 0, "50% + 38px" ],
+                "controls": [
+                  {
+                    "blur_layer_1@mintui_background.background_blur": {
+                      "$background_ingame": true,
+                      "$background_offset": [ "-100% + 198px", "-100% + 20px" ],
+                      "$background_children_offset": [ "50% - 99px", "50% - 58px" ],
+                      "$background_layer": -18
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "background_all@rainbowpie.background_all_ingame": {} },
+      { "title_panel@disconnect.title_panel": {} },
+      { "gamepad_helpers@disconnect.gamepad_helpers": {} },
+      { "gui_button_panel@disconnect.gui_button_panel": {} },
+      {
+        "background_image@start.background_image": {}
+      },
+      {
+        "background": {
+          "type": "image",
+          "texture": "textures/ui/Black",
+          "size": [ "100%", "100%" ],
+          "alpha": 0.3,
+          "layer": -12
+        }
+      }
+    ]
+  },
+
+  // 我草start.background_image可以追溯到2019年的最初版本
+
+  "open_account_setting_button@common_buttons.hyperlink_button": {
+    "$button_text": "permissions.open.account.help.button",
+    "property_bag": {
+      "#hyperlink": "https://aka.ms/MCMultiplayerHelp"
+    }
+  }
+}

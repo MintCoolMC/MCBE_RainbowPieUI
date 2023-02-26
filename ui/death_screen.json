@@ -1,0 +1,57 @@
+{
+  "namespace": "death",
+
+  "buttons_panel/respawn_button": {
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "#respawn_visible"
+        }
+      }
+    ]
+  },
+
+  "buttons_panel/main_menu_button": {
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "#quit_visible"
+        }
+      },
+      {
+        "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "#quit_enabled"
+        }
+      }
+    ]
+  },
+
+  "death_screen_content/loading_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "background_gradient": {
+    "ignored": true
+  },
+
+  "death_reason_panel/death_reason_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "you_died_panel/you_died_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "death_screen": {
+    "force_render_below": true
+  }
+}

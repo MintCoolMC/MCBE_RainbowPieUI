@@ -1,0 +1,41 @@
+{
+  "namespace": "local_world_picker",
+
+  "local_world_picker_content/content": {
+    "anchor_to": "bottom_middle",
+    "anchor_from": "bottom_middle",
+    "size": "$large_screen_size",
+    "max_size": [ "100%", "100% - 19px" ],
+    "offset": [ 0, 0 ]
+  },
+
+  "local_world_picker_content/panel_label": {
+    "ignored": true
+  },
+
+  "local_world_picker_content/background": {
+    "ignored": true
+  },
+
+  "local_world_picker_content": {
+    "size": [ "100%", "100%" ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "realmsCreateScreen.chooseWorld"
+            }
+          },
+          {
+            "mintui_background@mintui_background.background_fullscreen": {
+              "layer": -3000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

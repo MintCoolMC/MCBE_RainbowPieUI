@@ -1,0 +1,396 @@
+##注释可以以'##'开头添加到有效行的任意位置
+##
+##请注意，尾随空格将不会被修剪。 如果要在字符串末尾和a的开头之间留出空间
+##在同一行上注释，使用TAB。
+
+rainbowpie.ui.error=这是一个错误信息！	#
+
+rainbowpie.ui.uidebug.item_id_convert=物品ID转换	#
+rainbowpie.ui.uidebug.item_id=物品ID	#
+rainbowpie.ui.uidebug.item_aux_id=物品AUX ID	#
+rainbowpie.ui.uidebug.handle_string=字符串处理	#
+rainbowpie.ui.uidebug.handle_number=数字处理	#
+rainbowpie.ui.uidebug.image=图片测试	#
+rainbowpie.ui.uidebug.image_texture_path=纹理路径	#
+rainbowpie.ui.uidebug.image_file_system=文件系统	#
+
+rainbowpie.ui.npc_interact.command.title.dialog=对话框样式	#
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_0=NPC_DIALOG_0 - 仅文字	#
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_1=NPC_DIALOG_1 - 1个按钮	#
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_2=NPC_DIALOG_2 - 2个按钮	#
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_3=NPC_DIALOG_3 - 3个按钮	#
+rainbowpie.ui.npc_interact.command.title.background=背景样式（可选）	#
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_BG=NPC_DIALOG_BG - 常规背景	#
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_BG_NOBLUR=NPC_DIALOG_BG_NOBLUR - 常规背景（无模糊）	#
+rainbowpie.ui.npc_interact.command.text.tip=以上两个项请不可重复	#
+
+rainbowpie.ui.screenshot.saved=截图已保存至：	#
+
+rainbowpie.ui.resourcepack.moduletag=[模块]	#
+rainbowpie.ui.resourcepack.packagetag=[增量包]	#
+rainbowpie.ui.resourcepack.themetag=[主题包]	#
+
+rainbowpie.ui.crafting.quickcraft=快速合成	#
+rainbowpie.ui.crafting.delete=删除	#
+
+rainbowpie.ui.version.warn=版本警告！	#
+rainbowpie.ui.version.supported=支持的版本：	#
+rainbowpie.ui.version.warn_unsupport=使用不支持的版本可能出现崩溃或界面错误等问题	#
+
+rainbowpie.ui.dialog.title_default=注意	#
+
+rainbowpie.ui.warning.text.trial=当前游戏版本为试玩版，Rainbow Pie UI不支持试玩版的游戏。	#
+rainbowpie.ui.warning.text.error=发生了致命错误，如果您没有添加其他UI包且当前游戏版本号和UI推荐的版本号一致，请反馈给作者（见信息）！致命错误可能影响到正常使用，你可以选择“禁用资源包”来避免可能的影响。	#
+rainbowpie.ui.warning.text.warning=发生了错误，但是这不致命，请反馈给作者（见信息）。	#
+rainbowpie.ui.warning.text.debug=这是一条debug信息！	#
+rainbowpie.ui.warning.button.check=检查错误	#
+rainbowpie.ui.warning.button.deactivate=禁用资源包	#
+
+rainbowpie.ui.resourcepack.search.placeholder.resource=搜索资源包	#
+rainbowpie.ui.resourcepack.search.placeholder.behavior=搜索行为包	#
+
+rainbowpie.ui.play.search.placeholder=搜索世界	#
+
+rainbowpie.ui.hud.clickspace.tip=点击这个区域来显示HUD	#
+
+rainbowpie.ui.howtoplay.HUD.header.1=Rainbow Pie UI 快捷方式	#
+rainbowpie.ui.howtoplay.HUD.text.1=Rainbow Pie UI 在您的HUD上添加了两个快捷方式，一般情况下您无法看见它们在哪里，为了避免您不知道，请阅读以下文字。	#
+rainbowpie.ui.howtoplay.HUD.text.2=隐藏纸娃娃：您只需要在纸娃娃的位置点击一下，即可快捷显示或隐藏纸娃娃。	#
+rainbowpie.ui.howtoplay.HUD.text.3=隐藏HUD：点击一下您HUD的右下角区域，即可快捷隐藏HUD，再次点击即可显示。需要注意的是，您点击的位置应该在安全区内，否则无法触发快捷方式！	#
+
+rainbowpie.ui.theme.default_name=默认主题	#
+rainbowpie.ui.theme.default_auther=薄荷树莓	#
+rainbowpie.ui.theme.default_description=RainbowPieUI默认主题	#
+
+rainbowpie.ui.themesystem.description.title=简介:	#
+rainbowpie.ui.themesystem.version_toolow=当前主题版本太低！请更新！	#
+rainbowpie.ui.themesystem.version_toohight=当前主题版本太高！	#
+
+rainbowpie.ui.warn.packModed=被修改过的版本	#
+rainbowpie.ui.warn.packModed.text=我们检查到该版本已经被修改，请阅读包内copyright.txt文件来决定是否将该版本发布。（本提示每次启动都会显示）	#
+
+rainbowpie.ui.music_player.section.default=默认	#
+rainbowpie.ui.music_player.section.home=主页	#
+
+rainbowpie.ui.music_player.text.tip1=这里只列出游戏中包含的音乐，如果无法播放请检查音乐资源是否存在。	#
+rainbowpie.ui.music_player.seeAll=查看全部	#
+
+rainbowpie.ui.music_player.category.album=Minecraft音乐专辑	#
+
+rainbowpie.ui.music_player.section.album_volume_alpha=Volume Alpha	#
+rainbowpie.ui.music_player.music.key=C418 - Key	#
+rainbowpie.ui.music_player.music.subwoofer_lullaby=C418 - Subwoofer Lullaby	#
+rainbowpie.ui.music_player.music.living_mice=C418 - Living Mice	#
+rainbowpie.ui.music_player.music.haggstorm=C418 - Haggstrom	#
+rainbowpie.ui.music_player.music.minecraft=C418 - Minecraft	#
+rainbowpie.ui.music_player.music.oxygene=C418 - Oxygène	#
+rainbowpie.ui.music_player.music.mice_on_venus=C418 - Mice On Venus	#
+rainbowpie.ui.music_player.music.dry_hands=C418 - Dry Hands	#
+rainbowpie.ui.music_player.music.wet_hands=C418 - Wet Hands	#
+rainbowpie.ui.music_player.music.clark=C418 - Clark	#
+rainbowpie.ui.music_player.music.thirteen=C418 - Thirteen	#
+rainbowpie.ui.music_player.music.sweden=C418 - Sweden	#
+rainbowpie.ui.music_player.music.cat=C418 - Cat	#
+rainbowpie.ui.music_player.music.danny=C418 - Danny	#
+
+rainbowpie.ui.music_player.section.album_volume_beta=Volume Beta	#
+rainbowpie.ui.music_player.music.alpha=C418 - Alpha	#
+rainbowpie.ui.music_player.music.dead_voxel=C418 - Dead Voxel	#
+rainbowpie.ui.music_player.music.blind_spots=C418 - Blind Spots	#
+rainbowpie.ui.music_player.music.moog_city_2=C418 - Moog City 2	#
+rainbowpie.ui.music_player.music.concrete_halls=C418 - Concrete Halls	#
+rainbowpie.ui.music_player.music.biome_fest=C418 - Biome Fest	#
+rainbowpie.ui.music_player.music.mutation=C418 - Mutation	#
+rainbowpie.ui.music_player.music.haunt_muskie=C418 - Haunt Muskie	#
+rainbowpie.ui.music_player.music.warmth=C418 - Warmth	#
+rainbowpie.ui.music_player.music.floating_trees=C418 - Floating Trees	#
+rainbowpie.ui.music_player.music.aria_math=C418 - Aria Math	#
+rainbowpie.ui.music_player.music.ballad_of_the_cats=C418 - Ballad of the Cats	#
+rainbowpie.ui.music_player.music.taswell=C418 - Taswell	#
+rainbowpie.ui.music_player.music.beginning_2=C418 - Beginning 2	#
+rainbowpie.ui.music_player.music.dreiton=C418 - Dreiton	#
+rainbowpie.ui.music_player.music.the_end=C418 - The End	#
+rainbowpie.ui.music_player.music.chirp=C418 - Chirp	#
+rainbowpie.ui.music_player.music.wait=C418 - Wait	#
+rainbowpie.ui.music_player.music.mellohi=C418 - Mellohi	#
+rainbowpie.ui.music_player.music.stal=C418 - Stal	#
+rainbowpie.ui.music_player.music.strad=C418 - Strad	#
+rainbowpie.ui.music_player.music.ward=C418 - Ward	#
+rainbowpie.ui.music_player.music.mall=C418 - Mall	#
+rainbowpie.ui.music_player.music.blocks=C418 - Blocks	#
+rainbowpie.ui.music_player.music.far=C418 - Far	#
+
+rainbowpie.ui.music_player.section.album_caves_and_cliffs=Caves & Cliffs	#
+rainbowpie.ui.music_player.music.stand_tall=莉娜·雷恩 - Stand Tall	#
+rainbowpie.ui.music_player.music.left_to_bloom=莉娜·雷恩 - Left to Bloom	#
+rainbowpie.ui.music_player.music.ancestry=莉娜·雷恩 - Ancestry	#
+rainbowpie.ui.music_player.music.wending=莉娜·雷恩 - Wending	#
+rainbowpie.ui.music_player.music.infinite_amethyst=莉娜·雷恩 - Infinite Amethyst	#
+rainbowpie.ui.music_player.music.one_more_day=莉娜·雷恩 - One More Day	#
+rainbowpie.ui.music_player.music.otherside=莉娜·雷恩 - otherside	#
+rainbowpie.ui.music_player.music.floating_dream=谷岡久美 - Floating Dream	#
+rainbowpie.ui.music_player.music.comforting_memories=谷岡久美 - Comforting Memories	#
+rainbowpie.ui.music_player.music.an_ordinary_day=谷岡久美 - An Ordinary Day	#
+
+rainbowpie.ui.music_player.section.album_nether_update=Nether Update	#
+rainbowpie.ui.music_player.music.chrysopoeia=莉娜·雷恩 - Chrysopoeia	#
+rainbowpie.ui.music_player.music.rubedo=莉娜·雷恩 - Rubedo	#
+rainbowpie.ui.music_player.music.so_below=莉娜·雷恩 - So Below	#
+rainbowpie.ui.music_player.music.pigstep=莉娜·雷恩 - Pigstep (Stereo Mix)	#
+
+rainbowpie.ui.music_player.section.album_the_wild_update=The Wild Update	#
+rainbowpie.ui.music_player.music.firebugs=莉娜·雷恩 - Firebugs	#
+rainbowpie.ui.music_player.music.aerie=莉娜·雷恩 - Aerie	#
+rainbowpie.ui.music_player.music.labyrinthine=莉娜·雷恩 - Labyrinthine	#
+rainbowpie.ui.music_player.music.five=塞缪尔·阿伯格 - Five	#
+
+rainbowpie.ui.music_player.category.single=Minecraft音乐	#
+rainbowpie.ui.music_player.section.record=音乐唱片	#
+rainbowpie.ui.music_player.section.water=水下背景音乐	#
+
+## Music player old format
+
+rainbowpie.ui.music.random.record=音乐唱片
+rainbowpie.ui.music.random.other=其他
+rainbowpie.ui.music_player.musics=单曲
+
+rainbowpie.ui.music_player.vanilla=随机播放	#
+rainbowpie.ui.music.game.survival=生存模式	#
+rainbowpie.ui.music.game.creative=创造模式	#
+rainbowpie.ui.music.game.nether=地狱	#
+rainbowpie.ui.music.game.menu=菜单	#
+rainbowpie.ui.music.game.water=Water	#
+
+rainbowpie.ui.music_player.other=其他	#
+rainbowpie.ui.music.game.end=C418 - The End	#
+rainbowpie.ui.music.game.endboss=末影龙	#
+rainbowpie.ui.music.game.credits=C418 - Alpha	#
+
+rainbowpie.ui.music_player.survival=生存模式	#
+rainbowpie.ui.music.game.calm1=C418 - Minecraft	#
+rainbowpie.ui.music.game.calm2=C418 - Clark	#
+rainbowpie.ui.music.game.calm3=C418 - Sweden	#
+rainbowpie.ui.music.game.hal1=C418 - Subwoofer Lullaby	#
+rainbowpie.ui.music.game.hal2=C418 - Living Mice	#
+rainbowpie.ui.music.game.hal3=C418 - Haggstrom	#
+rainbowpie.ui.music.game.hal4=C418 - Danny	#
+rainbowpie.ui.music.game.nuance1=C418 - Key	#
+rainbowpie.ui.music.game.nuance2=C418 - Oxygène	#
+rainbowpie.ui.music.game.piano1=C418 - Dry Hands	#
+rainbowpie.ui.music.game.piano2=C418 - Wet Hands	#
+rainbowpie.ui.music.game.piano3=C418 - Mice On Venus	#
+
+rainbowpie.ui.music_player.creative=创造模式	#
+rainbowpie.ui.music.game.creative.creative1=C418 - Biome Fest	#
+rainbowpie.ui.music.game.creative.creative2=C418 - Blind Spots	#
+rainbowpie.ui.music.game.creative.creative3=C418 - Haunt Muskie	#
+rainbowpie.ui.music.game.creative.creative4=C418 - Aria Math	#
+rainbowpie.ui.music.game.creative.creative5=C418 - Dreiton	#
+rainbowpie.ui.music.game.creative.creative6=C418 - Taswell	#
+
+rainbowpie.ui.music_player.nether=地狱	#
+rainbowpie.ui.music.game.nether.nether1=C418 - Concrete Halls	#
+rainbowpie.ui.music.game.nether.nether2=C418 - Dead Voxel	#
+rainbowpie.ui.music.game.nether.nether3=C418 - Warmth	#
+rainbowpie.ui.music.game.nether.nether4=C418 - Ballad of the Cats	#
+
+rainbowpie.ui.music_player.menu=菜单	#
+rainbowpie.ui.music.menu.menu1=C418 - Mutation	#
+rainbowpie.ui.music.menu.menu2=C418 - Moog City 2	#
+rainbowpie.ui.music.menu.menu3=C418 - Beginning 2	#
+rainbowpie.ui.music.menu.menu4=C418 - Floating Trees	#
+rainbowpie.ui.music.menu.an_ordinary_day=谷岡久美 - An Ordinary Day
+rainbowpie.ui.music.menu.comforting_memories=谷岡久美 - Comforting Memories
+rainbowpie.ui.music.menu.floating_dream=谷岡久美 - Floating Dream
+rainbowpie.ui.music.menu.infinite_amethyst=莉娜·雷恩 - Infinite Amethyst
+rainbowpie.ui.music.menu.left_to_bloom=莉娜·雷恩 - Left to Bloom
+rainbowpie.ui.music.menu.one_more_day=莉娜·雷恩 - One More Day
+rainbowpie.ui.music.menu.stand_tall=莉娜·雷恩 - Stand Tall
+rainbowpie.ui.music.menu.wending=莉娜·雷恩 - Wending
+
+rainbowpie.ui.music_player.water=Water	#
+rainbowpie.ui.music.game.water.axolotl=C418 - Axolotl	#
+rainbowpie.ui.music.game.water.dragon_fish=C418 - Dragon Fish	#
+rainbowpie.ui.music.game.water.shuniji=C418 - Shuniji	#
+
+rainbowpie.ui.music_player.record=音乐唱片	#
+
+rainbowpie.text.music_tip=注意：如果你播放了任何一个随机音乐只能通过进入/退出世界、退出游戏和使用"/stopsound"指令停止播放！	#
+rainbowpie.text.music_tip2=本页面所有音乐来自Minecraft自带音乐包，如果您无法播放请检查是否已安装音乐包。	#
+
+--RainbowPie:UIName=§4R§ca§6i§en§ab§bo§5w §6Pie§r
+--RainbowPie:PackName=§4R§ca§6i§en§ab§bo§5w §6Pie§r
+
+pack.name=彩虹派UI	#
+pack.description=Minecraft UI
+
+Rainbow-Pie.hud_screen.Pocket_tips=使用Pocket档案可能无法体验到完美的Rainbow Pie	#
+
+options.Playbutton.label=音乐	#
+
+Rainbow-Pie.PlayMusic.Vanilla=原版音乐	#
+## 原版随机
+options.SoundButton.game=生存模式背景音乐 (随机)	#
+options.SoundButton.game.creative=创造模式背景音乐 (随机)
+options.SoundButton.game.end=终界背景音乐	#
+options.SoundButton.game.endboss=终界Boss背景音乐	#
+options.SoundButton.game.credits=Credits背景音乐	#
+options.SoundButton.game.nether=下界背景音乐 (随机)	#
+options.SoundButton.menu=主菜单背景音乐 (随机)	#
+options.SoundButton.water=水 (随机)	#
+
+Rainbow-Pie.PlayMusic.Record=唱片音乐	#
+options.SoundButton.Record_Random=随机	#
+options.SoundButton.Record_Random_NO11=随机 (没有11号)	#
+##PML
+menu.Rainbow-Pie.Pie_Modules_Loader=模块信息	#
+
+Pie_Modules_Loader.text.description=目前只能显示优先加载的PML	#
+Pie_Modules_Loader.update=更新内容:	#
+Pie_Modules_Loader.info.loader=PML已成功加载	#
+Pie_Modules_Loader.info.noloader=PML没有加载	#
+Pie_Modules_Loader.oldPmlVersion=旧版本PML (低于当前版本)	#
+Pie_Modules_Loader.text.notNew=PML已兼容旧版本（在当前版本可能会有BUG）	#
+Pie_Modules_Loader.text.new=PML兼容当前版本	#
+Pie_Modules_Loader.text.oldPack=PML可能不兼容当前版本！	#
+Pie_Modules_Loader.text.startScreen.warn=警告：您安装了一个可能不兼容当前版本的PML！	#
+Pie_Modules_Loader.text.startScreen.warn_title=警告	#
+Pie_Modules_Loader.text.startScreen.warn_text=您安装了一个可能不兼容当前版本的PML！	#
+Pie_Modules_Loader.text.systemVersion=系统版本	#
+Pie_Modules_Loader.text.author=作者	#
+Pie_Modules_Loader.text.supportClientVersion=支持的客户端版本	#
+Pie_Modules_Loader.text.moduleList=模块列表	#
+Pie_Modules_Loader.text.noModulesFound=没有安装任何模块	#
+
+rainbowpie.onlinePlay.doNotShowAgain=继续并且永不提醒	#
+rainbowpie.onlinePlay.continue=继续	#
+
+##死亡界面
+options.death.enabledQuitGame=启用主菜单按钮	#
+##设置
+options.pack_info=Rainbow Pie信息	#
+options.pack_update=更新内容	#
+options.netease_hide=中国版隐藏按钮	#
+options.notpregame_hidden_content=游戏内隐藏内容	#
+options.package_info=增量包信息	#
+
+options.desc.language=显示语言内容	#
+
+feed.screenshotManager=截图管理器	#
+
+start.tip1=请不要修改本材质包	#
+
+fold_menu.screenshot=截图分享	#
+fold_menu.voice_settings=语音设置	#
+
+credits.skip_tip=点击左上角跳过	#
+
+start.cantstart=无法启动?尝试删除Rainbow Pie	#
+start.doNotModUIPack.title=警告	#
+start.doNotModUIPack=请不要修改本UI包，请删除被修改过的版本并重新进入游戏。	#
+
+pack.safe_zone.reason=安全区已被系统禁用。	#
+
+pack.update.tip.1=提示:如果遇到bug请反馈到mintraspberryup@gmail.com :)	#
+pack.update.tip.2=	#
+pack.update.title.current=当前版本:	#
+pack.update.text=当前版本更新日志：	#
+pack.hud.welcome_tip=欢迎使用	#
+pack.chat.update_info=您可以在§ehttps://lanzoux.com/b0e7quvhg§r下载更新	#
+pack.chat.update_info.feedback=§a如果你遇到§cbug§a，请§e反馈§a到§bmintraspberryup@gmail.com	#
+pack.toggle.on=开启	#
+pack.toggle.off=关闭	#
+pack.slider.locked=已锁定	#
+pack.about=关于	#
+pack.music=音乐	#
+pack.emotes_text=表情更换未在此世界启用	#
+pack.pauseScreen.confirmQuit=再次点击确认保存并退出	#
+pack.loading=正在加载	#
+pack.hide_scoreboard=隐藏积分板	#
+pack.typeface.customFont=自定义字体	#
+start.pack.vanilla_screen.toggle=原版开始界面	#
+pack.pause.win10.tip=请移动鼠标再点击退出	#
+pack.pause.showPlayerList=显示玩家列表	#
+pack.update.version=版本	#
+pack.update.release=发布	#
+pack.language.tip=更换语言后可能会导致字体消失	#
+pack.music.tip=您可能需要在商店下载音乐包才能播放音乐	#
+pack.version_warn=版本警告！	#
+pack.no_suggest_version=该版本可能存在BUG 闪退等问题	#
+pack.new_minecraft_version=这是一个正在适配的版本，可能出现按钮缺少、闪退或报错，请遇到BUG及时反馈！	#
+pack.beta_minecraft_tip=您正在使用BETA版本的Minecraft搭载RainbowPieUI，请确保版本号与支持的正式版相近	#
+pack.suggest_version=推荐使用的版本	#
+pack.options.debug_info=Beta版Debug信息	#
+pack.options.debug_info.toggle=显示/隐藏	#
+pack.options.debug_info.off=显示	#
+pack.options.debug_info.on=隐藏	#
+pack.screen_animations_tip=你知道吗？打开屏幕动画可以让你获得更好的体验！
+pack.beta.feedback=您正在使用预览版的RainbowPieUI	#
+pack.beta.feedback2=如果遇到BUG请及时反馈至预览版发布群	#
+pack.packageInfo=增量包信息	#
+
+options.rainbowpie.theme_info=主题信息	#
+
+pack-load.loaded=已加载	#
+
+pack.operationMethod=操作方式	#
+
+crafting.pack.quickcraft=快速合成	#
+crafting.pack.delete=删除	#
+
+trade.pack.tradeAll=快速交易	#
+
+--RainbowPie:DebugWorld=测试专用世界	#
+
+manifestvalidation.pack.show_errors_off=显示错误	#
+manifestvalidation.pack.show_errors_on=隐藏错误	#
+
+pack.tips.game.1=<Removed>	#
+
+pack.pack_description=Mintraspberry(mintraspberryup@gmail.com) 保留所有权利。	#
+pack.fansGroup=交流群	#
+pack.mainMember=主要成员	#
+pack.thanks=感谢名单	#
+pack.language=语言包	#
+
+pack.notloggedin=未登录	#
+
+pack.alert=注意	#
+
+music_player.title=播放音乐	#
+music_player.reason=音乐播放器已禁用。	#
+
+music_player.vanilla=原版音乐	#
+music_player.record=唱片音乐	#
+music_player.x0.1=0.1倍速	#
+music_player.vanilla_x01=原版音乐 x0.1	#
+music_player.record_x01=唱片音乐 x0.1	#
+music_player.x0.5=0.5倍速	#
+music_player.vanilla_x05=原版音乐 x0.5	#
+music_player.record_x05=唱片音乐 x0.5	#
+music_player.x0.9=0.9倍速	#
+music_player.vanilla_x09=原版音乐 x0.9	#
+music_player.record_x09=唱片音乐 x0.9	#
+music_player.x1.5=1.5倍速	#
+music_player.vanilla_x15=原版音乐 x1.5	#
+music_player.record_x15=唱片音乐 x1.5	#
+music_player.x2.0=2.0倍速	#
+music_player.vanilla_x20=原版音乐 x2.0	#
+music_player.record_x20=唱片音乐 x2.0	#
+music_player.x2.5=2.5倍速	#
+music_player.vanilla_x25=原版音乐 x2.5	#
+music_player.record_x25=唱片音乐 x2.5	#
+music_player.x3.0=3.0倍速	#
+music_player.vanilla_x30=原版音乐 x3.0	#
+music_player.record_x30=唱片音乐 x3.0	#
+music_player.x3.5=3.5倍速	#
+music_player.vanilla_x35=原版音乐 x3.5	#
+music_player.record_x35=唱片音乐 x3.5	#
+music_player.x4.0=4.0倍速	#
+music_player.vanilla_x40=原版音乐 x4.0	#
+music_player.record_x40=唱片音乐 x4.0	#
+
+hudtip.enabledMinyFlying=喵喵喵~ 薄荷树莓来咯~~~	#
+hudtip.cantEnableMinyFlying=嘤嘤嘤~人家已经在这里啦~~	#
+
+rainbowpie.preview_text=预览发布版本

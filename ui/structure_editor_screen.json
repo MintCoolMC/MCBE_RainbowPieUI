@@ -1,0 +1,306 @@
+{
+  "namespace": "structure_editor",
+
+  "common_text_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "mirror_checkbox/label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "load_mode_panel/mirror_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "load_mode_panel/animation_time_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "save_message_text/save_message_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "import_message_text/save_message_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "import_failed_message_text/save_message_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "export_disabled_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "image_panel/border_indent/background_gradient": {
+    "ignored": true
+  },
+
+  "image_panel_wrapper/image_panel": {
+    "size": [ "100%", "100%" ]
+  },
+
+  "image_panel_wrapper": {
+    "texture": ""
+  },
+
+  "right_divider_content/base_offset": {
+    "ignored": true
+  },
+
+  "right_divider_content/preview": {
+    "size": [ "100%", "100% - 50px" ]
+  },
+
+  "right_divider_content/button_wrapper": {
+    "size": [ "100%", "46px" ]
+  },
+
+  "scrolling_panel": {
+    "$scroll_size": [ 3, "100% - 4px" ],
+    "$scroll_bar_left_padding_size": [ 0, 0 ]
+  },
+
+  "load_mode_panel/integrity_field": {
+    "ignored": true
+  },
+
+  "load_mode_panel/seed_field": {
+    "ignored": true
+  },
+
+  "load_mode_panel/animation_time_field": {
+    "ignored": true
+  },
+
+  "load_mode_panel": {
+    "modifications": [
+      {
+        "control_name": "integrity_field",
+        "operation": "insert_after",
+        "value": [
+          {
+            "integrity_field_panel": {
+              "type": "panel",
+              "size": [ "100%", 20 ],
+              "controls": [
+                {
+                  "integrity_field@structure_editor.text_edit_control": {
+                    "size": [ "100% + 2px", 20 ],
+                    "max_length": 64,
+                    "$text_box_name": "#integrity_field",
+                    "$text_edit_box_content_binding_name": "#integrity_content_edit_box",
+                    "$place_holder_text": "100.00"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "control_name": "seed_field",
+        "operation": "insert_after",
+        "value": [
+          {
+            "seed_field_panel": {
+              "type": "panel",
+              "size": [ "100%", 20 ],
+              "controls": [
+                {
+                  "seed_field@structure_editor.text_edit_control": {
+                    "size": [ "100% + 2px", 20 ],
+                    "max_length": 256,
+                    "$text_box_name": "#seed_field",
+                    "$text_edit_box_content_binding_name": "#seed_content_edit_box",
+                    "$place_holder_text": ""
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "control_name": "animation_time_field",
+        "operation": "insert_after",
+        "value": [
+          {
+            "animation_time_field_panel": {
+              "type": "panel",
+              "size": [ "100%", 20 ],
+              "controls": [
+                {
+                  "animation_time_field@structure_editor.text_edit_control": {
+                    "size": [ "100% + 2px", 20 ],
+                    "max_length": 10,
+                    "$text_edit_box_text_type": "NumberChars",
+                    "$text_box_name": "#animation_time_field",
+                    "$text_edit_box_content_binding_name": "#animation_time_content_edit_box",
+                    "$place_holder_text": "structure_block.animation_time_tip"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "animation_mode_dropdown": {
+    "$option_dropdown_size": [ "100%", 20 ],
+    "$button_mode": true,
+    "$button_mode_type": "3",
+    "$1_binding_name": "#structure_animation_none",
+    "$2_binding_name": "#structure_animation_layers",
+    "$3_binding_name": "#structure_animation_blocks",
+    "$1_label_text": "structure_block.place_by_none",
+    "$2_label_text": "structure_block.place_by_layer",
+    "$3_label_text": "structure_block.place_by_block"
+  },
+
+  "redstone_save_mode_panel": {
+    "$option_dropdown_size": [ "100%", 20 ],
+    "$button_mode": true,
+    "$button_mode_type": "2",
+    "$1_binding_name": "#structure_redstone_memory",
+    "$2_binding_name": "#structure_redstone_disk",
+    "$1_label_text": "structure_block.save_to_memory",
+    "$2_label_text": "structure_block.save_to_disk"
+  },
+
+  "detect_button_wrapper/detect": {
+    "size": [ "100% + 2px", 20 ]
+  },
+
+  "detect_button_wrapper": {
+    "size": [ "100%", 20 ]
+  },
+
+  "structure_name_wrapper/structure_name": {
+    "size": [ "100% + 2px", 20 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle"
+  },
+
+  "structure_name_wrapper": {
+    "size": [ "100%", 22 ]
+  },
+
+  "mode_panel": {
+    "type": "panel",
+    "size": [ "100%", 20 ],
+    "controls": [
+      {
+        "mode_panel_all_support@structure_editor_extra.mode_panel_all_support": {}
+      },
+      {
+        "mode_panel_all_not_support@structure_editor_extra.mode_panel_all_not_support": {}
+      },
+      {
+        "mode_panel_support_data@structure_editor_extra.mode_panel_support_data": {}
+      },
+      {
+        "mode_panel_support_3d@structure_editor_extra.mode_panel_support_3d": {}
+      }
+    ]
+  },
+
+  "scroll_panel_content/content_stack_panel/base_offset": {
+    // "ignored": true,
+    "size": [ "100%", 1 ]
+  },
+
+  "scroll_panel_content/content_stack_panel/mode_panel_offset": {
+    
+  },
+
+  "scroll_panel_content/content_stack_panel": {
+    "size": [ "100%", "100%c" ]
+  },
+
+  "scroll_panel_content": {
+    "size": [ "100% - 4px", "100%c" ],
+    "offset": [ 2, 0 ]
+  },
+
+  "scrolling_panel_wrapper/scrolling_panel": {
+    "size": [ "100%", "100%" ]
+  },
+
+  "scrolling_panel_wrapper": {
+    "offset": [ 0, 0 ],
+    "texture": ""
+  },
+
+  "divider_content/left_side": {
+    "size": [ "168px", "100% - 19px" ],
+    "offset": [ 0, 19 ]
+  },
+
+  "divider_content/right_side": {
+    "size": [ "100% - 168px", "100% - 19px" ],
+    "offset": [ "168px", 19 ]
+  },
+
+  "structure_editor_content/background_panel": {
+    "ignored": true
+  },
+
+  "structure_editor_content/title": {
+    "ignored": true
+  },
+
+  "structure_editor_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "mask_layer@mintui_background.background_mask": {
+              "$background_offset": [ "-100% + 168px", 19 ],
+              "$background_children_offset": [ "100% - 168px", -19 ],
+              "$background_layer": -3
+            }
+          },
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "structure_block.title",
+              "$header_offset": [
+                "@structure_editor_extra.structure_editor_bar_back_animation",
+                "@common_store.store_top_bar_back_animation",
+                "@structure_editor_extra.structure_editor_bar_animation",
+                "@common_store.store_top_bar_animation_pop"
+              ],
+              "$HeaderBlurAnims": [
+                "@pause.top_bar_blur_back_animation",
+                "@pause.top_bar_blur_animation"
+              ],
+              "$HeaderBlur2Anims": [
+                "@pause.top_bar_blur2_back_animation",
+                "@pause.top_bar_blur2_animation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "structure_editor_screen": {
+    "force_render_below": true,
+    "$screen_bg_content": "settings_common.background_black",
+    "$screen_background_alpha": 0.4
+  }
+}

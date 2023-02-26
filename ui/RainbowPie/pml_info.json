@@ -1,0 +1,141 @@
+{
+  "namespace": "rainbowpie_pml",
+
+  "pml_info_tmp": {
+    "type": "stack_panel",
+    "controls": [
+      {
+        "pml_info_tmp_i@rainbowpie_pml.pml_info_tmp_i": {}
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ 6, 6 ]
+        }
+      }
+    ]
+  },
+
+  "pml_info_tmp_i": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [ "100%", 50 ],
+    "alpha": 0.5,
+    "$module_icon_texture|default": "textures/RainbowPie/PML/pml_icon",
+    "$module_name|default": "module_name",
+    "$module_version|default": "module_version",
+    "$module_author|default": "module_author",
+    "$module_description|default": "module_description",
+    "$module_state_check|default": false,
+    "$module_max_engine_version|default": "0",
+    "$module_max_engine_patch_version|default": "0",
+    "$module_min_engine_version|default": "0",
+    "$module_min_engine_patch_version|default": "0",
+    "controls": [
+      {
+        "stack_panel_1": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", "100%" ],
+          "layer": 3,
+          "controls": [
+            {
+              "image_icon": {
+                "type": "image",
+                "size": [ 50, 50 ],
+                "texture": "$module_icon_texture"
+              }
+            },
+            {
+              "padding_1": {
+                "type": "panel",
+                "size": [ 2, 2 ]
+              }
+            },
+            {
+              "stack_panel_2": {
+                "type": "stack_panel",
+                "size": [ "fill", "fill" ],
+                "controls": [
+                  {
+                    "padding_top@common.empty_panel": {
+                      "size": [ 1.8, 1.8 ]
+                    }
+                  },
+                  {
+                    "label_1": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 15 ],
+                      "text": "($module_name + ' [' + $module_state + ']' + $module_update_state)",
+                      "font_scale_factor": 1.5,
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "$module_state|default": "§cINACTIVE§r",
+                      "$module_update_state|default": "",
+                      "variables": [
+                        {
+                          "requires": "$module_state_check",
+                          "$module_state": "§aACTIVE§r"
+                        },
+                        {
+                          "requires": "(($module_max_engine_version < $rainbowpieui_engine_version) or ($module_max_engine_patch_version < $rainbowpieui_patch_version))",
+                          "$module_update_state": " [§eNEEDUPDATE§r]"
+                        },
+                        {
+                          "requires": "(($module_min_engine_version > $rainbowpieui_engine_version) or ($module_min_engine_patch_version > $rainbowpieui_patch_version))",
+                          "$module_update_state": " [§cUNSUPPORT§r]"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "label_2": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 10 ],
+                      "text": "($module_version + ', §o§l' + $module_author)",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  },
+                  {
+                    "label_3": {
+                      "type": "label",
+                      "layer": 1,
+                      "size": [ "100%", 20 ],
+                      "text": "$module_description",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "pml_info": {
+    "type": "stack_panel",
+    "controls": [
+      {
+        "<module_pack_uuid>@rainbowpie_pml.pml_info_tmp": {
+          "visible": "$development_pack",
+          "$module_icon_texture": "textures/RainbowPie/PML/pml_icon", // 模块图标
+          "$module_name": "module_name", // 模块名称
+          "$module_version": "module_version", // 模块版本
+          "$module_author": "module_author", // 模块作者
+          "$module_description": "module_description", // 模块简介
+          "$module_state_check": "$module_loaded", // 检查变量是否正确
+          "$module_max_engine_version": "999999", // 最大版本，如果没有最大版本写999999即可
+          "$module_max_engine_patch_version": "999999", // 最大补丁版本，如果没有最大版本写999999即可
+          "$module_min_engine_version": "0", // 最小版本，如果没有最小版本写0即可
+          "$module_min_engine_patch_version": "0" // 最小补丁版本，如果没有最小版本写0即可
+        }
+      }
+    ]
+  }
+}

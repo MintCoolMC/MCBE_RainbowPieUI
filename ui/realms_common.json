@@ -1,0 +1,8 @@
+{
+  "namespace": "realms_common",
+
+  "hollow_banner": {
+    "texture": "textures/ui/Black",
+    "alpha": 0.4
+  }
+}

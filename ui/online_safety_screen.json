@@ -1,0 +1,71 @@
+{
+  "namespace": "online_safety",
+
+  "online_safety_description": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "color": "$rainbowpie_ui_theme_text_text_color"
+  },
+
+  "ip_safety_description": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "ip_safety_dialog": {
+    "size": [ 200, 142 ],
+    "$rainbowpie_dialogwindow_style2": true,
+    "$top_button_panel": "online_safety_extra.do_not_show_checkbox"
+  },
+
+  "online_safety_screen": {
+    "$rainbowpie_ui_screenbackground_bsf_need": false,
+    "$screen_animations": [
+      "@online_safety_extra.exit_animation_push",
+      "@online_safety_extra.exit_animation_pop"
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.back",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.proceed",
+        "mapping_type": "global"
+      }
+    ],
+    "$screen_content": "online_safety_extra.online_safety_screen_content"
+  },
+
+  "ip_safety_screen": {
+    "should_be_skipped_during_automation": false,
+    "$screen_animations": [
+      "@common.screen_exit_animation_push_offset",
+      "@common.screen_exit_animation_pop_offset",
+      "@common.screen_entrance_animation_push_offset",
+      "@common.screen_entrance_animation_pop_offset",
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ]
+  },
+
+  "ip_safety_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "background@mintui_background.background_blur_fullscreen": {
+              "layer": -3000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

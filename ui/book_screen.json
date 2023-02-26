@@ -1,0 +1,95 @@
+{
+  "namespace": "book",
+
+  "book_screen_animation": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 1,
+    "to": [ "100%", "100%" ],
+    "from": [ 0, "100%" ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "book_screen_animation_pop": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 1,
+    "to": [ "100%", "100%" ],
+    "from": [ 0, "100%" ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "book_screen_back_animation": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ "100%", "100%" ],
+    "to": [ 0, "100%" ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "book_screen_back_animation_pop": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ "100%", "100%" ],
+    "to": [ 0, "100%" ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "book_screen_content": {
+    "clips_children": true,
+    "animation_reset_name": "screen_animation_reset",
+    "anims": [
+      "@book.book_screen_back_animation",
+      "@book.book_screen_back_animation_pop",
+      "@book.book_screen_animation",
+      "@book.book_screen_animation_pop"
+    ]
+  },
+
+  "author_text_box": {
+    "max_length": 32767,
+    "enabled_newline": true,
+    "$rainbowpie_ui_theme_input_text_color": "$book_author_color"
+  },
+
+  "title_text_box": {
+    "max_length": 32767,
+    "enabled_newline": true,
+    "$rainbowpie_ui_theme_input_text_color": "$book_title_color"
+  },
+
+  "page_text_edit": {
+    "$rainbowpie_ui_theme_input_text_color": "$book_page_text_color"
+  },
+
+  "page_number_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "title_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "author_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "warning_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "book_screen": {
+    "force_render_below": true,
+    "close_on_player_hurt": false
+  }
+}

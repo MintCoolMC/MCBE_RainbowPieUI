@@ -1,0 +1,78 @@
+{
+  "namespace": "horse",
+
+  "horse_screen": {
+    "close_on_player_hurt": false,
+    "modifications": [
+      {
+        "array_name": "variables",
+        "operation": "insert_front",
+        "value": [
+          {
+            "requires": "$pocket_screen",
+            "$screen_animations": [
+              "@common.screen_exit_animation_push_fade",
+              "@common.screen_exit_animation_pop_fade",
+              "@common.screen_entrance_animation_push_fade",
+              "@common.screen_entrance_animation_pop_fade"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "horse_renderer/renderer_bg": {
+    "ignored": true
+  },
+
+  "horse_panel": {
+    "type": "panel",
+    "controls": [
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      { "flying_item_renderer@common.flying_item_renderer": {} },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      {
+        "title_text@common_art.title_text": {
+          "ignored": "$hide_inventory_watermark",
+          "offset": [ 0, 94 ],
+          "anchor_to": "buttom_middle",
+          "anchor_from": "buttom_middle",
+          "$title_text_scale": 2.0
+        }
+      },
+      {
+        "root_panel@common.root_panel": {
+          "layer": 1,
+          "controls": [
+            {
+              "inv_header@rainbowpie.inv_header": {
+                "offset": [ 0, 2 ],
+                "$title_icon_ignored": true,
+                "$title_text": "$container_title",
+                "$title_icon_texture": "('textures/ui/inventory_icons/horse/' + $container_title)"
+              }
+            },
+            { "inv_panel@horse.inv_panel": {} },
+
+            {
+              "equipment@horse.equip_panel": {
+                "offset": [ 7, 18 ]
+              }
+            },
+            {
+              "renderer@horse.horse_renderer": {
+                "offset": [ 25, 18 ]
+              }
+            },
+
+            { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
+            { "hotbar_grid_template@common.hotbar_grid_template": {} },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  }
+}

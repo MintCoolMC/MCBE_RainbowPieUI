@@ -1,0 +1,401 @@
+## Comments can be added anywhere on a valid line by starting with '##'
+##
+## Note, trailing spaces will NOT be trimmed. If you want room between the end of the string and the start of a
+## comment on the same line, use TABs.
+
+rainbowpie.ui.error=This is a error message!
+
+rainbowpie.ui.uidebug.item_id_convert=Item id convert
+rainbowpie.ui.uidebug.item_id=Item id
+rainbowpie.ui.uidebug.item_aux_id=Item aux id
+rainbowpie.ui.uidebug.handle_string=Handle String
+rainbowpie.ui.uidebug.handle_number=Handle Number
+rainbowpie.ui.uidebug.image=Image
+rainbowpie.ui.uidebug.image_texture_path=Texture path
+rainbowpie.ui.uidebug.image_file_system=File system
+
+rainbowpie.ui.npc_interact.command.title.dialog=Dialog styles
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_0=NPC_DIALOG_0 - Only Text
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_1=NPC_DIALOG_1 - 1 Button
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_2=NPC_DIALOG_2 - 2 Buttons
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_3=NPC_DIALOG_3 - 3 Buttons
+rainbowpie.ui.npc_interact.command.title.background=Background (Optional)
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_BG=NPC_DIALOG_BG - Normal
+rainbowpie.ui.npc_interact.command.NPC_DIALOG_BG_NOBLUR=NPC_DIALOG_BG_NOBLUR - No blur
+rainbowpie.ui.npc_interact.command.text.tip=please choose one of each
+
+rainbowpie.ui.screenshot.saved=Screenshots have been saved to
+
+rainbowpie.ui.resourcepack.moduletag=[Module]
+rainbowpie.ui.resourcepack.packagetag=[Package]
+rainbowpie.ui.resourcepack.themetag=[Theme]
+
+rainbowpie.ui.crafting.quickcraft=Quick Craft
+rainbowpie.ui.crafting.delete=Delete
+
+rainbowpie.ui.version.warn=Warning!
+rainbowpie.ui.version.supported=Supported Versions:
+rainbowpie.ui.version.warn_unsupport=This version may have bugs or problems
+
+rainbowpie.ui.dialog.title_default=Alert
+
+rainbowpie.ui.warning.text.trial=The current game version is a trial version, and Rainbow Pie UI does not support the trial version of the game.
+rainbowpie.ui.warning.text.error=A fatal error has occurred that may affect normal use.
+rainbowpie.ui.warning.text.warning=An error occurred.
+rainbowpie.ui.warning.text.debug=This is debug placeholder.
+rainbowpie.ui.warning.button.check=Check error
+rainbowpie.ui.warning.button.deactivate=Deactivate Pack
+
+rainbowpie.ui.resourcepack.search.placeholder.resource=Search your resource packs
+rainbowpie.ui.resourcepack.search.placeholder.behavior=Search your behavior packs
+
+rainbowpie.ui.play.search.placeholder=Search your worlds
+
+rainbowpie.ui.hud.clickspace.tip=Click this space to show HUD
+
+rainbowpie.ui.howtoplay.HUD.header.1=Rainbow Pie UI Shortcuts
+rainbowpie.ui.howtoplay.HUD.text.1=The Rainbow Pie UI adds two shortcuts to your HUD that you would not normally be able to see where they are, so in case you don't know, please read the following text.
+rainbowpie.ui.howtoplay.HUD.text.2=Hide Paper Doll: You can quickly show or hide paper dolls by simply clicking on their location.
+rainbowpie.ui.howtoplay.HUD.text.3=Hide HUD: Click on the lower right corner of your HUD to hide the HUD quickly, and click again to show it. Note that the position you click should be in the safe area, otherwise the shortcut cannot be triggered!
+
+rainbowpie.ui.theme.default_name=Default Theme
+rainbowpie.ui.theme.default_auther=Mintraspberry Cool
+rainbowpie.ui.theme.default_description=Rainbow Pie UI Default Theme
+
+rainbowpie.ui.themesystem.description.title=Description:
+rainbowpie.ui.themesystem.version_toolow=This theme version is too low! please update!
+rainbowpie.ui.themesystem.version_toohight=This theme version is too hight!
+
+rainbowpie.ui.warn.packModed=Modified Version
+rainbowpie.ui.warn.packModed.text=We checked that this version has been modified, please read the copyright.txt file in the package to decide whether to release this version. (This prompt will be displayed every time you start)
+
+rainbowpie.ui.music_player.section.default=Default
+rainbowpie.ui.music_player.section.home=Home
+
+rainbowpie.ui.music_player.text.tip1=Only the music included in the game is listed here.
+rainbowpie.ui.music_player.seeAll=See All
+
+rainbowpie.ui.music_player.category.album=Minecraft Music Albums
+
+rainbowpie.ui.music_player.section.album_volume_alpha=Volume Alpha
+rainbowpie.ui.music_player.music.key=C418 - Key
+rainbowpie.ui.music_player.music.subwoofer_lullaby=C418 - Subwoofer Lullaby
+rainbowpie.ui.music_player.music.living_mice=C418 - Living Mice
+rainbowpie.ui.music_player.music.haggstorm=C418 - Haggstrom
+rainbowpie.ui.music_player.music.minecraft=C418 - Minecraft
+rainbowpie.ui.music_player.music.oxygene=C418 - Oxygène
+rainbowpie.ui.music_player.music.mice_on_venus=C418 - Mice On Venus
+rainbowpie.ui.music_player.music.dry_hands=C418 - Dry Hands
+rainbowpie.ui.music_player.music.wet_hands=C418 - Wet Hands
+rainbowpie.ui.music_player.music.clark=C418 - Clark
+rainbowpie.ui.music_player.music.thirteen=C418 - Thirteen
+rainbowpie.ui.music_player.music.sweden=C418 - Sweden
+rainbowpie.ui.music_player.music.cat=C418 - Cat
+rainbowpie.ui.music_player.music.danny=C418 - Danny
+
+rainbowpie.ui.music_player.section.album_volume_beta=Volume Beta
+rainbowpie.ui.music_player.music.alpha=C418 - Alpha
+rainbowpie.ui.music_player.music.dead_voxel=C418 - Dead Voxel
+rainbowpie.ui.music_player.music.blind_spots=C418 - Blind Spots
+rainbowpie.ui.music_player.music.moog_city_2=C418 - Moog City 2
+rainbowpie.ui.music_player.music.concrete_halls=C418 - Concrete Halls
+rainbowpie.ui.music_player.music.biome_fest=C418 - Biome Fest
+rainbowpie.ui.music_player.music.mutation=C418 - Mutation
+rainbowpie.ui.music_player.music.haunt_muskie=C418 - Haunt Muskie
+rainbowpie.ui.music_player.music.warmth=C418 - Warmth
+rainbowpie.ui.music_player.music.floating_trees=C418 - Floating Trees
+rainbowpie.ui.music_player.music.aria_math=C418 - Aria Math
+rainbowpie.ui.music_player.music.ballad_of_the_cats=C418 - Ballad of the Cats
+rainbowpie.ui.music_player.music.taswell=C418 - Taswell
+rainbowpie.ui.music_player.music.beginning_2=C418 - Beginning 2
+rainbowpie.ui.music_player.music.dreiton=C418 - Dreiton
+rainbowpie.ui.music_player.music.the_end=C418 - The End
+rainbowpie.ui.music_player.music.chirp=C418 - Chirp
+rainbowpie.ui.music_player.music.wait=C418 - Wait
+rainbowpie.ui.music_player.music.mellohi=C418 - Mellohi
+rainbowpie.ui.music_player.music.stal=C418 - Stal
+rainbowpie.ui.music_player.music.strad=C418 - Strad
+rainbowpie.ui.music_player.music.ward=C418 - Ward
+rainbowpie.ui.music_player.music.mall=C418 - Mall
+rainbowpie.ui.music_player.music.blocks=C418 - Blocks
+rainbowpie.ui.music_player.music.far=C418 - Far
+
+rainbowpie.ui.music_player.section.album_caves_and_cliffs=Caves & Cliffs
+rainbowpie.ui.music_player.music.stand_tall=Lena Raine - Stand Tall
+rainbowpie.ui.music_player.music.left_to_bloom=Lena Raine - Left to Bloom
+rainbowpie.ui.music_player.music.ancestry=Lena Raine - Ancestry
+rainbowpie.ui.music_player.music.wending=Lena Raine - Wending
+rainbowpie.ui.music_player.music.infinite_amethyst=Lena Raine - Infinite Amethyst
+rainbowpie.ui.music_player.music.one_more_day=Lena Raine - One More Day
+rainbowpie.ui.music_player.music.otherside=Lena Raine - otherside
+rainbowpie.ui.music_player.music.floating_dream=Kumi Tanioka - Floating Dream
+rainbowpie.ui.music_player.music.comforting_memories=Kumi Tanioka - Comforting Memories
+rainbowpie.ui.music_player.music.an_ordinary_day=Kumi Tanioka - An Ordinary Day
+
+rainbowpie.ui.music_player.section.album_nether_update=Nether Update
+rainbowpie.ui.music_player.music.chrysopoeia=Lena Raine - Chrysopoeia
+rainbowpie.ui.music_player.music.rubedo=Lena Raine - Rubedo
+rainbowpie.ui.music_player.music.so_below=Lena Raine - So Below
+rainbowpie.ui.music_player.music.pigstep=Lena Raine - Pigstep (Stereo Mix)
+
+rainbowpie.ui.music_player.section.album_the_wild_update=The Wild Update
+rainbowpie.ui.music_player.music.firebugs=Lena Raine - Firebugs
+rainbowpie.ui.music_player.music.aerie=Lena Raine - Aerie
+rainbowpie.ui.music_player.music.labyrinthine=Lena Raine - Labyrinthine
+rainbowpie.ui.music_player.music.five=Samuel Åberg - Five
+
+rainbowpie.ui.music_player.category.single=Minecraft Music
+rainbowpie.ui.music_player.section.record=Records
+rainbowpie.ui.music_player.section.water=Under Water
+
+## Music player old format
+
+rainbowpie.ui.music.random.record=Music Discs
+rainbowpie.ui.music.random.other=Other
+rainbowpie.ui.music_player.musics=Music
+
+rainbowpie.ui.music_player.vanilla=Random
+rainbowpie.ui.music.game.survival=Survival Mode
+rainbowpie.ui.music.game.creative=Creative Mode
+rainbowpie.ui.music.game.nether=Nether
+rainbowpie.ui.music.game.menu=Menu
+rainbowpie.ui.music.game.water=Water
+
+rainbowpie.ui.music_player.other=Other
+rainbowpie.ui.music.game.end=C418 - The End
+rainbowpie.ui.music.game.endboss=End Dragon
+rainbowpie.ui.music.game.credits=C418 - Alpha
+
+rainbowpie.ui.music_player.survival=Survival Mode
+rainbowpie.ui.music.game.calm1=C418 - Minecraft
+rainbowpie.ui.music.game.calm2=C418 - Clark
+rainbowpie.ui.music.game.calm3=C418 - Sweden
+rainbowpie.ui.music.game.hal1=C418 - Subwoofer Lullaby
+rainbowpie.ui.music.game.hal2=C418 - Living Mice
+rainbowpie.ui.music.game.hal3=C418 - Haggstrom
+rainbowpie.ui.music.game.hal4=C418 - Danny
+rainbowpie.ui.music.game.nuance1=C418 - Key
+rainbowpie.ui.music.game.nuance2=C418 - Oxygène
+rainbowpie.ui.music.game.piano1=C418 - Dry Hands
+rainbowpie.ui.music.game.piano2=C418 - Wet Hands
+rainbowpie.ui.music.game.piano3=C418 - Mice On Venus
+
+rainbowpie.ui.music_player.creative=Creative Mode
+rainbowpie.ui.music.game.creative.creative1=C418 - Biome Fest
+rainbowpie.ui.music.game.creative.creative2=C418 - Blind Spots
+rainbowpie.ui.music.game.creative.creative3=C418 - Haunt Muskie
+rainbowpie.ui.music.game.creative.creative4=C418 - Aria Math
+rainbowpie.ui.music.game.creative.creative5=C418 - Dreiton
+rainbowpie.ui.music.game.creative.creative6=C418 - Taswell
+
+rainbowpie.ui.music_player.nether=Nether
+rainbowpie.ui.music.game.nether.nether1=C418 - Concrete Halls
+rainbowpie.ui.music.game.nether.nether2=C418 - Dead Voxel
+rainbowpie.ui.music.game.nether.nether3=C418 - Warmth
+rainbowpie.ui.music.game.nether.nether4=C418 - Ballad of the Cats
+rainbowpie.ui.music.game.nether.chrysopoeia=Lena Raine - Chrysopoeia
+rainbowpie.ui.music.game.nether.rubedo=Lena Raine - Rubedo
+rainbowpie.ui.music.game.nether.so_below=Lena Raine - So Below
+
+rainbowpie.ui.music_player.menu=Menu
+rainbowpie.ui.music.menu.menu1=C418 - Mutation
+rainbowpie.ui.music.menu.menu2=C418 - Moog City 2
+rainbowpie.ui.music.menu.menu3=C418 - Beginning 2
+rainbowpie.ui.music.menu.menu4=C418 - Floating Trees
+rainbowpie.ui.music.menu.an_ordinary_day=Kumi Tanioka - An Ordinary Day
+rainbowpie.ui.music.menu.comforting_memories=Kumi Tanioka - Comforting Memories
+rainbowpie.ui.music.menu.floating_dream=Kumi Tanioka - Floating Dream
+rainbowpie.ui.music.menu.infinite_amethyst=Lena Raine - Infinite Amethyst
+rainbowpie.ui.music.menu.left_to_bloom=Lena Raine - Left to Bloom
+rainbowpie.ui.music.menu.one_more_day=Lena Raine - One More Day
+rainbowpie.ui.music.menu.stand_tall=Lena Raine - Stand Tall
+rainbowpie.ui.music.menu.wending=Lena Raine - Wending
+
+rainbowpie.ui.music_player.water=Water
+rainbowpie.ui.music.game.water.axolotl=C418 - Axolotl
+rainbowpie.ui.music.game.water.dragon_fish=C418 - Dragon Fish
+rainbowpie.ui.music.game.water.shuniji=C418 - Shuniji
+
+rainbowpie.ui.music_player.record=Music Discs
+
+rainbowpie.text.music_tip=Note: If you play any of the random music you can only stop it by entering/exiting the world, quitting the game and using the "/stopsound" command!
+rainbowpie.text.music_tip2=All the music on this page comes from Minecraft's own music package, if you can't play it please check if you have installed the music package.
+
+--RainbowPie:UIName=§4R§ca§6i§en§ab§bo§5w §6Pie§r
+--RainbowPie:PackName=§4R§ca§6i§en§ab§bo§5w §6Pie§r
+
+pack.name=Rainbow Pie UI
+pack.description=Minecraft UI
+
+Rainbow-Pie.hud_screen.Pocket_tips=Using pocket profile could prevent you from getting a full experience of Rainbow Pie#
+
+options.Playbutton.label=Music
+
+Rainbow-Pie.PlayMusic.Vanilla=Vanilla Music
+## 原版随机
+options.SoundButton.game=Bgm of survival (Random)
+options.SoundButton.game.creative=Bgm of creative (Random)
+options.SoundButton.game.end=Bgm of end
+options.SoundButton.game.endboss=Bgm of end dragon
+options.SoundButton.game.credits=Bgm of credits screen
+options.SoundButton.game.nether=Bgm of nether (Random)
+options.SoundButton.menu=Bgm of main menu (Random)
+options.SoundButton.water=Sound of water (Random)
+
+Rainbow-Pie.PlayMusic.Record=Record Music
+options.SoundButton.Record_Random=Random
+options.SoundButton.Record_Random_NO11=Random without no.11
+##PML
+menu.Rainbow-Pie.Pie_Modules_Loader=Module INFO
+
+Pie_Modules_Loader.text.description=Only the PML loaded on the top will be shown here
+Pie_Modules_Loader.update=What's new:
+Pie_Modules_Loader.info.loader=PML Loaded successfully
+Pie_Modules_Loader.info.noloader=PML not loaded
+Pie_Modules_Loader.oldPmlVersion=PML version too low (can't be loaded)
+Pie_Modules_Loader.text.notNew=This PML is compatible with this version（BUGs can occur）
+Pie_Modules_Loader.text.new=PML version matches RP version √
+Pie_Modules_Loader.text.oldPack=PML pack too old
+Pie_Modules_Loader.text.startScreen.warn=Warning: You have installed a PML that may not have Incompatibility with the RP pack#
+Pie_Modules_Loader.text.startScreen.warn_title=WARNING
+Pie_Modules_Loader.text.startScreen.warn_text=You have installed a PML that may not have Incompatibility with the RP pack!#
+Pie_Modules_Loader.text.systemVersion=System Version
+Pie_Modules_Loader.text.author=Author
+Pie_Modules_Loader.text.supportClientVersion=Support Client Version
+Pie_Modules_Loader.text.moduleList=Module List
+Pie_Modules_Loader.text.noModulesFound=No Modules Found!
+
+rainbowpie.onlinePlay.doNotShowAgain=Continue and never remind
+rainbowpie.onlinePlay.continue=Continue
+
+##死亡界面
+options.death.enabledQuitGame=Enable the button to main menu 
+##设置
+options.pack_info=Rainbow Pie INFO
+options.pack_update=Change log
+options.netease_hide=Netease Buttons
+options.notpregame_hidden_content=IN GAME HIDDEN CONTENT
+options.package_info=PACKAGE INFO
+
+options.desc.language=Show Language Content
+
+feed.screenshotManager=Screenshot Manager
+
+start.tip1=DONNOT MODIFY this pack
+
+fold_menu.screenshot=Share screenshot
+fold_menu.voice_settings=Voice settings
+
+credits.skip_tip=Tap upper left corner tp skip
+
+start.cantstart=Having trouble starting the game? Try deleting Rainbow Pie
+start.doNotModUIPack.title=Warning!
+start.doNotModUIPack=Please delete this package and restart the Minecraft.
+
+pack.safe_zone.reason=Disabled
+
+pack.update.tip.1=Report bugs at mintraspberryup@gmail.com :)
+pack.update.tip.2=
+pack.update.title.current=Current Version:
+pack.update.text=Change Log:
+pack.hud.welcome_tip=Welcome
+pack.chat.update_info=Download the latest version at §ehttps://lanzoux.com/b0e7quvhg§r
+pack.chat.update_info.feedback=§aIncountering§c BUGs §a? Please§e REPORT §aat §bmintraspberryup@gmail.com
+pack.toggle.on=ON
+pack.toggle.off=OFF
+pack.slider.locked=LOCKED
+pack.about=About
+pack.music=Music
+pack.emotes_text=Emote changing is not enabled in this world
+pack.pauseScreen.confirmQuit=Press again to confirm Save & Quit
+pack.loading=LOADING
+pack.hide_scoreboard=Hide Scoreboard
+pack.typeface.customFont=Custom Font
+start.pack.vanilla_screen.toggle=Vanilla Screen
+pack.pause.win10.tip=Move your cursor so you can click Save&Quit
+pack.pause.showPlayerList=Player List
+pack.update.version=Version
+pack.update.release=Release
+pack.language.tip=Changing the language may cause INVISIBLE TEXTS
+pack.music.tip=You may have to download the music pack from the in-game store to play music
+pack.version_warn=Warning!
+pack.no_suggest_version=This version may have bugs or problems
+pack.new_minecraft_version=This is a version that is being adapted, and there may be crashes or errors.
+pack.beta_minecraft_tip=You are using Minecraft Beta, please make sure the version is similar to the official version supported
+pack.suggest_version=Suggested version
+pack.options.debug_info=Debug info for beta versions
+pack.options.debug_info.toggle=Show/Hide
+pack.options.debug_info.off=Show
+pack.options.debug_info.on=Hide
+pack.screen_animations_tip=Screen Animations!
+pack.beta.feedback=You are using Preview Version RainbowPieUI
+pack.beta.feedback2= 
+pack.packageInfo=Package INFO
+
+options.rainbowpie.preview=Preview
+options.rainbowpie.preview.text.1=You are using Preview Version RainbowPieUI
+options.rainbowpie.theme_info=Theme
+
+pack-load.loaded=Loaded
+
+pack.operationMethod=Operation Method
+
+crafting.pack.quickcraft=Quick Craft
+crafting.pack.delete=Delete
+
+trade.pack.tradeAll=Trade All
+
+--RainbowPie:DebugWorld=Test UI Pack
+
+manifestvalidation.pack.show_errors_off=SHOW ERRORS
+manifestvalidation.pack.show_errors_on=HIDE ERRORS
+
+pack.tips.game.1=Meow Meow Meow~
+
+pack.pack_description=Mintraspberry(mintraspberryup@gmail.com) All rights reserved.
+pack.fansGroup=Groups
+pack.mainMember=Main Member
+pack.thanks=Thanks List
+pack.language=Language Pack
+
+pack.notloggedin=Not logged in
+
+pack.alert=Alert
+
+music_player.title=Music
+music_player.reason=Disabled.
+
+music_player.vanilla=Vanilla Music
+music_player.record=Record Music
+music_player.x0.1=x0.1
+music_player.vanilla_x01=Vanilla Music x0.1
+music_player.record_x01=Record Music x0.1
+music_player.x0.5=x0.5
+music_player.vanilla_x05=Vanilla Music x0.5
+music_player.record_x05=Record Music x0.5
+music_player.x0.9=x0.9
+music_player.vanilla_x09=Vanilla Music x0.9
+music_player.record_x09=Record Music x0.9
+music_player.x1.5=x1.5
+music_player.vanilla_x15=Vanilla Music x1.5
+music_player.record_x15=Record Music x1.5
+music_player.x2.0=x2.0
+music_player.vanilla_x20=Vanilla Music x2.0
+music_player.record_x20=Record Music x2.0
+music_player.x2.5=x2.5
+music_player.vanilla_x25=Vanilla Music x2.5
+music_player.record_x25=Record Music x2.5
+music_player.x3.0=x3.0
+music_player.vanilla_x30=Vanilla Music x3.0
+music_player.record_x30=Record Music x3.0
+music_player.x3.5=x3.5
+music_player.vanilla_x35=Vanilla Music x3.5
+music_player.record_x35=Record Music x3.5
+music_player.x4.0=x4.0
+music_player.vanilla_x40=Vanilla Music x4.0
+music_player.record_x40=Record Music x4.0
+
+hudtip.enabledMinyFlying=喵喵喵~ 薄荷树莓来咯~~~
+hudtip.cantEnableMinyFlying=嘤嘤嘤~人家已经在这里啦~~
+
+rainbowpie.preview_text=Preview release version

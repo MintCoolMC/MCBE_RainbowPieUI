@@ -1,0 +1,8 @@
+{
+  "namespace": "persona_deprecated",
+
+  "emote_wheel_screen_deprecated": {
+    "$screen_bg_layer": 2,
+    "force_render_below": true
+  }
+}

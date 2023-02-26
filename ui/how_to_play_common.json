@@ -1,0 +1,780 @@
+/********************************************************
++*   (c) Mojang. All rights reserved                       *
++*   (c) Microsoft. All rights reserved.                   *
++*********************************************************/
+
+{
+  "namespace": "how_to_play_common",
+
+  "dynamic_dialog_screen@common.base_screen": {
+    "type": "screen",
+    "size": [ "100%", "100%" ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_tab_left",
+        "to_button_id": "button.menu_tab_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_tab_right",
+        "to_button_id": "button.menu_tab_right",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ],
+    "$screen_content": "how_to_play_common.how_to_play_content"
+  },
+
+  "top_bar": {
+    "type": "image",
+    "texture": "textures/ui/control_white",
+    "alpha": 0.7
+  },
+
+  "button_panel@common_buttons.new_ui_binding_button_label": {
+    "$anchor|default": "left_middle",
+    "offset": [ 10, 0 ]
+  },
+
+  "light_text_button@common_buttons.light_text_button": {
+    "$button_type_panel": "how_to_play_common.button_panel"
+  },
+
+  "action_button@how_to_play_common.light_text_button": {
+    "$pressed_button_name|default": "unset_button_name",
+    "$button_text|default": "unset $button_text",
+    "size": [ "100%", 26 ],
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle"
+  },
+
+  "topic_category": {
+    "type": "panel",
+    "size": [ "100%", "12px" ],
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "size": [ "100% - 2px", "11px" ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "texture": "textures/ui/White",
+          "color": "$rainbowpie_ui_theme_toggle_background_default_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_default_default_alpha",
+          "controls": [
+            {
+              "category_text": {
+                "type": "label",
+                "anchor_from": "bottom_middle",
+                "anchor_to": "bottom_middle",
+                "size": [ "100% - 2px", "default" ],
+                "text": "('howtoplay.category.' + $category)",
+                "font_type": "$global_font_type",
+                "backup_font_type": "$global_font_type_backup",
+                "color": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+                "layer": 2
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "toggle_button_control": {
+    "type": "panel",
+    "$toggle_text_color|default": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+    "layer": 2,
+    "controls": [
+      {
+        "tab_button_text": {
+          "type": "label",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [ "100% - 38px", "default" ],
+          "max_size": [ "100% - 14px", "100% - 4px" ],
+          "offset": [ 10, 0 ],
+          "text": "('howtoplay.' + $section_topic)",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "layer": 3,
+          "color": "$toggle_text_color",
+          "alpha": 1
+        }
+      }
+    ]
+  },
+
+  "unchecked_noleft": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_unchecked_hover_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_unchecked_hover_alpha",
+          "controls": [
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "unchecked_noh": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_default_default_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_unchecked_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_unchecked_default_alpha",
+          "controls": [
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "checked_left_blue_bar_hover": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_checked_hover_color",
+    "$glyph_color": "$light_glyph_default_color",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_checked_hover_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_checked_hover_alpha",
+          "controls": [
+            {
+              "left_image": {
+                "type": "image",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 0 ],
+                "texture": "textures/ui/White",
+                "size": [ 2, "100%" ],
+                "layer": 3,
+                "color": "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_color",
+                "alpha": "$rainbowpie_ui_theme_toggle_background_checked_hover_btbar_alpha"
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "checked_left_blue_bar": {
+    "type": "panel",
+    "$toggle_text_color": "$rainbowpie_ui_theme_toggle_text_checked_default_color",
+    "$glyph_color": [ 0, 0, 0 ],
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "texture": "textures/ui/White",
+          "size": [ "100% - 2px", 25 ],
+          "layer": 3,
+          "color": "$rainbowpie_ui_theme_toggle_background_checked_default_color",
+          "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_alpha",
+          "controls": [
+            {
+              "left_image": {
+                "type": "image",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 0 ],
+                "texture": "textures/ui/White",
+                "size": [ 2, "100%" ],
+                "layer": 3,
+                "color": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_color",
+                "alpha": "$rainbowpie_ui_theme_toggle_background_checked_default_btbar_alpha"
+              }
+            },
+            {
+              "toggle_image": {
+                "type": "panel",
+                "$button_content_size|default": [ "100%", "80%" ],
+                "size": [ "100% - 4px", "80%" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$anchor": "left_middle",
+                "$text_alignment": "left",
+                "$button_text_size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "button_content": {
+                      "type": "panel",
+                      "size": "$button_content_size",
+                      "offset": [ 2, 0 ],
+                      "controls": [
+                        {
+                          "$button_type_panel@$button_type_panel": {
+                            "layer": 3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "section_toggle_button": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "25px" ],
+    "controls": [
+      {
+        "section_toggle_button@common_toggles.light_ui_toggle": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "100%", "25px" ],
+
+          "$button_type_panel": "how_to_play_common.toggle_button_control",
+          "$checked_control": "how_to_play_common.checked_left_blue_bar",
+          "$checked_hover_control": "how_to_play_common.checked_left_blue_bar_hover",
+          "$unchecked_hover_control": "how_to_play_common.unchecked_noleft",
+          "$unchecked_control": "how_to_play_common.unchecked_noh",
+          "$radio_toggle_group": true,
+          "$toggle_name": "navigation_tab",
+          "$toggle_group_default_selected": "$default_selector_toggle_index",
+
+          "$toggle_tab_focus_binding_type": "global",
+          "$toggle_tab_focus_binding_name": "#navigation_tab_focus_precedence",
+          "$toggle_on_hover_binding_type": "global",
+          "$toggle_on_hover_binding_name": "#toggle_on_hover",
+
+          "$toggle_view_binding_name": "($section_topic + '_button_toggle')",
+          "$toggle_property_bag": {
+            "#panel_title": "('howtoplay.' + $section_topic)"
+          }
+        }
+      }
+    ]
+  },
+
+  "edu_section_toggle_button@how_to_play_common.section_toggle_button": {
+    "ignored": "(not $education_edition)"
+  },
+
+  "padding": {
+    "type": "panel",
+    "size": [ "100%", "12px" ]
+  },
+
+  "small_padding": {
+    "type": "panel",
+    "size": [ "100%", "4px" ]
+  },
+
+  "large_padding@how_to_play_common.padding": {
+    "type": "panel",
+    "size": [ "100%", "22px" ]
+  },
+
+  "section_contents_header": {
+    "type": "input_panel",
+    "focus_enabled": true,
+    "size": [ "100%", "6px" ]
+  },
+
+  "section_contents_footer": {
+    "type": "input_panel",
+    "focus_enabled": true,
+    "size": [ "100%", "24px" ]
+  },
+
+  "main_sections": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+  "splitscreen_only_content": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "orientation": "vertical",
+    "controls": "$content",
+    "bindings": [
+      {
+        "binding_name": "#splitscreen_enabled",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "header_background": {
+    "type": "image",
+    "size": [ "100%", "20px" ],
+    "offset": [ 0, "-2px" ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "texture": "textures/ui/White",
+    "color": "$rainbowpie_ui_theme_title_background_color",
+    "alpha": "$rainbowpie_ui_theme_title_background_alpha",
+    "controls": [
+      {
+        "header_label": {
+          "type": "label",
+          "$text_color|default": [ 0.0, 0.0, 0.0 ],
+          "color": "$rainbowpie_ui_theme_title_text_color",
+          "layer": 1,
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "text_alignment": "center",
+          "max_size": [ "95%", 10 ],
+          "text": "$text",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "variables": [
+            {
+              "requires": "$rainbowpie_ui_theme_title_text_light",
+              "$text_color": [ 1.0, 1.0, 1.0 ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "header": {
+    "type": "panel",
+    "size": [ "100%", "28px" ],
+    "controls": [
+      { "header@how_to_play_common.header_background": {} }
+    ]
+  },
+
+  "paragraph": {
+    "type": "label",
+    "color": "$body_text_color",
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "size": [ "100%", "default" ],
+    "text": "$text",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "paragraph_with_icons@how_to_play_common.paragraph": {
+    "text": "('#pre_process_' + $text)",
+    "bindings": [
+      {
+        "binding_name": "('#pre_process_' + $text)"
+      }
+    ]
+  },
+
+  "paragraph_with_selective_input@how_to_play_common.paragraph_with_icons": {
+    "line_padding": 4.0,
+    "bindings": [
+      {
+        "binding_name": "('#pre_process_' + $text)"
+      },
+      {
+        "binding_name": "$input_binding",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "paragraph_keyboard@how_to_play_common.paragraph_with_selective_input": {
+    "$input_binding": "#keyboard_being_used"
+  },
+
+  "paragraph_gamepad@how_to_play_common.paragraph_with_selective_input": {
+    "line_padding": 10.0,
+    "$input_binding": "#gamepad_being_used"
+  },
+
+  "paragraph_rift_controller@how_to_play_common.paragraph_with_selective_input": {
+    "line_padding": 10.0,
+    "$input_binding": "#rift_controller_being_used"
+  },
+
+  "paragraph_windowsmr_controller@how_to_play_common.paragraph_with_selective_input": {
+    "line_padding": 10.0,
+    "$input_binding": "#windowsmr_controller_being_used"
+  },
+
+  "paragraph_touch@how_to_play_common.paragraph_with_selective_input": {
+    "line_padding": 12.0,
+    "$input_binding": "#touch_being_used"
+  },
+
+  "paragraph_not_touch@how_to_play_common.paragraph_with_selective_input": {
+    "line_padding": 10.0,
+    "$input_binding": "#touch_not_being_used"
+  },
+
+  "image": {
+    "type": "image",
+    "layer": 1,
+    "size": [ "100%", "128px" ],
+    "anchor_from": "center",
+    "anchor_to": "center"
+  },
+
+  "top_bar_animation": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 1.2,
+    "from": [ 0, "-50%" ],
+    "to": [ 0, 0 ]
+  },
+
+  "how_to_play_header": {
+    "type": "panel",
+    "animation_reset_name": "screen_animation_reset",
+    "anims": [
+      "@common_store.store_top_bar_back_animation",
+      "@common_store.store_top_bar_back_animation_pop",
+      "@common_store.store_top_bar_animation",
+      "@common_store.store_top_bar_animation_pop"
+    ],
+    "controls": [
+      {
+        "top_bar@how_to_play_common.top_bar": {
+          "size": [ "100%", "100%" ],
+          "layer": 2,
+          "controls": [
+            {
+              "back_button@common.back_title_button": {
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 2, -1 ]
+              }
+            },
+            {
+              "how_to_play_title@common.screen_header_title_panel": {
+                "size": [ "70% - 22px", "100%" ], // Gamepad helpers have max size of 30% and the back button is 20px
+                "offset": [ 20, -1 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "$screen_header_title": "#section_title",
+                "$screen_header_title_binding_type": "global",
+                "layer": 2
+              }
+            },
+            { "gamepad_bumper_helpers@how_to_play_common.gamepad_bumper_helpers": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "how_to_play_content": {
+    "type": "panel",
+    "controls": [
+      /*{
+        "header@how_to_play_common.how_to_play_header": {
+          "size": [ "100%", 19 ], // 23px
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },*/
+      {
+        "header@rainbowpie.header_black": {
+          "$BlurLayer": -30,
+          "$header_title": "#section_title",
+          "$title_bindings": [
+            {
+              "binding_type": "global",
+              "binding_name": "#section_title",
+              "binding_name_override": "#section_title"
+            }
+          ]
+        }
+      },
+      {
+        "container": {
+          "type": "panel",
+          "size": [ "100%", "100%" ],//"$store_screen_size",
+          "controls": [
+            { "$dialog_content@$dialog_content": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "dialog_content": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "blur_layer_1@mintui_background.background_blur": {
+          "$background_offset": [ "-70%", 19 ],
+          "$background_children_offset": [ "70%", -19 ],
+          "$background_layer": -2
+        }
+      },
+      {
+        "mask_layer_1@mintui_background.background_mask": {
+          "$background_offset": [ "-70%", 19 ],
+          "$background_children_offset": [ "70%", -19 ],
+          "$background_layer": -2
+        }
+      },
+      { "selector_area@how_to_play_common.selector_area": {} },
+      { "content_area@how_to_play_common.content_area_wrapper": {} },
+      { "background_all@rainbowpie.background_all": {} },
+      { "background_anim@rainbowpie.background_anim": { "ignored": "$is_pregame" } }
+      //{ "section_divider@how_to_play_common.section_divider": {} }
+    ]
+  },
+
+  "scrollable_selector_area_content": {
+    "type": "panel",
+    "offset": [ 0, 0 ],
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      { "$selector_stack_panel@$selector_stack_panel": {} }
+    ]
+  },
+
+  // left side
+  "selector_area": {
+    "type": "panel",
+    "offset": [ 0, "19px" ],
+    "size": [ "30%", "100% - 19px" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "layer": 3,
+    "focus_container": true,
+    "use_last_focus": true,
+    "controls": [
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "$scrolling_content": "how_to_play_common.scrollable_selector_area_content",
+          "$show_background": false,
+          "$scroll_size": [ "5px", "100% - 4px" ],
+          "$scroll_bar_left_padding_size": [ 0, 0 ],
+          "$scroll_bar_right_padding_size": [ 1, 0 ]
+        }
+      }
+    ]
+  },
+
+  // divider between two sides
+  "section_divider": {
+    "type": "image",
+   // "offset": [ "30%", "20px" ],
+    "size": [ "4px", "100% - 18px" ],
+    "offset": "@how_to_play_common.divider_animation",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "layer": 3,
+    "texture": "textures/ui/HowToPlayDivider"
+  },
+
+  "divider_animation": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.8,
+    "from": [ "30%", "500%" ],
+    "to": [ "30%", "20px" ]
+  },
+
+  // contains right side
+  "content_area_wrapper": {
+    "type": "panel",
+    "offset": [ "2px", "19px" ],
+    "size": [ "70% - 2px", "100% - 19px" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "layer": 1,
+    "controls": [
+      { "content_area@how_to_play_common.content_area": {} }
+    ]
+  },
+
+  // right side
+  "content_area": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "controls": [
+      {
+        "control": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "controls": [
+            {
+              "scrolling_panel@common.scrolling_panel": {
+                "size": [ "100%", "100%" ],
+                "$scrolling_content": "$section_content_panels",
+                "$show_background": false,
+                "$scroll_size": [ "5px", "100% - 4px" ],
+                "$scroll_bar_left_padding_size": [ 5, 0 ],
+                "$scroll_bar_right_padding_size": [ 5, 0 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "screen_base@how_to_play_common.dynamic_dialog_screen": {
+    "$dialog_content": "how_to_play_common.dialog_content"
+  },
+
+  "gamepad_bumper_helper_description@common.gamepad_helper_icon_description": {
+    "max_size": [ "54px", "10px" ]
+  },
+
+  // gamepad helpers
+  "gamepad_bumper_helpers": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "anchor_from": "right_middle",
+    "anchor_to": "right_middle",
+    "offset": [ "-4px", "-2px" ],
+    "max_size": [ "30%", "26px" ],
+    "layer": 6,
+    "controls": [
+      {
+        "gamepad_helper_left_bumper@common.gamepad_helper_left_bumper": {
+          "$gamepad_description": "how_to_play_common.gamepad_bumper_helper_description"
+        }
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ "4px", "100%" ]
+        }
+      },
+      {
+        "gamepad_helper_right_bumper@common.gamepad_helper_right_bumper": {
+          "$gamepad_description": "how_to_play_common.gamepad_bumper_helper_description"
+        }
+      }
+    ]
+  }
+
+}

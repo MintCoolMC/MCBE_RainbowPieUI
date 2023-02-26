@@ -1,0 +1,35 @@
+{
+  "namespace": "loom_pocket",
+
+  "vertical_arrow_icon": {
+    "texture": "textures/ui/crafting/arrow_down_large",
+    "alpha": 0.4
+  },
+
+  "right_navigation_tabs/right_tab_loom": {
+    "ignored": true
+  },
+
+  "right_navigation_tabs": {
+    "offset": [ -4, 0 ]
+  },
+
+  "left_panel/content": {
+  },
+
+  "left_navigation_tabs": {
+    "offset": [ 7, -6 ]
+  },
+
+  "left_tab_patterns": {
+    "size": [ 34, 26 ]
+  },
+
+  "left_tab_inventory": {
+    "size": [ 34, 26 ]
+  },
+
+  "left_navigation_tabs/padding": {
+    "ignored": true
+  }
+}

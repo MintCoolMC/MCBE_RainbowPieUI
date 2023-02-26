@@ -1,0 +1,131 @@
+{
+  "namespace": "anvil_extra",
+
+  "plus_icon": {
+    "type": "image",
+    "layer": 2,
+    "size": [ 18, 18 ],
+    "texture": "($rainbowpie_ui_path_uihome + '/maximize_icon')"
+  },
+
+  "anvil_multiline_text_edit_box@common.multiline_text_edit_box": {
+    "focus_change_down": "FOCUS_OVERRIDE_STOP",
+    "focus_change_up": "FOCUS_OVERRIDE_STOP",
+    "focus_change_right": "FOCUS_OVERRIDE_STOP",
+    "focus_change_left": "FOCUS_OVERRIDE_STOP",
+    "$text_offset": [ 2, 2 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "layer": 1,
+    "size": [ "100%", "100%" ],
+    "offset": [ 0, 0 ],
+    "max_length": 32500,
+    "$enable_profanity_filter": "$text_edit_box_enable_profanity_filter",
+    "property_bag": {
+      "#property_field": "#item_name"
+    },
+    "$text_edit_binding_name": "#text_box_item_name",
+    "$place_holder_text": "Enter your content here...",
+    "$cancel_button_id": "button.menu_cancel",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select",
+        "handle_select": true,
+        "handle_deselect": false,
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_select",
+        "handle_select": true,
+        "handle_deselect": false,
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "$cancel_button_id",
+        "handle_select": false,
+        "handle_deselect": true,
+        "mapping_type": "global"
+      }
+    ]
+  },
+
+  "maximized_input_panel": {
+    "ignored": "$game_pad",
+    "type": "panel",
+    "offset": [ "1000%", 0 ],
+    "animation_reset_name": "rainbowpie.maximize_input",
+    "anims": [
+      "@anvil_extra.maximized_input_panel_hidden2",
+      "@anvil_extra.maximized_input_panel_hidden",
+      "@anvil_extra.maximized_input_panel_shown"
+    ],
+    "controls": [
+      {
+        "dialog_extra_buttons": {
+          "type": "panel",
+          "size": "$extra_large_screen_size",
+          "max_size": "$extra_large_max_screen_size",
+          "layer": 120,
+          "controls": [
+          ]
+        }
+      },
+      {
+        "maximized_chat_input_dialog@common_dialogs.main_panel_no_buttons": {
+          "$text_name": "tile.anvil.name",
+          "$child_control": "anvil_extra.anvil_multiline_text_edit_box",
+          "$show_close_button": true,
+          "$close_button_to_button_id": "rainbowpie.minimize_input",
+          "size": "$extra_large_screen_size",
+          "max_size": "$extra_large_max_screen_size",
+          "layer": 110
+        }
+      },
+      {
+        "anti_click_panel": {
+          "type": "input_panel",
+          "size": [ "100%", "100%" ],
+          "anchor_to": "center",
+          "anchor_from": "center",
+          "focus_enabled": false,
+          "layer": 100,
+          "button_mappings": [
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "rainbowpie.empty",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_ok",
+              "to_button_id": "rainbowpie.empty",
+              "mapping_type": "pressed"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "maximized_input_panel_hidden2@anvil_extra.maximized_input_panel_hidden": {
+    "play_event": "button.menu_exit"
+  },
+
+  "maximized_input_panel_hidden": {
+    "anim_type": "offset",
+    "duration": 0,
+    "to": [ "1000%", 0 ],
+    "from": [ "1000%", 0 ],
+    "play_event": "rainbowpie.minimize_input"
+  },
+
+  "maximized_input_panel_shown": {
+    "anim_type": "offset",
+    "duration": 0,
+    "to": [ 0, 0 ],
+    "from": [ 0, 0 ],
+    "play_event": "rainbowpie.maximize_input"
+  }
+}

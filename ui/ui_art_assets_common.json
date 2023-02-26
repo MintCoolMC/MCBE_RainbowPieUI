@@ -1,0 +1,111 @@
+{
+  "namespace": "common_art",
+
+  "title_image@common_art.title_text": {
+    "$title_text_scale": 5.0
+  },
+
+  "title_text": {
+    "type": "label",
+    "layer": 12,
+    "text": "$rainbowpie_ui_theme_global_title_text",
+    "shadow": false,
+    "font_type": "MinecraftTen",
+    "font_scale_factor": "$title_text_scale",
+    "$title_text_scale|default": 5.0
+  },
+
+  "splash_text": {
+    "type": "custom",
+    "renderer": "splash_text_renderer",
+    "size": [ 0.1, 0.1 ],
+    "layer": 2,
+    "anchor_from": "right_middle",
+    "anchor_to": "right_middle",
+    "$splash_text_visible|default": false,
+    "visible": "$splash_text_visible"
+  },
+
+  "version_text_panel": {
+    "type": "image",
+    "size": [ "100%c + 4px", "100%c + 2px" ],
+    "offset": [ -2, -13 ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "alpha": 0.4,
+    "texture": "textures/ui/Black",
+    "controls": [
+      {
+        "version_text_label": {
+          "type": "label",
+          "text": "('Version: ' + $Nversion + ' - ' + $rv_text + $version_prefix + ' - ' + $release_type)",
+          "text_alignment": "left",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "font_size": "normal",
+          "layer": 1,
+          "$release_type|default": "$release_type_text",
+          "$cversion|default": "Default",
+          "variables": [
+            {
+              "requires": "$mcpedl_release",
+              "$release_type": "$mcpedl_release_text"
+            },
+            {
+              "requires": "$preview_pack",
+              "$release_type": "Preview"
+            },
+            {
+              "requires": "$development_pack",
+              "$release_type": "Development"
+            },
+            {
+              "requires": "$is_netease",
+              "$cversion": "Netease"
+            },
+            {
+              "requires": "(not $is_publish)",
+              "$cversion": "Development"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "large_text_panel": {
+    "type": "image",
+    "size": [ "100%c + 4px", "100%c + 2px" ],
+    "alpha": 0.4,
+    "texture": "textures/ui/Black",
+    "controls": [
+      {
+        "large_text_label": {
+          "type": "label",
+          "text": "$rainbow_pie_bottom_panel_text",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "font_scale_factor": 2,
+          "layer": 1,
+          "controls": [
+            {
+              "version_text_panel@common_art.version_text_panel": {}
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "rainbow_pie_bottom_panel": {
+    "ignored": "($hide_bottom_panel or $is_netease)",
+    "type": "panel",
+    "size": [ "100%c + 2px", "100%c + 2px" ],
+    "anchor_to": "bottom_middle",
+    "anchor_from": "bottom_middle",
+    "layer": 12,
+    "controls": [
+      { "large_text_panel@common_art.large_text_panel": {} }
+    ]
+  }
+}

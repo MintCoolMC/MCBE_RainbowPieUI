@@ -1,0 +1,186 @@
+{
+  "namespace": "trade2",
+
+  "stack_count_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "tier_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "shadow": true
+  },
+
+  "tier_label_locked": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "shadow": true
+  },
+
+  "trade_details/item_panel_image/item_text_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "hover_button": {
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "(not #using_touch)"
+        }
+      }
+    ]
+  },
+
+  "arrow_left_image": {
+    "texture": "textures/ui/trade/arrow_dark_left_stretch",
+    "alpha": 0.4
+  },
+
+  "arrow_right_image": {
+    "texture": "textures/ui/trade/arrow_dark_right_stretch",
+    "alpha": 0.4
+  },
+
+  "red_cell_image": {
+    "texture": "textures/ui/White",
+    "color": "$rainbowpie_ui_theme_inventory_cell_red_color",
+    "alpha": "$rainbowpie_ui_theme_inventory_cell_red_alpha"
+  },
+
+  "scroll_background_image": {
+    "ignored": false,
+    "texture": "textures/ui/White",
+    "alpha": 0.0
+  },
+
+  "trade_toggle_locked": {
+    "size": [ "100%", "100% + 1px" ]
+  },
+
+  "villager_name_label": {
+    "ignored": true
+  },
+
+  "exp_progress_bar": {
+    "size": [ 153, 3 ],
+    "offset": [ 0, 20 ]
+  },
+
+  "blue_progress_bar": {
+    "texture": "textures/ui/White",
+    "color": [ 0.2392156862745098, 0.5686274509803922, 0.6 ],
+    "alpha": "$rainbowpie_ui_theme_experience_full_alpha"
+  },
+
+  "white_progress_bar": {
+    "texture": "textures/ui/White",
+    "color": [ 1.0, 1.0, 1.0 ],
+    "alpha": "$rainbowpie_ui_theme_experience_empty_alpha"
+  },
+
+  "empty_progress_bar": {
+    "texture": "textures/ui/White",
+    "color": [ 0.1254901960784314, 0.2509803921568627, 0.2823529411764706 ],
+    "alpha": "$rainbowpie_ui_theme_experience_empty_alpha"
+  },
+
+  "progress_bar_nub": {
+    "texture": ""
+  },
+
+  "toolbar_anchor": {
+    "ignored": true
+  },
+
+  "how_to_play_button": {
+    "$button_text": "?"
+  },
+
+  "trade_toggle": {
+    "$toggle_enabled_binding_name": "",
+    "$checked_control": "trade2_extra.checked_control",
+    "$checked_hover_control": "trade2_extra.checked_hover_control",
+    "$unchecked_hover_control": "trade2_extra.unchecked_hover_control",
+    "$unchecked_control": "trade2_extra.unchecked_control"
+  },
+
+  "tier_stack_panel": {
+    "bindings": []
+  },
+
+  "top_half_stack_panel/trade_button_holder/trade_button": {
+    "anchor_to": "top_middle",
+    "anchor_from": "top_middle"
+  },
+
+  "top_half_stack_panel/trade_button_holder": {
+    "size": [ 48, 36 ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "trade_all_button@trade2_extra.trade_all_button": {
+              "anchor_to": "bottom_middle",
+              "anchor_from": "bottom_middle"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "screen_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "title_text@common_art.title_text": {
+              "ignored": "$hide_inventory_watermark",
+              "offset": [ 0, 94 ],
+              "anchor_to": "buttom_middle",
+              "anchor_from": "buttom_middle",
+              "$title_text_scale": 2.0
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "right_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header@rainbowpie.inv_header": {
+              "offset": [ 0, 5 ],
+              "$title_icon_ignored": false,
+              "$title_text": "#name_label",
+              "$title_icon_texture": "('textures/ui/inventory_icons/' + $screen_content)",
+              "$title_bindings": [
+                {
+                  "binding_name": "#name_label",
+                  "binding_condition": "always_when_visible"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "trade_screen": {
+    "close_on_player_hurt": false
+  }
+}

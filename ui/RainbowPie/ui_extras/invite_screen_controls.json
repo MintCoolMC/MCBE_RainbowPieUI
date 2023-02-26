@@ -1,0 +1,67 @@
+{
+  "namespace": "invite_extra",
+
+  "search_text_box_place_holder_control": {
+    "type": "panel",
+    "controls": [
+      {
+        "search_icon": {
+          "type": "image",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [ 16, 16 ],
+          "offset": [ 0, 1 ],
+          "texture": "textures/ui/magnifyingGlass",
+          "alpha": 0.5
+        }
+      },
+      {
+        "place_holder_text@common.text_edit_box_place_holder_label": {
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "offset": [ 18, 0 ]
+        }
+      }
+    ]
+  },
+
+  "right_panel": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%c", "100%" ],
+    "$add_button_mappings": [
+      {
+        "from_button_id": "button.controller_secondary_select",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "focused"
+      }
+    ],
+    "controls": [
+      {
+        "add_friend_button@invite.add_friend_button": {
+          "size": [ 80, "100%" ]
+        }
+      },
+      {
+        "add_member_button@invite.add_member_button": {
+          "size": [ 100, "100%" ]
+        }
+      },
+      {
+        "send_button@invite.send_button": {
+          "size": [ 100, "100%" ]
+        }
+      }
+    ]
+  }
+}

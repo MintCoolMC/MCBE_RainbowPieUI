@@ -1,0 +1,72 @@
+{
+  "namespace": "furnace_pocket",
+
+  "generic_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "color": [ 1.0, 1.0, 1.0 ]
+  },
+
+  "furnace_panel/header_and_content_stack_panel": {
+    "ignored": true
+  },
+
+  "furnace_panel/bg": {
+    "ignored": true
+  },
+
+  "furnace_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "inv_header@rainbowpie.inv_header_pocket": {
+              "visible": "(($container_title = 'tile.smoker.name') or ($container_title = 'tile.blast_furnace.name') or ($container_title = 'furnaceScreen.header'))",
+              "offset": [ 0, -1 ],
+              "$title_icon_ignored": false,
+              "$title_text": "$container_title",
+              "$title_icon_texture": "('textures/ui/inventory_icons/furnace/' + $furnace_type)"
+            }
+          },
+          {
+            "inv_header_rename@rainbowpie.inv_header_pocket": {
+              "ignored": "(($container_title = 'tile.smoker.name') or ($container_title = 'tile.blast_furnace.name') or ($container_title = 'furnaceScreen.header'))",
+              "offset": [ 0, -1 ],
+              "$title_icon_ignored": true,
+              "$title_text": "$container_title"
+            }
+          },
+          {
+            "inventory_and_half_screen": {
+              "type": "panel",
+              "animation_reset_name": "screen_animation_reset",
+              "anims": [
+                "@common.rainbowpie_inventory_exit_animation_push",
+                "@common.rainbowpie_inventory_entrance_animation_pop",
+                "@common.inventory_animation_start",
+                "@common.inventory_animation_end2",
+                "@common.inventory_animation_end2_pop",
+                "@common.screen_exit_animation_push_fade",
+                "@common.screen_exit_animation_pop_fade",
+                "@common.screen_entrance_animation_push_fade",
+                "@common.screen_entrance_animation_pop_fade"
+              ],
+              "controls": [
+                {
+                  "inventory_and_furnace_panel@furnace_pocket.inventory_and_furnace_panel": {
+                    "size": [ "100%", "100%-35px" ],
+                    "offset": [ 0, 31 ],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

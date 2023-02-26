@@ -1,0 +1,147 @@
+{
+  "namespace": "profile_card",
+
+  "player_gamer_pic": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "uuid_panel": {
+              "ignored": true,
+              "type": "input_panel",
+              "size": [ 32, 32 ],
+              "controls": [
+                {
+                  "hover_text@common.hover_text": {
+                    "size": [ 32, 32 ],
+                    "layer": 29,
+                    "bindings": [
+                      {
+                        "binding_name": "#player_uuid"
+                      },
+                      {
+                        "binding_type": "view",
+                        "source_property_name": "#player_uuid",
+                        "target_property_name": "#hover_text"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "xbl_dialog_scrolling_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "friends_dropdown@settings_common.option_dropdown": {
+              "$option_dropdown_size": [ "100%", 30 ],
+              "$rwlbm_size": [ "100% - 2px", "100% - 2px" ],
+              "$button_mode": true,
+              "$button_mode_type": "1",
+              "$1_binding_name": "#remove_friend_option",
+              "$1_label_text": "xbox.profile.removeFriend",
+              "bindings": [
+                {
+                  "binding_name": "#is_friend",
+                  "binding_name_override": "#visible"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "xbl_dialog_scrolling_content/padding_7": {
+    "ignored": true
+  },
+
+  "xbl_dialog_scrolling_content/dropdown_visibility_panel/friends_dropdown": {
+    "$option_dropdown_size": [ "100%", 25 ],
+    "$button_mode": true,
+    "$button_mode_type": "2",
+    "$1_binding_name": "#friend_option",
+    "$2_binding_name": "#favorite_option",
+    "$1_label_text": "xbox.profile.friend",
+    "$2_label_text": "xbox.profile.favorite"
+  },
+
+  "main_panel/dialog": {
+    "$show_divider": false
+  },
+
+  "unfriend_button_panel/text_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "report_button_content/report_label/report_label": {
+    "color": "$text_color",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "toggle_option/label_panel/toggle_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "xbl_dialog_scrolling_content/real_name_message": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "xbl_dialog_scrolling_content/title_presence_info": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "platform_dialog_scrolling_content/title_presence_info": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "platform_info/platform_labels/platform_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "profile_labels/gamertag_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "gamer_score_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "x_radio_visuals/label_panel/radio_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "profile_card_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "background_all@rainbowpie.background_all": {} }
+        ]
+      }
+    ]
+  }
+}

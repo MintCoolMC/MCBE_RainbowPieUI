@@ -1,0 +1,84 @@
+{
+  "namespace": "feed",
+
+  "new_post_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "go_to_manage_feed_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "new_post_gamepad_option/new_post_stack_panel/new_post_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "textpost_content": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content/popup_dialog_factory_new_post": {
+    "control_ids": {
+      "new_post": "@feed_extra.new_post_dialog_bg"
+    }
+  },
+
+  "feed_item_scrolling_panel": {
+    "anchor_to": "bottom_middle",
+    "anchor_from": "bottom_middle",
+    "size": [ "100%", "100% - 19px" ]
+  },
+
+  "factory_scrolling_content_stack/top_spacing_gap": {
+    "size": [ "100%", 5 ]
+  },
+
+  "content/world_name_label_instance": {
+    "ignored": true
+  },
+
+  "content/return_button": {
+    "ignored": true
+  },
+
+  "content/new_post_button": {
+    "ignored": true
+  },
+
+  "content/top_bar_gradient": {
+    "ignored": true
+  },
+
+  "feed_screen_content/transparent_background": {
+    "ignored": true
+  },
+
+  "feed_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "#feed_world_name",
+              "$right_panel": "feed_extra.right_panel",
+              "$title_bindings": [
+                {
+                  "binding_name": "#feed_world_name"
+                }
+              ]
+            }
+          },
+          {
+            "background_all@rainbowpie.background_all": {}
+          }
+        ]
+      }
+    ]
+  }
+}

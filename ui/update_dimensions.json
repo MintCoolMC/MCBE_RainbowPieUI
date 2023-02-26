@@ -1,0 +1,134 @@
+{
+  "namespace": "update_dimensions",
+
+  "make_backup_checkbox": {
+    "controls": [
+      {
+        "header_description_stack_panel": {
+          "type": "panel",
+          "size": [ "100%", "100%" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+
+          "controls": [
+            {
+              "checkbox_visuals@common.toggle_visuals": {
+                "$unchecked_control": "settings_common.option_toggle_off",
+                "$checked_control": "settings_common.option_toggle_on",
+                "$unchecked_hover_control": "settings_common.option_toggle_off_hover",
+                "$checked_hover_control": "settings_common.option_toggle_on_hover",
+                "$unchecked_locked_control": "settings_common.option_toggle_off_locked",
+                "$unchecked_locked_hover_control": "settings_common.option_toggle_off_locked",
+                "$checked_locked_control": "settings_common.option_toggle_on_locked",
+                "$checked_locked_hover_control": "settings_common.option_toggle_on_locked",
+                "$on_label": "$toggle_label_text",
+                "$off_label": "$toggle_label_text",
+                "$option_toggle_size": [ "100% - 2px", "100% - 2px" ],
+                "offset": [ 1, 1 ],
+                "layer": 2,
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "update_dimensions_dialog/bottom_button_panel": {
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "size": [ "50% - 3px", 22 ],
+    "offset": [ -3, -3 ],
+    "$button_size": [ "100%", "100%" ]
+  },
+
+  "update_dimensions_dialog/top_button_panel": {
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "size": [ "50% - 3px", 22 ],
+    "offset": [ 3, -3 ]
+  },
+
+  "update_dimensions_dialog/panel_indent": {
+    "layer": 10
+  },
+
+  "update_dimensions_description": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "color": [ 1.0, 1.0, 1.0 ],
+    "layer": 10
+  },
+
+  "update_dimensions_dialog/common_panel": {
+    "$close_button_offset": [ -1, -1 ],
+    "$use_default_close_button": false,
+    "$dialog_background": "popup_dialog.popup_dialog_background"
+  },
+
+  "update_dimensions_dialog": {
+    "size": [ 300, 185 ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "background": {
+              "type": "image",
+              "texture": "textures/ui/Black",
+              "anchor_to": "top_middle",
+              "anchor_from": "top_middle",
+              "size": [ "100% - 8px", "100% - 44px" ],
+              "offset": [ 0, 18 ],
+              "alpha": 0.6,
+              "layer": 3
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "update_dimensions_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "background_all@rainbowpie.background_all": {} }
+        ]
+      }
+    ]
+  },
+
+  "update_dimensions_screen": {
+    "force_render_below": true,
+    "$screen_animations": [
+      "@update_dimensions.exit_animation_push",
+      "@update_dimensions.exit_animation_pop"
+    ]
+  },
+
+  "exit_animation_push": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": 0,
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "exit_animation_pop": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": 0,
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  }
+}

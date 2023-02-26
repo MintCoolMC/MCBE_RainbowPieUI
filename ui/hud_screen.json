@@ -1,0 +1,1244 @@
+{
+  "namespace": "hud",
+
+  "item_durability": {
+    
+  },
+
+  "hud_screen": {
+    "render_only_when_topmost": "(not $desktop_screen)"
+  },
+
+  "hotbar_elipses_button": {
+  },
+
+  "borderless_button/elipses": {
+    "ignored": "$is_hidehud_button"
+  },
+
+  "borderless_button": {
+    "$is_hidehud_button|default": false,
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "hidehud_icon": {
+              "visible": "$is_hidehud_button",
+              "type": "label",
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "text": "H",
+              "layer": 30,
+              "alpha": 0.65
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "vignette_renderer": {
+    "ignored": true
+  },
+
+  "hotbar_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "hotbar_hidehud_button_panel": {
+              "type": "panel",
+              "ignored": "(not $rainbowpie_style_hotbar)",
+              "size": [ 0, 22 ],
+              "controls": [
+                {
+                  "hotbar_hidehud_button_rainbowpie@hud.hotbar_elipses_button": {
+                    "$is_hidehud_button": true,
+                    "$pressed_button_name": "button.hide_gui_all",
+                    "size": [ 20, 22 ],
+                    "offset": [ -10, 0 ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "hotbar_elipses_button_panel": {
+              "type": "panel",
+              "ignored": "(not $rainbowpie_style_hotbar)",
+              "size": [ 0, 22 ],
+              "controls": [
+                {
+                  "hotbar_elipses_button_rainbowpie@hud.hotbar_elipses_button": {
+                    "size": [ 20, 22 ],
+                    "offset": [ 10, 0 ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "hotbar_elipses_panel_right_content": {
+    "ignored": "$rainbowpie_style_hotbar"
+  },
+
+  "hotbar_elipses_panel_right_art/slot": {
+    "ignored": "($rainbowpie_style_hotbar)"
+  },
+
+  "borderless_button/default": {
+    "ignored": "($rainbowpie_style_hotbar)"
+  },
+
+  "borderless_button/hover": {
+    "ignored": "($rainbowpie_style_hotbar)"
+  },
+
+  "borderless_button/pressed": {
+    "ignored": "($rainbowpie_style_hotbar)"
+  },
+
+  "hud_player_renderer": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "rainbowpie_hide_paperdoll": {
+              "type": "input_panel",
+              "size": [ 15, 30 ],
+              "anchor_to": "top_middle",
+              "anchor_from": "top_middle",
+              "prevent_touch_input": true,
+              "controls": [
+                {
+                  "debug_background_bg": {
+                    "ignored": "(not $development_pack)",
+                    "type": "image",
+                    "texture": "textures/ui/debug_green",
+                    "layer": -2,
+                    "alpha": 0.3,
+                    "controls": [
+                      {
+                        "text_label": {
+                          "type": "label",
+                          "shadow": true,
+                          "font_type": "$global_font_type",
+                          "backup_font_type": "$global_font_type_backup",
+                          "font_scale_factor": 0.5,
+                          "text": "HIDE PAPERDOLL",
+                          "anchor_from": "centor",
+                          "anchor_to": "centor"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "button_mappings": [
+                {
+                  "from_button_id": "button.menu_select",
+                  "to_button_id": "button.hide_paperdoll_hud",
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_ok",
+                  "to_button_id": "button.hide_paperdoll_hud",
+                  "mapping_type": "pressed"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "hidehudtip_background_out_in": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 0,
+    "from": 0.6,
+    "to": 0.6,
+    "next": "@hud.hidehudtip_background_out_wait",
+    "play_event": "button.hide_gui_all"
+  },
+
+  "hidehudtip_background_out_wait": {
+    "anim_type": "wait",
+    "duration": 5,
+    "next": "@hud.hidehudtip_background_out_anim"
+  },
+
+  "hidehudtip_background_out_anim": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 2,
+    "from": 0.6,
+    "to": 0
+  },
+
+  "hidehudtip_text_out_in": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 0,
+    "from": 1,
+    "to": 1,
+    "next": "@hud.hidehudtip_text_out_wait",
+    "play_event": "button.hide_gui_all"
+  },
+
+  "hidehudtip_text_out_wait": {
+    "anim_type": "wait",
+    "duration": 5,
+    "next": "@hud.hidehudtip_text_out_anim"
+  },
+
+  "hidehudtip_text_out_anim": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 2,
+    "from": 1,
+    "to": 0
+  },
+
+  "hidehudtip_border_out_in": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 0,
+    "from": "$rainbowpie_ui_theme_button_border_default_alpha",
+    "to": "$rainbowpie_ui_theme_button_border_default_alpha",
+    "next": "@hud.hidehudtip_border_out_wait",
+    "play_event": "button.hide_gui_all"
+  },
+
+  "hidehudtip_border_out_wait": {
+    "anim_type": "wait",
+    "duration": 5,
+    "next": "@hud.hidehudtip_border_out_anim"
+  },
+
+  "hidehudtip_border_out_anim": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 2,
+    "from": "$rainbowpie_ui_theme_button_border_default_alpha",
+    "to": 0
+  },
+
+  "hud_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "netease_unsupport_warn": {
+              "ignored": "($is_netease and (($branch_name = 'rs_netease') or ($branch_name = 'rs_ecpublic') or ($branch_name = 'cn_dev') or ($branch_name = 'cn_release')))",
+              "visible": "$is_netease",
+              "type": "image",
+              "texture": "textures/ui/Black",
+              "alpha": 0.4,
+              "size": [ "100%c", "100%c" ],
+              "anchor_to": "bottom_right",
+              "anchor_from": "bottom_right",
+              "controls": [
+                {
+                  "text_label": {
+                    "type": "label",
+                    "shadow": true,
+                    "font_type": "$global_font_type",
+                    "backup_font_type": "$global_font_type_backup",
+                    "size": [ 135, "default" ],
+                    "text": "§eWARN!§r\nThis version is not support netease version!\nPlease contact the publisher of this resource pack!",
+                    "anchor_from": "centor",
+                    "anchor_to": "centor",
+                    "layer": 1
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "rainbowpie_hide_hud_v2": {
+              "ignored": "(not $rainbowpie_style_hotbar)",
+              "visible": "$rainbowpie_ui_flag_c728d612",
+              "type": "panel",
+              "size": [ 204, 24 ],
+              "anchor_to": "bottom_middle",
+              "anchor_from": "bottom_middle",
+              "controls": [
+                {
+                  "hotbar_hidehud_button_rainbowpie@hud.hotbar_elipses_button": {
+                    "ignored": "$rainbowpie_ui_flag_0c48fd31",
+                    "$is_hidehud_button": true,
+                    "$pressed_button_name": "button.hide_gui_all",
+                    "size": [ 24, 24 ],
+                    "offset": [ -11, -0.5 ],
+                    "anchor_to": "bottom_left",
+                    "anchor_from": "bottom_left"
+                  }
+                },
+                {
+                  "clickspace_hidehud": {
+                    "ignored": "(not $rainbowpie_ui_flag_0c48fd31)",
+                    "type": "input_panel",
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+                    "size": [ 180, 24 ],
+                    "offset": [ 0, -0.5 ],
+                    "controls": [
+                      {
+                        "tip_panel": {
+                          "type": "panel",
+                          "size": [ "100%", "100%" ],
+                          "controls": [
+                            {
+                              "tip_text_background": {
+                                "type": "image",
+                                "size": [ "100%c + 12px", "100%c + 5px" ],
+                                "texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_black')",
+                                "alpha": "@hud.hidehudtip_background_out_in",
+                                "controls": [
+                                  {
+                                    "item_text_label": {
+                                      "type": "label",
+                                      "max_size": [ 160, 24 ],
+                                      "text_alignment": "center",
+                                      "layer": 31,
+                                      "font_type": "$global_font_type",
+                                      "backup_font_type": "$global_font_type_backup",
+                                      "text": "rainbowpie.ui.hud.clickspace.tip",
+                                      "alpha": "@hud.hidehudtip_text_out_in"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "border_panel": {
+                          "type": "panel",
+                          "size": [ "100%", "100%" ],
+                          "controls": [
+                            {
+                              "border_left": {
+                                "type": "image",
+                                "size": [ 1, "100%" ],
+                                "offset": [ 0, 0 ],
+                                "anchor_from": "left_middle",
+                                "anchor_to": "left_middle",
+                                "texture": "textures/ui/White",
+                                "layer": 30,
+                                "color": "$rainbowpie_ui_theme_button_border_default_color",
+                                "alpha": "@hud.hidehudtip_border_out_in"
+                              }
+                            },
+                            {
+                              "border_right": {
+                                "type": "image",
+                                "size": [ 1, "100%" ],
+                                "offset": [ 0, 0 ],
+                                "anchor_from": "right_middle",
+                                "anchor_to": "right_middle",
+                                "texture": "textures/ui/White",
+                                "layer": 30,
+                                "color": "$rainbowpie_ui_theme_button_border_default_color",
+                                "alpha": "@hud.hidehudtip_border_out_in"
+                              }
+                            },
+                            {
+                              "border_top": {
+                                "type": "image",
+                                "size": [ "100%", 1 ],
+                                "offset": [ 0, 0 ],
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "texture": "textures/ui/White",
+                                "layer": 30,
+                                "color": "$rainbowpie_ui_theme_button_border_default_color",
+                                "alpha": "@hud.hidehudtip_border_out_in"
+                              }
+                            },
+                            {
+                              "border_bottom": {
+                                "type": "image",
+                                "size": [ "100%", 1 ],
+                                "offset": [ 0, 0 ],
+                                "anchor_from": "bottom_middle",
+                                "anchor_to": "bottom_middle",
+                                "texture": "textures/ui/White",
+                                "layer": 30,
+                                "color": "$rainbowpie_ui_theme_button_border_default_color",
+                                "alpha": "@hud.hidehudtip_border_out_in"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "debug_background_bg": {
+                          "ignored": "(not $development_pack)",
+                          "type": "image",
+                          "texture": "textures/ui/debug_green",
+                          "layer": -2,
+                          "alpha": 0.3,
+                          "controls": [
+                            {
+                              "text_label": {
+                                "type": "label",
+                                "shadow": true,
+                                "font_type": "$global_font_type",
+                                "backup_font_type": "$global_font_type_backup",
+                                "font_scale_factor": 1,
+                                "text": "CLICK SPACE PLACEHOLDER",
+                                "anchor_from": "centor",
+                                "anchor_to": "centor"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "button_mappings": [
+                      {
+                        "from_button_id": "button.menu_select",
+                        "to_button_id": "button.hide_gui_all",
+                        "mapping_type": "pressed"
+                      },
+                      {
+                        "from_button_id": "button.menu_ok",
+                        "to_button_id": "button.hide_gui_all",
+                        "mapping_type": "pressed"
+                      }
+                    ],
+                    "bindings": [
+                      {
+                        "binding_name": "#inventory_touch_button",
+                        "binding_name_override": "#visible",
+                        "binding_type": "global"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "debug_background_bg": {
+                    "visible": "(not $rainbowpie_ui_flag_0c48fd31)",
+                    "ignored": "(not $development_pack)",
+                    "type": "image",
+                    "texture": "textures/ui/debug_green",
+                    "layer": -2,
+                    "alpha": 0.3,
+                    "controls": [
+                      {
+                        "text_label": {
+                          "type": "label",
+                          "shadow": true,
+                          "font_type": "$global_font_type",
+                          "backup_font_type": "$global_font_type_backup",
+                          "font_scale_factor": 1,
+                          "text": "FAKE HOTBAR PLACEHOLDER",
+                          "anchor_from": "centor",
+                          "anchor_to": "centor"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "bindings": [
+                {
+                  "binding_name": "(not #hud_visible)",
+                  "binding_name_override": "#visible",
+                  "binding_type": "global"
+                }
+              ]
+            }
+          },
+          {
+            "rainbowpie_hide_hud": {
+              "ignored": "$rainbowpie_ui_flag_c728d612",
+              "type": "input_panel",
+              "size": [ 24, 24 ],
+              "anchor_to": "bottom_right",
+              "anchor_from": "bottom_right",
+              "controls": [
+                {
+                  "debug_background_bg": {
+                    "ignored": "(not $development_pack)",
+                    "type": "image",
+                    "texture": "textures/ui/debug_green",
+                    "layer": -2,
+                    "alpha": 0.3,
+                    "controls": [
+                      {
+                        "text_label": {
+                          "type": "label",
+                          "shadow": true,
+                          "font_type": "$global_font_type",
+                          "backup_font_type": "$global_font_type_backup",
+                          "font_scale_factor": 0.5,
+                          "text": "HIDE HUD",
+                          "anchor_from": "centor",
+                          "anchor_to": "centor"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "button_mappings": [
+                {
+                  "from_button_id": "button.menu_select",
+                  "to_button_id": "button.hide_gui_all",
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_ok",
+                  "to_button_id": "button.hide_gui_all",
+                  "mapping_type": "pressed"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "root_panel/chat_stack": {
+    "size": [ "100%", "100%" ]
+  },
+
+  "root_panel/chat_stack/player_position": {
+    "ignored": "($enable_bottom_chat or ($win10_enable_bottom_chat and $mouse) or ($win10_enable_bottom_chat and $game_pad))"
+  },
+
+  "root_panel/chat_stack/chat_panel": {
+    "ignored": "($enable_bottom_chat or ($win10_enable_bottom_chat and $mouse) or ($win10_enable_bottom_chat and $game_pad))"
+  },
+
+  "rainbowpie_chat_grid_item": {
+    "type": "panel",
+    "layer": 1,
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "$anchor_from",
+    "anchor_to": "$anchor_to",
+    "$anchor_from|default": "top_left",
+    "$anchor_to|default": "top_left",
+    "variables": [
+      {
+        "requires": "($enable_bottom_chat or ($win10_enable_bottom_chat and $mouse))",
+        "$anchor_from": "bottom_left",
+        "$anchor_to": "bottom_left"
+      },
+      {
+        "requires": "($enable_bottom_chat or ($win10_enable_bottom_chat and $game_pad))",
+        "$anchor_from": "bottom_left",
+        "$anchor_to": "bottom_left"
+      }
+    ],
+    "controls": [
+      { "chat_content_bg_panel@hud.chat_content_bg_panel": {} }
+    ]
+  },
+
+  "anim_chat_txt_alpha": {
+    "anim_type": "alpha",
+    "easing": "in_quart",
+    "duration": 0.6,
+    "from": 1,
+    "to": 0
+  },
+
+  "anim_chat_background_alpha": {
+    "anim_type": "alpha",
+    "easing": "in_quart",
+    "duration": 0.6,
+    "from": 0.4,
+    "to": 0
+  },
+
+  "anim_chat_background_wait": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@hud.anim_chat_background_alpha"
+  },
+
+  "anim_chat_txt_wait": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@hud.anim_chat_txt_alpha"
+  },
+
+  "anim_chat_bg_alpha": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "destroy_at_end": "$destroy_n",
+    "duration": 1.5,
+    "from": [ 0, 0 ],
+    "to": [ 0, -12 ],
+    "$destroy_n|default": "chat_grid_item",
+    "variables": [
+      {
+        "requires": "($enable_bottom_chat or ($win10_enable_bottom_chat and $mouse))",
+        "$destroy_n": "rainbowpie_chat_grid_item"
+      },
+      {
+        "requires": "($enable_bottom_chat or ($win10_enable_bottom_chat and $game_pad))",
+        "$destroy_n": "rainbowpie_chat_grid_item"
+      }
+    ]
+  },
+
+  "anim_chat_bg_wait": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@hud.anim_chat_bg_alpha"
+  },
+
+  "anim_chat_bg_size_alpha": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": [ "100%-2px", "100%c" ],
+    "to": [ 0, 0 ]
+  },
+
+  "anim_chat_bg_size_wait": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@hud.anim_chat_bg_size_alpha"
+  },
+
+  "anim_chat_grid_item": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": [ "-100%", 0 ],
+    "to": [ 0, 0 ]
+  },
+
+  "chat_content_bg_panel_anim": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": [ "100%", 0 ],
+    "to": [ "100%", "100%c" ]
+  },
+
+  "chat_content_bg_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "anims": [
+      "@hud.chat_content_bg_panel_anim"
+    ],
+    "controls": [
+      {
+        "chat_background": {
+          "type": "image",
+          "texture": "textures/RainbowPie/tm",
+          "alpha": 0,
+          "size": [ "40% - 12px", "100%c" ],
+          "anchor_from": "$anchor_from",
+          "anchor_to": "$anchor_to",
+          "$anchor_from|default": "top_left",
+          "$anchor_to|default": "top_left",
+          "variables": [
+            {
+              "requires": "($enable_bottom_chat or ($win10_enable_bottom_chat and $mouse))",
+              "$anchor_from": "bottom_left",
+              "$anchor_to": "bottom_left"
+            },
+            {
+              "requires": "($enable_bottom_chat or ($win10_enable_bottom_chat and $game_pad))",
+              "$anchor_from": "bottom_left",
+              "$anchor_to": "bottom_left"
+            }
+          ],
+          "offset": "@hud.anim_chat_grid_item",
+          "anims": [
+            "@hud.anim_chat_bg_wait"
+          ],
+          "controls": [
+            {
+              "chat_label": {
+                "type": "label",
+                "max_size": [ "100%", "default" ],
+                "offset": [ 2, 0 ],
+                "$font_type|default": "default",
+                "layer": 31,
+                "text": "#text",
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "shadow": true,
+                "localize": false,
+                "color": "$chat_text_color",
+                "font_type": "$font_type",
+                "font_scale_factor": "$chat_font_scale_factor",
+                "line_padding": "$chat_line_spacing",
+                "controls": [
+                  {
+                    "bg": {
+                      "type": "image",
+                      "texture": "textures/ui/Black",
+                      "alpha": 0.4,
+                      "layer": -1,
+                      "size": [ "100% + 4px", "default" ],
+                      "offset": [ 0, 0 ],
+                      "anims": [
+                        "@hud.anim_chat_background_wait"
+                      ]
+                    }
+                  }
+                ],
+                "anims": [
+                  "@hud.anim_chat_txt_wait"
+                ],
+                "variables": [
+                  {
+                    "requires": "$custom_chat_font",
+                    "$font_type": "$global_font_type_chat"
+                  },
+                  {
+                    "requires": "($chat_font_type = 'smooth')",
+                    "$font_type": "$global_font_type_chat"
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#chat_text",
+                    "binding_name_override": "#text",
+                    "binding_type": "collection",
+                    "binding_collection_name": "chat_text_grid",
+                    "binding_condition": "once"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "chat_panel": {
+    "anchor_from": "$anchor_from",
+    "anchor_to": "$anchor_to",
+    "$anchor_from|default": "top_left",
+    "$anchor_to|default": "top_left",
+    "size": "$size",
+    "$size|default": [ "100%", "100%c" ],
+    "max_size": [ "100%", "50%" ],
+    "variables": [
+      {
+        "requires": "($enable_bottom_chat or ($win10_enable_bottom_chat and $mouse))",
+        "$size": [ "100%", "100%" ],
+        "$anchor_from": "bottom_left",
+        "$anchor_to": "bottom_left"
+      },
+      {
+        "requires": "($enable_bottom_chat or ($win10_enable_bottom_chat and $game_pad))",
+        "$size": [ "100%", "100%" ],
+        "$anchor_from": "bottom_left",
+        "$anchor_to": "bottom_left"
+      }
+    ]
+  },
+
+  "chat_panel/stack_panel": {
+    "factory": {
+      "name": "chat_item_factory",
+      "max_children_size": 50,
+      "control_ids": {
+        "chat_item": "chat_item@hud.rainbowpie_chat_grid_item"
+      }
+    }
+  },
+
+  "hud_root_panel_animation": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "to": [ "100%", "100%" ],
+    "from": [ "100%", "125%" ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "hud_root_panel_animation_pop": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "to": [ "100%", "100%" ],
+    "from": [ "100%", "125%" ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "hud_root_panel_back_animation": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ "100%", "100%" ],
+    "to": [ "100%", "125%" ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "hud_root_panel_back_animation_pop": {
+    "anim_type": "size",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ "100%", "100%" ],
+    "to": [ "100%", "125%" ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "player_position": {
+    "ignored": "($show_hotbar and not $touch)",
+    "alpha": 0.5
+  },
+
+  "rainbowpie_ui_hotbar": {
+    "ignored": "(not $rainbowpie_style_hotbar or $show_hotbar)",
+    "type": "image",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "size": [ 180, 24 ],
+    "offset": [ 0, -0.5 ],
+    "alpha": "$alpha",
+    "texture": "$texture",
+    "$texture|default": "textures/ui/Black",
+    "$alpha|default": 0.2,
+    "variables": [
+      {
+        "requires": "$rainbowpie_ui_flag_003fd164",
+        "$texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_black')"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#show_survival_ui"
+      },
+      {
+        "binding_name": "#is_creative_mode"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#show_survival_ui or #is_creative_mode)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "hotbar_slot_selected_image_left_rainbowpie_ui_hotbar@hud.hotbar_slot_selected_image_rainbowpie_ui_hotbar": {
+    "variables": [
+      {
+        "requires": "$rainbowpie_ui_flag_003fd164",
+        "$texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_white_left')"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#collection_index",
+        "binding_type": "collection",
+        "binding_collection_name": "$hotbar_collection_name"
+      },
+      {
+        "binding_name": "#slot_selected",
+        "binding_type": "collection",
+        "binding_collection_name": "$hotbar_collection_name"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#slot_selected and (#collection_index = 0))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "hotbar_slot_selected_image_right_rainbowpie_ui_hotbar@hud.hotbar_slot_selected_image_rainbowpie_ui_hotbar": {
+    "variables": [
+      {
+        "requires": "$rainbowpie_ui_flag_003fd164",
+        "$texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_white_right')"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#collection_index",
+        "binding_type": "collection",
+        "binding_collection_name": "$hotbar_collection_name"
+      },
+      {
+        "binding_name": "#slot_selected",
+        "binding_type": "collection",
+        "binding_collection_name": "$hotbar_collection_name"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#slot_selected and (#collection_index = 8))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "hotbar_slot_selected_image_rainbowpie_ui_hotbar": {
+    "type": "image",
+    "texture": "$texture",
+    "$texture|default": "textures/ui/White",
+    "size": [ 20, 24 ],
+    "offset": [ 0, 0 ],
+    "alpha": 0.3,
+    "layer": 8,
+    // "variables": [
+    //   {
+    //     "requires": "$rainbowpie_ui_feature_rounded_corners",
+    //     "$texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_white')"
+    //   }
+    // ],
+    "bindings": [
+      {
+        "binding_name": "#collection_index",
+        "binding_type": "collection",
+        "binding_collection_name": "$hotbar_collection_name"
+      },
+      {
+        "binding_name": "#slot_selected",
+        "binding_type": "collection",
+        "binding_collection_name": "$hotbar_collection_name"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#slot_selected and (not (#collection_index = 0) and not (#collection_index = 8)))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "gui_hotbar_grid_item/hotbar_slot_selected_image": {
+    "ignored": "($show_hotbar or $rainbowpie_style_hotbar)"
+  },
+
+  "gui_hotbar_grid_item/hotbar_renderer": {
+    "ignored": "($show_hotbar or $rainbowpie_style_hotbar)"
+  },
+
+  "gui_hotbar_grid_item/hotbar_parent/item_icon": {
+    "layer": 9,
+    "$offset|default": [ 0, 0 ],
+    "offset": "$offset",
+    "variables": [
+      {
+        "requires": "$rainbowpie_style_hotbar",
+        "$offset": [ 0, 0 ]
+      }
+    ]
+  },
+
+  "gui_hotbar_grid_item/hotbar_parent/item_count": {
+    "layer": 10,
+    "bindings": [
+      {
+        "binding_name": "#inventory_stack_count",
+        "binding_type": "collection",
+        "binding_collection_name": "$stack_count_collection_name"
+      }
+    ]
+  },
+
+  "gui_hotbar_grid_item/hotbar_parent/item_dura": {
+    "layer": 10
+  },
+
+  "start_cap_image": {
+    "ignored": "($show_hotbar or $rainbowpie_style_hotbar)"
+  },
+
+  "gui_hotbar_grid_item": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "hotbar_slot_selected_image_rainbowpie_ui_hotbar@hotbar_slot_selected_image_rainbowpie_ui_hotbar": {
+              "ignored": "(not $rainbowpie_style_hotbar or $show_hotbar)"
+            }
+          },
+          {
+            "hotbar_slot_selected_image_left_rainbowpie_ui_hotbar@hotbar_slot_selected_image_left_rainbowpie_ui_hotbar": {
+              "ignored": "(not $rainbowpie_style_hotbar or $show_hotbar)"
+            }
+          },
+          {
+            "hotbar_slot_selected_image_right_rainbowpie_ui_hotbar@hotbar_slot_selected_image_right_rainbowpie_ui_hotbar": {
+              "ignored": "(not $rainbowpie_style_hotbar or $show_hotbar)"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "empty_progress_bar": {
+    "texture": "$texture",
+    "$texture|default": "textures/ui/White"
+  },
+
+  "progress_bar_nub": {
+    "alpha": "$alpha",
+    "$alpha|default": 1.0,
+    "variables": [
+      {
+        "requires": "$rainbowpie_style_hotbar",
+        "$alpha": 0
+      }
+    ]
+  },
+
+  "full_progress_bar": {
+    "texture": "$texture",
+    "$texture|default": "textures/ui/experiencebarfull",
+    "color": "$color",
+    "$color|default": [],
+    "variables": [
+      {
+        "requires": "$rainbowpie_style_hotbar",
+        "$texture": "textures/ui/White",
+        "$color": "$rainbowpie_ui_theme_experience_full_color"
+      }
+    ]
+  },
+
+  "exp_progress_bar_and_hotbar/resizing_xp_bar_with_hotbar/empty_progress_bar": {
+    "size": "$size",
+    "offset": "$offset",
+    "alpha": "$alpha",
+    "color": "$color",
+    "$texture|default": "textures/ui/experiencebarempty",
+    "$size|default": [ "100%c", 5 ],
+    "$full_size|default": [ "100%c + 10px", "100%" ],
+    "$offset|default": [ 0, 0 ],
+    "$color|default": [],
+    "$hotbar_offset|default": [ 3.5, 16 ],
+    "$alpha|default": 1,
+    "$full_alpha|default": 1,
+    "variables": [
+      {
+        "requires": "$rainbowpie_style_hotbar",
+        "$size": [ "100%c", 4 ],
+        "$full_size": [ "100%c + 8px", "100%" ],
+        "$hotbar_offset": [ 4, 16 ],
+        "$offset": [ 0, 0 ],
+        "$texture": "textures/ui/White",
+        "$color": "$rainbowpie_ui_theme_experience_empty_color",
+        "$alpha": "$rainbowpie_ui_theme_experience_empty_alpha",
+        "$full_alpha": "$rainbowpie_ui_theme_experience_full_alpha"
+      }
+    ]
+  },
+
+  "exp_progress_bar_and_hotbar/resizing_xp_bar_with_hotbar/empty_progress_bar/full_progress_bar": {
+    "alpha": "$full_alpha",
+    "size": "$full_size"
+  },
+
+  "exp_progress_bar_and_hotbar/resizing_xp_bar_with_hotbar/empty_progress_bar/full_progress_bar/progress_bar_nub": {
+    "size": [ "100%c - 10px", "100%" ],
+    "max_size": [ 172, "100%" ]
+  },
+
+  "exp_progress_bar_and_hotbar/resizing_xp_bar_with_hotbar/empty_progress_bar/full_progress_bar/progress_bar_nub/hotbar": {
+    "offset": "$hotbar_offset"
+  },
+
+  "root_panel": {
+    "animation_reset_name": "screen_animation_reset",
+    "anims": [
+      "@hud.hud_root_panel_back_animation",
+      "@hud.hud_root_panel_back_animation_pop",
+      "@hud.hud_root_panel_animation",
+      "@hud.hud_root_panel_animation_pop"
+    ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "rainbowpie_ui_hotbar@hud.rainbowpie_ui_hotbar": {}
+          },
+          {
+            "win10_chat_panel@hud.chat_panel": {
+              "ignored": "(not $win10_enable_bottom_chat or not $mouse)",
+              "offset": "$offset",
+              "$offset|default": [ 0, -38 ]
+            }
+          },
+          {
+            "gamepad_chat_panel@hud.chat_panel": {
+              "ignored": "(not $win10_enable_bottom_chat or not $game_pad)",
+              "offset": "$offset",
+              "$offset|default": [ 0, -38 ]
+            }
+          },
+          {
+            "win10_player_position@hud.player_position": {
+              "ignored": "(not $win10_enable_bottom_chat or not $mouse or $show_hotbar)",
+              "offset": [ 0, -26 ],
+              "anchor_from": "bottom_left",
+              "anchor_to": "bottom_left"
+            }
+          },
+          {
+            "gamepad_player_position@hud.player_position": {
+              "ignored": "(not $win10_enable_bottom_chat or not $game_pad or $show_hotbar)",
+              "offset": [ 0, -26 ],
+              "anchor_from": "bottom_left",
+              "anchor_to": "bottom_left"
+            }
+          },
+          {
+            "chat_panel@hud.chat_panel": {
+              "ignored": "(not $enable_bottom_chat or $mouse or $game_pad)",
+              "offset": "$offset",
+              "$offset|default": [ 0, -38 ]
+            }
+          },
+          {
+            "player_position@hud.player_position": {
+              "ignored": "(not $enable_bottom_chat or $mouse or $game_pad or $show_hotbar)",
+              "offset": [ 0, -26 ],
+              "anchor_from": "bottom_left",
+              "anchor_to": "bottom_left"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  // Font Changes
+
+  "progress_text_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "player_position/player_position_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup",
+    "anchor_from": "center",
+    "anchor_to": "center"
+  },
+
+  "chat_label": {
+    "font_type": "$font_type",
+    "variables": [
+      {
+        "requires": "$custom_chat_font",
+        "$font_type": "$global_font_type_chat"
+      },
+      {
+        "requires": "($chat_font_type = 'smooth')",
+        "$font_type": "$global_font_type_chat"
+      }
+    ]
+  },
+
+  "item_name_text_root/item_text_aligner/item_text_control/item_text_background": {
+    "texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_black')"
+  },
+
+  "item_name_text_root/item_text_aligner/item_text_control/item_text_label": {
+    "max_size": [ 200, 100 ],
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "hud_tip_text": {
+    "texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_black')"
+  },
+
+  "hud_tip_text/item_text_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "hud_actionbar_text": {
+    "texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_black')"
+  },
+
+  "hud_actionbar_text/actionbar_message": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "hud_title_text/title_frame/title_background": {
+    "texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_black')"
+  },
+
+  "hud_title_text/title_frame/title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "hud_title_text/subtitle_frame/subtitle_background": {
+    "texture": "($rainbowpie_ui_path_images_mintraspberry + '/r_black')"
+  },
+
+  "hud_title_text/subtitle_frame/subtitle": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "boss_name_panel/boss_name": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "tooltip_helper_icon_description": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "base_icon_image/postfix_label_wrapper/label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "base_keyboard_icon/icon/key_backing/key_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "base_keyboard_icon/icon/mouse_buttons": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "root_panel/gamertag_label_for_splitscreen": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "namespace": "pack_settings",
+
+  "screen": {
+    "$rainbowpie_ui_screenbackground_bsf_need": false
+  },
+
+  "content_tiering_panel/label_panel/content_tier_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content_tiering_panel/label_panel/unsupported_content_tier_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content_tiering_panel/incompatible_label_panel/label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  }
+}

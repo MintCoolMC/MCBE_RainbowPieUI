@@ -1,0 +1,768 @@
+{
+  "namespace": "common_store",
+
+  "purchase_coins_panel/plus_button": {
+    "focus_enabled": false
+  },
+
+  "search_header_stack/gamepad_helper_y_alignment_hack": {
+    "ignored": true
+  },
+
+  "wallet_button_panel/gamepad_helper_x_alignment_hack": {
+    "ignored": true
+  },
+
+  "status_with_coins/gamepad_helper_start_alignment_hack": {
+    "ignored": true
+  },
+
+  "inventory_panel/inventory_button": {
+    "modifications": [
+      {
+        "array_name": "button_mappings",
+        "operation": "remove",
+        "where": {
+          "from_button_id": "button.controller_start"
+        }
+      }
+    ]
+  },
+  
+  "xbl_player_status_panel/gamer_pic_with_bevel": {
+    "bindings": []
+  },
+
+  "xbl_player_status_panel/updates_with_bevel": {
+    "ignored": true
+  },
+
+  "close_bg_button": {
+    "controls": [
+      { "default@common.empty_panel": {} },
+      { "hover@common.empty_panel": {} },
+      { "pressed@common.empty_panel": {} }
+    ]
+  },
+
+  "filter_logo_content_panel/filter_count_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "search_label_panel/offset_panel/label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "suggested_content_offers_grid_item/frame/title_label_panel/offer_type": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "suggested_content_offers_grid_item/frame/title_label_panel/title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "store_offer_grid_item/frame/durable_offer_info_panel/offer_status_panel/offer_prompt_panel/offer_status_text_panel/offer_status_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  // "store_offer_grid_item/frame/durable_offer_info_panel/title_label_padding_stack/title_label_vert_stack_panel/offer_price_info_panel/sales_banner/offer_prompt_panel": {
+  //   "font_type": "$global_font_type",
+  //   "backup_font_type": "$global_font_type_backup"
+  // },
+
+  "store_offer_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "offer_price_markdown_panel/offer_price": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "hero_offer_sale_markdown": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "row_offer_sale_markdown": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "store_offer_grid_show_more/frame/title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "offer_download_progress/label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "rating_text_panel/rating_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "hero_offer_download_progress/label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "hero_offer_details_title": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "store_offer_item_creator_panel/creator_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "disclaimer_panel/legal_text_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "xbl_button_content/disconnected_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "content_owned_no_xbl_panel/no_xbl_content_owned_label_alignment_pannel/no_xbl_content_owned_label_panel/gamertag_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "no_xbl_player_status_panel/no_xbl_player_status_label_alignment_pannel/label_panel/gamertag_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "xbl_player_status_panel/label_alignment_pannel/label_panel/gamertag_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "my_account_button_content/my_account_content/my_account_label_panel/my_account_center_label/my_account_label": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "coin_balance_panel/coin_balance_text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "realms_plus_expiration/contents/text_panel/text": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "timer_panel/timer": {
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "store_offer_grid_show_more": {
+  },
+  
+  "store_offer_grid_item/frame/offer_button": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "focus_button@common.non_interact_focus_border_button": {
+              "$pressed_button_name|default": "button.select_offer",
+              "sound_name": "random.click",
+              "sound_volume": 1.0,
+              "sound_pitch": 1.0,
+              "size": [ "100%", "100%" ],
+              "tts_inherit_siblings": true,
+              "bindings": [
+                {
+                  "binding_name": "#is_using_gamepad",
+                  "binding_name_override": "#visible"
+                },
+                {
+                  "binding_type": "$offer_collection_details",
+                  "binding_collection_name": "$offer_collection_name"
+                },
+                {
+                  "binding_type": "$store_factory_collection_details",
+                  "binding_collection_name": "$store_factory_collection_name",
+                  "binding_collection_prefix": "$store_factory_collection_prefix"
+                },
+                {
+                  "binding_type": "$offer_collection_details",
+                  "binding_collection_name": "$offer_collection_name",
+                  "binding_collection_prefix": "$offer_collection_prefix"
+                }
+              ],
+              "button_mappings": [
+                {
+                  "from_button_id": "button.menu_select",
+                  "to_button_id": "$pressed_button_name",
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_ok",
+                  "to_button_id": "$pressed_button_name",
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_tab_right",
+                  "to_button_id": "button.cycle_offer_right",
+                  "mapping_type": "focused"
+                },
+                {
+                  "from_button_id": "button.menu_tab_left",
+                  "to_button_id": "button.cycle_offer_left",
+                  "mapping_type": "focused"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "store_description_background": {
+    "texture": "textures/ui/Black",
+    "alpha": 0.6
+  },
+
+  "xbl_player_status_panel/gamer_pic_with_bevel/player_pic": {
+    "size": [ 15, 15 ]
+  },
+
+  "xbl_player_status_panel/gamer_pic_with_bevel/player_pic_bevel": {
+    "ignored": true
+  },
+
+  "store_bg@common_store.store_background": {
+    "texture": "textures/ui/Black"
+  },
+
+  "store_background": {
+    "texture": "textures/RainbowPie/tm"
+  },
+
+  "banner_fill": {
+    "texture": "textures/ui/Black",
+    "$banner_fill_alpha|default": 0.4
+  },
+
+  "empty_progress_bar_icon": {
+    "type": "image",
+    "texture": "textures/ui/White",
+    "color": "$rainbowpie_ui_theme_progress_empty_color",
+    "alpha": "$rainbowpie_ui_theme_progress_empty_alpha"
+  },
+
+  "bar_animation_r": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "duration": 1.5,
+    "from": [ "-50%", 0 ],
+    "to": [ "50%", 0 ],
+    "next": "@common_store.bar_animation_a"
+  },
+
+  "bar_animation_a": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "duration": 1.5,
+    "from": [ "50%", 0 ],
+    "to": [ "-50%", 0 ],
+    "next": "@common_store.bar_animation_r"
+  },
+
+  "progress_loading_bars_r": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [ "100% - 4px", "8%x" ],
+    "max_size": [ 64, 3 ],
+    // "clips_children": true, // 如果觉得这样更好看再解除注释吧
+    "controls": [
+      {
+        "full_progress_bar_icon_base": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "color": "$rainbowpie_ui_theme_progress_full_color",
+          "alpha": "$rainbowpie_ui_theme_progress_full_alpha",
+          "size": [ 3, 3 ],
+          "offset": "@common_store.bar_animation_r",
+          "layer": 2
+        }
+      },
+      {
+        "empty_progress_bar_icon@common_store.empty_progress_bar_icon": {
+          "layer": 1
+        }
+      }
+    ]
+  },
+
+  "progress_loading": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "layer": 100,
+
+    "$hide_failure_text|default": false,
+    "$use_sibling_scope|default": true,
+    "$hide_progress_loading_outline|default": false,
+    "$baseLayer|default": 2,
+
+    "controls": [
+      {
+        "progress_loading_outline@common_store.banner_fill": {
+          "visible": "(not $hide_progress_loading_outline)"
+        }
+      },
+      {
+        "stack_panel": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "controls": [
+            {
+              "centerer_0": {
+                "type": "panel",
+                "size": [ "100%", "100%c" ],
+                "controls": [
+                  {
+                    "store_failure_text": {
+                      "type": "label",
+                      "layer": "($baseLayer + 1)",
+                      "color": "$body_text_color",
+                      "font_type": "$global_font_type",
+                      "backup_font_type": "$global_font_type_backup",
+                      "text_alignment": "center",
+                      "ignored": "$hide_failure_text",
+                      "size": [ "100%-4px", "default" ],
+                      "text": "store.connection.failed.body",
+                      "alpha": 0,
+                      "anims": [
+                        "@common_store.failure_text_wait_animation"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "centerer_1": {
+                "type": "panel",
+                "size": [ "100%", "100%c" ],
+                "controls": [
+                  {
+                    "progress_loading_bars@common_store.progress_loading_bars_r": {
+                      "layer": "($baseLayer + 1)"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$source_control_name",
+        "source_property_name": "$source_property_name",
+        "target_property_name": "#visible",
+        "resolve_sibling_scope": "$use_sibling_scope"
+      }
+    ]
+  },
+
+  "plus_icon": {
+  },
+
+  "tag": {
+    "type": "image",
+    "$tag_texture|default": "textures/ui/newOffersIcon",
+    "$tag_text|default": "",
+    "texture": "$tag_texture",
+    "size": [ "100%c + 4px", 15 ],
+    "controls": [
+      {
+        "new_offer_label": {
+          "type": "label",
+          "size": [ "default", 10 ],
+          "offset": [ 0, 1 ],
+          "text": "$tag_text",
+          "font_type": "$global_font_type",
+          "backup_font_type": "$global_font_type_backup",
+          "color": "$new_offer_icon_text_color",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "layer": 1,
+          "tts_name": "accessibility.store.tag",
+          "tts_control_type_order_priority": 1002, // To be read after the button control type
+          "tts_value_order_priority": 1001
+        }
+      }
+    ]
+  },
+
+  "store_top_bar_animation": {
+    "ignored": "$is_topbar_animations_disabled",
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ 50, 0 ],
+    "to": [ 0, 0 ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "store_top_bar_animation_pop": {
+    "ignored": "$is_topbar_animations_disabled",
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ -50, 0 ],
+    "to": [ 0, 0 ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "store_top_bar_back_animation": {
+    "ignored": "$is_topbar_animations_disabled",
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ 0, 0 ],
+    "to": [ -50, 0 ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "store_top_bar_back_animation_pop": {
+    "ignored": "$is_topbar_animations_disabled",
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.6,
+    "from": [ 0, 0 ],
+    "to": [ 50, 0 ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "panel_animation": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 1.2,
+    "from": [ 0, "70%" ],
+    "to": [ 0, 0 ]
+  },
+
+  "store_animation": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 1.2,
+    "from": [ 0, "20%" ],
+    "to": [ 0, 0 ]
+  },
+
+  "label": {
+    "type": "label",
+    "color": "$body_text_color",
+    "size": [ "100%", "14px" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "font_type": "$global_font_type",
+    "backup_font_type": "$global_font_type_backup"
+  },
+
+  "store_top_bar_black": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [ "100%", 19 ],
+    "animation_reset_name": "screen_animation_reset",
+    "anims": "$anims",
+    "$anims|default": [
+      "@common_store.store_top_bar_back_animation",
+      "@common_store.store_top_bar_back_animation_pop",
+      "@common_store.store_top_bar_animation",
+      "@common_store.store_top_bar_animation_pop"
+    ],
+    "alpha": 0.3,
+    "layer": 50
+  },
+
+  "store_top_bar": {
+    "type": "image",
+    "texture": "textures/ui/control_white",
+    "size": [ "100%", 19 ],
+    "animation_reset_name": "screen_animation_reset",
+    "anims": "$anims",
+    "$anims|default": [
+      "@common_store.store_top_bar_back_animation",
+      "@common_store.store_top_bar_back_animation_pop",
+      "@common_store.store_top_bar_animation",
+      "@common_store.store_top_bar_animation_pop"
+    ],
+    "$alpha|default": 0.5,
+    "alpha": "$alpha",
+    "layer": 50,
+    "variables": [
+      {
+        "requires": "($rainbowpie_ui_feature_background_blur and $is_pregame)",
+        "$alpha": 0.3
+      },
+      {
+        "requires": "($rainbowpie_ui_feature_background_blur and ($screen_content = 'start.start_screen_content'))",
+        "$alpha": 0.3
+      },
+      {
+        "requires": "($rainbowpie_ui_feature_background_blur and ($screen_content = 'play.play_screen_content'))",
+        "$alpha": 0.3
+      }
+    ]
+  },
+
+  "store_top_bar_filler": {
+    "type": "image",
+    "texture": "textures/ui/control_white",
+    "alpha": 0.7
+  },
+
+  "home_button_panel": {
+    "ignored": false,
+    "type": "panel",
+    "size": [ 19, "100%" ],
+    "controls": [
+      {
+        "home_button@common_buttons.light_content_button": {
+          "focus_enabled": false,
+          "size": [ "100%", 17 ],
+          "layer": 3,
+          "offset": [ 0, -1 ],
+          "$pressed_button_name": "button.store_home",
+          "$button_content": "common_store.home_button_content"
+        }
+      }
+    ]
+  },
+
+  "home_button_content": {
+    "type": "image",
+    "color": "$text_color",
+    "size": [ 13, 11 ],
+    "texture": "textures/ui/store_home_icon"
+  },
+
+  "store_header_with_coins": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "$ignore_inventory_button": false,
+    "$store_header_size|default": [ "100%", 19 ],
+    "$is_inventory_screen|default": false,
+    "$ignore_home_button|default": false,
+    "$ignore_search|default": false,
+    "$ignored_header|default": false,
+    "$ignored_background|default": false,
+    "$gamepad_helper_visible|default": true,
+    "$scroll_clips_children": "(not $scroll_met)",
+    "$back_button_has_title|default": false,
+    "$button_text|default": "Back Button",
+    "$blur|default": false,
+    "$need_fix_ingame_bug|default": false,
+    "$header|default": "common_store.store_top_bar",
+    "controls": [
+      {
+        "gamepad_helpers@rainbowpie.gamepad_helpers": {
+          "visible": "$gamepad_helper_visible",
+          "$panel_controls": [
+            {
+              "gamepad_helper_start@rainbowpie.gamepad_helper": {
+                "ignored": "$rainbowpie_ui_flag_disable_sidebar_navigation",
+                "$icon_texture": "#controller_start_icon",
+                "$icon_description_bind": "hbui.MenuButton.menu"
+              }
+            },
+            {
+              "gamepad_helper_y@rainbowpie.gamepad_helper": {
+                "ignored": "$ignore_search",
+                "$icon_texture": "#controller_face_up_icon",
+                "$icon_description_bind": "controller.buttonTip.enterSearch"
+              }
+            },
+            {
+              "gamepad_helper_x@rainbowpie.gamepad_helper": {
+                "$icon_texture": "#controller_face_left_icon",
+                "$icon_description_bind": "accessibility.minecoins"
+              }
+            },
+            {
+              "gamepad_helper_a@rainbowpie.gamepad_helper": {
+                "$icon_texture": "#controller_face_down_icon",
+                "$icon_description_bind": "#button_a_description"
+              }
+            },
+            {
+              "gamepad_helper_b@rainbowpie.gamepad_helper": {
+                "$icon_texture": "#controller_face_right_icon",
+                "$icon_description_bind": "controller.buttonTip.back"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "RainbowPieHeaderMask@rainbowpie.RainbowPieHeaderMask": {}
+      },
+      {
+        "RainbowPieHeaderBlur@rainbowpie.RainbowPieHeaderBlur": {}
+      },
+      {
+        "top_bar@common_store.store_top_bar": {
+          "ignored": "$ignored_header",
+          "size": "$store_header_size",
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "focus_container": true,
+          "layer": 50,
+          "texture": "textures/ui/White",
+          "color": "$rainbowpie_ui_theme_topbar_background_color",
+          "alpha": "$rainbowpie_ui_theme_topbar_background_alpha",
+          "controls": [
+            {
+              "title_stack_panel": {
+                "type": "stack_panel",
+                "size": [ "100%", 19 ],
+                "offset": [ 0, 1 ],
+                "orientation": "horizontal",
+                "controls": [
+                  {
+                    "padding1": {
+                      "type": "panel",
+                      "size": [ 2, "100%" ]
+                    }
+                  },
+                  {
+                    "back_button_content_panel@rainbowpie.back_content_panel": {
+                      "ignored": "$back_button_has_title",
+                      "$back_button_text": "#screen_header_title",
+                      "$rainbowpie_text_bindings": [
+                        {
+                          "binding_type": "global",
+                          "binding_name": "#screen_header_title",
+                          "binding_name_override": "#screen_header_title"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "back_button_content_panel_1@chat.back_content_panel": {
+                      "visible": "$back_button_has_title",
+                      "$back_button_text": "$button_text"
+                    }
+                  },
+                  {
+                    "header_title_panel@common.screen_header_title_panel": {
+                      "$screen_header_title_visible": false,
+                      "layer": 1,
+                      "$screen_header_title_binding_type": "global"
+                    }
+                  },
+                  {
+                    "padding3": {
+                      "type": "panel",
+                      "size": [ 5, "100%" ]
+                    }
+                  },
+                  { "home_button@common_store.home_button_panel": {} },
+                  {
+                    "padding4": {
+                      "type": "panel",
+                      "size": [ 5, "100%" ]
+                    }
+                  },
+                  {
+                    "status_and_coins@common_store.status_with_coins": {
+                      "$top_status_and_coins_visible_binding_type|default": "none",
+                      "$top_status_and_coins_visible_binding|default": "",
+                      "bindings": [
+                        {
+                          "binding_type": "$top_status_and_coins_visible_binding_type",
+                          "binding_name": "$top_status_and_coins_visible_binding",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "padding5": {
+                      "type": "panel",
+                      "size": [ 2, "100%" ]
+                    }
+                  },
+                  { "search_header_stack@common_store.search_header_stack": {} }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "stack_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "header_padding": {
+                "type": "panel",
+                "size": "$store_header_size"
+              }
+            },
+            {
+              "child_control@$child_control": {
+                "size": [ "100%", "fill" ],
+                "layer": 2
+              }
+            }
+          ]
+        }
+      },
+      {
+        "black_bg": {
+          "ignored": true,
+          "type": "image",
+          "texture": "textures/ui/Black",
+          "size": [ "500%", "500%" ],
+          "alpha": 0.4,
+          "layer": -3
+        }
+      },
+      { "background_all@rainbowpie.background_all": { "ignored": "(not $is_pregame or $ignored_background)" } },
+      { "background_anim@rainbowpie.background_anim": { "ignored": "$is_pregame" } },
+      {
+        "background_image@start.background_image": {
+          "ignored": "(not $show_image_bg)",
+          "layer": -4
+        }
+      }
+    ],
+    "variables": [
+      {
+        "requires": "$global_topbar_black",
+        "$header": "common_store.store_top_bar_black"
+      }
+    ]
+  }
+}

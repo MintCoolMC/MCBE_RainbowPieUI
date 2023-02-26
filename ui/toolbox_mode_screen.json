@@ -1,0 +1,45 @@
+{
+  "namespace": "toolbox",
+
+  "toolbox_mode": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "header@rainbowpie.header": {
+              "$header_title": "toolboxMode.text"
+            }
+          },
+          { "background_all@rainbowpie.background_all": {} },
+          { "background_anim@rainbowpie.background_anim": { "ignored": "$is_pregame" } }
+        ]
+      }
+    ]
+  },
+
+  "toolbox_mode/title": {
+    "ignored": true
+  },
+
+  "toolbox_mode/panel": {
+    "ignored": true
+  },
+
+  "toolbox_mode_screen": {
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_exit",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ],
+    "$screen_bg_content": "common.empty_panel"
+  }
+}
