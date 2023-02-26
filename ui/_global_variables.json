@@ -75,7 +75,7 @@
 
   "$support_netease": false,
   "$new_minecraft_version_test": false,
-  "$suggest_version": "v1.19.62", // 目标版本，将被打包工具读取
+  "$suggest_version": "v1.19.63", // 目标版本，将被打包工具读取
   "$release_type_text": "Release",
   "$rv_text": "14032",
   "$release_date": "",
@@ -118,7 +118,7 @@
   "$mintui_other_config_ShowInSettings": false,
 
   // Version check
-  "$rainbowpie_ui_check_mcversions": "v1.19.62,v1.19.60", // 支持的版本（支持多个）
+  "$rainbowpie_ui_check_mcversions": "v1.19.63,v1.19.62,v1.19.60", // 支持的版本（支持多个）
 
   // Alert
   "$rainbowpie_ui_alert_enabled": false,
