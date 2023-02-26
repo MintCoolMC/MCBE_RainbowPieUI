@@ -1279,7 +1279,7 @@
             "back_shortcut@common_buttons.light_text_button": {
               "ignored": "(($screen_content = 'toast_screen.toast_screen_content') or ($screen_content = 'debug_screen.content_panel') or ($screen_content = 'hud.hud_content') or (not $touch))",
               "visible": "$rainbowpie_ui_flag_screen_backshortcut",
-              "layer": 8200,
+              "layer": 8000,
               "size": [ 80, 26 ],
               "offset": [ 0, "-16%" ],
               "anchor_from": "bottom_right",
