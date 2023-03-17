@@ -290,7 +290,7 @@
                   "clock@common.item_renderer": {
                     "size": [ 16, 16 ],
                     "property_bag": {
-                      "#item_id_aux": "(393 * 65536)"
+                      "#item_id_aux": "(394 * 65536)"
                     },
                     "bindings": []
                   }
@@ -299,7 +299,7 @@
                   "compass@common.item_renderer": {
                     "size": [ 16, 16 ],
                     "property_bag": {
-                      "#item_id_aux": "(391 * 65536)"
+                      "#item_id_aux": "(392 * 65536)"
                     },
                     "bindings": []
                   }
@@ -308,7 +308,7 @@
                   "recovery_compass@common.item_renderer": {
                     "size": [ 16, 16 ],
                     "property_bag": {
-                      "#item_id_aux": "(651 * 65536)"
+                      "#item_id_aux": "(652 * 65536)"
                     },
                     "bindings": []
                   }
