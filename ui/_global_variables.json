@@ -90,9 +90,9 @@
   // branch_type: 分支类型 | release: 保证可用且无明显bug | prerelease: 正式发布前的测试 | preview: 测试新内容、修复bug | dev: 一些无关紧要的测试，内容不一定会放到正式版
   // branch_name: 分支名称 | rs_public: 正式发布 | rs_preview: 正式发布前的测试 | pre_release: 正式发布前的测试和内容更新 | cn_dev: 中国版的发布和测试 | lt_release: 长期版本，会发送hotfix更新 | lt_preview: 长期版本，会发送hotfix更新。正式发布前的测试
   // branch_display_name: 分支显示名称 | 会显示在UI名称后
-  "$branch_type": "preview",
-  "$branch_name": "pre_release",
-  "$branch_display_name": "Release Preview",
+  "$branch_type": "release",
+  "$branch_name": "rs_public",
+  "$branch_display_name": "Release",
 
   // 以下值会在模块列表和被打包时读取
   "$rainbowpieui_engine_version": "15",
